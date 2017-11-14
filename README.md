@@ -201,13 +201,14 @@ NICE TO HAVE
 
 CHANGELIST
 ----------
-***Version 1.1.0.0000* ** *- TBD*
+***Version 1.1.0* ** *- November 14, 2017*
 
 - Some basic refactoring to make the library more "Swift-studly."
 - Made some references weak/unowned that should have been declared as such. Even though it has not (yet) resulted in a leak, it could.
 - Updating basic project format to Xcode 8-compatible.
 - Major restrutcture and history reset for CocoaPods.
-- Moving repo to GitHub.
+- The Git repo has been reset. I'll also keep only a master branch, with release tags.
+- Moving repo to GitHub, as GitHub and CocoaPods play better together.
 - Fixed an issue with the search tab sometimes crashing when selected (test app).
 
 ***Version 1.0.1.3000* ** *- August 27, 2017*
