@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="BMLTiOSLib_Tester" customModuleProvider="target">
+            <connections>
+                <outlet property="_durationSelectionContainer" destination="iN0-l3-epB" id="pmo-4L-oHk"/>
+                <outlet property="_durationSwitch" destination="zse-Ss-ZnI" id="nLT-zD-B62"/>
+                <outlet property="_durationTimePicker" destination="Qui-BI-LDv" id="sdD-hI-x3C"/>
+                <outlet property="_durationTypeSegmentedControl" destination="LF7-DF-Rfo" id="aKG-Jr-WRz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LF7-DF-Rfo">
+                    <rect key="frame" x="65" y="0.0" width="302" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="7u1-BC-AAQ"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Last At Least"/>
+                        <segment title="Last No Longer Than"/>
+                    </segments>
+                    <connections>
+                        <action selector="durationTypeChanged:" destination="-1" eventType="valueChanged" id="Opw-j5-hjG"/>
+                    </connections>
+                </segmentedControl>
+                <datePicker contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="7200" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qui-BI-LDv">
+                    <rect key="frame" x="8" y="36" width="359" height="80"/>
+                    <date key="date" timeIntervalSinceReferenceDate="-978281999.22925305">
+                        <!--1970-01-01 07:00:00 +0000-->
+                    </date>
+                    <connections>
+                        <action selector="durationTimeChanged:" destination="-1" eventType="valueChanged" id="gKh-xh-Hkg"/>
+                    </connections>
+                </datePicker>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zse-Ss-ZnI">
+                    <rect key="frame" x="8" y="0.0" width="51" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="EDQ-ZC-JDL"/>
+                        <constraint firstAttribute="width" constant="49" id="f0q-T7-YQ5"/>
+                    </constraints>
+                    <connections>
+                        <action selector="durationSwitchChanged:" destination="-1" eventType="valueChanged" id="WnO-nC-ivq"/>
+                    </connections>
+                </switch>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="zse-Ss-ZnI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="7lO-ra-dyu"/>
+                <constraint firstItem="LF7-DF-Rfo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Adj-Ny-9Jr"/>
+                <constraint firstItem="Qui-BI-LDv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="HH0-ql-ERW"/>
+                <constraint firstItem="LF7-DF-Rfo" firstAttribute="leading" secondItem="zse-Ss-ZnI" secondAttribute="trailing" constant="8" id="NTz-rC-1Bs"/>
+                <constraint firstAttribute="trailing" secondItem="LF7-DF-Rfo" secondAttribute="trailing" constant="8" id="SUY-FU-ffn"/>
+                <constraint firstAttribute="bottom" secondItem="Qui-BI-LDv" secondAttribute="bottom" id="Y4x-eZ-JAq"/>
+                <constraint firstItem="Qui-BI-LDv" firstAttribute="top" secondItem="LF7-DF-Rfo" secondAttribute="bottom" constant="8" id="gB1-w1-mqc"/>
+                <constraint firstItem="zse-Ss-ZnI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kvU-Tv-RHM"/>
+                <constraint firstAttribute="trailing" secondItem="Qui-BI-LDv" secondAttribute="trailing" constant="8" id="qlb-2y-LfK"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="24.5" y="-223"/>
+        </view>
+    </objects>
+</document>

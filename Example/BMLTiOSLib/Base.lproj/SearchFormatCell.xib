@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="BMLTiOSLib_Tester" customModuleProvider="target">
+            <connections>
+                <outlet property="_formatCheckboxContainerView" destination="KVF-1T-xgt" id="K9t-j1-kWa"/>
+                <outlet property="_formatLabel" destination="gur-tx-tec" id="Uuj-N4-kDu"/>
+                <outlet property="_formatListCellView" destination="iN0-l3-epB" id="QBy-Qv-QtW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Format Checkbox List Cell View">
+            <rect key="frame" x="0.0" y="0.0" width="398" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formats:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gur-tx-tec" userLabel="Format List Label">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="4XH-vd-Qi9"/>
+                        <constraint firstAttribute="height" constant="21" id="SnC-yG-kvT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVF-1T-xgt" userLabel="Format Checkbox Container View">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="KVF-1T-xgt" secondAttribute="bottom" id="0xe-eV-9hq"/>
+                <constraint firstAttribute="trailing" secondItem="gur-tx-tec" secondAttribute="trailing" id="9Ae-yt-mND"/>
+                <constraint firstItem="KVF-1T-xgt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GRb-UL-rrh"/>
+                <constraint firstItem="KVF-1T-xgt" firstAttribute="top" secondItem="gur-tx-tec" secondAttribute="bottom" constant="4" id="Rol-ub-PPz"/>
+                <constraint firstItem="gur-tx-tec" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rCb-PJ-nIG"/>
+                <constraint firstItem="gur-tx-tec" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uRX-Wn-sGR"/>
+                <constraint firstAttribute="trailing" secondItem="KVF-1T-xgt" secondAttribute="trailing" id="w6Y-e6-ftf"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-148" y="-307"/>
+        </view>
+    </objects>
+</document>
