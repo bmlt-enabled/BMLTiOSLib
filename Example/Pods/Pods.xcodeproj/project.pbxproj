@@ -3,16 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21E07EC6EACF5997BA012E876F8FEF5F /* BMLTiOSLib-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 16CF6FEBBEB381A373CF527EE38A0B18 /* BMLTiOSLib-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DBE3991FBAFDA100953548 /* BMLTiOSLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE3961FBAFDA100953548 /* BMLTiOSLib.swift */; };
 		77DBE39A1FBAFDA100953548 /* BMLTiOSLibCommunicationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE3971FBAFDA100953548 /* BMLTiOSLibCommunicationHandler.swift */; };
 		77DBE39B1FBAFDA100953548 /* BMLTCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE3981FBAFDA100953548 /* BMLTCommunicator.swift */; };
 		9304B0C7187E11DEC58A42F9AD13CE23 /* Pods-BMLTiOSLib_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EA0736E13C7DE9D89733C477BC98FB1A /* Pods-BMLTiOSLib_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D88908DA247B1BF95EB4E77759E9FADF /* BMLTiOSLib-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE059EFC97E204F926567C6C47BE043 /* BMLTiOSLib-dummy.m */; };
 		F4BB9876510EA6C3E94C6F1D811BEACD /* Pods-BMLTiOSLib_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A0D0691E59E32FEB86B1AEDC3A8A44 /* Pods-BMLTiOSLib_Example-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -52,13 +50,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B67C1055F948EC16374F27EFC3313C33 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D9BFF1A6E93B42AFECD52417F7CFF0B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -159,14 +150,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		279FF52FDAAB2579C0E705E439F4595A /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				21E07EC6EACF5997BA012E876F8FEF5F /* BMLTiOSLib-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -193,8 +176,6 @@
 			buildConfigurationList = 92B79F78737EFE13E7E2687D7352C5A1 /* Build configuration list for PBXNativeTarget "BMLTiOSLib" */;
 			buildPhases = (
 				9151629154F37EE6243608929F18E16D /* Sources */,
-				B67C1055F948EC16374F27EFC3313C33 /* Frameworks */,
-				279FF52FDAAB2579C0E705E439F4595A /* Headers */,
 			);
 			buildRules = (
 			);
@@ -216,11 +197,12 @@
 				TargetAttributes = {
 					C0914672FC80CA5999366B373A2CB3FC = {
 						LastSwiftMigration = 0910;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -251,7 +233,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				77DBE39A1FBAFDA100953548 /* BMLTiOSLibCommunicationHandler.swift in Sources */,
-				D88908DA247B1BF95EB4E77759E9FADF /* BMLTiOSLib-dummy.m in Sources */,
 				77DBE39B1FBAFDA100953548 /* BMLTCommunicator.swift in Sources */,
 				77DBE3991FBAFDA100953548 /* BMLTiOSLib.swift in Sources */,
 			);
@@ -429,11 +410,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P53V4JS928;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -442,7 +424,9 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/BMLTiOSLib/BMLTiOSLib.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = net.magshare.bmlt.BMLTiOSLib;
 				PRODUCT_NAME = BMLTiOSLib;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -461,10 +445,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = P53V4JS928;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -473,7 +459,9 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/BMLTiOSLib/BMLTiOSLib.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = net.magshare.bmlt.BMLTiOSLib;
 				PRODUCT_NAME = BMLTiOSLib;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
