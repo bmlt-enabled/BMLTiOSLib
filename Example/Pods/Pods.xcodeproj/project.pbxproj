@@ -176,6 +176,7 @@
 			buildConfigurationList = 92B79F78737EFE13E7E2687D7352C5A1 /* Build configuration list for PBXNativeTarget "BMLTiOSLib" */;
 			buildPhases = (
 				9151629154F37EE6243608929F18E16D /* Sources */,
+				77BF86201FBF8F630048B8AE /* Generate Jazzy Docs */,
 			);
 			buildRules = (
 			);
@@ -218,6 +219,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		77BF86201FBF8F630048B8AE /* Generate Jazzy Docs */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Jazzy Docs";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if hash jazzy 2>/dev/null; then\ncd ${PROJECT_DIR}\njazzy --readme ../../README.md\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		808C79B28D8C723FEB0E0807D08C7C2E /* Sources */ = {
