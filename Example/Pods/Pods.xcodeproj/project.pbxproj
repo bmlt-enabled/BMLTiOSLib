@@ -233,7 +233,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if hash jazzy 2>/dev/null; then\ncd ${PROJECT_DIR}\njazzy --readme ../../README.md\nfi\n";
+			shellScript = "if hash jazzy 2>/dev/null; then\ncd ${PROJECT_DIR}\njazzy --readme ../../README.md\ncp ../../icon.png docs/\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
