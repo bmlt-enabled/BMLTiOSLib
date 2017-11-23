@@ -996,7 +996,7 @@ public class BMLTiOSLib : NSObject {
      Disconnects the session, and removes all local storage.
      */
     public func clearStorage() {
-        self._searchCriteria.clearStorage()
+        self._searchCriteria?.clearStorage()
         self._communicationHandler.disconnectSession()
     }
     
