@@ -201,6 +201,10 @@ NICE TO HAVE
 
 CHANGELIST
 ----------
+***Version 1.1.1.3000* ** *- November 23, 2017*
+
+- There was a possibility of a crash if the session was terminated without a connection.
+
 ***Version 1.1.0* ** *- November 14, 2017*
 
 - Some basic refactoring to make the library more "Swift-studly."
