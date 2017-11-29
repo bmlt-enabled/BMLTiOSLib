@@ -107,27 +107,27 @@ USAGE (Taken from the actual file documentation):
  
  You do this by calling one of these methods:
  
-- ```getAllMeetingChanges(meetingID:Int?)```
+- getAllMeetingChanges(meetingID:Int?)
 
-- ```getAllMeetingChanges(serviceBodyID:Int?)```
+- getAllMeetingChanges(serviceBodyID:Int?)
 
-- ```getAllMeetingChanges(meeting:BMLTiOSLibMeetingNode?)```
+- getAllMeetingChanges(meeting:BMLTiOSLibMeetingNode?)
 
-- ```getAllMeetingChanges(fromDate:Date?,toDate:Date?)```
+- getAllMeetingChanges(fromDate:Date?,toDate:Date?)
 
-- ```getAllMeetingChanges(fromDate:Date?,toDate:Date?,meetingID:Int?)```
+- getAllMeetingChanges(fromDate:Date?,toDate:Date?,meetingID:Int?)
 
-- ```getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?)```
+- getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?)
 
-- ```getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?,meetingID:Int?)```
+- getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?,meetingID:Int?)
 
-- ```getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?,meetingID:Int?,userID:Int?)```
+- getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?,meetingID:Int?,userID:Int?)
 
-- ```getDeletedMeetingChanges()```
+- getDeletedMeetingChanges()
 
-- ```getDeletedMeetingChanges(serviceBodyID:Int?)```
+- getDeletedMeetingChanges(serviceBodyID:Int?)
 
-- ```getDeletedMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?)```
+- getDeletedMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?)
 
  After calling one of the above methods, your delegate is called back with the ```bmltLibInstance(_:BMLTiOSLib,changeListResults:[BMLTiOSLibChangeNode])``` method; which will have an Array of the requested change objects. You can then use these objects to revert meetings, or restore deleted meetings.
 
