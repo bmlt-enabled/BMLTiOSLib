@@ -30,7 +30,7 @@ The whole idea is to completely abstract the communication layer from the app de
 
 Interaction with the BMLTiOSLib is done via Apple's [Delegation Pattern](https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Delegation.html).
 
-When you instantiate an instance of BMLTiOSLib, you register your app as a BMLTiOSLibDelegate delegate instance, and it will receive events as they come in.
+When you instantiate an instance of BMLTiOSLib, you register your app as a [```BMLTiOSLibDelegate```](https://bmlt.magshare.net/bmlt-doc/07-BMLTiOSLib/Protocols/BMLTiOSLibDelegate.html) delegate instance, and it will receive events as they come in.
 
 You then use the functional interface to operate the connection.
 
@@ -41,7 +41,7 @@ USAGE (Taken from the actual file documentation):
  
  This class needs to be instantiated with a URI to a valid [Root Server](http://bmlt.magshare.net/installing-a-new-root-server/) (the same URI used to log in), and a BMLTiOSLibDelegate delegate instance.
  
- Instantiation immediately starts a communication process, and the result will be reflected in the delegate's bmltLibInstance(_:BMLTiOSLib,serverIsValid:Bool) callback.
+ Instantiation immediately starts a communication process, and the result will be reflected in the delegate's ```bmltLibInstance(_:BMLTiOSLib,serverIsValid:Bool)``` callback.
  
  If this instance fails to connect to a valid Root Server, it should be deleted, and reinstantiated for a new connection.
  
@@ -53,37 +53,37 @@ USAGE (Taken from the actual file documentation):
  
  Once you have successfully connected (established a session) to the Root Server, this instance will have some fundamental information available about that server.
  
- Your delegate's bmltLibInstance(_:BMLTiOSLib,serverIsValid:Bool) method is called when the connection is successful (serverIsValid is true).
+ Your delegate's ```bmltLibInstance(_:BMLTiOSLib,serverIsValid:Bool)``` method is called when the connection is successful (serverIsValid is true).
  
  This information can be accessed by calling the following instance properties:
 
-- distanceUnits and distanceUnitsString (This is the distance unit used for the server -Km or Mi).
+- ```distanceUnits``` and ```distanceUnitsString``` (This is the distance unit used for the server -Km or Mi).
 
-- availableMeetingValueKeys (This contains the Dictionary key strings that can access various meeting properties).
+- ```availableMeetingValueKeys``` (This contains the Dictionary key strings that can access various meeting properties).
 
-- emailMeetingContactsEnabled (True, if the Server is set to allow emails to be sent to meeting contacts).
+- ```emailMeetingContactsEnabled``` (True, if the Server is set to allow emails to be sent to meeting contacts).
 
-- emailServiceBodyAdminsEnabled (True, if these emails will CC the Service Body Admin for that Service body, as well as the meeting contact -They may be the same email address).
+- ```emailServiceBodyAdminsEnabled``` (True, if these emails will CC the Service Body Admin for that Service body, as well as the meeting contact -They may be the same email address).
 
-- changeDepth (The number of changes saved per meeting).
+- ```changeDepth``` (The number of changes saved per meeting).
 
-- googleAPIKey (The API key for the Root Server -May not be useful for most other Servers).
+- ```googleAPIKey``` (The API key for the Root Server -May not be useful for most other Servers).
 
-- delegate (That will be the object that was passed in as delegate when the instance was created).
+- ```delegate``` (That will be the object that was passed in as delegate when the instance was created).
 
-- versionAsString and versionAInt (The server version)
+- ```versionAsString``` and ```versionAsInt``` (The server version)
 
-- isAdminAvailable (True, if Semantic Administration is available).
+- ```isAdminAvailable``` (True, if Semantic Administration is available).
 
-- defaultLocation (The Root Server's default central location).
+- ```defaultLocation``` (The Root Server's default central location).
 
-- serviceBodies (This is a "flat" Array of the Service bodies, with no hierarchy).
+- ```serviceBodies``` (This is a "flat" Array of the Service bodies, with no hierarchy).
 
-- hierarchicalServiceBodies (This maps out the Service bodies in the hierarchy they occupy on the Root Server, and this is just one node with children only -no parents or Service body).
+- ```hierarchicalServiceBodies``` (This maps out the Service bodies in the hierarchy they occupy on the Root Server, and this is just one node with children only -no parents or Service body).
 
-- allPossibleFormats (an Array of format objects available -May not all be used by the meetings).
+- ```allPossibleFormats``` (an Array of format objects available -May not all be used by the meetings).
 
-- availableServerLanguages (an Array of language objects).
+- ```availableServerLanguages``` (an Array of language objects).
 
  **MEETING SEARCHES:**
  
@@ -93,9 +93,9 @@ USAGE (Taken from the actual file documentation):
  
  Once the search is complete, this class will call your delegate routines:
  
-- bmltLibInstance(_:BMLTiOSLib,meetingSearchResults:[BMLTiOSLibMeetingNode]) is called with the results of the meeting search.
+- ```bmltLibInstance(_:BMLTiOSLib,meetingSearchResults:[BMLTiOSLibMeetingNode])``` is called with the results of the meeting search.
 
-- bmltLibInstance(_:BMLTiOSLib,formatSearchResults:[BMLTiOSLibFormatNode],isAllUsedFormats:Bool) is called with the results of the format search.
+- ```bmltLibInstance(_:BMLTiOSLib,formatSearchResults:[BMLTiOSLibFormatNode],isAllUsedFormats:Bool)``` is called with the results of the format search.
  
  Either or both may be called, depending on what you requested when you called performMeetingSearch(_:BMLTiOSLibSearchCriteria.SearchCriteriaExtent).
  
@@ -107,47 +107,46 @@ USAGE (Taken from the actual file documentation):
  
  You do this by calling one of these methods:
  
-- getAllMeetingChanges(meetingID:Int?)
+- ```getAllMeetingChanges(meetingID:Int?)```
 
-- getAllMeetingChanges(serviceBodyID:Int?)
+- ```getAllMeetingChanges(serviceBodyID:Int?)```
 
-- getAllMeetingChanges(meeting:BMLTiOSLibMeetingNode?)
+- ```getAllMeetingChanges(meeting:BMLTiOSLibMeetingNode?)```
 
-- getAllMeetingChanges(fromDate:Date?,toDate:Date?)
+- ```getAllMeetingChanges(fromDate:Date?,toDate:Date?)```
 
-- getAllMeetingChanges(fromDate:Date?,toDate:Date?,meetingID:Int?)
+- ```getAllMeetingChanges(fromDate:Date?,toDate:Date?,meetingID:Int?)```
 
-- getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?)
+- ```getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?)```
 
-- getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?,meetingID:Int?)
+- ```getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?,meetingID:Int?)```
 
-- getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?,meetingID:Int?,userID:Int?)
+- ```getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?,meetingID:Int?,userID:Int?)```
 
-- getDeletedMeetingChanges()
+- ```getDeletedMeetingChanges()```
 
-- getDeletedMeetingChanges(serviceBodyID:Int?)
+- ```getDeletedMeetingChanges(serviceBodyID:Int?)```
 
-- getDeletedMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?)
+- ```getDeletedMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?)```
 
- After calling one of the above methods, your delegate is called back with the bmltLibInstance(_:BMLTiOSLib,changeListResults:[BMLTiOSLibChangeNode]) method; which will have an Array of the requested change objects. You can then use these objects to revert meetings, or restore deleted meetings.
+ After calling one of the above methods, your delegate is called back with the ```bmltLibInstance(_:BMLTiOSLib,changeListResults:[BMLTiOSLibChangeNode])``` method; which will have an Array of the requested change objects. You can then use these objects to revert meetings, or restore deleted meetings.
 
  **ROLLING BACK AND UNDELETING MEETINGS:**
 
- Selecting the "saveMeetingToBeforeThisChange()" of a change or editable meeting object will use the restore deleted or rollback function of the Semantic Admin interface.
- We do allow you to take the "before" record of the meeting (found in the "json_data" JSON response, or the "beforeObject" property of the change record object), and save that.
+ Selecting the ```saveMeetingToBeforeThisChange()``` of a change or editable meeting object will use the restore deleted or rollback function of the Semantic Admin interface (as long as you are logged in as an administrator, and have sufficient rights to edit the meeting).
+ We do allow you to take the "before" record of the meeting (found in the ```json_data``` JSON response, or the ```beforeObject``` property of the change record object), and save that.
  This allows you to add new changes (as opposed to simply accepting the whole change in a rollback, you can choose to only take certain changes).
  It also gives a better change record in the meeting history. Instead of a curt "Meeting was rolled back to a previous version.", you now have a list of the exact fields that were changed.
  Remember that the "beforeObject" and "afterObject" properties are fully-qualified meeting objects, and, if editable, can be saved, which overwrites whatever is currently in the database (It's exactly like saving a changed meeting record).
- You revert a meeting by calling the "revertMeetingToBeforeThisChange()" method of the change record object concerned. It's quite simple.
-
+ You revert a meeting by calling the ```revertMeetingToBeforeThisChange()``` method of the change record object concerned. It's quite simple.
 
  **NEW MEETINGS:**
  
  Creating new meetings is easy (as long as you are logged in as an administrator, and have sufficient rights to create a meeting).
  
- You create an instance of BMLTiOSLibEditableMeetingNode with an ID of 0 (the default). Then, when you call saveChanges(), it will create a new meeting.
+ You create an instance of [```BMLTiOSLibEditableMeetingNode```](https://bmlt.magshare.net/bmlt-doc/07-BMLTiOSLib/Classes/BMLTiOSLibEditableMeetingNode.html) with an ID of 0 (the default). Then, when you call saveChanges(), it will create a new meeting.
  
- When you create a new meeting, or restore a deleted meeting, your delegate is called with the bmltLibInstance(_:BMLTiOSLib,newMeetingAdded:BMLTiOSLibEditableMeetingNode) method.
+ When you create a new meeting, or restore a deleted meeting, your delegate is called with the ```bmltLibInstance(_:BMLTiOSLib,newMeetingAdded:BMLTiOSLibEditableMeetingNode)``` method.
  
  The newMeetingAdded parameter will contain an object that models the newly-created meeting (including the new ID, if it was a brand-new meeting).
  
@@ -155,33 +154,33 @@ USAGE (Taken from the actual file documentation):
  
  In some Root Servers, the administrator can choose to enable the ability for users of the site to send messages to designated contacts for meetings (or the Service Body Administrator responsible for the meeting).
  
- In these cases, the message is received as an email, but the sender does not send an email. Instead, they use a method of the BMLTiOSLibMeetingNode class, called sendMessageToMeetingContact(fromAddress:String,messageBody:String). The message is sent in the background.
+ In these cases, the message is received as an email, but the sender does not send an email. Instead, they use a method of the ```BMLTiOSLibMeetingNode``` class, called ```sendMessageToMeetingContact(fromAddress:String,messageBody:String)```. The message is sent in the background.
  
- When the message has been sent, your delegate is called with the bmltLibInstance(_:BMLTiOSLib,sendMessageSuccessful:Bool) method.
+ When the message has been sent, your delegate is called with the ```bmltLibInstance(_:BMLTiOSLib,sendMessageSuccessful:Bool)``` method.
  
  **ADMINISTRATION:**
  
- In order to perform administration on the Root Server, you need to log in with the adminLogin(loginID:String,password:String) method. The login will remain valid for the lifetime of this object (and its connection session), or until the adminLogout() method is called.
+ In order to perform administration on the Root Server, you need to log in with the ```adminLogin(loginID:String,password:String)``` method. The login will remain valid for the lifetime of this object (and its connection session), or until the adminLogout() method is called.
  
- Results of meeting searches will return the meeting objects as instances of BMLTiOSLibEditableMeetingNode instead of BMLTiOSLibEditableNode. is will depend on the edit rights that the login has for the given meeting. If you cannot edit the meeting, then the instance will be of BMLTiOSLibMeetingNode, instead of BMLTiOSLibEditableMeetingNode.
+ Results of meeting searches may return the meeting objects as instances of [```BMLTiOSLibEditableMeetingNode```](https://bmlt.magshare.net/bmlt-doc/07-BMLTiOSLib/Classes/BMLTiOSLibEditableMeetingNode.html) instead of [BMLTiOSLibMeetingNode](https://bmlt.magshare.net/bmlt-doc/07-BMLTiOSLib/Classes/BMLTiOSLibMeetingNode.html) (as long as you are logged in as an administrator, and have sufficient rights to edit the meeting). is will depend on the edit rights that the login has for the given meeting. If you cannot edit the meeting, then the instance will be of BMLTiOSLibMeetingNode, instead of BMLTiOSLibEditableMeetingNode.
  
- If the instance is BMLTiOSLibEditableMeetingNode, the instance's isEditable property will return true.
+ If the instance is ```BMLTiOSLibEditableMeetingNode```, the instance's isEditable property will return true.
  
- If the instance is of the BMLTiOSLibEditableMeetingNode class, you can cast it to that class, and manipulate the public properties. Once the properties have been set, you can then call the saveChanges() method for that instance, and the meeting will be saved.
+ If the instance is of the ```BMLTiOSLibEditableMeetingNode``` class, you can cast it to that class, and manipulate the public properties. Once the properties have been set, you can then call the ```saveChanges()``` method for that instance, and the meeting will be saved.
  
- Until the saveChanges() method is called, the meeting changes are not sent to the server.
+ Until the ```saveChanges()``` method is called, the meeting changes are not sent to the server.
  
- Once the meeting has been saved, your delegate will receive a call to its bmltLibInstance(_:BMLTiOSLib,adminMeetingChangeComplete:BMLTiOSLibChangedMeeting!) with an object that will contain whatever fields of the meeting changed, with the "before" and "after" values (always Strings).
+ Once the meeting has been saved, your delegate will receive a call to its ```bmltLibInstance(_:BMLTiOSLib,adminMeetingChangeComplete:BMLTiOSLibChangedMeeting!)``` method with an object that will contain whatever fields of the meeting changed, with the "before" and "after" values (always Strings).
  
- You can also delete a meeting, by calling the delete() method (The deletion happens immediately).
+ You can also delete a meeting, by calling the ```delete()``` method (The deletion happens immediately).
  
- If you delete the meeting, your delegate is called with the bmltLibInstance(_:BMLTiOSLib,deleteMeetingSuccessful:Bool) method.
+ If you delete the meeting, your delegate is called with the ```bmltLibInstance(_:BMLTiOSLib,deleteMeetingSuccessful:Bool)``` method.
 
- If you call the restoreToOriginal() method, any changes that you made to the meeting object will be reverted to the state of the meeting on the server. Nothing will be sent to the server.
+ If you call the ```restoreToOriginal()``` method, any changes that you made to the meeting object will be reverted to the state of the meeting on the server. Nothing will be sent to the server.
  
- You can also revert a meeting to the state it was in before a given change record for that meeting, using the revertMeetingToBeforeThisChange(_:BMLTiOSLibChangeNode) method. Nothing will be sent to the server.
+ You can also revert a meeting to the state it was in before a given change record for that meeting, using the ```revertMeetingToBeforeThisChange(_:BMLTiOSLibChangeNode)``` method. Nothing will be sent to the server.
  
- If the change was inappropriate for the meeting, the call will return false. If it was successful, the meeting's state will be reverted to that in the change record, but will not yet be sent to the server. You still need to call saveChanges().
+ If the change was inappropriate for the meeting, the call will return false. If it was successful, the meeting's state will be reverted to that in the change record, but will not yet be sent to the server. You still need to call ```saveChanges()```.
 
 
 **As of March 9, 2017:**
@@ -189,7 +188,7 @@ USAGE (Taken from the actual file documentation):
 TO DO
 -----
 
-- Make tasks interruptable without terminating the session. Currently, the way to terminate a task is to terminate the session. This works great for search apps, but not so good for admin apps, as the session carries the login. If you terminate the session, to force the user to log back in.
+- Make tasks interruptable without terminating the session. Currently, the way to terminate a task is to terminate the session. This works great for search apps, but not so good for admin apps, as the session carries the login. If you terminate the session, you force the user to log back in.
 - Make the library multi-tasking. Currently, the library works in a single-threaded manner. It should be able to handle multiple simultaneous tasks.
 
 NICE TO HAVE
