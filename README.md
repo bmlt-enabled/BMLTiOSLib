@@ -202,7 +202,7 @@ CHANGELIST
 ----------
 ***Version 1.1.1.3001* ** *- November 29, 2017*
 
-- Spruced up this README, and tweaked some settings in the project. Temporarily disabled the "auto-jazzy." There seems to be an issue with Jazzy.
+- Spruced up this README, and tweaked some settings in the project.
 
 ***Version 1.1.1.3000* ** *- November 23, 2017*
 

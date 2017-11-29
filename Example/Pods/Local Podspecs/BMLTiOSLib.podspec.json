@@ -1,6 +1,6 @@
 {
   "name": "BMLTiOSLib",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "summary": "An iOS Framework that provides a driver-level interaction with BMLT Root Servers.",
     "description": "The BMLTiOSLib is a Swift shared framework designed to allow easy development of iOS BMLT apps. It completely abstracts the connection to BMLT Root Servers, including administration functions.",
   "homepage": "https://bmlt.magshare.net/BMLTiOSLib",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/LittleGreenViper/BMLTiOSLib.git",
-    "tag": "1.1.0"
+    "tag": "1.1.1"
   },
   "platforms": {
     "ios": "9.0"
