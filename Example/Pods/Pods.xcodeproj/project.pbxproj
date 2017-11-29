@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		773834861FCF621200F159A5 /* BMLTiOSLib-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 773834811FCF61D700F159A5 /* BMLTiOSLib-umbrella.h */; };
+		7738348A1FCF638F00F159A5 /* BMLTiOSLib-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 16CF6FEBBEB381A373CF527EE38A0B18 /* BMLTiOSLib-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DBE3991FBAFDA100953548 /* BMLTiOSLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE3961FBAFDA100953548 /* BMLTiOSLib.swift */; };
 		77DBE39A1FBAFDA100953548 /* BMLTiOSLibCommunicationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE3971FBAFDA100953548 /* BMLTiOSLibCommunicationHandler.swift */; };
 		77DBE39B1FBAFDA100953548 /* BMLTCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE3981FBAFDA100953548 /* BMLTCommunicator.swift */; };
@@ -36,6 +38,12 @@
 		470833B458C046498BE1F864847E21DC /* Pods-BMLTiOSLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BMLTiOSLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		622A5CF772483360799326E3F2605F3E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CAC268852EDACE8F8C85B9D292D60C1 /* BMLTiOSLib.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BMLTiOSLib.modulemap; sourceTree = "<group>"; };
+		7738347F1FCF61D700F159A5 /* BMLTiOSLib-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BMLTiOSLib-prefix.pch"; sourceTree = "<group>"; };
+		773834801FCF61D700F159A5 /* BMLTiOSLib-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BMLTiOSLib-dummy.m"; sourceTree = "<group>"; };
+		773834811FCF61D700F159A5 /* BMLTiOSLib-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BMLTiOSLib-umbrella.h"; sourceTree = "<group>"; };
+		773834821FCF61D700F159A5 /* BMLTiOSLib.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = BMLTiOSLib.modulemap; sourceTree = "<group>"; };
+		773834831FCF61D700F159A5 /* BMLTiOSLib.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = BMLTiOSLib.xcconfig; sourceTree = "<group>"; };
+		773834841FCF61D700F159A5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77DBE3961FBAFDA100953548 /* BMLTiOSLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BMLTiOSLib.swift; path = BMLTiOSLib/Classes/BMLTiOSLib.swift; sourceTree = "<group>"; };
 		77DBE3971FBAFDA100953548 /* BMLTiOSLibCommunicationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BMLTiOSLibCommunicationHandler.swift; path = BMLTiOSLib/Classes/BMLTiOSLibCommunicationHandler.swift; sourceTree = "<group>"; };
 		77DBE3981FBAFDA100953548 /* BMLTCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BMLTCommunicator.swift; path = BMLTiOSLib/Classes/BMLTCommunicator.swift; sourceTree = "<group>"; };
@@ -103,6 +111,20 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
+		7738347E1FCF61D700F159A5 /* BMLTiOSLib */ = {
+			isa = PBXGroup;
+			children = (
+				7738347F1FCF61D700F159A5 /* BMLTiOSLib-prefix.pch */,
+				773834801FCF61D700F159A5 /* BMLTiOSLib-dummy.m */,
+				773834811FCF61D700F159A5 /* BMLTiOSLib-umbrella.h */,
+				773834821FCF61D700F159A5 /* BMLTiOSLib.modulemap */,
+				773834831FCF61D700F159A5 /* BMLTiOSLib.xcconfig */,
+				773834841FCF61D700F159A5 /* Info.plist */,
+			);
+			name = BMLTiOSLib;
+			path = "Target Support Files/BMLTiOSLib";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +138,7 @@
 		B24999C5C9CA179F439D00599938E918 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				7738347E1FCF61D700F159A5 /* BMLTiOSLib */,
 				E4BBEA4359F9E5F573E444F37DA950A9 /* Pods-BMLTiOSLib_Example */,
 			);
 			name = "Targets Support Files";
@@ -147,6 +170,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9304B0C7187E11DEC58A42F9AD13CE23 /* Pods-BMLTiOSLib_Example-umbrella.h in Headers */,
+				773834861FCF621200F159A5 /* BMLTiOSLib-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		773834891FCF638500F159A5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7738348A1FCF638F00F159A5 /* BMLTiOSLib-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +208,8 @@
 			buildConfigurationList = 92B79F78737EFE13E7E2687D7352C5A1 /* Build configuration list for PBXNativeTarget "BMLTiOSLib" */;
 			buildPhases = (
 				9151629154F37EE6243608929F18E16D /* Sources */,
-				77BF86201FBF8F630048B8AE /* Generate Jazzy Docs */,
+				773834891FCF638500F159A5 /* Headers */,
+				77BF86201FBF8F630048B8AE /* Generate Jazzy Docs (Disabled for Now) */,
 			);
 			buildRules = (
 			);
@@ -221,19 +254,19 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		77BF86201FBF8F630048B8AE /* Generate Jazzy Docs */ = {
+		77BF86201FBF8F630048B8AE /* Generate Jazzy Docs (Disabled for Now) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Generate Jazzy Docs";
+			name = "Generate Jazzy Docs (Disabled for Now)";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if hash jazzy 2>/dev/null; then\ncd ${PROJECT_DIR}\njazzy --readme ../../README.md\ncp ../../icon.png docs/\nfi\n";
+			shellScript = "#if hash jazzy 2>/dev/null; then\n#cd ${PROJECT_DIR}\n#jazzy --readme ../../README.md\n#cp ../../icon.png docs/\n#fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -438,6 +471,11 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_PREFIX_HEADER = "Target Support Files/BMLTiOSLib/BMLTiOSLib-prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers/Private\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Target Support Files/BMLTiOSLib\"",
+				);
 				INFOPLIST_FILE = "Target Support Files/BMLTiOSLib/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -473,6 +511,11 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_PREFIX_HEADER = "Target Support Files/BMLTiOSLib/BMLTiOSLib-prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers/Private\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Target Support Files/BMLTiOSLib\"",
+				);
 				INFOPLIST_FILE = "Target Support Files/BMLTiOSLib/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

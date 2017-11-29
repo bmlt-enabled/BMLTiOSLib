@@ -200,6 +200,10 @@ NICE TO HAVE
 
 CHANGELIST
 ----------
+***Version 1.1.1.3001* ** *- November 29, 2017*
+
+- Spruced up this README, and tweaked some settings in the project. Temporarily disabled the "auto-jazzy." There seems to be an issue with Jazzy.
+
 ***Version 1.1.1.3000* ** *- November 23, 2017*
 
 - There was a possibility of a crash if the session was terminated without a connection.

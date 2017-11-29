@@ -81,6 +81,7 @@
 		77DBE3D71FBB169000953548 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchByStartTimeAndEndTimeCellView.xib; sourceTree = "<group>"; };
 		77DBE3D91FBB169100953548 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DetailLocationMapCell.xib; sourceTree = "<group>"; };
 		77DBE3DB1FBB169100953548 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchStringCell.xib; sourceTree = "<group>"; };
+		77F233A31FCF6767005C2AEB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8D87DD52D3D72F060F48CBA0 /* Pods-BMLTiOSLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMLTiOSLib_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-BMLTiOSLib_Example/Pods-BMLTiOSLib_Example.release.xcconfig"; sourceTree = "<group>"; };
 		AE3CEDB60F513887DD9D5580 /* Pods_BMLTiOSLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMLTiOSLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1BB9EBDF6B7B01C3074B14 /* BMLTiOSLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BMLTiOSLib.podspec; path = ../BMLTiOSLib.podspec; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				77F233A31FCF6767005C2AEB /* README.md */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for BMLTiOSLib */,
 				607FACD11AFB9204008FA782 /* Products */,
