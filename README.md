@@ -183,7 +183,7 @@ USAGE (Taken from the actual file documentation):
  If the change was inappropriate for the meeting, the call will return false. If it was successful, the meeting's state will be reverted to that in the change record, but will not yet be sent to the server. You still need to call ```saveChanges()```.
 
 
-**As of March 9, 2017:**
+**As of December, 2017:**
 
 TO DO
 -----
@@ -200,6 +200,10 @@ NICE TO HAVE
 
 CHANGELIST
 ----------
+***Version 1.1.2* ** *- TBD*
+
+- Updated to latest Xcode version.
+
 ***Version 1.1.1.3001* ** *- November 29, 2017*
 
 - Spruced up this README, and tweaked some settings in the project.
