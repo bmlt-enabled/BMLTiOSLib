@@ -200,6 +200,8 @@ NICE TO HAVE
 
 CHANGELIST
 ----------
+***Version 1.1.3* ** *- TBD*
+
 ***Version 1.1.2* ** *- December 5, 2017*
 
 - Updated to latest Xcode version.
