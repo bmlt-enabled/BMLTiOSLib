@@ -2,7 +2,7 @@
 //  BMLTiOSLib.h
 //  BMLTiOSLib
 //
-//  Created by Chris Marshall on 11/14/17.
+//  Created by Chris Marshall on 12/11/17.
 //  Copyright © 2017 MAGSHARE. All rights reserved.
 //
 

@@ -1,6 +1,0 @@
-framework module BMLTiOSLib {
-  umbrella header "BMLTiOSLib-umbrella.h"
-
-  export *
-  module * { export * }
-}

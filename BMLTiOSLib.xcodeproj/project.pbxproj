@@ -1,0 +1,752 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		77DBD79D1FDEAEEB008F110F /* BMLTiOSLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DBD79B1FDEAEEB008F110F /* BMLTiOSLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77DBD7A71FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A41FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift */; };
+		77DBD7A81FDEAFBF008F110F /* BMLTCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A51FDEAFBF008F110F /* BMLTCommunicator.swift */; };
+		77DBD7A91FDEAFBF008F110F /* BMLTiOSLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A61FDEAFBF008F110F /* BMLTiOSLib.swift */; };
+		77DBD7F21FDEB027008F110F /* AllChangesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C11FDEB027008F110F /* AllChangesListViewController.swift */; };
+		77DBD7F31FDEB027008F110F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C21FDEB027008F110F /* SearchViewController.swift */; };
+		77DBD7F41FDEB027008F110F /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C31FDEB027008F110F /* ConnectViewController.swift */; };
+		77DBD7F51FDEB027008F110F /* BMLTiOSTesterMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C41FDEB027008F110F /* BMLTiOSTesterMarker.swift */; };
+		77DBD7F61FDEB027008F110F /* ChangeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C51FDEB027008F110F /* ChangeListViewController.swift */; };
+		77DBD7F71FDEB027008F110F /* BMLTiOSLibCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C61FDEB027008F110F /* BMLTiOSLibCheckbox.swift */; };
+		77DBD7F81FDEB027008F110F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7C71FDEB027008F110F /* Assets.xcassets */; };
+		77DBD7F91FDEB027008F110F /* DetailedInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C81FDEB027008F110F /* DetailedInfoController.swift */; };
+		77DBD7FA1FDEB027008F110F /* SearchStringCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7C91FDEB027008F110F /* SearchStringCell.xib */; };
+		77DBD7FB1FDEB027008F110F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7CB1FDEB027008F110F /* LaunchScreen.storyboard */; };
+		77DBD7FC1FDEB027008F110F /* SearchFormatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7CD1FDEB027008F110F /* SearchFormatCell.xib */; };
+		77DBD7FD1FDEB027008F110F /* DetailFormatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7CF1FDEB027008F110F /* DetailFormatCell.xib */; };
+		77DBD7FE1FDEB027008F110F /* SearchByStartTimeAndEndTimeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D11FDEB027008F110F /* SearchByStartTimeAndEndTimeCellView.xib */; };
+		77DBD7FF1FDEB027008F110F /* SingleMeetingMapDisplayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D31FDEB027008F110F /* SingleMeetingMapDisplayCellView.xib */; };
+		77DBD8001FDEB027008F110F /* SearchWeekdaysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D51FDEB027008F110F /* SearchWeekdaysCell.xib */; };
+		77DBD8011FDEB027008F110F /* DetailLocationMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D71FDEB027008F110F /* DetailLocationMapCell.xib */; };
+		77DBD8021FDEB027008F110F /* DetailLoginTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D91FDEB027008F110F /* DetailLoginTableCellView.xib */; };
+		77DBD8031FDEB027008F110F /* SearchViewControllerMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7DB1FDEB027008F110F /* SearchViewControllerMapView.xib */; };
+		77DBD8041FDEB027008F110F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7DD1FDEB027008F110F /* Main.storyboard */; };
+		77DBD8051FDEB027008F110F /* SearchMeetingDurationCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7DF1FDEB027008F110F /* SearchMeetingDurationCellView.xib */; };
+		77DBD8061FDEB027008F110F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E11FDEB027008F110F /* Default-568h@2x.png */; };
+		77DBD8071FDEB027008F110F /* SearchServiceBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E31FDEB027008F110F /* SearchServiceBodyCell.xib */; };
+		77DBD8081FDEB027008F110F /* MeetingSearchResultsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E51FDEB027008F110F /* MeetingSearchResultsTableCell.xib */; };
+		77DBD8091FDEB027008F110F /* SearchRadiusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E71FDEB027008F110F /* SearchRadiusCell.xib */; };
+		77DBD80A1FDEB027008F110F /* FormatSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7E91FDEB027008F110F /* FormatSearchResultsViewController.swift */; };
+		77DBD80B1FDEB027008F110F /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EA1FDEB027008F110F /* SendMessageViewController.swift */; };
+		77DBD80C1FDEB027008F110F /* TestTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EB1FDEB027008F110F /* TestTabController.swift */; };
+		77DBD80D1FDEB027008F110F /* BMLTiOSLibTesterAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EC1FDEB027008F110F /* BMLTiOSLibTesterAppDelegate.swift */; };
+		77DBD80E1FDEB027008F110F /* BaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7ED1FDEB027008F110F /* BaseTestViewController.swift */; };
+		77DBD80F1FDEB027008F110F /* MeetingSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EE1FDEB027008F110F /* MeetingSearchResultsViewController.swift */; };
+		77DBD8101FDEB027008F110F /* SingleMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EF1FDEB027008F110F /* SingleMeetingViewController.swift */; };
+		77DBD8111FDEB027008F110F /* NewMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7F01FDEB027008F110F /* NewMeetingViewController.swift */; };
+		77DBD8141FDEB08B008F110F /* BMLTiOSLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DBD7981FDEAEEB008F110F /* BMLTiOSLib.framework */; };
+		77DBD8151FDEB08B008F110F /* BMLTiOSLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 77DBD7981FDEAEEB008F110F /* BMLTiOSLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		77DBD8161FDEB08B008F110F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77DBD78F1FDEAEEB008F110F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77DBD7971FDEAEEB008F110F;
+			remoteInfo = BMLTiOSLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		77DBD8181FDEB08C008F110F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				77DBD8151FDEB08B008F110F /* BMLTiOSLib.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7790839A1FDEB5CD0032C2B8 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		77DBD7981FDEAEEB008F110F /* BMLTiOSLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BMLTiOSLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77DBD79B1FDEAEEB008F110F /* BMLTiOSLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLTiOSLib.h; sourceTree = "<group>"; };
+		77DBD79C1FDEAEEB008F110F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77DBD7A41FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibCommunicationHandler.swift; sourceTree = "<group>"; };
+		77DBD7A51FDEAFBF008F110F /* BMLTCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTCommunicator.swift; sourceTree = "<group>"; };
+		77DBD7A61FDEAFBF008F110F /* BMLTiOSLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLib.swift; sourceTree = "<group>"; };
+		77DBD7AE1FDEB010008F110F /* BMLTiOSLib Test Harness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMLTiOSLib Test Harness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77DBD7C11FDEB027008F110F /* AllChangesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChangesListViewController.swift; sourceTree = "<group>"; };
+		77DBD7C21FDEB027008F110F /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		77DBD7C31FDEB027008F110F /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		77DBD7C41FDEB027008F110F /* BMLTiOSTesterMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSTesterMarker.swift; sourceTree = "<group>"; };
+		77DBD7C51FDEB027008F110F /* ChangeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeListViewController.swift; sourceTree = "<group>"; };
+		77DBD7C61FDEB027008F110F /* BMLTiOSLibCheckbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibCheckbox.swift; sourceTree = "<group>"; };
+		77DBD7C71FDEB027008F110F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77DBD7C81FDEB027008F110F /* DetailedInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedInfoController.swift; sourceTree = "<group>"; };
+		77DBD7CA1FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchStringCell.xib; sourceTree = "<group>"; };
+		77DBD7CC1FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		77DBD7CE1FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchFormatCell.xib; sourceTree = "<group>"; };
+		77DBD7D01FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DetailFormatCell.xib; sourceTree = "<group>"; };
+		77DBD7D21FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchByStartTimeAndEndTimeCellView.xib; sourceTree = "<group>"; };
+		77DBD7D41FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SingleMeetingMapDisplayCellView.xib; sourceTree = "<group>"; };
+		77DBD7D61FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchWeekdaysCell.xib; sourceTree = "<group>"; };
+		77DBD7D81FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DetailLocationMapCell.xib; sourceTree = "<group>"; };
+		77DBD7DA1FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DetailLoginTableCellView.xib; sourceTree = "<group>"; };
+		77DBD7DC1FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchViewControllerMapView.xib; sourceTree = "<group>"; };
+		77DBD7DE1FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		77DBD7E01FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchMeetingDurationCellView.xib; sourceTree = "<group>"; };
+		77DBD7E21FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = "Base.lproj/Default-568h@2x.png"; sourceTree = "<group>"; };
+		77DBD7E41FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchServiceBodyCell.xib; sourceTree = "<group>"; };
+		77DBD7E61FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MeetingSearchResultsTableCell.xib; sourceTree = "<group>"; };
+		77DBD7E81FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchRadiusCell.xib; sourceTree = "<group>"; };
+		77DBD7E91FDEB027008F110F /* FormatSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatSearchResultsViewController.swift; sourceTree = "<group>"; };
+		77DBD7EA1FDEB027008F110F /* SendMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
+		77DBD7EB1FDEB027008F110F /* TestTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTabController.swift; sourceTree = "<group>"; };
+		77DBD7EC1FDEB027008F110F /* BMLTiOSLibTesterAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibTesterAppDelegate.swift; sourceTree = "<group>"; };
+		77DBD7ED1FDEB027008F110F /* BaseTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestViewController.swift; sourceTree = "<group>"; };
+		77DBD7EE1FDEB027008F110F /* MeetingSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingSearchResultsViewController.swift; sourceTree = "<group>"; };
+		77DBD7EF1FDEB027008F110F /* SingleMeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleMeetingViewController.swift; sourceTree = "<group>"; };
+		77DBD7F01FDEB027008F110F /* NewMeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMeetingViewController.swift; sourceTree = "<group>"; };
+		77DBD7F11FDEB027008F110F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77DBD8191FDEB183008F110F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		77DBD81A1FDEB183008F110F /* BMLTiOSLib.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BMLTiOSLib.podspec; sourceTree = "<group>"; };
+		77DBD81B1FDEB183008F110F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		77DBD7941FDEAEEB008F110F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77DBD7AB1FDEB010008F110F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77DBD8141FDEB08B008F110F /* BMLTiOSLib.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		77DBD78E1FDEAEEB008F110F = {
+			isa = PBXGroup;
+			children = (
+				77DBD81A1FDEB183008F110F /* BMLTiOSLib.podspec */,
+				7790839A1FDEB5CD0032C2B8 /* Podfile */,
+				77DBD81B1FDEB183008F110F /* LICENSE */,
+				77DBD8191FDEB183008F110F /* README.md */,
+				77DBD7A31FDEAFBF008F110F /* Framework Project */,
+				77DBD7C01FDEB027008F110F /* Test Harness Project */,
+				77DBD7991FDEAEEB008F110F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		77DBD7991FDEAEEB008F110F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77DBD7981FDEAEEB008F110F /* BMLTiOSLib.framework */,
+				77DBD7AE1FDEB010008F110F /* BMLTiOSLib Test Harness.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77DBD7A31FDEAFBF008F110F /* Framework Project */ = {
+			isa = PBXGroup;
+			children = (
+				77DBD79C1FDEAEEB008F110F /* Info.plist */,
+				77DBD79B1FDEAEEB008F110F /* BMLTiOSLib.h */,
+				77DBD81C1FDEB501008F110F /* Classes */,
+			);
+			name = "Framework Project";
+			path = "BMLTiOSLib/Framework Project";
+			sourceTree = "<group>";
+		};
+		77DBD7C01FDEB027008F110F /* Test Harness Project */ = {
+			isa = PBXGroup;
+			children = (
+				77DBD7C11FDEB027008F110F /* AllChangesListViewController.swift */,
+				77DBD7C21FDEB027008F110F /* SearchViewController.swift */,
+				77DBD7C31FDEB027008F110F /* ConnectViewController.swift */,
+				77DBD7C41FDEB027008F110F /* BMLTiOSTesterMarker.swift */,
+				77DBD7C51FDEB027008F110F /* ChangeListViewController.swift */,
+				77DBD7C61FDEB027008F110F /* BMLTiOSLibCheckbox.swift */,
+				77DBD7C81FDEB027008F110F /* DetailedInfoController.swift */,
+				77DBD7E91FDEB027008F110F /* FormatSearchResultsViewController.swift */,
+				77DBD7EA1FDEB027008F110F /* SendMessageViewController.swift */,
+				77DBD7EB1FDEB027008F110F /* TestTabController.swift */,
+				77DBD7EC1FDEB027008F110F /* BMLTiOSLibTesterAppDelegate.swift */,
+				77DBD7ED1FDEB027008F110F /* BaseTestViewController.swift */,
+				77DBD7EE1FDEB027008F110F /* MeetingSearchResultsViewController.swift */,
+				77DBD7EF1FDEB027008F110F /* SingleMeetingViewController.swift */,
+				77DBD7F01FDEB027008F110F /* NewMeetingViewController.swift */,
+				77DBD8131FDEB055008F110F /* Resources */,
+				77DBD7F11FDEB027008F110F /* Info.plist */,
+			);
+			name = "Test Harness Project";
+			path = "BMLTiOSLib/Test Harness Project";
+			sourceTree = "<group>";
+		};
+		77DBD8131FDEB055008F110F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				77DBD7C71FDEB027008F110F /* Assets.xcassets */,
+				77DBD7C91FDEB027008F110F /* SearchStringCell.xib */,
+				77DBD7CB1FDEB027008F110F /* LaunchScreen.storyboard */,
+				77DBD7CD1FDEB027008F110F /* SearchFormatCell.xib */,
+				77DBD7CF1FDEB027008F110F /* DetailFormatCell.xib */,
+				77DBD7D11FDEB027008F110F /* SearchByStartTimeAndEndTimeCellView.xib */,
+				77DBD7D31FDEB027008F110F /* SingleMeetingMapDisplayCellView.xib */,
+				77DBD7D51FDEB027008F110F /* SearchWeekdaysCell.xib */,
+				77DBD7D71FDEB027008F110F /* DetailLocationMapCell.xib */,
+				77DBD7D91FDEB027008F110F /* DetailLoginTableCellView.xib */,
+				77DBD7DB1FDEB027008F110F /* SearchViewControllerMapView.xib */,
+				77DBD7DD1FDEB027008F110F /* Main.storyboard */,
+				77DBD7DF1FDEB027008F110F /* SearchMeetingDurationCellView.xib */,
+				77DBD7E11FDEB027008F110F /* Default-568h@2x.png */,
+				77DBD7E31FDEB027008F110F /* SearchServiceBodyCell.xib */,
+				77DBD7E51FDEB027008F110F /* MeetingSearchResultsTableCell.xib */,
+				77DBD7E71FDEB027008F110F /* SearchRadiusCell.xib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		77DBD81C1FDEB501008F110F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				77DBD7A41FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift */,
+				77DBD7A51FDEAFBF008F110F /* BMLTCommunicator.swift */,
+				77DBD7A61FDEAFBF008F110F /* BMLTiOSLib.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		77DBD7951FDEAEEB008F110F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77DBD79D1FDEAEEB008F110F /* BMLTiOSLib.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		77DBD7971FDEAEEB008F110F /* BMLTiOSLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77DBD7A01FDEAEEB008F110F /* Build configuration list for PBXNativeTarget "BMLTiOSLib" */;
+			buildPhases = (
+				77DBD7931FDEAEEB008F110F /* Sources */,
+				77DBD7941FDEAEEB008F110F /* Frameworks */,
+				77DBD7951FDEAEEB008F110F /* Headers */,
+				77DBD7961FDEAEEB008F110F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BMLTiOSLib;
+			productName = BMLTiOSLib;
+			productReference = 77DBD7981FDEAEEB008F110F /* BMLTiOSLib.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		77DBD7AD1FDEB010008F110F /* BMLTiOSLib Test Harness */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77DBD7BD1FDEB010008F110F /* Build configuration list for PBXNativeTarget "BMLTiOSLib Test Harness" */;
+			buildPhases = (
+				77DBD7AA1FDEB010008F110F /* Sources */,
+				77DBD7AB1FDEB010008F110F /* Frameworks */,
+				77DBD7AC1FDEB010008F110F /* Resources */,
+				77DBD8181FDEB08C008F110F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77DBD8171FDEB08B008F110F /* PBXTargetDependency */,
+			);
+			name = "BMLTiOSLib Test Harness";
+			productName = "BMLTiOSLib Test Harness";
+			productReference = 77DBD7AE1FDEB010008F110F /* BMLTiOSLib Test Harness.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		77DBD78F1FDEAEEB008F110F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = MAGSHARE;
+				TargetAttributes = {
+					77DBD7971FDEAEEB008F110F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					77DBD7AD1FDEB010008F110F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 77DBD7921FDEAEEB008F110F /* Build configuration list for PBXProject "BMLTiOSLib" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 77DBD78E1FDEAEEB008F110F;
+			productRefGroup = 77DBD7991FDEAEEB008F110F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				77DBD7971FDEAEEB008F110F /* BMLTiOSLib */,
+				77DBD7AD1FDEB010008F110F /* BMLTiOSLib Test Harness */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		77DBD7961FDEAEEB008F110F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77DBD7AC1FDEB010008F110F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77DBD7FE1FDEB027008F110F /* SearchByStartTimeAndEndTimeCellView.xib in Resources */,
+				77DBD8081FDEB027008F110F /* MeetingSearchResultsTableCell.xib in Resources */,
+				77DBD8071FDEB027008F110F /* SearchServiceBodyCell.xib in Resources */,
+				77DBD7FC1FDEB027008F110F /* SearchFormatCell.xib in Resources */,
+				77DBD8001FDEB027008F110F /* SearchWeekdaysCell.xib in Resources */,
+				77DBD8041FDEB027008F110F /* Main.storyboard in Resources */,
+				77DBD8031FDEB027008F110F /* SearchViewControllerMapView.xib in Resources */,
+				77DBD8091FDEB027008F110F /* SearchRadiusCell.xib in Resources */,
+				77DBD8061FDEB027008F110F /* Default-568h@2x.png in Resources */,
+				77DBD8051FDEB027008F110F /* SearchMeetingDurationCellView.xib in Resources */,
+				77DBD7FD1FDEB027008F110F /* DetailFormatCell.xib in Resources */,
+				77DBD8021FDEB027008F110F /* DetailLoginTableCellView.xib in Resources */,
+				77DBD7FB1FDEB027008F110F /* LaunchScreen.storyboard in Resources */,
+				77DBD7FF1FDEB027008F110F /* SingleMeetingMapDisplayCellView.xib in Resources */,
+				77DBD8011FDEB027008F110F /* DetailLocationMapCell.xib in Resources */,
+				77DBD7FA1FDEB027008F110F /* SearchStringCell.xib in Resources */,
+				77DBD7F81FDEB027008F110F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		77DBD7931FDEAEEB008F110F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77DBD7A71FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift in Sources */,
+				77DBD7A81FDEAFBF008F110F /* BMLTCommunicator.swift in Sources */,
+				77DBD7A91FDEAFBF008F110F /* BMLTiOSLib.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77DBD7AA1FDEB010008F110F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77DBD7F61FDEB027008F110F /* ChangeListViewController.swift in Sources */,
+				77DBD7F41FDEB027008F110F /* ConnectViewController.swift in Sources */,
+				77DBD80D1FDEB027008F110F /* BMLTiOSLibTesterAppDelegate.swift in Sources */,
+				77DBD80A1FDEB027008F110F /* FormatSearchResultsViewController.swift in Sources */,
+				77DBD8101FDEB027008F110F /* SingleMeetingViewController.swift in Sources */,
+				77DBD7F31FDEB027008F110F /* SearchViewController.swift in Sources */,
+				77DBD80E1FDEB027008F110F /* BaseTestViewController.swift in Sources */,
+				77DBD7F71FDEB027008F110F /* BMLTiOSLibCheckbox.swift in Sources */,
+				77DBD7F21FDEB027008F110F /* AllChangesListViewController.swift in Sources */,
+				77DBD7F51FDEB027008F110F /* BMLTiOSTesterMarker.swift in Sources */,
+				77DBD80C1FDEB027008F110F /* TestTabController.swift in Sources */,
+				77DBD80B1FDEB027008F110F /* SendMessageViewController.swift in Sources */,
+				77DBD80F1FDEB027008F110F /* MeetingSearchResultsViewController.swift in Sources */,
+				77DBD7F91FDEB027008F110F /* DetailedInfoController.swift in Sources */,
+				77DBD8111FDEB027008F110F /* NewMeetingViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		77DBD8171FDEB08B008F110F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77DBD7971FDEAEEB008F110F /* BMLTiOSLib */;
+			targetProxy = 77DBD8161FDEB08B008F110F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		77DBD7C91FDEB027008F110F /* SearchStringCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7CA1FDEB027008F110F /* Base */,
+			);
+			name = SearchStringCell.xib;
+			sourceTree = "<group>";
+		};
+		77DBD7CB1FDEB027008F110F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7CC1FDEB027008F110F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		77DBD7CD1FDEB027008F110F /* SearchFormatCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7CE1FDEB027008F110F /* Base */,
+			);
+			name = SearchFormatCell.xib;
+			sourceTree = "<group>";
+		};
+		77DBD7CF1FDEB027008F110F /* DetailFormatCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7D01FDEB027008F110F /* Base */,
+			);
+			name = DetailFormatCell.xib;
+			sourceTree = "<group>";
+		};
+		77DBD7D11FDEB027008F110F /* SearchByStartTimeAndEndTimeCellView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7D21FDEB027008F110F /* Base */,
+			);
+			name = SearchByStartTimeAndEndTimeCellView.xib;
+			sourceTree = "<group>";
+		};
+		77DBD7D31FDEB027008F110F /* SingleMeetingMapDisplayCellView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7D41FDEB027008F110F /* Base */,
+			);
+			name = SingleMeetingMapDisplayCellView.xib;
+			sourceTree = "<group>";
+		};
+		77DBD7D51FDEB027008F110F /* SearchWeekdaysCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7D61FDEB027008F110F /* Base */,
+			);
+			name = SearchWeekdaysCell.xib;
+			sourceTree = "<group>";
+		};
+		77DBD7D71FDEB027008F110F /* DetailLocationMapCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7D81FDEB027008F110F /* Base */,
+			);
+			name = DetailLocationMapCell.xib;
+			sourceTree = "<group>";
+		};
+		77DBD7D91FDEB027008F110F /* DetailLoginTableCellView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7DA1FDEB027008F110F /* Base */,
+			);
+			name = DetailLoginTableCellView.xib;
+			sourceTree = "<group>";
+		};
+		77DBD7DB1FDEB027008F110F /* SearchViewControllerMapView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7DC1FDEB027008F110F /* Base */,
+			);
+			name = SearchViewControllerMapView.xib;
+			sourceTree = "<group>";
+		};
+		77DBD7DD1FDEB027008F110F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7DE1FDEB027008F110F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		77DBD7DF1FDEB027008F110F /* SearchMeetingDurationCellView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7E01FDEB027008F110F /* Base */,
+			);
+			name = SearchMeetingDurationCellView.xib;
+			sourceTree = "<group>";
+		};
+		77DBD7E11FDEB027008F110F /* Default-568h@2x.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7E21FDEB027008F110F /* Base */,
+			);
+			name = "Default-568h@2x.png";
+			sourceTree = "<group>";
+		};
+		77DBD7E31FDEB027008F110F /* SearchServiceBodyCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7E41FDEB027008F110F /* Base */,
+			);
+			name = SearchServiceBodyCell.xib;
+			sourceTree = "<group>";
+		};
+		77DBD7E51FDEB027008F110F /* MeetingSearchResultsTableCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7E61FDEB027008F110F /* Base */,
+			);
+			name = MeetingSearchResultsTableCell.xib;
+			sourceTree = "<group>";
+		};
+		77DBD7E71FDEB027008F110F /* SearchRadiusCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77DBD7E81FDEB027008F110F /* Base */,
+			);
+			name = SearchRadiusCell.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		77DBD79E1FDEAEEB008F110F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		77DBD79F1FDEAEEB008F110F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		77DBD7A11FDEAEEB008F110F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = P53V4JS928;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/BMLTiOSLib/Framework Project/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.magshare.bmlt.BMLTiOSLib;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		77DBD7A21FDEAEEB008F110F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = P53V4JS928;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/BMLTiOSLib/Framework Project/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.magshare.bmlt.BMLTiOSLib;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		77DBD7BE1FDEB010008F110F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P53V4JS928;
+				INFOPLIST_FILE = "$(SRCROOT)/BMLTiOSLib/Test Harness Project/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		77DBD7BF1FDEB010008F110F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P53V4JS928;
+				INFOPLIST_FILE = "$(SRCROOT)/BMLTiOSLib/Test Harness Project/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		77DBD7921FDEAEEB008F110F /* Build configuration list for PBXProject "BMLTiOSLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77DBD79E1FDEAEEB008F110F /* Debug */,
+				77DBD79F1FDEAEEB008F110F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77DBD7A01FDEAEEB008F110F /* Build configuration list for PBXNativeTarget "BMLTiOSLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77DBD7A11FDEAEEB008F110F /* Debug */,
+				77DBD7A21FDEAEEB008F110F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77DBD7BD1FDEB010008F110F /* Build configuration list for PBXNativeTarget "BMLTiOSLib Test Harness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77DBD7BE1FDEB010008F110F /* Debug */,
+				77DBD7BF1FDEB010008F110F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 77DBD78F1FDEAEEB008F110F /* Project object */;
+}
