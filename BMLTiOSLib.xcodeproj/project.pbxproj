@@ -8,6 +8,41 @@
 
 /* Begin PBXBuildFile section */
 		0EDDFAFBBB92FE7EC60A1223 /* Pods_BMLTiOSLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3FA16D6D95473857AA7AAB /* Pods_BMLTiOSLib.framework */; };
+		772570A51FDF12C400297473 /* ChangeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C51FDEB027008F110F /* ChangeListViewController.swift */; };
+		772570A61FDF12C400297473 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C31FDEB027008F110F /* ConnectViewController.swift */; };
+		772570A71FDF12C400297473 /* BMLTiOSLibTesterAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EC1FDEB027008F110F /* BMLTiOSLibTesterAppDelegate.swift */; };
+		772570A81FDF12C400297473 /* FormatSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7E91FDEB027008F110F /* FormatSearchResultsViewController.swift */; };
+		772570A91FDF12C400297473 /* SingleMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EF1FDEB027008F110F /* SingleMeetingViewController.swift */; };
+		772570AA1FDF12C400297473 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C21FDEB027008F110F /* SearchViewController.swift */; };
+		772570AB1FDF12C400297473 /* BaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7ED1FDEB027008F110F /* BaseTestViewController.swift */; };
+		772570AC1FDF12C400297473 /* BMLTiOSLibCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C61FDEB027008F110F /* BMLTiOSLibCheckbox.swift */; };
+		772570AD1FDF12C400297473 /* AllChangesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C11FDEB027008F110F /* AllChangesListViewController.swift */; };
+		772570AE1FDF12C400297473 /* BMLTiOSTesterMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C41FDEB027008F110F /* BMLTiOSTesterMarker.swift */; };
+		772570AF1FDF12C400297473 /* TestTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EB1FDEB027008F110F /* TestTabController.swift */; };
+		772570B01FDF12C400297473 /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EA1FDEB027008F110F /* SendMessageViewController.swift */; };
+		772570B11FDF12C400297473 /* MeetingSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EE1FDEB027008F110F /* MeetingSearchResultsViewController.swift */; };
+		772570B21FDF12C400297473 /* DetailedInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C81FDEB027008F110F /* DetailedInfoController.swift */; };
+		772570B31FDF12C400297473 /* NewMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7F01FDEB027008F110F /* NewMeetingViewController.swift */; };
+		772570B71FDF12C400297473 /* SearchByStartTimeAndEndTimeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D11FDEB027008F110F /* SearchByStartTimeAndEndTimeCellView.xib */; };
+		772570B81FDF12C400297473 /* MeetingSearchResultsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E51FDEB027008F110F /* MeetingSearchResultsTableCell.xib */; };
+		772570B91FDF12C400297473 /* SearchServiceBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E31FDEB027008F110F /* SearchServiceBodyCell.xib */; };
+		772570BA1FDF12C400297473 /* SearchFormatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7CD1FDEB027008F110F /* SearchFormatCell.xib */; };
+		772570BB1FDF12C400297473 /* SearchWeekdaysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D51FDEB027008F110F /* SearchWeekdaysCell.xib */; };
+		772570BC1FDF12C400297473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7DD1FDEB027008F110F /* Main.storyboard */; };
+		772570BD1FDF12C400297473 /* SearchViewControllerMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7DB1FDEB027008F110F /* SearchViewControllerMapView.xib */; };
+		772570BE1FDF12C400297473 /* SearchRadiusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E71FDEB027008F110F /* SearchRadiusCell.xib */; };
+		772570BF1FDF12C400297473 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E11FDEB027008F110F /* Default-568h@2x.png */; };
+		772570C01FDF12C400297473 /* SearchMeetingDurationCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7DF1FDEB027008F110F /* SearchMeetingDurationCellView.xib */; };
+		772570C11FDF12C400297473 /* DetailFormatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7CF1FDEB027008F110F /* DetailFormatCell.xib */; };
+		772570C21FDF12C400297473 /* DetailLoginTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D91FDEB027008F110F /* DetailLoginTableCellView.xib */; };
+		772570C31FDF12C400297473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7CB1FDEB027008F110F /* LaunchScreen.storyboard */; };
+		772570C41FDF12C400297473 /* SingleMeetingMapDisplayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D31FDEB027008F110F /* SingleMeetingMapDisplayCellView.xib */; };
+		772570C51FDF12C400297473 /* DetailLocationMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D71FDEB027008F110F /* DetailLocationMapCell.xib */; };
+		772570C61FDF12C400297473 /* SearchStringCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7C91FDEB027008F110F /* SearchStringCell.xib */; };
+		772570C71FDF12C400297473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7C71FDEB027008F110F /* Assets.xcassets */; };
+		772570CF1FDF12F500297473 /* BMLTiOSLibCommunicationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A41FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift */; };
+		772570D01FDF12F500297473 /* BMLTCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A51FDEAFBF008F110F /* BMLTCommunicator.swift */; };
+		772570D11FDF12F500297473 /* BMLTiOSLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A61FDEAFBF008F110F /* BMLTiOSLib.swift */; };
 		77DBD79D1FDEAEEB008F110F /* BMLTiOSLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DBD79B1FDEAEEB008F110F /* BMLTiOSLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DBD7A71FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A41FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift */; };
 		77DBD7A81FDEAFBF008F110F /* BMLTCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A51FDEAFBF008F110F /* BMLTCommunicator.swift */; };
@@ -74,6 +109,8 @@
 
 /* Begin PBXFileReference section */
 		57DB341D667253D0EBA749D6 /* Pods-BMLTiOSLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMLTiOSLib.release.xcconfig"; path = "Pods/Target Support Files/Pods-BMLTiOSLib/Pods-BMLTiOSLib.release.xcconfig"; sourceTree = "<group>"; };
+		772570CD1FDF12C400297473 /* BMLTiOSLib Test Harness (Direct).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMLTiOSLib Test Harness (Direct).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		772570CE1FDF12C400297473 /* BMLTiOSLib Test Harness copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BMLTiOSLib Test Harness copy-Info.plist"; path = "/Users/cmarshall/Documents/Development/iOS/BMLTiOSLib/BMLTiOSLib Test Harness copy-Info.plist"; sourceTree = "<absolute>"; };
 		7790839A1FDEB5CD0032C2B8 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		77DBD7981FDEAEEB008F110F /* BMLTiOSLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BMLTiOSLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DBD79B1FDEAEEB008F110F /* BMLTiOSLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLTiOSLib.h; sourceTree = "<group>"; };
@@ -123,6 +160,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		772570B41FDF12C400297473 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		77DBD7941FDEAEEB008F110F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,6 +195,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		772570D21FDF13E200297473 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				77DBD7ED1FDEB027008F110F /* BaseTestViewController.swift */,
+				77DBD7C31FDEB027008F110F /* ConnectViewController.swift */,
+				77DBD7C81FDEB027008F110F /* DetailedInfoController.swift */,
+				77DBD7C11FDEB027008F110F /* AllChangesListViewController.swift */,
+				77DBD7C21FDEB027008F110F /* SearchViewController.swift */,
+				77DBD7C51FDEB027008F110F /* ChangeListViewController.swift */,
+				77DBD7E91FDEB027008F110F /* FormatSearchResultsViewController.swift */,
+				77DBD7EA1FDEB027008F110F /* SendMessageViewController.swift */,
+				77DBD7EE1FDEB027008F110F /* MeetingSearchResultsViewController.swift */,
+				77DBD7EF1FDEB027008F110F /* SingleMeetingViewController.swift */,
+				77DBD7F01FDEB027008F110F /* NewMeetingViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		77DBD78E1FDEAEEB008F110F = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +225,7 @@
 				77DBD7991FDEAEEB008F110F /* Products */,
 				0AEAB784A039D14DA0430C9F /* Pods */,
 				9F2AEF357313BE8BEE338456 /* Frameworks */,
+				772570CE1FDF12C400297473 /* BMLTiOSLib Test Harness copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +234,7 @@
 			children = (
 				77DBD7981FDEAEEB008F110F /* BMLTiOSLib.framework */,
 				77DBD7AE1FDEB010008F110F /* BMLTiOSLib Test Harness.app */,
+				772570CD1FDF12C400297473 /* BMLTiOSLib Test Harness (Direct).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,21 +253,11 @@
 		77DBD7C01FDEB027008F110F /* Test Harness Project */ = {
 			isa = PBXGroup;
 			children = (
-				77DBD7C11FDEB027008F110F /* AllChangesListViewController.swift */,
-				77DBD7C21FDEB027008F110F /* SearchViewController.swift */,
-				77DBD7C31FDEB027008F110F /* ConnectViewController.swift */,
-				77DBD7C41FDEB027008F110F /* BMLTiOSTesterMarker.swift */,
-				77DBD7C51FDEB027008F110F /* ChangeListViewController.swift */,
-				77DBD7C61FDEB027008F110F /* BMLTiOSLibCheckbox.swift */,
-				77DBD7C81FDEB027008F110F /* DetailedInfoController.swift */,
-				77DBD7E91FDEB027008F110F /* FormatSearchResultsViewController.swift */,
-				77DBD7EA1FDEB027008F110F /* SendMessageViewController.swift */,
-				77DBD7EB1FDEB027008F110F /* TestTabController.swift */,
 				77DBD7EC1FDEB027008F110F /* BMLTiOSLibTesterAppDelegate.swift */,
-				77DBD7ED1FDEB027008F110F /* BaseTestViewController.swift */,
-				77DBD7EE1FDEB027008F110F /* MeetingSearchResultsViewController.swift */,
-				77DBD7EF1FDEB027008F110F /* SingleMeetingViewController.swift */,
-				77DBD7F01FDEB027008F110F /* NewMeetingViewController.swift */,
+				77DBD7C61FDEB027008F110F /* BMLTiOSLibCheckbox.swift */,
+				77DBD7C41FDEB027008F110F /* BMLTiOSTesterMarker.swift */,
+				77DBD7EB1FDEB027008F110F /* TestTabController.swift */,
+				772570D21FDF13E200297473 /* View Controllers */,
 				77DBD8131FDEB055008F110F /* Resources */,
 				77DBD7F11FDEB027008F110F /* Info.plist */,
 			);
@@ -267,6 +321,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		772570A11FDF12C400297473 /* BMLTiOSLib Test Harness (Direct) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 772570CA1FDF12C400297473 /* Build configuration list for PBXNativeTarget "BMLTiOSLib Test Harness (Direct)" */;
+			buildPhases = (
+				772570A41FDF12C400297473 /* Sources */,
+				772570B41FDF12C400297473 /* Frameworks */,
+				772570B61FDF12C400297473 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BMLTiOSLib Test Harness (Direct)";
+			productName = "BMLTiOSLib Test Harness";
+			productReference = 772570CD1FDF12C400297473 /* BMLTiOSLib Test Harness (Direct).app */;
+			productType = "com.apple.product-type.application";
+		};
 		77DBD7971FDEAEEB008F110F /* BMLTiOSLib */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77DBD7A01FDEAEEB008F110F /* Build configuration list for PBXNativeTarget "BMLTiOSLib" */;
@@ -317,6 +388,9 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = MAGSHARE;
 				TargetAttributes = {
+					772570A11FDF12C400297473 = {
+						ProvisioningStyle = Automatic;
+					};
 					77DBD7971FDEAEEB008F110F = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -342,11 +416,36 @@
 			targets = (
 				77DBD7971FDEAEEB008F110F /* BMLTiOSLib */,
 				77DBD7AD1FDEB010008F110F /* BMLTiOSLib Test Harness */,
+				772570A11FDF12C400297473 /* BMLTiOSLib Test Harness (Direct) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		772570B61FDF12C400297473 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				772570B71FDF12C400297473 /* SearchByStartTimeAndEndTimeCellView.xib in Resources */,
+				772570B81FDF12C400297473 /* MeetingSearchResultsTableCell.xib in Resources */,
+				772570B91FDF12C400297473 /* SearchServiceBodyCell.xib in Resources */,
+				772570BA1FDF12C400297473 /* SearchFormatCell.xib in Resources */,
+				772570BB1FDF12C400297473 /* SearchWeekdaysCell.xib in Resources */,
+				772570BC1FDF12C400297473 /* Main.storyboard in Resources */,
+				772570BD1FDF12C400297473 /* SearchViewControllerMapView.xib in Resources */,
+				772570BE1FDF12C400297473 /* SearchRadiusCell.xib in Resources */,
+				772570BF1FDF12C400297473 /* Default-568h@2x.png in Resources */,
+				772570C01FDF12C400297473 /* SearchMeetingDurationCellView.xib in Resources */,
+				772570C11FDF12C400297473 /* DetailFormatCell.xib in Resources */,
+				772570C21FDF12C400297473 /* DetailLoginTableCellView.xib in Resources */,
+				772570C31FDF12C400297473 /* LaunchScreen.storyboard in Resources */,
+				772570C41FDF12C400297473 /* SingleMeetingMapDisplayCellView.xib in Resources */,
+				772570C51FDF12C400297473 /* DetailLocationMapCell.xib in Resources */,
+				772570C61FDF12C400297473 /* SearchStringCell.xib in Resources */,
+				772570C71FDF12C400297473 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		77DBD7961FDEAEEB008F110F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -431,6 +530,31 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		772570A41FDF12C400297473 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				772570A51FDF12C400297473 /* ChangeListViewController.swift in Sources */,
+				772570A61FDF12C400297473 /* ConnectViewController.swift in Sources */,
+				772570D11FDF12F500297473 /* BMLTiOSLib.swift in Sources */,
+				772570A71FDF12C400297473 /* BMLTiOSLibTesterAppDelegate.swift in Sources */,
+				772570A81FDF12C400297473 /* FormatSearchResultsViewController.swift in Sources */,
+				772570CF1FDF12F500297473 /* BMLTiOSLibCommunicationHandler.swift in Sources */,
+				772570A91FDF12C400297473 /* SingleMeetingViewController.swift in Sources */,
+				772570AA1FDF12C400297473 /* SearchViewController.swift in Sources */,
+				772570AB1FDF12C400297473 /* BaseTestViewController.swift in Sources */,
+				772570AC1FDF12C400297473 /* BMLTiOSLibCheckbox.swift in Sources */,
+				772570AD1FDF12C400297473 /* AllChangesListViewController.swift in Sources */,
+				772570AE1FDF12C400297473 /* BMLTiOSTesterMarker.swift in Sources */,
+				772570AF1FDF12C400297473 /* TestTabController.swift in Sources */,
+				772570B01FDF12C400297473 /* SendMessageViewController.swift in Sources */,
+				772570B11FDF12C400297473 /* MeetingSearchResultsViewController.swift in Sources */,
+				772570D01FDF12F500297473 /* BMLTCommunicator.swift in Sources */,
+				772570B21FDF12C400297473 /* DetailedInfoController.swift in Sources */,
+				772570B31FDF12C400297473 /* NewMeetingViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		77DBD7931FDEAEEB008F110F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -605,6 +729,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		772570CB1FDF12C400297473 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P53V4JS928;
+				INFOPLIST_FILE = "BMLTiOSLib Test Harness copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		772570CC1FDF12C400297473 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P53V4JS928;
+				INFOPLIST_FILE = "BMLTiOSLib Test Harness copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		77DBD79E1FDEAEEB008F110F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -798,6 +952,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		772570CA1FDF12C400297473 /* Build configuration list for PBXNativeTarget "BMLTiOSLib Test Harness (Direct)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				772570CB1FDF12C400297473 /* Debug */,
+				772570CC1FDF12C400297473 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		77DBD7921FDEAEEB008F110F /* Build configuration list for PBXProject "BMLTiOSLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

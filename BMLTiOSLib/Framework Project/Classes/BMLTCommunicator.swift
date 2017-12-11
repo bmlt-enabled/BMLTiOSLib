@@ -122,16 +122,16 @@ extension String {
         var ret: String! = self.URLEncodedString()
         
         // Very kludgy way of checking for an HTTPS URI.
-        let wasHTTP: Bool = ret.lowercased().beginsWith("http: //")
-        let wasHTTPS: Bool = ret.lowercased().beginsWith("https: //")
+        let wasHTTP: Bool = ret.lowercased().beginsWith("http://")
+        let wasHTTPS: Bool = ret.lowercased().beginsWith("https://")
         
         // Yeah, this is pathetic, but it's quick, simple, and works a charm.
-        ret = ret.replacingOccurrences(of: "^http[s]{0,1}: //", with: "", options: NSString.CompareOptions.regularExpression)
+        ret = ret.replacingOccurrences(of: "^http[s]{0,1}://", with: "", options: NSString.CompareOptions.regularExpression)
         
         if wasHTTPS || (sslRequired && !wasHTTP && !wasHTTPS) {
-            ret = "https: //" + ret
+            ret = "https://" + ret
         } else {
-            ret = "http: //" + ret
+            ret = "http://" + ret
         }
         
         return ret

@@ -1328,7 +1328,6 @@ public class BMLTiOSLibSearchCriteria: NSObject {
     /* ############################################################## */
     // MARK: Public Enums
     /* ############################################################## */
-    
     /** These are the available selection states for Search Criteria. */
     public enum SelectionState: Int {
         /** This is a "hard NOT". This means that this criteria should state that the associated data item NOT be present. */
@@ -2097,7 +2096,6 @@ public class BMLTiOSLibMeetingNodeSimpleDictionaryElement: NSObject {
     /* ################################################################## */
     // MARK: Public Properties
     /* ################################################################## */
-    
     /** The Dictionary key */
     public let key: String
     /** The element value */
@@ -2261,8 +2259,8 @@ public class BMLTiOSLibChangeNode: NSObject {
      */
     public var changeDate: Date! {
         var ret: Date! = nil
-        if let epochDateString = self._rawObject["date_int"] {
-            if let dateInt = TimeInterval((epochDateString as? String)!) {
+        if let epochDateString = self._rawObject["date_int"] as? String {
+            if let dateInt = TimeInterval(epochDateString) {
                 ret = Date(timeIntervalSince1970: dateInt)
             }
         }
@@ -2662,7 +2660,7 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
     }
     
     /** These are the standard keys that all meeting objects should have available (They may not all be filled, though). */
-    internal static let standardKeys: [String] = ["id_bigint", "service_body_bigint", "weekday_tinyint", "start_time", "duration_time", "formats", "longitude", "latitude", "meeting_name", "location_text", "location_info", "location_street", "location_city_subsection", "location_neighborhood", "location_municipality", "location_sub_province", "location_province", "location_postal_code_1", "comments"]
+    internal static let standardKeys = ["id_bigint", "service_body_bigint", "weekday_tinyint", "start_time", "duration_time", "formats", "longitude", "latitude", "meeting_name", "location_text", "location_info", "location_street", "location_city_subsection", "location_neighborhood", "location_municipality", "location_sub_province", "location_province", "location_postal_code_1", "comments"]
     
     /** This is the library object that "owns" this instance. */
     weak internal var _handler: BMLTiOSLib! = nil

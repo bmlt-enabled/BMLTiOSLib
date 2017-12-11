@@ -137,7 +137,7 @@ public class SingleMeetingViewController: BaseTestViewController, UITableViewDel
      */
     func resetAndClose(_ inAction: UIAlertAction) {
         if nil != self.meetingObject {
-            (self.meetingObject as? BMLTiOSLibEditableMeetingNode).restoreToOriginal()
+            (self.meetingObject as? BMLTiOSLibEditableMeetingNode)?.restoreToOriginal()
         }
         self.navigationController!.popViewController(animated: true)
     }
@@ -147,7 +147,7 @@ public class SingleMeetingViewController: BaseTestViewController, UITableViewDel
      */
     @IBAction func publishButtonHit(_ sender: UIBarButtonItem) {
         if (nil != self.meetingObject) && self.meetingObject.isEditable {
-            (self.meetingObject as? BMLTiOSLibEditableMeetingNode).published = !self.meetingObject.published
+            (self.meetingObject as? BMLTiOSLibEditableMeetingNode)?.published = !self.meetingObject.published
             
             if nil != self.publishedTextField {
                 self.publishedTextField.text = (self.meetingObject.published ? "1" : "0")
@@ -173,7 +173,7 @@ public class SingleMeetingViewController: BaseTestViewController, UITableViewDel
 
         let alertController = UIAlertController(title: NSLocalizedString("Are You Sure?", comment: ""), message: "Do you want to delete this meeting?", preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "Nuke From Orbit", style: UIAlertActionStyle.cancel, handler: { (_) in (self.meetingObject as? BMLTiOSLibEditableMeetingNode).delete() })
+        let okAction = UIAlertAction(title: "Nuke From Orbit", style: UIAlertActionStyle.cancel, handler: { (_) in (self.meetingObject as? BMLTiOSLibEditableMeetingNode)?.delete() })
         
         alertController.addAction(okAction)
         
@@ -247,7 +247,7 @@ public class SingleMeetingViewController: BaseTestViewController, UITableViewDel
     /**
      */
     @IBAction func saveButtonHit(_ sender: UIBarButtonItem) {
-        (self.meetingObject as? BMLTiOSLibEditableMeetingNode).saveChanges()
+        (self.meetingObject as? BMLTiOSLibEditableMeetingNode)?.saveChanges()
         self.navigationController!.popViewController(animated: true)
     }
     
@@ -446,7 +446,7 @@ public class SingleMeetingViewController: BaseTestViewController, UITableViewDel
                 let span = self._mapView.region.span
                 let newRegion: MKCoordinateRegion = MKCoordinateRegion(center: mapLocation, span: span)
                 self._mapView.setRegion(newRegion, animated: true)
-                (self.meetingObject as? BMLTiOSLibEditableMeetingNode).locationCoords = mapLocation
+                (self.meetingObject as? BMLTiOSLibEditableMeetingNode)?.locationCoords = mapLocation
                 self.enableDisableSave()
             }
         }

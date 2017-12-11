@@ -38,7 +38,7 @@ import CoreLocation
  
  It is instantiated by the BMLTiOSLib class, and handles the actual communications with the Root Server.
  */
-internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProtocol {
+class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProtocol {
     /** This is a special typeAlias for when we save a meeting as a new meeting. Making the meeting object editable adds a another modicum of security. */
     typealias NewMeetingRefCon = (meetingObject: BMLTiOSLibEditableMeetingNode, refCon: AnyObject?)
     typealias PermissionsTuple = (id: Int, name: String, permissions: BMLTiOSLibPermissions)
@@ -55,7 +55,6 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
     /* ######################################################## */
     // MARK: Enumerations
     /* ######################################################## */
-    
     /**
      These are URL suffixes for calling into the semantic interface. We also use them as enumerations.
      */
@@ -84,14 +83,12 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
     /* ######################################################## */
     // MARK: Constant Instance Properties
     /* ######################################################## */
-
     /** This is the minimum server version we'll support. Format is XYYYZZZ, with X = Main version (No leading zeroes), YYY = Feature Version (with leading zeroes), and ZZZ = Fix Version (with leading zeroes). */
     let s_minServerVersion: Int                     =   2008012 ///< 2.8.12
     
     /* ######################################################## */
     // MARK: Variable Instance Properties
     /* ######################################################## */
-    
     /** This is a semaphore that is set to let the class know that it needs to call a different callback for new and restored meetings. */
     var _newMeetingCall: Bool = false
     /** This contains all the permissions in a simple string Dictionary. */
@@ -127,7 +124,6 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
     /* ######################################################## */
     // MARK: Calculated Properties
     /* ######################################################## */
-
     /** This is a calculated property that returns a boolean to tell whether or not the server is valid and connected. */
     var isConnected: Bool { return 0 < self.serverVersionAsInt }
     /** This is a calculated property that returns a boolean to tell whether or not we are logged into an admin session. */
@@ -1094,93 +1090,17 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
         if nil == inError {
             // See if the response data is a Dictionary
             if inResponseData is NSDictionary {
-                ret = self.parseJSONDictionary((inResponseData as? NSDictionary)!)
-                // These two steps will ensure that all singular response objects are contained in the same manner as array responses.
                 if ret is BMLTiOSLibMeetingNode {
                     ret = ["meetings": [ret]] as AnyObject?
                 } else {
                     if ret is BMLTiOSLibFormatNode {
                         ret = ["formats": [ret]] as AnyObject?
                     } else {
-                        // This does the opposite of above. It removes a redundant layer.
-                        if ret is [String: [BMLTiOSLibServerLang]] {
-                            if let retTmp = ret as? [String: [BMLTiOSLibServerLang]] {
-                                ret = retTmp["languages"] as AnyObject?
-                            }
-                        } else {
-                            // This also does the opposite, and creates an array of BMLTiOSLibPermissions objects.
-                            
-                            // The strange dance below is because singular permissions come across as simple Dictionaries,
-                            // not as Arrays of Dictionaries, so we need to create artificial 1-element Arrays.
-                            var sb_perms_container_final: [String: [[String: String]]] = [: ]
-                            
-                            if let sb_perms_container = ret as? [String: [[String: String]]] {
-                                sb_perms_container_final = sb_perms_container
-                            } else {    // Create an artificial Array.
-                                if let sb_perms_container = ret as? [String: [String: String]] {
-                                    if let sb_perms = sb_perms_container["service_body"] {
-                                        sb_perms_container_final = ["service_body": [sb_perms]]
-                                    }
-                                }
-                            }
-                            
-                            if let sb_perms = sb_perms_container_final["service_body"] {
-                                var permArray: [PermissionsTuple] = []
-                                for perm in sb_perms {
-                                    if let id = Int(perm["id"]!) {
-                                        if let name = perm["name"] {
-                                            if let permissions = Int(perm["permissions"]!) {
-                                                if let permissionsObject = BMLTiOSLibPermissions(rawValue: permissions) {
-                                                    let tupleoGold: PermissionsTuple = (id: id, name: name, permissions: permissionsObject)
-                                                    permArray.append(tupleoGold)
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                ret = permArray as AnyObject?
-                            }
-                        }
+                        ret = self.parseJSONDictionaryHandler(inResponseData, error: inError, refCon: inRefCon)
                     }
                 }
             } else {
-                // Arrays are a bit simpler.
-                if inResponseData is NSArray {
-                    ret = self.parseJSONArray((inResponseData as? NSArray)!) as AnyObject?
-                    if ret is [BMLTiOSLibMeetingNode] {
-                        ret = ["meetings": ret] as AnyObject?
-                    } else {
-                        if ret is [BMLTiOSLibFormatNode] {
-                            ret = ["formats": ret] as AnyObject?
-                        }
-                    }
-                } else {    // Look for simple string responses. A couple of them are errors.
-                    if inResponseData is NSString {
-                        ret = (String(describing: inResponseData as? NSString) as AnyObject??)!
-                        
-                        if "ERROR" == (ret as? String) {
-                            ret = NSError(domain: BMLTiOSLibErrorDomains.CommunicationError.rawValue, code: BMLTiOSLibErrorCodes.GeneralError.rawValue, userInfo: nil) as AnyObject?
-                        } else {
-                            if "NOT AUTHORIZED" == (ret as? String) {
-                                ret = NSError(domain: BMLTiOSLibErrorDomains.PermissionError.rawValue, code: BMLTiOSLibErrorCodes.IncorrectCredentials.rawValue, userInfo: nil) as AnyObject?
-                            }
-                        }
-                    } else {
-                        if inResponseData is NSNumber {
-                            ret = self.parseJSONNumber((inResponseData as? NSNumber)!) as AnyObject?
-                        } else {
-                            if let dataObj = inResponseData as? Data {
-                                if 0 < dataObj.count {
-                                    ret = String(data: dataObj, encoding: .utf8) as AnyObject?
-                                } else {
-                                    ret = NSError(domain: BMLTiOSLibErrorDomains.CommunicationError.rawValue, code: BMLTiOSLibErrorCodes.NoDataReceivedError.rawValue, userInfo: nil) as AnyObject?
-                                }
-                            } else {
-                                ret = NSError(domain: BMLTiOSLibErrorDomains.CommunicationError.rawValue, code: BMLTiOSLibErrorCodes.NoDataReceivedError.rawValue, userInfo: nil) as AnyObject?
-                            }
-                        }
-                    }
-                }
+                ret = self.parseJSONOtherHandler(inResponseData, error: inError, refCon: inRefCon)
             }
         } else {
             ret = inError as AnyObject?
@@ -1189,6 +1109,101 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
         return ret
     }
     
+    /* ################################################################## */
+    /**
+     */
+    func parseJSONOtherHandler(_ inResponseData: Any?, error inError: Error?, refCon inRefCon: Any?) -> AnyObject? {
+        var ret: AnyObject? = nil
+        
+        // Arrays are a bit simpler.
+        if inResponseData is NSArray {
+            ret = self.parseJSONArray((inResponseData as? NSArray)!) as AnyObject?
+            if ret is [BMLTiOSLibMeetingNode] {
+                ret = ["meetings": ret] as AnyObject?
+            } else {
+                if ret is [BMLTiOSLibFormatNode] {
+                    ret = ["formats": ret] as AnyObject?
+                }
+            }
+        } else {    // Look for simple string responses. A couple of them are errors.
+            if inResponseData is NSString {
+                ret = (inResponseData as? NSString) as AnyObject?
+                
+                if "ERROR" == (ret as? String) {
+                    ret = NSError(domain: BMLTiOSLibErrorDomains.CommunicationError.rawValue, code: BMLTiOSLibErrorCodes.GeneralError.rawValue, userInfo: nil) as AnyObject?
+                } else {
+                    if "NOT AUTHORIZED" == (ret as? String) {
+                        ret = NSError(domain: BMLTiOSLibErrorDomains.PermissionError.rawValue, code: BMLTiOSLibErrorCodes.IncorrectCredentials.rawValue, userInfo: nil) as AnyObject?
+                    }
+                }
+            } else {
+                if inResponseData is NSNumber {
+                    ret = self.parseJSONNumber((inResponseData as? NSNumber)!) as AnyObject?
+                } else {
+                    if let dataObj = inResponseData as? Data {
+                        if 0 < dataObj.count {
+                            ret = String(data: dataObj, encoding: .utf8) as AnyObject?
+                        } else {
+                            ret = NSError(domain: BMLTiOSLibErrorDomains.CommunicationError.rawValue, code: BMLTiOSLibErrorCodes.NoDataReceivedError.rawValue, userInfo: nil) as AnyObject?
+                        }
+                    } else {
+                        ret = NSError(domain: BMLTiOSLibErrorDomains.CommunicationError.rawValue, code: BMLTiOSLibErrorCodes.NoDataReceivedError.rawValue, userInfo: nil) as AnyObject?
+                    }
+                }
+            }
+        }
+
+        return ret
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    func parseJSONDictionaryHandler(_ inResponseData: Any?, error inError: Error?, refCon inRefCon: Any?) -> AnyObject? {
+        var ret: AnyObject? = self.parseJSONDictionary((inResponseData as? NSDictionary)!)
+        // This does the opposite of above. It removes a redundant layer.
+        if ret is [String: [BMLTiOSLibServerLang]] {
+            if let retTmp = ret as? [String: [BMLTiOSLibServerLang]] {
+                ret = retTmp["languages"] as AnyObject?
+            }
+        } else {
+            // This also does the opposite, and creates an array of BMLTiOSLibPermissions objects.
+            
+            // The strange dance below is because singular permissions come across as simple Dictionaries,
+            // not as Arrays of Dictionaries, so we need to create artificial 1-element Arrays.
+            var sb_perms_container_final: [String: [[String: String]]] = [:]
+            
+            if let sb_perms_container = ret as? [String: [[String: String]]] {
+                sb_perms_container_final = sb_perms_container
+            } else {    // Create an artificial Array.
+                if let sb_perms_container = ret as? [String: [String: String]] {
+                    if let sb_perms = sb_perms_container["service_body"] {
+                        sb_perms_container_final = ["service_body": [sb_perms]]
+                    }
+                }
+            }
+            
+            if let sb_perms = sb_perms_container_final["service_body"] {
+                var permArray: [PermissionsTuple] = []
+                for perm in sb_perms {
+                    if let id = Int(perm["id"]!) {
+                        if let name = perm["name"] {
+                            if let permissions = Int(perm["permissions"]!) {
+                                if let permissionsObject = BMLTiOSLibPermissions(rawValue: permissions) {
+                                    let tupleoGold: PermissionsTuple = (id: id, name: name, permissions: permissionsObject)
+                                    permArray.append(tupleoGold)
+                                }
+                            }
+                        }
+                    }
+                }
+                ret = permArray as AnyObject?
+            }
+        }
+        
+        return ret
+    }
+
     /* ################################################################## */
     /**
      This parses a section of data that is an NSArray, and returns a new Swift Array (or single object in one instance).
@@ -1208,7 +1223,7 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
                     ret.append(self.parseJSONArray((object as? NSArray)!) as AnyObject?)
                 } else {
                     if object is NSString { // If it's a String, we simply create a copy and slap that in.
-                        ret.append(String(describing: object as? NSString) as AnyObject?)
+                        ret.append(object as AnyObject?)
                     } else {
                         if object is NSNumber { // If it's a number, we create the appropriate type of number object for it.
                             ret.append(self.parseJSONNumber((object as? NSNumber)!) as AnyObject?)
@@ -1284,20 +1299,20 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
             // First, look for format and meeting lists (both).
             // If so, we call our array parser on each of them.
             if (2 == keys.count) && keys.contains("meetings") && keys.contains("formats") {
-                var retTemp: [String: [AnyObject?]] = [: ]
+                var retTemp: [String: [AnyObject?]] = [:]
                 retTemp["meetings"] = (self.parseJSONArray((inResponseData.object(forKey: "meetings") as? NSArray)!) as? [AnyObject?]?)!
                 retTemp["formats"] = (self.parseJSONArray((inResponseData.object(forKey: "formats") as? NSArray)!) as? [AnyObject?]?)!
                 ret = retTemp as AnyObject?
             } else {
                 // See if we only have a single set of meetings (no formats).
                 if (1 == keys.count) && keys.contains("meetings") {
-                    var retTemp: [String: [AnyObject?]] = [: ]
+                    var retTemp: [String: [AnyObject?]] = [:]
                     retTemp["meetings"] = (self.parseJSONArray((inResponseData.object(forKey: "meetings") as? NSArray)!) as? [AnyObject?]?)!
                     ret = retTemp as AnyObject?
                 } else {
                     // Is this a json_data section of a change response?
                     if (2 >= keys.count) && (keys.contains("before") || keys.contains("after")) {
-                        var retTemp: [String: [String: String]] = [: ]
+                        var retTemp: [String: [String: String]] = [:]
                         
                         // The reason for this odd little dance, is because the meeting Dictionary in a change object is slightly different from that in the regular response (oops).
                         // The smart parser will account for this, so we smart parse, then extract the raw data.
@@ -1313,7 +1328,7 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
                     } else {
                         // See if we only have a formats response.
                         if (1 == keys.count) && keys.contains("formats") {
-                            var retTemp: [String: [AnyObject?]] = [: ]
+                            var retTemp: [String: [AnyObject?]] = [:]
                             retTemp["formats"] = (self.parseJSONArray((inResponseData.object(forKey: "formats") as? NSArray)!) as? [AnyObject?]?)!
                             ret = retTemp as AnyObject?
                         } else {
@@ -1342,7 +1357,7 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
                                                     ret = self.parseJSONServerLang(inResponseData) as AnyObject?
                                                 } else {
                                                     // Otherwise, we treat it as a generic Dictionary.
-                                                    var retDict: [String: Any?] = [: ]
+                                                    var retDict: [String: Any?] = [:]
                                                     for key in keys {
                                                         let stringKey = key as String
                                                         if let value = inResponseData.object(forKey: key) {
@@ -1353,7 +1368,7 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
                                                                     retDict[stringKey] = self.parseJSONArray((value as? NSArray)!) as AnyObject??
                                                                 } else {
                                                                     if value is NSString {
-                                                                        retDict[stringKey] = String(describing: value as? NSString) as AnyObject??
+                                                                        retDict[stringKey] = value as AnyObject?
                                                                     } else {
                                                                         if value is NSNumber {
                                                                             retDict[stringKey] = self.parseJSONNumber((value as? NSNumber)!)
@@ -1389,11 +1404,13 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
      - returns:  The result of the parse. This will be a "smart object" that represents the Dictionary.
      */
     func parseJSONServiceBody(_ inResponseData: NSDictionary) -> ServiceBodyRawDataDictionary? {
-        var infoDictionary: [String: String] = [: ]
+        var infoDictionary: [String: String] = [:]
         
         if let keys = inResponseData.allKeys as? [NSString] {
             for key in keys {
-                infoDictionary[key as String] = String(describing: inResponseData.object(forKey: key) as? NSString)
+                if let value = inResponseData.object(forKey: key) as? String {
+                    infoDictionary[key as String] = value
+                }
             }
         }
         
@@ -1411,7 +1428,7 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
      - returns:  The result of the parse. This will be a "smart object" that represents the Dictionary.
      */
     func parseJSONServerLang(_ inResponseData: NSDictionary) -> BMLTiOSLibServerLang? {
-        var infoDictionary: [String: String] = [: ]
+        var infoDictionary: [String: String] = [:]
         
         if let value = inResponseData.object(forKey: "key") as? NSString {
             infoDictionary["key"] = String(value)
@@ -1442,11 +1459,11 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
      - returns:  The result of the parse. This will be a "smart object" that represents the Dictionary.
      */
     func parseJSONServerInfo(_ inResponseData: NSDictionary) -> BMLTiOSLibServerInfo? {
-        var infoDictionary: [String: String] = [: ]
+        var infoDictionary: [String: String] = [:]
         
         if let keys = inResponseData.allKeys as? [NSString] {
             for key in keys {
-                infoDictionary[key as String] = String(describing: inResponseData.object(forKey: key) as? NSString)
+                infoDictionary[key as String] = (inResponseData.object(forKey: key) as? NSString)! as String
             }
         }
         
@@ -1464,7 +1481,7 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
      - returns:  The result of the parse. This will be a "smart object" that represents the Dictionary.
     */
     func parseJSONChangeObject(_ inResponseData: NSDictionary) -> BMLTiOSLibChangeNode? {
-        var infoDictionary: [String: AnyObject?] = [: ]
+        var infoDictionary: [String: AnyObject?] = [:]
         
         if let keys = inResponseData.allKeys as? [NSString] {
             for key in keys {
@@ -1477,7 +1494,7 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
                             value = (self.parseJSONArray((value as? NSArray)!) as AnyObject??)!
                         } else {
                             if value is NSString {
-                                value = (String(describing: value as? NSString) as AnyObject??)!
+                                value = value as AnyObject?
                             } else {
                                 if value is NSNumber {
                                     value = self.parseJSONNumber((value as? NSNumber)!) as AnyObject?
@@ -1505,7 +1522,7 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
      - returns:  The result of the parse. This will be a "smart object" that represents the Dictionary.
      */
     func parseJSONMeeting(_ inResponseData: NSDictionary) -> BMLTiOSLibMeetingNode? {
-        var meetingDictionary: [String: String] = [: ]
+        var meetingDictionary: [String: String] = [:]
         
         if let keys = inResponseData.allKeys as? [NSString] {
             for key in keys {
@@ -1547,7 +1564,7 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
      - returns:  The result of the parse. This will be a "smart object" that represents the Dictionary.
      */
     func parseJSONFormat(_ inResponseData: NSDictionary) -> BMLTiOSLibFormatNode? {
-        var formatDictionary: [String: String] = [: ]
+        var formatDictionary: [String: String] = [:]
         
         if let keys = inResponseData.allKeys as? [NSString] {
             for key in keys {
@@ -1658,7 +1675,7 @@ internal class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorData
                                         self.handleMeetingSearchResponse(meetings)
                                     } else {
                                         if nil == parsedObject {
-                                            self.handleMeetingSearchResponse([: ])
+                                            self.handleMeetingSearchResponse([:])
                                         } else {
                                             self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.MeetingSearch, inBadData: inResponseData as AnyObject?)
                                         }
@@ -1754,14 +1771,12 @@ internal class BMLTiOSLibServerInfo {
      
      - parameter inString: This is the Dictionary key.
      */
-    subscript(_ inString: String) -> String! {
-        get {
-            if let value = self._serverInfoDictionary[inString] {
-                return value
-            }
-            
-            return nil
+    subscript(_ inString: String) -> String? {
+        if let value = self._serverInfoDictionary[inString] {
+            return value
         }
+        
+        return nil
     }
     
     /* ################################################################## */
@@ -1835,11 +1850,11 @@ internal class BMLTiOSLibServerInfo {
     var defaultDurationInMinutes: Int {
         var ret: Int = 0
         
-        let timeComponents = self["defaultDuration"].components(separatedBy: ": ").map { Int($0) }
-        if let hours = timeComponents[0] {
+        let timeComponents = self["defaultDuration"]?.components(separatedBy: ": ").map { Int($0) }
+        if let hours = timeComponents![0] {
             ret = hours * 60
         }
-        if let minutes = timeComponents[0] {
+        if let minutes = timeComponents![0] {
             ret += minutes
         }
         
@@ -1974,7 +1989,8 @@ internal class BMLTiOSLibServerInfo {
      */
     var versionInt: Int {
         if let value = self["versionInt"] {
-            return Int(value)!
+            let ret = Int(value)
+            return ret!
         }
         
         return 0

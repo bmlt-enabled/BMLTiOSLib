@@ -127,12 +127,14 @@ public class ConnectViewController: UIViewController, BMLTiOSLibDelegate, UIText
     /**
      */
     @IBAction func connectButtonHit(_ sender: UIButton) {
-        if "CONNECT" == sender.title(for: UIControlState.normal) {
-            self.wereConnecting()
-            (UIApplication.shared.delegate as? BMLTiOSLibTesterAppDelegate)?._libraryObject = BMLTiOSLib(inRootServerURI: self.urlEditText.text!, inDelegate: self)
-        } else {
-            (UIApplication.shared.delegate as? BMLTiOSLibTesterAppDelegate)?._libraryObject = nil
-            self.wereNotConnected()
+        if let appDel = UIApplication.shared.delegate as? BMLTiOSLibTesterAppDelegate {
+            if "CONNECT" == sender.title(for: UIControlState.normal) {
+                self.wereConnecting()
+                appDel._libraryObject = BMLTiOSLib(inRootServerURI: self.urlEditText.text!, inDelegate: self)
+            } else {
+                appDel._libraryObject = nil
+                self.wereNotConnected()
+            }
         }
     }
     

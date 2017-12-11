@@ -156,7 +156,7 @@ class BMLTiOSLibTesterMarker: MKAnnotationView {
      This gives us a shortcut to the annotation prpoerty.
      */
     var meetings: BMLTiOSLibTesterMeetingList {
-        return ((self.annotation as? BMLTiOSLibTesterAnnotation).meetings)
+        return ((self.annotation as? BMLTiOSLibTesterAnnotation)!.meetings)
     }
     
     // MARK: - Instance Methods -

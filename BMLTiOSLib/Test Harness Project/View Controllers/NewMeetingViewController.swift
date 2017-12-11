@@ -48,7 +48,7 @@ public class NewMeetingViewController: SingleMeetingViewController {
     /**
      */
     @IBAction override func saveButtonHit(_ sender: UIBarButtonItem) {
-        (self.meetingObject as? BMLTiOSLibEditableMeetingNode).saveChanges()
+        (self.meetingObject as? BMLTiOSLibEditableMeetingNode)?.saveChanges()
         self.meetingObject = BMLTiOSLibEditableMeetingNode([:], inHandler: BMLTiOSLibTesterAppDelegate.libraryObject)
         self.displayTableView.reloadData()
     }

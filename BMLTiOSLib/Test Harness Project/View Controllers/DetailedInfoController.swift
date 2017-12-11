@@ -114,7 +114,7 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Got this tip from here: http://natecook.com/blog/2014/10/loopy-random-enum-ideas/
         var max: Int = 0
-        while _ = TableRows(rawValue: max) { max += 1 }
+        while nil != TableRows(rawValue: max) { max += 1 }
         
         return max
     }
@@ -295,7 +295,7 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
             text += format.name + "\n"
         }
         self._formatTextView.text = text
-        (self.view as? UITableView).reloadData()
+        (self.view as? UITableView)?.reloadData()
     }
     
     /* ################################################################## */

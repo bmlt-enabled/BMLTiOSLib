@@ -606,10 +606,10 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
         super.prepare(for: segue, sender: sender)
         
         if segue.destination is MeetingSearchResultsViewController {
-            (segue.destination as? MeetingSearchResultsViewController).meetingSearchResults = self.meetingSearchResults
+            (segue.destination as? MeetingSearchResultsViewController)?.meetingSearchResults = self.meetingSearchResults
         } else {
             if segue.destination is FormatSearchResultsViewController {
-                (segue.destination as? FormatSearchResultsViewController).formatSearchResults = self.formatSearchResults
+                (segue.destination as? FormatSearchResultsViewController)?.formatSearchResults = self.formatSearchResults
             }
         }
     }
@@ -839,251 +839,56 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     /**
      */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var reuseID: String = ""
         var ret: UITableViewCell! = nil
+        let reuseIDs = [TableRows.ClearButtonRow.rawValue: "ClearButtonRow",
+                        TableRows.StartEndTimeRow.rawValue: "SearchByStartTimeAndEndTimeCellView",
+                        TableRows.DurationTimeRow.rawValue: "SearchMeetingDurationCellView",
+                        TableRows.SearchStringRow.rawValue: "SearchStringCell",
+                        TableRows.LocationRadiusRow.rawValue: "SearchRadiusCell",
+                        TableRows.MapRow.rawValue: "SearchViewControllerMapView",
+                        TableRows.WeekdayRow.rawValue: "SearchWeekdaysCell",
+                        TableRows.ServiceBodyRow.rawValue: "SearchServiceBodyCell",
+                        TableRows.FormatRow.rawValue: "SearchFormatCell"]
         
-        switch indexPath.row {
-        case TableRows.ClearButtonRow.rawValue:
-            reuseID = "ClearButtonRow"
+        if let reuseID = reuseIDs[indexPath.row] {
+            ret = tableView.dequeueReusableCell(withIdentifier: reuseIDs[indexPath.row]!)
+            
+            if nil == ret {
+                ret = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: reuseID)
+                if nil != ret {
+                    ret.backgroundColor = UIColor.clear
+                    
+                    switch indexPath.row {
+                    case TableRows.ClearButtonRow.rawValue:
+                        ret = self.handleClearButtonRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
 
-        case TableRows.StartEndTimeRow.rawValue:
-            reuseID = "SearchByStartTimeAndEndTimeCellView"
-        
-        case TableRows.DurationTimeRow.rawValue:
-            reuseID = "SearchMeetingDurationCellView"
-            
-        case TableRows.SearchStringRow.rawValue:
-            reuseID = "SearchStringCell"
-            
-        case TableRows.LocationRadiusRow.rawValue:
-            reuseID = "SearchRadiusCell"
-            
-        case TableRows.MapRow.rawValue:
-            reuseID = "SearchViewControllerMapView"
+                    case TableRows.StartEndTimeRow.rawValue:
+                        ret = self.handleStartTimeRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
 
-        case TableRows.WeekdayRow.rawValue:
-            reuseID = "SearchWeekdaysCell"
-            
-        case TableRows.ServiceBodyRow.rawValue:
-            reuseID = "SearchServiceBodyCell"
-            
-        case TableRows.FormatRow.rawValue:
-            reuseID = "SearchFormatCell"
-            
-        default:
-            break
-        }
-        
-        ret = tableView.dequeueReusableCell(withIdentifier: reuseID)
-        
-        if nil == ret {
-            ret = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: reuseID)
-            if nil != ret {
-                ret.backgroundColor = UIColor.clear
-                
-                switch indexPath.row {
-                case TableRows.ClearButtonRow.rawValue:
-                    var bounds: CGRect = CGRect.zero
-                    bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
-                    bounds.size.width = tableView.bounds.size.width
-                    ret.bounds = bounds
-                    if nil == self._clearButton {
-                        self._clearButton = UIButton(frame: bounds)
-                        self._clearButton.setTitle("Clear Search Criteria", for: UIControlState.normal)
-                        self._clearButton.setTitleColor(UIColor(red: 0.5, green: 0.6, blue: 1, alpha: 1), for: UIControlState.normal)
-                        self._clearButton.setTitleColor(UIColor.lightGray, for: UIControlState.disabled)
-                        self._clearButton.addTarget(self, action: #selector(SearchViewController.clearButtonHit(_:)), for: UIControlEvents.touchUpInside)
-                        self._clearButton.isEnabled = false
-                        ret.addSubview(self._clearButton)
-                    }
-                    
-                case TableRows.StartEndTimeRow.rawValue:
-                    if nil == self._startEndTimeContainerView {
-                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
-                    }
-                    
-                    if nil != self._startEndTimeContainerView {
-                        var bounds: CGRect = CGRect.zero
-                        bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
-                        bounds.size.width = tableView.bounds.size.width
-                        self._startsAfterDatePicker.setValue(UIColor.white, forKey: "textColor")
-                        self._endsBeforeDatePicker.setValue(UIColor.white, forKey: "textColor")
-                        self._startsAfterSegmentedControlView.isEnabled = false
-                        self._startsAfterDatePicker.isEnabled = false
-                        self._endsBeforeDatePicker.isEnabled = false
-                        ret.bounds = bounds
-                        self._startEndTimeContainerView.frame = bounds
-                        ret.addSubview(self._startEndTimeContainerView)
-                    }
-                    
-                case TableRows.DurationTimeRow.rawValue:
-                    if nil == self._durationSelectionContainer {
-                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
-                    }
-                    
-                    if nil != self._durationSelectionContainer {
-                        var bounds: CGRect = CGRect.zero
-                        bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
-                        bounds.size.width = tableView.bounds.size.width
-                        self._durationTimePicker.setValue(UIColor.white, forKey: "textColor")
-                        self._durationTypeSegmentedControl.isEnabled = false
-                        self._durationTimePicker.isEnabled = false
-                        ret.bounds = bounds
-                        self._durationTimePicker.frame = bounds
-                        ret.addSubview(self._durationSelectionContainer)
-                    }
+                    case TableRows.DurationTimeRow.rawValue:
+                        ret = self.handleDurationRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
 
-                case TableRows.SearchStringRow.rawValue:
-                    if nil == self._stringSearchCellView {
-                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
-                    }
-                    
-                    if nil != self._stringSearchCellView {
-                        var bounds: CGRect = CGRect.zero
-                        bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
-                        bounds.size.width = tableView.bounds.size.width
-                        ret.bounds = bounds
-                        self._stringSearchCellView.frame = bounds
-                        ret.addSubview(self._stringSearchCellView)
-                    }
-                    
-                case TableRows.LocationRadiusRow.rawValue:
-                    if nil == self._locationRadiusCellView {
-                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
-                    }
-                    
-                    if nil != self._locationRadiusCellView {
-                        var bounds: CGRect = CGRect.zero
-                        bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
-                        bounds.size.width = tableView.bounds.size.width
-                        ret.bounds = bounds
-                        self._locationRadiusCellView.frame = bounds
-                        ret.addSubview(self._locationRadiusCellView)
-                    }
+                    case TableRows.SearchStringRow.rawValue:
+                        ret = self.handleSearchStringRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
 
-                case TableRows.MapRow.rawValue:
-                    var bounds: CGRect = CGRect.zero
-                    bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
-                    bounds.size.width = tableView.bounds.size.width
-                    ret.bounds = bounds
-                    
-                    let mapContainer = UIView(frame: bounds)
-                    
-                    if nil == self._mapView {
-                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+                    case TableRows.LocationRadiusRow.rawValue:
+                        ret = self.handleLocationRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
                         
-                        if nil != self._mapView {
-                            bounds.size.height -= self.mapRowExtraHeight
-                            bounds.origin.y = self.mapRowExtraHeight
-                            
-                            self._mapView.frame = bounds
-                            
-                            bounds.size.height = 31
-                            bounds.origin.y = 8
-                            bounds.origin.x = 8
-                            
-                            self._useLocationSwitch = UISwitch(frame: bounds)
-                            self._useLocationSwitch.isOn = false
-                            self._useLocationSwitch.addTarget(self, action: #selector(SearchViewController.useLocationSwitchChanged(_:)), for: UIControlEvents.valueChanged)
-                            mapContainer.addSubview(self._useLocationSwitch)
-                            
-                            bounds.origin.y = 8
-                            bounds.origin.x = 61
-                            bounds.size.height = 31
-                            bounds.size.width = tableView.bounds.size.width - bounds.origin.x
-                            self._useLocationLabel = UILabel(frame: bounds)
-                            self._useLocationLabel.backgroundColor = UIColor.clear
-                            self._useLocationLabel.textColor = UIColor.white
-                            self._useLocationLabel.font = UIFont.boldSystemFont(ofSize: 17)
-                            self._useLocationLabel.text = "Use Map Location:"
-                            mapContainer.addSubview(self._useLocationLabel)
-                            
-                            let mapLocation = BMLTiOSLibTesterAppDelegate.libraryObject.defaultLocation
-                            let span = MKCoordinateSpan(latitudeDelta: type(of: self).sMapSizeInDegrees, longitudeDelta: 0)
-                            let newRegion: MKCoordinateRegion = MKCoordinateRegion(center: mapLocation, span: span)
-                            self._mapView.setRegion(newRegion, animated: false)
-                        }
-                    }
-                    
-                    if nil != self._mapView {
-                        mapContainer.addSubview(self._mapView)
-                        ret.addSubview(mapContainer)
-                    }
+                    case TableRows.MapRow.rawValue:
+                        ret = self.handleMapRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
 
-                case TableRows.WeekdayRow.rawValue:
-                    if nil == self._weekdayListCellView {
-                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
-                        
-                        self.allCheckboxes.append(self.sundayButton)
-                        self.allCheckboxes.append(self.mondayButton)
-                        self.allCheckboxes.append(self.tuesdayButton)
-                        self.allCheckboxes.append(self.wednesdayButton)
-                        self.allCheckboxes.append(self.thursdayButton)
-                        self.allCheckboxes.append(self.fridayButton)
-                        self.allCheckboxes.append(self.saturdayButton)
-                        
-                        self.sundayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
-                        self.mondayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
-                        self.tuesdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
-                        self.wednesdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
-                        self.thursdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
-                        self.fridayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
-                        self.saturdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
-                        
-                        self.setWeekdayButtons()
-                    }
-                    
-                    if nil != self._weekdayListCellView {
-                        var bounds: CGRect = CGRect.zero
-                        bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
-                        bounds.size.width = tableView.bounds.size.width
-                        ret.bounds = bounds
-                        self._weekdayListCellView.frame = bounds
-                        ret.addSubview(self._weekdayListCellView)
-                    }
+                    case TableRows.WeekdayRow.rawValue:
+                        ret = self.handleWeekdayRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
 
-                case TableRows.ServiceBodyRow.rawValue:
-                    if nil == self._serviceBodyListCellView {
-                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
-                        self._serviceBodyListCellView.frame.size.height = self._serviceBodyLabel.frame.size.height
-                        self._serviceBodyListCellView.frame.size.width = self.view.bounds.size.width
-                        self._serviceBodyCheckboxContainerView.frame.size.width = self.view.bounds.size.width
-                        self._serviceBodyCheckboxContainerView.frame.size.height = 0
-                        self.populateServiceBodyContainer(inServiceBody: BMLTiOSLibTesterAppDelegate.libraryObject.hierarchicalServiceBodies, inContainerView: self._serviceBodyCheckboxContainerView)
-                        self._serviceBodyListCellView.frame.size.height += self._serviceBodyCheckboxContainerView.frame.size.height
+                    case TableRows.ServiceBodyRow.rawValue:
+                        ret = self.handleServiceBodyRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
+
+                    case TableRows.FormatRow.rawValue:
+                        ret = self.handleFormatRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
+                        
+                    default:
+                        break
                     }
-                    
-                    if nil != self._serviceBodyListCellView {
-                        var bounds: CGRect = CGRect.zero
-                        bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
-                        bounds.size.width = tableView.bounds.size.width
-                        ret.bounds = bounds
-                        self._serviceBodyListCellView.frame = bounds
-                        ret.addSubview(self._serviceBodyListCellView)
-                    }
-                    
-                case TableRows.FormatRow.rawValue:
-                    if nil == self._formatListCellView {
-                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
-                        self._formatListCellView.frame.size.height = self._formatLabel.frame.size.height
-                        self._formatListCellView.frame.size.width = self.view.bounds.size.width
-                        self._formatCheckboxContainerView.frame.size.width = self.view.bounds.size.width
-                        self._formatCheckboxContainerView.frame.size.height = 0
-                        self.populateFormatContainer(inContainerView: self._formatCheckboxContainerView)
-                        self._formatCheckboxContainerView.frame.size.height += self._formatCheckboxContainerView.frame.size.height
-                    }
-                    
-                    if nil != self._formatListCellView {
-                        var bounds: CGRect = CGRect.zero
-                        bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
-                        bounds.size.width = tableView.bounds.size.width
-                        ret.bounds = bounds
-                        self._formatListCellView.frame = bounds
-                        ret.addSubview(self._formatListCellView)
-                    }
-                
-                default:
-                    break
                 }
             }
         }
@@ -1091,6 +896,260 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
         return ret
     }
     
+    /* ################################################################## */
+    /**
+     */
+    func handleClearButtonRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell, reuseID: String) -> UITableViewCell {
+        var bounds: CGRect = CGRect.zero
+        bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
+        bounds.size.width = tableView.bounds.size.width
+        ret.bounds = bounds
+        if nil == self._clearButton {
+            self._clearButton = UIButton(frame: bounds)
+            self._clearButton.setTitle("Clear Search Criteria", for: UIControlState.normal)
+            self._clearButton.setTitleColor(UIColor(red: 0.5, green: 0.6, blue: 1, alpha: 1), for: UIControlState.normal)
+            self._clearButton.setTitleColor(UIColor.lightGray, for: UIControlState.disabled)
+            self._clearButton.addTarget(self, action: #selector(SearchViewController.clearButtonHit(_:)), for: UIControlEvents.touchUpInside)
+            self._clearButton.isEnabled = false
+            ret.addSubview(self._clearButton)
+        }
+        
+        return ret
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    func handleStartTimeRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell, reuseID: String) -> UITableViewCell {
+        if nil == self._startEndTimeContainerView {
+            _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+        }
+        
+        if nil != self._startEndTimeContainerView {
+            var bounds: CGRect = CGRect.zero
+            bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
+            bounds.size.width = tableView.bounds.size.width
+            self._startsAfterDatePicker.setValue(UIColor.white, forKey: "textColor")
+            self._endsBeforeDatePicker.setValue(UIColor.white, forKey: "textColor")
+            self._startsAfterSegmentedControlView.isEnabled = false
+            self._startsAfterDatePicker.isEnabled = false
+            self._endsBeforeDatePicker.isEnabled = false
+            ret.bounds = bounds
+            self._startEndTimeContainerView.frame = bounds
+            ret.addSubview(self._startEndTimeContainerView)
+        }
+        
+        return ret
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    func handleDurationRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell, reuseID: String) -> UITableViewCell {
+        if nil == self._durationSelectionContainer {
+            _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+        }
+        
+        if nil != self._durationSelectionContainer {
+            var bounds: CGRect = CGRect.zero
+            bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
+            bounds.size.width = tableView.bounds.size.width
+            self._durationTimePicker.setValue(UIColor.white, forKey: "textColor")
+            self._durationTypeSegmentedControl.isEnabled = false
+            self._durationTimePicker.isEnabled = false
+            ret.bounds = bounds
+            self._durationTimePicker.frame = bounds
+            ret.addSubview(self._durationSelectionContainer)
+        }
+        
+        return ret
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    func handleSearchStringRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell, reuseID: String) -> UITableViewCell {
+        if nil == self._stringSearchCellView {
+            _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+        }
+        
+        if nil != self._stringSearchCellView {
+            var bounds: CGRect = CGRect.zero
+            bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
+            bounds.size.width = tableView.bounds.size.width
+            ret.bounds = bounds
+            self._stringSearchCellView.frame = bounds
+            ret.addSubview(self._stringSearchCellView)
+        }
+        
+        return ret
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    func handleLocationRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell, reuseID: String) -> UITableViewCell {
+        if nil == self._locationRadiusCellView {
+            _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+        }
+        
+        if nil != self._locationRadiusCellView {
+            var bounds: CGRect = CGRect.zero
+            bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
+            bounds.size.width = tableView.bounds.size.width
+            ret.bounds = bounds
+            self._locationRadiusCellView.frame = bounds
+            ret.addSubview(self._locationRadiusCellView)
+        }
+        
+        return ret
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    func handleMapRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell, reuseID: String) -> UITableViewCell {
+        var bounds: CGRect = CGRect.zero
+        bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
+        bounds.size.width = tableView.bounds.size.width
+        ret.bounds = bounds
+        
+        let mapContainer = UIView(frame: bounds)
+        
+        if nil == self._mapView {
+            _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+            
+            if nil != self._mapView {
+                bounds.size.height -= self.mapRowExtraHeight
+                bounds.origin.y = self.mapRowExtraHeight
+                
+                self._mapView.frame = bounds
+                
+                bounds.size.height = 31
+                bounds.origin.y = 8
+                bounds.origin.x = 8
+                
+                self._useLocationSwitch = UISwitch(frame: bounds)
+                self._useLocationSwitch.isOn = false
+                self._useLocationSwitch.addTarget(self, action: #selector(SearchViewController.useLocationSwitchChanged(_:)), for: UIControlEvents.valueChanged)
+                mapContainer.addSubview(self._useLocationSwitch)
+                
+                bounds.origin.y = 8
+                bounds.origin.x = 61
+                bounds.size.height = 31
+                bounds.size.width = tableView.bounds.size.width - bounds.origin.x
+                self._useLocationLabel = UILabel(frame: bounds)
+                self._useLocationLabel.backgroundColor = UIColor.clear
+                self._useLocationLabel.textColor = UIColor.white
+                self._useLocationLabel.font = UIFont.boldSystemFont(ofSize: 17)
+                self._useLocationLabel.text = "Use Map Location:"
+                mapContainer.addSubview(self._useLocationLabel)
+                
+                let mapLocation = BMLTiOSLibTesterAppDelegate.libraryObject.defaultLocation
+                let span = MKCoordinateSpan(latitudeDelta: type(of: self).sMapSizeInDegrees, longitudeDelta: 0)
+                let newRegion: MKCoordinateRegion = MKCoordinateRegion(center: mapLocation, span: span)
+                self._mapView.setRegion(newRegion, animated: false)
+            }
+        }
+        
+        if nil != self._mapView {
+            mapContainer.addSubview(self._mapView)
+            ret.addSubview(mapContainer)
+        }
+        
+        return ret
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    func handleWeekdayRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell, reuseID: String) -> UITableViewCell {
+        if nil == self._weekdayListCellView {
+            _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+            
+            self.allCheckboxes.append(self.sundayButton)
+            self.allCheckboxes.append(self.mondayButton)
+            self.allCheckboxes.append(self.tuesdayButton)
+            self.allCheckboxes.append(self.wednesdayButton)
+            self.allCheckboxes.append(self.thursdayButton)
+            self.allCheckboxes.append(self.fridayButton)
+            self.allCheckboxes.append(self.saturdayButton)
+            
+            self.sundayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
+            self.mondayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
+            self.tuesdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
+            self.wednesdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
+            self.thursdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
+            self.fridayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
+            self.saturdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
+            
+            self.setWeekdayButtons()
+        }
+        
+        if nil != self._weekdayListCellView {
+            var bounds: CGRect = CGRect.zero
+            bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
+            bounds.size.width = tableView.bounds.size.width
+            ret.bounds = bounds
+            self._weekdayListCellView.frame = bounds
+            ret.addSubview(self._weekdayListCellView)
+        }
+        
+        return ret
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    func handleServiceBodyRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell, reuseID: String) -> UITableViewCell {
+        if nil == self._serviceBodyListCellView {
+            _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+            self._serviceBodyListCellView.frame.size.height = self._serviceBodyLabel.frame.size.height
+            self._serviceBodyListCellView.frame.size.width = self.view.bounds.size.width
+            self._serviceBodyCheckboxContainerView.frame.size.width = self.view.bounds.size.width
+            self._serviceBodyCheckboxContainerView.frame.size.height = 0
+            self.populateServiceBodyContainer(inServiceBody: BMLTiOSLibTesterAppDelegate.libraryObject.hierarchicalServiceBodies, inContainerView: self._serviceBodyCheckboxContainerView)
+            self._serviceBodyListCellView.frame.size.height += self._serviceBodyCheckboxContainerView.frame.size.height
+        }
+        
+        if nil != self._serviceBodyListCellView {
+            var bounds: CGRect = CGRect.zero
+            bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
+            bounds.size.width = tableView.bounds.size.width
+            ret.bounds = bounds
+            self._serviceBodyListCellView.frame = bounds
+            ret.addSubview(self._serviceBodyListCellView)
+        }
+        
+        return ret
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    func handleFormatRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell, reuseID: String) -> UITableViewCell {
+        if nil == self._formatListCellView {
+            _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+            self._formatListCellView.frame.size.height = self._formatLabel.frame.size.height
+            self._formatListCellView.frame.size.width = self.view.bounds.size.width
+            self._formatCheckboxContainerView.frame.size.width = self.view.bounds.size.width
+            self._formatCheckboxContainerView.frame.size.height = 0
+            self.populateFormatContainer(inContainerView: self._formatCheckboxContainerView)
+            self._formatCheckboxContainerView.frame.size.height += self._formatCheckboxContainerView.frame.size.height
+        }
+        
+        if nil != self._formatListCellView {
+            var bounds: CGRect = CGRect.zero
+            bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
+            bounds.size.width = tableView.bounds.size.width
+            ret.bounds = bounds
+            self._formatListCellView.frame = bounds
+            ret.addSubview(self._formatListCellView)
+        }
+        
+        return ret
+    }
+
     // MARK: - UITextFieldDelegate Handlers -
     
     /* ################################################################## */
