@@ -853,42 +853,39 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
         if let reuseID = reuseIDs[indexPath.row] {
             ret = tableView.dequeueReusableCell(withIdentifier: reuseIDs[indexPath.row]!)
             
-            if nil == ret {
-                ret = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: reuseID)
-                if nil != ret {
-                    ret.backgroundColor = UIColor.clear
+            if nil == ret, ret = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: reuseID) {
+                ret.backgroundColor = UIColor.clear
+                
+                switch indexPath.row {
+                case TableRows.ClearButtonRow.rawValue:
+                    ret = self.handleClearButtonRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
+
+                case TableRows.StartEndTimeRow.rawValue:
+                    ret = self.handleStartTimeRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
+
+                case TableRows.DurationTimeRow.rawValue:
+                    ret = self.handleDurationRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
+
+                case TableRows.SearchStringRow.rawValue:
+                    ret = self.handleSearchStringRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
+
+                case TableRows.LocationRadiusRow.rawValue:
+                    ret = self.handleLocationRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
                     
-                    switch indexPath.row {
-                    case TableRows.ClearButtonRow.rawValue:
-                        ret = self.handleClearButtonRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
+                case TableRows.MapRow.rawValue:
+                    ret = self.handleMapRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
 
-                    case TableRows.StartEndTimeRow.rawValue:
-                        ret = self.handleStartTimeRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
+                case TableRows.WeekdayRow.rawValue:
+                    ret = self.handleWeekdayRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
 
-                    case TableRows.DurationTimeRow.rawValue:
-                        ret = self.handleDurationRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
+                case TableRows.ServiceBodyRow.rawValue:
+                    ret = self.handleServiceBodyRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
 
-                    case TableRows.SearchStringRow.rawValue:
-                        ret = self.handleSearchStringRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
-
-                    case TableRows.LocationRadiusRow.rawValue:
-                        ret = self.handleLocationRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
-                        
-                    case TableRows.MapRow.rawValue:
-                        ret = self.handleMapRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
-
-                    case TableRows.WeekdayRow.rawValue:
-                        ret = self.handleWeekdayRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
-
-                    case TableRows.ServiceBodyRow.rawValue:
-                        ret = self.handleServiceBodyRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
-
-                    case TableRows.FormatRow.rawValue:
-                        ret = self.handleFormatRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
-                        
-                    default:
-                        break
-                    }
+                case TableRows.FormatRow.rawValue:
+                    ret = self.handleFormatRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
+                    
+                default:
+                    break
                 }
             }
         }

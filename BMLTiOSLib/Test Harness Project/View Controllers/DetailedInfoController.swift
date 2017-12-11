@@ -180,95 +180,13 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
                     
                     switch indexPath.row {
                     case TableRows.FormatRow.rawValue:
-                        if nil == self._formatCellView {
-                            _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
-                        }
-                        
-                        if nil != self._formatCellView {
-                            var bounds: CGRect = tableView.bounds
-                            bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
-                            self._formatCellView.bounds = bounds
-                            self._formatCellView.frame = bounds
-                            ret.frame = bounds
-                            ret.bounds = bounds
-                            ret.addSubview(self._formatCellView)
-                        }
-                        
+                        ret = self.handleFormatRow(tableView, indexPath: indexPath, ret: ret)
+
                     case TableRows.LoginRow.rawValue:
-                        var bounds: CGRect = tableView.bounds
-                        bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
-                        ret.frame = bounds
-                        ret.bounds = bounds
-                        ret.backgroundColor = UIColor.clear
-                        
-                        if BMLTiOSLibTesterAppDelegate.libraryObject.isAdminAvailable {
-                            if !BMLTiOSLibTesterAppDelegate.libraryObject.isAdminLoggedIn {
-                                if nil != self.loginButtonLoggedIn {
-                                    self.loginButtonLoggedIn.removeFromSuperview()
-                                    self.loginButtonLoggedIn = nil
-                                }
-                                
-                                if nil == self._loginCellView {
-                                    _ = UINib(nibName: "DetailLoginTableCellView", bundle: nil).instantiate(withOwner: self, options: nil)[0]
-                                }
-                                
-                                if nil != self._loginCellView {
-                                    self._loginCellView.bounds = bounds
-                                    self._loginCellView.frame = bounds
-                                    ret.addSubview(self._loginCellView)
-                                }
-                            } else {
-                                if nil != self._loginCellView {
-                                    self.loginIDLabel.removeFromSuperview()
-                                    self.loginIDLabel = nil
-                                    self.loginIDTextField.removeFromSuperview()
-                                    self.loginIDTextField = nil
-                                    self.passwordLabel.removeFromSuperview()
-                                    self.passwordLabel = nil
-                                    self.passwordTextField.removeFromSuperview()
-                                    self.passwordTextField = nil
-                                    self.loginButton.removeFromSuperview()
-                                    self.loginButton = nil
-                                    self._loginCellView.removeFromSuperview()
-                                    self._loginCellView = nil
-                                }
-                                
-                                if nil == self.loginButtonLoggedIn {
-                                    self.loginButtonLoggedIn = UIButton(frame: bounds)
-                                    if nil != self.loginButtonLoggedIn {
-                                        self.loginButtonLoggedIn.setTitle("LOG OUT", for: UIControlState.normal)
-                                        self.loginButtonLoggedIn.setTitleColor(self.view.tintColor, for: UIControlState.normal)
-                                        self.loginButtonLoggedIn.addTarget(self, action: #selector(DetailedInfoController.loginButtonHit(_:)), for: UIControlEvents.touchUpInside)
-                                        ret.addSubview(self.loginButtonLoggedIn)
-                                    }
-                                }
-                            }
-                        }
+                        ret = self.handleLoginRow(tableView, indexPath: indexPath, ret: ret)
 
                     case TableRows.LocationRow.rawValue:
-                        if nil == self._mapView {
-                            _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
-                        }
-                        
-                        if nil != self._mapView {
-                            var bounds: CGRect = tableView.bounds
-                            bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
-                            self._mapView.bounds = bounds
-                            self._mapView.frame = bounds
-                            ret.frame = bounds
-                            ret.bounds = bounds
-                            
-                            if nil != BMLTiOSLibTesterAppDelegate.libraryObject {
-                                let mapLocation = BMLTiOSLibTesterAppDelegate.libraryObject.defaultLocation
-                                let span = MKCoordinateSpan(latitudeDelta: type(of: self).sMapSizeInDegrees, longitudeDelta: 0)
-                                let newRegion: MKCoordinateRegion = MKCoordinateRegion(center: mapLocation, span: span)
-                                self._mapView.setRegion(newRegion, animated: false)
-                                self.mapMarkerAnnotation = BMLTiOSLibTesterAnnotation(coordinate: mapLocation)
-                                self._mapView.addAnnotation(self.mapMarkerAnnotation)
-                            }
-                            
-                            ret.addSubview(self._mapView)
-                        }
+                        ret = self.handleLocationRow(tableView, indexPath: indexPath, ret: ret)
                         
                     default:
                         break
@@ -280,6 +198,115 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
         return ret
     }
     
+    /* ################################################################## */
+    /**
+     */
+    func handleFormatRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell) -> UITableViewCell {
+        if nil == self._formatCellView {
+            _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+        }
+        
+        if nil != self._formatCellView {
+            var bounds: CGRect = tableView.bounds
+            bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
+            self._formatCellView.bounds = bounds
+            self._formatCellView.frame = bounds
+            ret.frame = bounds
+            ret.bounds = bounds
+            ret.addSubview(self._formatCellView)
+        }
+
+        return ret
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    func handleLoginRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell) -> UITableViewCell {
+        var bounds: CGRect = tableView.bounds
+        bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
+        ret.frame = bounds
+        ret.bounds = bounds
+        ret.backgroundColor = UIColor.clear
+        
+        if BMLTiOSLibTesterAppDelegate.libraryObject.isAdminAvailable {
+            if !BMLTiOSLibTesterAppDelegate.libraryObject.isAdminLoggedIn {
+                if nil != self.loginButtonLoggedIn {
+                    self.loginButtonLoggedIn.removeFromSuperview()
+                    self.loginButtonLoggedIn = nil
+                }
+                
+                if nil == self._loginCellView {
+                    _ = UINib(nibName: "DetailLoginTableCellView", bundle: nil).instantiate(withOwner: self, options: nil)[0]
+                }
+                
+                if nil != self._loginCellView {
+                    self._loginCellView.bounds = bounds
+                    self._loginCellView.frame = bounds
+                    ret.addSubview(self._loginCellView)
+                }
+            } else {
+                if nil != self._loginCellView {
+                    self.loginIDLabel.removeFromSuperview()
+                    self.loginIDLabel = nil
+                    self.loginIDTextField.removeFromSuperview()
+                    self.loginIDTextField = nil
+                    self.passwordLabel.removeFromSuperview()
+                    self.passwordLabel = nil
+                    self.passwordTextField.removeFromSuperview()
+                    self.passwordTextField = nil
+                    self.loginButton.removeFromSuperview()
+                    self.loginButton = nil
+                    self._loginCellView.removeFromSuperview()
+                    self._loginCellView = nil
+                }
+                
+                if nil == self.loginButtonLoggedIn {
+                    self.loginButtonLoggedIn = UIButton(frame: bounds)
+                    if nil != self.loginButtonLoggedIn {
+                        self.loginButtonLoggedIn.setTitle("LOG OUT", for: UIControlState.normal)
+                        self.loginButtonLoggedIn.setTitleColor(self.view.tintColor, for: UIControlState.normal)
+                        self.loginButtonLoggedIn.addTarget(self, action: #selector(DetailedInfoController.loginButtonHit(_:)), for: UIControlEvents.touchUpInside)
+                        ret.addSubview(self.loginButtonLoggedIn)
+                    }
+                }
+            }
+        }
+        
+        return ret
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    func handleLocationRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell) -> UITableViewCell {
+        if nil == self._mapView {
+            _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+        }
+        
+        if nil != self._mapView {
+            var bounds: CGRect = tableView.bounds
+            bounds.size.height = self.tableView(tableView, heightForRowAt: indexPath)
+            self._mapView.bounds = bounds
+            self._mapView.frame = bounds
+            ret.frame = bounds
+            ret.bounds = bounds
+            
+            if nil != BMLTiOSLibTesterAppDelegate.libraryObject {
+                let mapLocation = BMLTiOSLibTesterAppDelegate.libraryObject.defaultLocation
+                let span = MKCoordinateSpan(latitudeDelta: type(of: self).sMapSizeInDegrees, longitudeDelta: 0)
+                let newRegion: MKCoordinateRegion = MKCoordinateRegion(center: mapLocation, span: span)
+                self._mapView.setRegion(newRegion, animated: false)
+                self.mapMarkerAnnotation = BMLTiOSLibTesterAnnotation(coordinate: mapLocation)
+                self._mapView.addAnnotation(self.mapMarkerAnnotation)
+            }
+            
+            ret.addSubview(self._mapView)
+        }
+        
+        return ret
+    }
+
     /* ################################################################## */
     /**
      */
