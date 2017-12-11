@@ -200,7 +200,9 @@ NICE TO HAVE
 
 CHANGELIST
 ----------
-***Version 1.1.3* ** *- TBD*
+***Version 1.1.3* ** *- December 10, 2017*
+
+- This is actually an "interim" version that needed to be created in order to allow me to work with Cocoapods.
 
 ***Version 1.1.2* ** *- December 5, 2017*
 
