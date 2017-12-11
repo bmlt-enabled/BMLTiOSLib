@@ -4,7 +4,7 @@
 //
 //  Created by MAGSHARE
 //
-//  https://bmlt.magshare.net/bmltioslib/
+//  https: //bmlt.magshare.net/bmltioslib/
 //
 //  This software is licensed under the MIT License.
 //  Copyright (c) 2017 MAGSHARE
@@ -53,7 +53,7 @@ extension String {
     
     /* ################################################################## */
     /**
-     The following function comes from this: http://stackoverflow.com/a/27736118/879365
+     The following function comes from this: http: //stackoverflow.com/a/27736118/879365
      
      This extension function cleans up a URI string.
      
@@ -70,7 +70,7 @@ extension String {
     
     /* ################################################################## */
     /**
-     The following function comes from this: http://stackoverflow.com/a/27736118/879365
+     The following function comes from this: http: //stackoverflow.com/a/27736118/879365
      
      This extension function creates a URI query string from given parameters.
      
@@ -78,21 +78,17 @@ extension String {
      
      - returns: a String, with the parameter list.
      */
-    static func queryStringFromParameters(_ parameters: Dictionary<String,String>) -> String? {
-        if (parameters.count == 0)
-        {
+    static func queryStringFromParameters(_ parameters: [String: String]) -> String? {
+        if parameters.isEmpty {
             return nil
         }
-        var queryString : String? = nil
+        var queryString: String? = nil
         for (key, value) in parameters {
             if let encodedKey = key.URLEncodedString() {
                 if let encodedValue = value.URLEncodedString() {
-                    if queryString == nil
-                    {
+                    if queryString == nil {
                         queryString = "?"
-                    }
-                    else
-                    {
+                    } else {
                         queryString! += "&"
                     }
                     queryString! += encodedKey + "=" + encodedValue
@@ -107,7 +103,7 @@ extension String {
      "Cleans" a URI
      
      - returns: an implicitly unwrapped optional String. This is the given URI, "cleaned up."
-     "http[s]://" may be prefixed.
+     "http[s]: //" may be prefixed.
      */
     func cleanURI() -> String! {
         return self.cleanURI(sslRequired: false)
@@ -120,23 +116,22 @@ extension String {
      - parameter sslRequired: If true, then we insist on SSL.
      
      - returns: an implicitly unwrapped optional String. This is the given URI, "cleaned up."
-     "http[s]://" may be prefixed.
+     "http[s]: //" may be prefixed.
      */
     func cleanURI(sslRequired: Bool) -> String! {
         var ret: String! = self.URLEncodedString()
         
-        
         // Very kludgy way of checking for an HTTPS URI.
-        let wasHTTP: Bool = ret.lowercased().beginsWith("http://")
-        let wasHTTPS: Bool = ret.lowercased().beginsWith("https://")
+        let wasHTTP: Bool = ret.lowercased().beginsWith("http: //")
+        let wasHTTPS: Bool = ret.lowercased().beginsWith("https: //")
         
         // Yeah, this is pathetic, but it's quick, simple, and works a charm.
-        ret = ret.replacingOccurrences(of: "^http[s]{0,1}://", with: "", options: NSString.CompareOptions.regularExpression)
+        ret = ret.replacingOccurrences(of: "^http[s]{0,1}: //", with: "", options: NSString.CompareOptions.regularExpression)
         
         if wasHTTPS || (sslRequired && !wasHTTP && !wasHTTPS) {
-            ret = "https://" + ret
+            ret = "https: //" + ret
         } else {
-            ret = "http://" + ret
+            ret = "http: //" + ret
         }
         
         return ret
@@ -148,9 +143,9 @@ extension String {
 /**
     This is a protocol for a data source that defines a "send and call back" structure.
 */
-protocol BMLTCommunicatorDataSourceProtocol {
+protocol BMLTCommunicatorDataSourceProtocol: class {
     /** If this is set to true, then errors are ignored. */
-    var suppressErrors:Bool { get set }
+    var suppressErrors: Bool { get set }
     
     /* ################################################################## */
     /**
@@ -163,14 +158,14 @@ protocol BMLTCommunicatorDataSourceProtocol {
     
         - returns: a Bool. True, if the call was successfully initiated.
     */
-    func callURI(_ inCommunicator: BMLTCommunicator, inURIAsAString: String!, inCompletionBlock: BMLTCommunicator.requestCompletionBlock!) -> Bool
+    func callURI(_ inCommunicator: BMLTCommunicator, inURIAsAString: String!, inCompletionBlock: BMLTCommunicator.RequestCompletionBlock!) -> Bool
 }
 
 /* ###################################################################################################################################### */
 /**
     This defines a protocol for a communicator delegate, which receives the responses.
 */
-protocol BMLTCommunicatorDataSinkProtocol {
+protocol BMLTCommunicatorDataSinkProtocol: class {
     /* ################################################################## */
     /**
         The response callback.
@@ -196,11 +191,11 @@ protocol BMLTCommunicatorDataSinkProtocol {
  throughout our administration duties. This class is instantiated once by the App Delegate, and holds the session open.
  
  This class maintains a dictionary of completion blocks that it uses to forward server responses to the users of this class.
- User instances need to define a completion block/callback, in the requestCompletionBlock format. When they call a URL with
+ User instances need to define a completion block/callback, in the RequestCompletionBlock format. When they call a URL with
  this class, they provide this completion block. When the class instance gets the response, it forwards the data as an NSData
  instance to the completion block.
  */
-class BMLTSession : NSObject, URLSessionDataDelegate, BMLTCommunicatorDataSourceProtocol {
+class BMLTSession: NSObject, URLSessionDataDelegate, BMLTCommunicatorDataSourceProtocol {
     
     /* ################################################################## */
     // MARK: - Nested Classes -
@@ -210,7 +205,7 @@ class BMLTSession : NSObject, URLSessionDataDelegate, BMLTCommunicatorDataSource
      */
     class BMLTSessionTaskData {
         /** This is the callback for this task. */
-        var block: BMLTCommunicator.requestCompletionBlock! = nil
+        var block: BMLTCommunicator.RequestCompletionBlock! = nil
         /** This is a data property that we build up as we get new data in. */
         var data: Data
         
@@ -220,7 +215,7 @@ class BMLTSession : NSObject, URLSessionDataDelegate, BMLTCommunicatorDataSource
          
          - parameter block: This is the completion block.
          */
-        init(block: BMLTCommunicator.requestCompletionBlock!) {
+        init(block: BMLTCommunicator.RequestCompletionBlock!) {
             self.block = block
             self.data = Data()
         }
@@ -260,7 +255,7 @@ class BMLTSession : NSObject, URLSessionDataDelegate, BMLTCommunicatorDataSource
      */
     func disconnectSession() {
         self.myCurrentTask = nil
-        if(self.isSessionConnected()) {
+        if self.isSessionConnected() {
             self.isSSL = false
             self.mySession.reset(completionHandler: {})
         }
@@ -289,7 +284,7 @@ class BMLTSession : NSObject, URLSessionDataDelegate, BMLTCommunicatorDataSource
         if inSession == self.mySession {  // Make sure this is us.
             if (nil != inError) && !self.suppressErrors {   // We don't display the error if we have been asked not to.
                 if nil != self.myCurrentTask {
-                    if let callback: BMLTCommunicator.requestCompletionBlock = self.myCurrentTask!.block {
+                    if let callback: BMLTCommunicator.RequestCompletionBlock = self.myCurrentTask!.block {
                         self.myCurrentTask = nil
                         callback(nil, inError)
                     } else {
@@ -312,8 +307,7 @@ class BMLTSession : NSObject, URLSessionDataDelegate, BMLTCommunicatorDataSource
         if (inSession == self.mySession) && (nil != self.myCurrentTask) {  // Make sure this is us.
             // This weird dance is because there's funky stuff going on under the hood, and this
             // will ensure that we have a separate, new copy of the data.
-            didReceive.withUnsafeBytes {
-                (bytes: UnsafePointer<CChar>)->Void in
+            didReceive.withUnsafeBytes {(bytes: UnsafePointer<CChar>) -> Void in
                 let myDataObject: Data = Data(bytes: bytes, count: didReceive.underestimatedCount)
                 self.myCurrentTask.data.append(myDataObject)
             }
@@ -332,13 +326,13 @@ class BMLTSession : NSObject, URLSessionDataDelegate, BMLTCommunicatorDataSource
     func urlSession(_ inSession: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         if (inSession == self.mySession) && (nil != self.myCurrentTask) {  // Make sure this is us.
             if (nil != error) && !self.suppressErrors {   // We don't display the error if we have been asked not to.
-                if let callback: BMLTCommunicator.requestCompletionBlock = self.myCurrentTask!.block {
+                if let callback: BMLTCommunicator.RequestCompletionBlock = self.myCurrentTask!.block {
                     self.myCurrentTask = nil
                     callback(nil, error)
                 }
             } else {
                 if nil != self.myCurrentTask {
-                    if let callback: BMLTCommunicator.requestCompletionBlock = self.myCurrentTask?.block {
+                    if let callback: BMLTCommunicator.RequestCompletionBlock = self.myCurrentTask?.block {
                         if let data = self.myCurrentTask?.data {
                             self.myCurrentTask = nil
                             do {    // Extract a usable object tree from the given JSON data.
@@ -367,9 +361,9 @@ class BMLTSession : NSObject, URLSessionDataDelegate, BMLTCommunicatorDataSource
      
      - returns: a Bool. True, if the call was successfully initiated.
      */
-    func callURI(_ inCommunicator: BMLTCommunicator, inURIAsAString: String!, inCompletionBlock: BMLTCommunicator.requestCompletionBlock!) -> Bool {
+    func callURI(_ inCommunicator: BMLTCommunicator, inURIAsAString: String!, inCompletionBlock: BMLTCommunicator.RequestCompletionBlock!) -> Bool {
         // If we did not already have a session established, we set one up.
-        if(nil == self.mySession) {
+        if nil == self.mySession {
             self.isSSL = false
             self.mySession = Foundation.URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
         }
@@ -381,7 +375,7 @@ class BMLTSession : NSObject, URLSessionDataDelegate, BMLTCommunicatorDataSource
 
         if let url = URL(string: uriString) {
             // Assuming we have a completion block and a URI, we will actually try to get a version from the server (determine its validity).
-            if((nil == self.myCurrentTask) && (nil != inCompletionBlock) && (nil != inURIAsAString) && self.isSessionConnected()) {
+            if (nil == self.myCurrentTask) && (nil != inCompletionBlock) && (nil != inURIAsAString) && self.isSessionConnected() {
                 let dataTask: URLSessionTask = self.mySession.dataTask(with: url)
                 self.myCurrentTask = BMLTSessionTaskData(block: inCompletionBlock)
                 ret = true
@@ -412,7 +406,7 @@ class BMLTSession : NSObject, URLSessionDataDelegate, BMLTCommunicatorDataSource
             if challenge.previousFailureCount > 0 {
                 completionHandler(Foundation.URLSession.AuthChallengeDisposition.cancelAuthenticationChallenge, nil)
             } else {
-                let credential = URLCredential(user:"username", password:"password", persistence: .forSession)
+                let credential = URLCredential(user: "username", password: "password", persistence: .forSession)
                 completionHandler(Foundation.URLSession.AuthChallengeDisposition.useCredential, credential)
             }
         }
@@ -431,8 +425,8 @@ class BMLTSession : NSObject, URLSessionDataDelegate, BMLTCommunicatorDataSource
         if challenge.previousFailureCount > 0 {
             completionHandler(Foundation.URLSession.AuthChallengeDisposition.cancelAuthenticationChallenge, nil)
         } else {
-            let credential = URLCredential(user:"username", password:"password", persistence: .forSession)
-            completionHandler(Foundation.URLSession.AuthChallengeDisposition.useCredential,credential)
+            let credential = URLCredential(user: "username", password: "password", persistence: .forSession)
+            completionHandler(Foundation.URLSession.AuthChallengeDisposition.useCredential, credential)
         }
     }
 }
@@ -462,25 +456,25 @@ class BMLTCommunicator {
         - parameter inData:  The Data returned.
         - parameter inError: Any error that ocurred. Nil, if no error.
     */
-    typealias requestCompletionBlock = (_ inData: Any?, _ inError: Error?)->Void
+    typealias RequestCompletionBlock = (_ inData: Any?, _ inError: Error?) -> Void
     
     /* ################################################################## */
     // MARK: - Fixed Data Members -
     /* ################################################################## */
     /** This is the data source for the call. */
-    let dataSource:BMLTCommunicatorDataSourceProtocol!
+    let dataSource: BMLTCommunicatorDataSourceProtocol!
     /** This is the completion handler to be called when the URL is called. */
-    let delegate:BMLTCommunicatorDataSinkProtocol!
+    weak var delegate: BMLTCommunicatorDataSinkProtocol!
     /** This is the completion handler to be called when the URL is called. */
-    let uriAsAString:String!
+    let uriAsAString: String!
     /** This is any extra data the caller may want passed to the callback. */
-    let refCon:AnyObject?
+    let refCon: AnyObject?
     
     // MARK: - Dynamic Data Members -
     /** This contains any error from the call. */
-    var error:Error!
+    var error: Error!
     /** This contains the data response (if any). */
-    var data:Data!
+    var data: Data!
     
     /* ################################################################## */
     // MARK: - Instance Methods -
@@ -499,7 +493,7 @@ class BMLTCommunicator {
                 is so we have a bit more flexibility. We don't need to rewrite that method if we
                 don't want to. Since the parameter has a default, it's not an issue to ignore it.
     */
-    init(_ inURI:String, dataSource inDataSource:BMLTCommunicatorDataSourceProtocol, delegate inDelegate:BMLTCommunicatorDataSinkProtocol, refCon inRefCon: AnyObject? = nil, executeImmediately inExecute: Bool = true) {
+    init(_ inURI: String, dataSource inDataSource: BMLTCommunicatorDataSourceProtocol, delegate inDelegate: BMLTCommunicatorDataSinkProtocol!, refCon inRefCon: AnyObject? = nil, executeImmediately inExecute: Bool = true) {
         self.uriAsAString = inURI
         self.dataSource = inDataSource
         self.delegate = inDelegate
@@ -507,7 +501,7 @@ class BMLTCommunicator {
         self.data = nil
         self.error = nil
         
-        if(inExecute) {
+        if inExecute {
             self.execute()
         }
     }
@@ -529,7 +523,7 @@ class BMLTCommunicator {
     */
     func handleResponseFromHandler(_ inData: Any, inError: Error?) {
         self.error = inError
-        if(nil != self.delegate) {
+        if nil != self.delegate {
             self.delegate.responseData(self, inResponseData: inData, inError: self.error, inRefCon: self.refCon)
         }
     }

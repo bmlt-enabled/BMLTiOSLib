@@ -34,8 +34,8 @@ import BMLTiOSLib
 /**
  */
 public class ConnectViewController: UIViewController, BMLTiOSLibDelegate, UITextViewDelegate {
-    var myTabController: TestTabController!    = nil
-    var weAreConnecting:Bool                   = false
+    var myTabController: TestTabController! = nil
+    var weAreConnecting: Bool               = false
 
     @IBOutlet weak var urlEditText: UITextField!
     @IBOutlet weak var resultText: UITextView!
@@ -129,9 +129,9 @@ public class ConnectViewController: UIViewController, BMLTiOSLibDelegate, UIText
     @IBAction func connectButtonHit(_ sender: UIButton) {
         if "CONNECT" == sender.title(for: UIControlState.normal) {
             self.wereConnecting()
-            (UIApplication.shared.delegate as! BMLTiOSLibTesterAppDelegate)._libraryObject = BMLTiOSLib(inRootServerURI: self.urlEditText.text!, inDelegate: self)
+            (UIApplication.shared.delegate as? BMLTiOSLibTesterAppDelegate)?._libraryObject = BMLTiOSLib(inRootServerURI: self.urlEditText.text!, inDelegate: self)
         } else {
-            (UIApplication.shared.delegate as! BMLTiOSLibTesterAppDelegate)._libraryObject = nil
+            (UIApplication.shared.delegate as? BMLTiOSLibTesterAppDelegate)?._libraryObject = nil
             self.wereNotConnected()
         }
     }
@@ -141,7 +141,7 @@ public class ConnectViewController: UIViewController, BMLTiOSLibDelegate, UIText
      */
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        self.myTabController = segue.destination as! TestTabController
+        self.myTabController = segue.destination as? TestTabController
     }
     
     // MARK: - BMLTiOSLibDelegate Methods -
@@ -334,4 +334,3 @@ public class ConnectViewController: UIViewController, BMLTiOSLibDelegate, UIText
         self.myTabController.updateDeletedMeeting(deleteMeetingSuccessful)
     }
 }
-

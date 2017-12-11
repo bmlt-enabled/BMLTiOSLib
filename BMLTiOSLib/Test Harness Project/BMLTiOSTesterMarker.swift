@@ -34,7 +34,7 @@
 import MapKit
 
 /** Points to a meeting JSON element. */
-typealias BMLTiOSLibTesterMeeting = [String:String]
+typealias BMLTiOSLibTesterMeeting = [String: String]
 /** Points to an array of JSON meetings. */
 typealias BMLTiOSLibTesterMeetingList = [BMLTiOSLibTesterMeeting]
 
@@ -43,7 +43,7 @@ typealias BMLTiOSLibTesterMeetingList = [BMLTiOSLibTesterMeeting]
 /**
  This handles the marker annotation.
  */
-class BMLTiOSLibTesterAnnotation : NSObject, MKAnnotation, NSCoding {
+class BMLTiOSLibTesterAnnotation: NSObject, MKAnnotation, NSCoding {
     let sCoordinateObjectKey: String = "BMLTiOSLibTesterAnnotation_Coordinate"
     let sMeetingsObjectKey: String = "BMLTiOSLibTesterAnnotation_Meetings"
 
@@ -80,8 +80,8 @@ class BMLTiOSLibTesterAnnotation : NSObject, MKAnnotation, NSCoding {
      - parameter aDecoder: The coder that will contain the coordinates.
      */
     @objc required init?(coder aDecoder: NSCoder) {
-        self.meetings = aDecoder.decodeObject(forKey: self.sMeetingsObjectKey) as! BMLTiOSLibTesterMeetingList
-        if let tempCoordinate = aDecoder.decodeObject(forKey: self.sCoordinateObjectKey) as! [NSNumber]! {
+        self.meetings = (aDecoder.decodeObject(forKey: self.sMeetingsObjectKey) as? BMLTiOSLibTesterMeetingList)!
+        if let tempCoordinate = aDecoder.decodeObject(forKey: self.sCoordinateObjectKey) as? [NSNumber]! {
             self.coordinate.longitude = tempCoordinate[0].doubleValue
             self.coordinate.latitude = tempCoordinate[1].doubleValue
         }
@@ -107,7 +107,7 @@ class BMLTiOSLibTesterAnnotation : NSObject, MKAnnotation, NSCoding {
 /**
  This handles our map marker.
  */
-class BMLTiOSLibTesterMarker : MKAnnotationView {
+class BMLTiOSLibTesterMarker: MKAnnotationView {
     let sAnnotationObjectKey: String = "BMLTiOSLibTesterMarker_Annotation"
     let sRegularAnnotationOffsetUp: CGFloat     = 24; /**< This is how many display units to shift the annotation view up. */
     let sRegularAnnotationOffsetRight: CGFloat  = 5;  /**< This is how many display units to shift the annotation view right. */
@@ -148,9 +148,7 @@ class BMLTiOSLibTesterMarker : MKAnnotationView {
      This gives us a shortcut to the annotation prpoerty.
      */
     var coordinate: CLLocationCoordinate2D {
-        get {
-            return (self.annotation?.coordinate)!
-        }
+        return (self.annotation?.coordinate)!
     }
     
     /* ################################################################## */
@@ -158,9 +156,7 @@ class BMLTiOSLibTesterMarker : MKAnnotationView {
      This gives us a shortcut to the annotation prpoerty.
      */
     var meetings: BMLTiOSLibTesterMeetingList {
-        get {
-            return ((self.annotation as! BMLTiOSLibTesterAnnotation).meetings)
-        }
+        return ((self.annotation as? BMLTiOSLibTesterAnnotation).meetings)
     }
     
     // MARK: - Instance Methods -
@@ -171,7 +167,7 @@ class BMLTiOSLibTesterMarker : MKAnnotationView {
      - parameter annotation: The annotation that represents this instance.
      - parameter draggable: If true, then this will be draggable (ignored if the annotation has more than one meeting).
      */
-    init(annotation: MKAnnotation?, draggable : Bool, reuseID: String?) {
+    init(annotation: MKAnnotation?, draggable: Bool, reuseID: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseID)
         self.isDraggable = draggable
         self.backgroundColor = UIColor.clear
@@ -283,7 +279,7 @@ class BMLTiOSLibTesterMarker : MKAnnotationView {
      */
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.annotation = aDecoder.decodeObject(forKey: self.sAnnotationObjectKey) as! BMLTiOSLibTesterAnnotation
+        self.annotation = aDecoder.decodeObject(forKey: self.sAnnotationObjectKey) as? BMLTiOSLibTesterAnnotation
     }
     
     /* ################################################################## */

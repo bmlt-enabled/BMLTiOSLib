@@ -112,8 +112,8 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     @IBOutlet weak var _durationSwitch: UISwitch!
     
     var allCheckboxes: [BMLTiOSLibCheckbox] = []
-    var serviceBodyMap: Dictionary<BMLTiOSLibCheckbox, BMLTiOSLibSearchCriteria.SelectableServiceBodyItem> = Dictionary<BMLTiOSLibCheckbox, BMLTiOSLibSearchCriteria.SelectableServiceBodyItem>()
-    var formatMap: [BMLTiOSLibCheckbox:BMLTiOSLibSearchCriteria.SelectableFormatItem] = [:]
+    var serviceBodyMap: [BMLTiOSLibCheckbox: BMLTiOSLibSearchCriteria.SelectableServiceBodyItem] = [:]
+    var formatMap: [BMLTiOSLibCheckbox: BMLTiOSLibSearchCriteria.SelectableFormatItem] = [:]
     var searchType: SearchType = .MeetingsAndFormats
     var meetingSearchResults: [BMLTiOSLibMeetingNode]! = nil
     var formatSearchResults: [BMLTiOSLibFormatNode]! = nil
@@ -126,16 +126,14 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     /**
      */
     var startTimeAsSeconds: Int? {
-        get {
-            if self._startTimeSwitch.isOn {
-                let date = self._startsAfterDatePicker.date
-                let hour = NSCalendar.current.component(Calendar.Component.hour, from: date)
-                let minute = NSCalendar.current.component(Calendar.Component.minute, from: date)
-                let ret = Int((hour * 3600) + (minute * 60))
-                return ret
-            } else {
-                return nil
-            }
+        if self._startTimeSwitch.isOn {
+            let date = self._startsAfterDatePicker.date
+            let hour = NSCalendar.current.component(Calendar.Component.hour, from: date)
+            let minute = NSCalendar.current.component(Calendar.Component.minute, from: date)
+            let ret = Int((hour * 3600) + (minute * 60))
+            return ret
+        } else {
+            return nil
         }
     }
     
@@ -143,16 +141,14 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     /**
      */
     var endTimeAsSeconds: Int? {
-        get {
-            if self._endTimeSwitch.isOn {
-                let date = self._endsBeforeDatePicker.date
-                let hour = NSCalendar.current.component(Calendar.Component.hour, from: date)
-                let minute = NSCalendar.current.component(Calendar.Component.minute, from: date)
-                let ret = Int((hour * 3600) + (minute * 60))
-                return ret
-            } else {
-                return nil
-            }
+        if self._endTimeSwitch.isOn {
+            let date = self._endsBeforeDatePicker.date
+            let hour = NSCalendar.current.component(Calendar.Component.hour, from: date)
+            let minute = NSCalendar.current.component(Calendar.Component.minute, from: date)
+            let ret = Int((hour * 3600) + (minute * 60))
+            return ret
+        } else {
+            return nil
         }
     }
     
@@ -160,16 +156,14 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     /**
      */
     var durationTimeAsSeconds: Int? {
-        get {
-            if self._durationSwitch.isOn {
-                let date = self._durationTimePicker.date
-                let hour = NSCalendar.current.component(Calendar.Component.hour, from: date)
-                let minute = NSCalendar.current.component(Calendar.Component.minute, from: date)
-                let ret = Int((hour * 3600) + (minute * 60))
-                return ret
-            } else {
-                return nil
-            }
+        if self._durationSwitch.isOn {
+            let date = self._durationTimePicker.date
+            let hour = NSCalendar.current.component(Calendar.Component.hour, from: date)
+            let minute = NSCalendar.current.component(Calendar.Component.minute, from: date)
+            let ret = Int((hour * 3600) + (minute * 60))
+            return ret
+        } else {
+            return nil
         }
     }
     
@@ -387,11 +381,9 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
             if nil != self._clearButton {
                 var enabled: Bool = !self._stringSearchTextEntry.text!.isEmpty
                 
-                for cb in self.allCheckboxes {
-                    if cb._selectionState != .Clear {
-                        enabled = true
-                        break
-                    }
+                for cb in self.allCheckboxes where cb._selectionState != .Clear {
+                    enabled = true
+                    break
                 }
                 
                 if nil != self.mapMarkerAnnotation {
@@ -614,10 +606,10 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
         super.prepare(for: segue, sender: sender)
         
         if segue.destination is MeetingSearchResultsViewController {
-            (segue.destination as! MeetingSearchResultsViewController).meetingSearchResults = self.meetingSearchResults
+            (segue.destination as? MeetingSearchResultsViewController).meetingSearchResults = self.meetingSearchResults
         } else {
             if segue.destination is FormatSearchResultsViewController {
-                (segue.destination as! FormatSearchResultsViewController).formatSearchResults = self.formatSearchResults
+                (segue.destination as? FormatSearchResultsViewController).formatSearchResults = self.formatSearchResults
             }
         }
     }
@@ -795,7 +787,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Got this tip from here: http://natecook.com/blog/2014/10/loopy-random-enum-ideas/
         var max: Int = 0
-        while let _ = TableRows(rawValue: max) { max += 1 }
+        while nil != TableRows(rawValue: max) { max += 1 }
         
         return max
     }
@@ -907,7 +899,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
                     
                 case TableRows.StartEndTimeRow.rawValue:
                     if nil == self._startEndTimeContainerView {
-                        let _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
                     }
                     
                     if nil != self._startEndTimeContainerView {
@@ -926,7 +918,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
                     
                 case TableRows.DurationTimeRow.rawValue:
                     if nil == self._durationSelectionContainer {
-                        let _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
                     }
                     
                     if nil != self._durationSelectionContainer {
@@ -943,7 +935,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
 
                 case TableRows.SearchStringRow.rawValue:
                     if nil == self._stringSearchCellView {
-                        let _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
                     }
                     
                     if nil != self._stringSearchCellView {
@@ -957,7 +949,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
                     
                 case TableRows.LocationRadiusRow.rawValue:
                     if nil == self._locationRadiusCellView {
-                        let _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
                     }
                     
                     if nil != self._locationRadiusCellView {
@@ -978,7 +970,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
                     let mapContainer = UIView(frame: bounds)
                     
                     if nil == self._mapView {
-                        let _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
                         
                         if nil != self._mapView {
                             bounds.size.height -= self.mapRowExtraHeight
@@ -1020,7 +1012,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
 
                 case TableRows.WeekdayRow.rawValue:
                     if nil == self._weekdayListCellView {
-                        let _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
                         
                         self.allCheckboxes.append(self.sundayButton)
                         self.allCheckboxes.append(self.mondayButton)
@@ -1052,7 +1044,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
 
                 case TableRows.ServiceBodyRow.rawValue:
                     if nil == self._serviceBodyListCellView {
-                        let _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
                         self._serviceBodyListCellView.frame.size.height = self._serviceBodyLabel.frame.size.height
                         self._serviceBodyListCellView.frame.size.width = self.view.bounds.size.width
                         self._serviceBodyCheckboxContainerView.frame.size.width = self.view.bounds.size.width
@@ -1072,7 +1064,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
                     
                 case TableRows.FormatRow.rawValue:
                     if nil == self._formatListCellView {
-                        let _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+                        _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
                         self._formatListCellView.frame.size.height = self._formatLabel.frame.size.height
                         self._formatListCellView.frame.size.width = self.view.bounds.size.width
                         self._formatCheckboxContainerView.frame.size.width = self.view.bounds.size.width
@@ -1117,7 +1109,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation.isKind(of: BMLTiOSLibTesterAnnotation.self) && self._useLocationSwitch.isOn {
             let reuseID = ""
-            let myAnnotation = annotation as! BMLTiOSLibTesterAnnotation
+            let myAnnotation = annotation as? BMLTiOSLibTesterAnnotation
             return BMLTiOSLibTesterMarker(annotation: myAnnotation, draggable: true, reuseID: reuseID)
         }
         

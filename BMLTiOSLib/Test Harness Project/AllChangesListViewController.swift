@@ -36,7 +36,7 @@ import BMLTiOSLib
 class AllChangesListViewController: BaseTestViewController {
     let checkboxRowHeight: CGFloat = 30
 
-    var changesObjects:[BMLTiOSLibChangeNode]! = nil
+    var changesObjects: [BMLTiOSLibChangeNode]! = nil
     var allCheckboxes: [BMLTiOSLibCheckbox] = []
     var checboxBeingHit: BMLTiOSLibCheckbox! = nil
 
@@ -57,7 +57,7 @@ class AllChangesListViewController: BaseTestViewController {
         
         let containerView = UIView(frame: scrollerBounds)
         
-        self.populateServiceBodyContainer(inServiceBody: BMLTiOSLibTesterAppDelegate.libraryObject.hierarchicalServiceBodies, inContainerView:containerView)
+        self.populateServiceBodyContainer(inServiceBody: BMLTiOSLibTesterAppDelegate.libraryObject.hierarchicalServiceBodies, inContainerView: containerView)
         
         self.serviceBodyScroller.addSubview(containerView)
         
@@ -109,11 +109,9 @@ class AllChangesListViewController: BaseTestViewController {
             fromDate = self.fromDatePicker.date
         }
         
-        for checkbox in self.allCheckboxes {
-            if checkbox.selectionState != .Clear {
-                if let sb1 = checkbox.extraData as? BMLTiOSLibServiceBodyContainer {
-                    serviceBodyID = sb1.item.id
-                }
+        for checkbox in self.allCheckboxes where checkbox.selectionState != .Clear {
+            if let sb1 = checkbox.extraData as? BMLTiOSLibServiceBodyContainer {
+                serviceBodyID = sb1.item.id
             }
         }
         

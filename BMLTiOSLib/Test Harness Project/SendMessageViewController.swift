@@ -75,7 +75,7 @@ public class SendMessageViewController: BaseTestViewController, UITextViewDelega
     /* ################################################################## */
     /**
      */
-    func closeUpShop(_ inAction : UIAlertAction) {
+    func closeUpShop(_ inAction: UIAlertAction) {
         _ = self.navigationController!.popViewController(animated: true)
     }
     

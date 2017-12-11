@@ -38,11 +38,10 @@ import BMLTiOSLib
 class BMLTiOSLibTesterAppDelegate: UIResponder, UIApplicationDelegate {
 
     static var libraryObject: BMLTiOSLib! {
-        get { return (UIApplication.shared.delegate as! BMLTiOSLibTesterAppDelegate)._libraryObject }
+        return (UIApplication.shared.delegate as? BMLTiOSLibTesterAppDelegate)._libraryObject
     }
     
     public var _libraryObject: BMLTiOSLib! = nil
     
     var window: UIWindow?
 }
-

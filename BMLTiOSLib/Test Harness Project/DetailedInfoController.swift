@@ -71,10 +71,8 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
         if BMLTiOSLibTesterAppDelegate.libraryObject.isAdminLoggedIn {
             var displayText: String = "We are logged into the Root Server as an administrator.\nWe have the indicated permissions for the following Service bodies:\n\n"
             
-            for sb in BMLTiOSLibTesterAppDelegate.libraryObject.serviceBodies {
-                if .None != sb.permissions {
-                    displayText += "    " + sb.name + " (\(sb.permissions))\n"
-                }
+            for sb in BMLTiOSLibTesterAppDelegate.libraryObject.serviceBodies where .None != sb.permissions {
+                displayText += "    " + sb.name + " (\(sb.permissions))\n"
             }
             
             self.resultsTextView.text = displayText
@@ -116,7 +114,7 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Got this tip from here: http://natecook.com/blog/2014/10/loopy-random-enum-ideas/
         var max: Int = 0
-        while let _ = TableRows(rawValue: max) { max += 1 }
+        while _ = TableRows(rawValue: max) { max += 1 }
         
         return max
     }
@@ -183,7 +181,7 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
                     switch indexPath.row {
                     case TableRows.FormatRow.rawValue:
                         if nil == self._formatCellView {
-                            let _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+                            _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
                         }
                         
                         if nil != self._formatCellView {
@@ -211,7 +209,7 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
                                 }
                                 
                                 if nil == self._loginCellView {
-                                    let _ = UINib(nibName: "DetailLoginTableCellView", bundle: nil).instantiate(withOwner: self, options: nil)[0]
+                                    _ = UINib(nibName: "DetailLoginTableCellView", bundle: nil).instantiate(withOwner: self, options: nil)[0]
                                 }
                                 
                                 if nil != self._loginCellView {
@@ -249,7 +247,7 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
 
                     case TableRows.LocationRow.rawValue:
                         if nil == self._mapView {
-                            let _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
+                            _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
                         }
                         
                         if nil != self._mapView {
@@ -297,7 +295,7 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
             text += format.name + "\n"
         }
         self._formatTextView.text = text
-        (self.view as! UITableView).reloadData()
+        (self.view as? UITableView).reloadData()
     }
     
     /* ################################################################## */
@@ -364,7 +362,7 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation.isKind(of: BMLTiOSLibTesterAnnotation.self) {
             let reuseID = ""
-            let myAnnotation = annotation as! BMLTiOSLibTesterAnnotation
+            let myAnnotation = annotation as? BMLTiOSLibTesterAnnotation
             return BMLTiOSLibTesterMarker(annotation: myAnnotation, draggable: true, reuseID: reuseID)
         }
         

@@ -4,7 +4,7 @@
 //
 //  Created by MAGSHARE
 //
-//  https://bmlt.magshare.net/bmltioslib/
+//  https: //bmlt.magshare.net/bmltioslib/
 //
 //  Created by MAGSHARE
 //
@@ -36,7 +36,7 @@ import BMLTiOSLib
 /**
  */
 class ChangeListViewController: BaseTestViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
-    var changesObjects:[BMLTiOSLibChangeNode]! = nil
+    var changesObjects: [BMLTiOSLibChangeNode]! = nil
     
     @IBOutlet weak var displayTableView: UITableView!
     
@@ -91,7 +91,7 @@ class ChangeListViewController: BaseTestViewController, UITableViewDelegate, UIT
         
         ret.frame = frame
         
-        var textColor:UIColor = isEditable ? UIColor.green : UIColor.white
+        var textColor: UIColor = isEditable ? UIColor.green : UIColor.white
         
         if isDeletedMeeting {
             textColor = isEditable ? UIColor.orange : UIColor.red
@@ -153,11 +153,11 @@ class ChangeListViewController: BaseTestViewController, UITableViewDelegate, UIT
             
             let alertController = UIAlertController(title: NSLocalizedString("Are You Sure?", comment: ""), message: message, preferredStyle: .alert)
             
-            let okAction = UIAlertAction(title: "Go For It!", style: UIAlertActionStyle.cancel, handler: {(_:UIAlertAction) in tableView.deselectRow(at: indexPath, animated: true);self.setMeetingToChange(self.changesObjects[indexPath.row], undelete: nil == afterMeeting)})
+            let okAction = UIAlertAction(title: "Go For It!", style: UIAlertActionStyle.cancel, handler: {(_: UIAlertAction) in tableView.deselectRow(at: indexPath, animated: true);self.setMeetingToChange(self.changesObjects[indexPath.row], undelete: nil == afterMeeting)})
             
             alertController.addAction(okAction)
             
-            let cancelAction = UIAlertAction(title: "Belay That Order!", style: UIAlertActionStyle.default, handler: {(_:UIAlertAction) in tableView.deselectRow(at: indexPath, animated: true)})
+            let cancelAction = UIAlertAction(title: "Belay That Order!", style: UIAlertActionStyle.default, handler: {(_: UIAlertAction) in tableView.deselectRow(at: indexPath, animated: true)})
             
             alertController.addAction(cancelAction)
             

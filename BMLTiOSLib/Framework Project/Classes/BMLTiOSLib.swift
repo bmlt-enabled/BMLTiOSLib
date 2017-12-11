@@ -372,7 +372,7 @@ import CoreLocation
  
  If the change was inappropriate for the meeting, the call will return false. If it was successful, the meeting's state will be reverted to that in the change record, but will not yet be sent to the server. You still need to call saveChanges().
  */
-public class BMLTiOSLib : NSObject {
+public class BMLTiOSLib: NSObject {
     /* ################################################################## */
     // MARK: Private Properties
     /* ################################################################## */
@@ -449,7 +449,7 @@ public class BMLTiOSLib : NSObject {
      - parameter inLoginWasSuccessful: A Bool, true, if the session is currently connected.
      */
     internal func loginWasSuccessful(_ inLoginWasSuccessful: Bool) {
-        guard let _ = self.delegate?.bmltLibInstance?(self, loginChangedTo: inLoginWasSuccessful) else { return }
+        guard nil != self.delegate?.bmltLibInstance?(self, loginChangedTo: inLoginWasSuccessful) else { return }
     }
     
     /* ################################################################## */
@@ -459,7 +459,7 @@ public class BMLTiOSLib : NSObject {
      - parameter inChanges: If successful, the meeting changes. If not, nil.
      */
     internal func meetingChangeComplete(_ inChanges: BMLTiOSLibChangedMeeting!) {
-        guard let _ = self.delegate?.bmltLibInstance?(self, adminMeetingChangeComplete: inChanges) else { return }
+        guard nil != self.delegate?.bmltLibInstance?(self, adminMeetingChangeComplete: inChanges) else { return }
     }
     
     /* ################################################################## */
@@ -469,7 +469,7 @@ public class BMLTiOSLib : NSObject {
      - parameter inWasSuccessful: A Bool, true, if the message send was successful.
      */
     internal func messageSentResponse(_ inWasSuccessful: Bool) {
-        guard let _ = self.delegate?.bmltLibInstance?(self, sendMessageSuccessful: inWasSuccessful) else { return }
+        guard nil != self.delegate?.bmltLibInstance?(self, sendMessageSuccessful: inWasSuccessful) else { return }
     }
     
     /* ################################################################## */
@@ -493,7 +493,7 @@ public class BMLTiOSLib : NSObject {
      
      - returns:  an object, either editable, or not.
      */
-    internal func generateProperMeetingObject(_ inSimpleMeetingDictionary: [String:String]) -> BMLTiOSLibMeetingNode {
+    internal func generateProperMeetingObject(_ inSimpleMeetingDictionary: [String: String]) -> BMLTiOSLibMeetingNode {
         var ret: BMLTiOSLibMeetingNode! = nil
         
         // If we are logged in, we extract the Service body from the meeting, then we check to see if we are an administrator or authorized editor for that Service body.
@@ -503,14 +503,10 @@ public class BMLTiOSLib : NSObject {
             if let sbID = inSimpleMeetingDictionary["service_body_bigint"] {
                 if let sbIDInt: Int = Int(sbID) {
                     // Go through our Service bodies until we come to the one we want.
-                    for sb in self.serviceBodies {
-                        if sb.id == sbIDInt {
-                            // Only admins or editors can change meetings.
-                            if sb.iCanEdit {
-                                ret = BMLTiOSLibEditableMeetingNode(inSimpleMeetingDictionary, inHandler: self)
-                                break
-                            }
-                        }
+                    for sb in self.serviceBodies where (sb.id == sbIDInt) && sb.iCanEdit {
+                        // Ony authorized users can edit.
+                        ret = BMLTiOSLibEditableMeetingNode(inSimpleMeetingDictionary, inHandler: self)
+                        break
                     }
                 }
             }
@@ -535,13 +531,13 @@ public class BMLTiOSLib : NSObject {
         if (nil != inSearchResultObject) && (0 < inSearchResultObject.count) {
             if newMeeting {
                 if let meetingObject = inSearchResultObject![0] as? BMLTiOSLibEditableMeetingNode {
-                    guard let _ = self.delegate?.bmltLibInstance?(self, newMeetingAdded: meetingObject) else { return }
+                    guard nil != self.delegate?.bmltLibInstance?(self, newMeetingAdded: meetingObject) else { return }
                 }
             } else {
-                guard let _ = self.delegate?.bmltLibInstance?(self, meetingSearchResults: inSearchResultObject) else { return }
+                guard nil != self.delegate?.bmltLibInstance?(self, meetingSearchResults: inSearchResultObject) else { return }
             }
         } else {
-            guard let _ = self.delegate?.bmltLibInstance?(self, meetingSearchResults: []) else { return }
+            guard nil != self.delegate?.bmltLibInstance?(self, meetingSearchResults: []) else { return }
         }
     }
     
@@ -559,12 +555,12 @@ public class BMLTiOSLib : NSObject {
                 formatList.append(self.getFormatByID(format.id))
             }
             
-            guard let _ = self.delegate?.bmltLibInstance?(self, formatSearchResults: formatList, isAllUsedFormats: self._communicationHandler._gettingAllUsedFormats) else {
+            guard nil != self.delegate?.bmltLibInstance?(self, formatSearchResults: formatList, isAllUsedFormats: self._communicationHandler._gettingAllUsedFormats) else {
                 self._communicationHandler._gettingAllUsedFormats = false
                 return
             }
         } else {
-            guard let _ = self.delegate?.bmltLibInstance?(self, formatSearchResults: [], isAllUsedFormats: self._communicationHandler._gettingAllUsedFormats) else {
+            guard nil != self.delegate?.bmltLibInstance?(self, formatSearchResults: [], isAllUsedFormats: self._communicationHandler._gettingAllUsedFormats) else {
                 self._communicationHandler._gettingAllUsedFormats = false
                 return
             }
@@ -590,7 +586,7 @@ public class BMLTiOSLib : NSObject {
                     editableMeetingNode.rawMeeting["id_bigint"] = String(inSearchResultObject[0].afterObject.id)    // This is the only place in the entire app where we can change the meeting ID.
                     editableMeetingNode.setChanges()
                     while true {
-                        guard let _ = self.delegate?.bmltLibInstance?(self, newMeetingAdded: editableMeetingNode) else { break }
+                        guard nil != self.delegate?.bmltLibInstance?(self, newMeetingAdded: editableMeetingNode) else { break }
                         return  // We don't call the regular changes thingy in this case.
                     }
                 }
@@ -598,9 +594,9 @@ public class BMLTiOSLib : NSObject {
         }
         
         if deletedMeetingsOnly {
-            guard let _ = self.delegate?.bmltLibInstance?(self, deletedChangeListResults: inSearchResultObject) else { return }
+            guard nil != self.delegate?.bmltLibInstance?(self, deletedChangeListResults: inSearchResultObject) else { return }
         } else {
-            guard let _ = self.delegate?.bmltLibInstance?(self, changeListResults: inSearchResultObject) else { return }
+            guard nil != self.delegate?.bmltLibInstance?(self, changeListResults: inSearchResultObject) else { return }
         }
     }
     
@@ -612,7 +608,7 @@ public class BMLTiOSLib : NSObject {
      */
     internal func restoreRequestResults(_ updateMeetingNode: BMLTiOSLibEditableMeetingNode!) {
         if nil != updateMeetingNode {
-            guard let _ = self.delegate?.bmltLibInstance?(self, newMeetingAdded: updateMeetingNode) else { return }
+            guard nil != self.delegate?.bmltLibInstance?(self, newMeetingAdded: updateMeetingNode) else { return }
         }
     }
     
@@ -624,7 +620,7 @@ public class BMLTiOSLib : NSObject {
      */
     internal func rollbackRequestResults(_ updateMeetingNode: BMLTiOSLibEditableMeetingNode!) {
         if nil != updateMeetingNode {
-            guard let _ = self.delegate?.bmltLibInstance?(self, meetingRolledback: updateMeetingNode) else { return }
+            guard nil != self.delegate?.bmltLibInstance?(self, meetingRolledback: updateMeetingNode) else { return }
         }
     }
     
@@ -635,7 +631,7 @@ public class BMLTiOSLib : NSObject {
      - parameter inSuccess: True, if the deletion was successful.
      */
     internal func meetingDeleted(_ inSuccess: Bool) {
-        guard let _ = self.delegate?.bmltLibInstance?(self, deleteMeetingSuccessful: inSuccess) else { return }
+        guard nil != self.delegate?.bmltLibInstance?(self, deleteMeetingSuccessful: inSuccess) else { return }
     }
 
     /* ################################################################## */
@@ -645,9 +641,7 @@ public class BMLTiOSLib : NSObject {
      - returns:  a reference to the internal SearcCriteria object.
      */
     public var searchCriteria: BMLTiOSLibSearchCriteria! {
-        get {
-            return self._searchCriteria
-        }
+        return self._searchCriteria
     }
     
     /* ############################################################## */
@@ -655,9 +649,7 @@ public class BMLTiOSLib : NSObject {
      Accessor for our internal Distance Units.
      */
     public var distanceUnits: BMLTiOSLibDistanceUnits {
-        get {
-            return self._communicationHandler.distanceUnits
-        }
+        return self._communicationHandler.distanceUnits
     }
     
     /* ############################################################## */
@@ -665,19 +657,15 @@ public class BMLTiOSLib : NSObject {
      Accessor for our internal Distance Units.
      */
     public var distanceUnitsString: String {
-        get {
-            return self._communicationHandler.distanceUnitsString
-        }
+        return self._communicationHandler.distanceUnitsString
     }
     
     /* ############################################################## */
     /**
      These are the available value keys for use when querying meeting data.
      */
-    public var availableMeetingValueKeys:[String] {
-        get {
-            return self._communicationHandler.availableMeetingValueKeys
-        }
+    public var availableMeetingValueKeys: [String] {
+        return self._communicationHandler.availableMeetingValueKeys
     }
     
     /* ############################################################## */
@@ -685,9 +673,7 @@ public class BMLTiOSLib : NSObject {
      This is set to true if emails sent to the server are enabled (Goes to meeting contacts).
      */
     public var emailMeetingContactsEnabled: Bool {
-        get {
-            return self._communicationHandler.emailMeetingContactsEnabled
-        }
+        return self._communicationHandler.emailMeetingContactsEnabled
     }
     
     /* ############################################################## */
@@ -695,9 +681,7 @@ public class BMLTiOSLib : NSObject {
      This is set to true if emails sent to the meeting contacts also send a copy to the Service body Admin for that meeting.
      */
     public var emailServiceBodyAdminsEnabled: Bool {
-        get {
-            return self._communicationHandler.emailServiceBodyAdminsEnabled
-        }
+        return self._communicationHandler.emailServiceBodyAdminsEnabled
     }
     
     /* ############################################################## */
@@ -705,9 +689,7 @@ public class BMLTiOSLib : NSObject {
      This is number of changes stored per meeting.
      */
     public var changeDepth: Int {
-        get {
-            return self._communicationHandler.changeDepth
-        }
+        return self._communicationHandler.changeDepth
     }
     
     /* ############################################################## */
@@ -715,9 +697,7 @@ public class BMLTiOSLib : NSObject {
      This is the server Google API Key
      */
     public var googleAPIKey: String {
-        get {
-            return self._communicationHandler.googleAPIKey
-        }
+        return self._communicationHandler.googleAPIKey
     }
     
     /* ################################################################## */
@@ -729,9 +709,7 @@ public class BMLTiOSLib : NSObject {
      - returns:  a reference to an object that follows the BMLTiOSLibDelegate protocol.
      */
     public var delegate: BMLTiOSLibDelegate! {
-        get {
-            return self._delegate
-        }
+        return self._delegate
     }
     
     /* ################################################################## */
@@ -740,10 +718,8 @@ public class BMLTiOSLib : NSObject {
      
      - returns:  a String, with the URI.
      */
-    public var rootServerURI: String  {
-        get {
-            return ((self._rootServerURI as NSString).trimmingCharacters(in: ["/"])) as String
-        }
+    public var rootServerURI: String {
+        return ((self._rootServerURI as NSString).trimmingCharacters(in: ["/"])) as String
     }
     
     /* ################################################################## */
@@ -752,10 +728,8 @@ public class BMLTiOSLib : NSObject {
      
      - returns:  a Bool, true if the instance is successfully connected.
      */
-    public var isConnected: Bool  {
-        get {
-            return self._communicationHandler.isConnected
-        }
+    public var isConnected: Bool {
+        return self._communicationHandler.isConnected
     }
     
     /* ################################################################## */
@@ -764,10 +738,8 @@ public class BMLTiOSLib : NSObject {
      
      - returns:  an optional String object. This will be a code that can be used to key a localized String.
      */
-    public var errorString: String!  {
-        get {
-            return self._communicationHandler.errorDescription.rawValue
-        }
+    public var errorString: String! {
+        return self._communicationHandler.errorDescription.rawValue
     }
     
     /* ################################################################## */
@@ -776,10 +748,8 @@ public class BMLTiOSLib : NSObject {
      
      - returns:  a Bool, true, if the administrator is logged in.
      */
-    public var isAdminLoggedIn: Bool  {
-        get {
-            return self._communicationHandler.isLoggedInAsAdmin
-        }
+    public var isAdminLoggedIn: Bool {
+        return self._communicationHandler.isLoggedInAsAdmin
     }
     
     /* ################################################################## */
@@ -788,10 +758,8 @@ public class BMLTiOSLib : NSObject {
      
      - returns:  a String, with the version, in "X.Y.Z" form, where X is the major version, Y is the minor version, and Z is the fix version
      */
-    public var versionAsString: String  {
-        get {
-            return self._communicationHandler.versionString
-        }
+    public var versionAsString: String {
+        return self._communicationHandler.versionString
     }
     
     /* ################################################################## */
@@ -804,10 +772,8 @@ public class BMLTiOSLib : NSObject {
      
      - returns:  an Int, with the version packed into integer form.
      */
-    public var versionAsInt: Int  {
-        get {
-            return self._communicationHandler.serverVersionAsInt
-        }
+    public var versionAsInt: Int {
+        return self._communicationHandler.serverVersionAsInt
     }
    
     /* ################################################################## */
@@ -816,10 +782,8 @@ public class BMLTiOSLib : NSObject {
      
      - returns:  a Bool, true, if the Root Server supports Semantic Administration.
      */
-    public var isAdminAvailable: Bool  {
-        get {
-            return self._communicationHandler.semanticAdminEnabled
-        }
+    public var isAdminAvailable: Bool {
+        return self._communicationHandler.semanticAdminEnabled
     }
     
     /* ################################################################## */
@@ -828,10 +792,8 @@ public class BMLTiOSLib : NSObject {
      
      - returns:  a CLLocationCoordinate2D object, with the coordinates (default Server coordinates).
      */
-    public var defaultLocation: CLLocationCoordinate2D  {
-        get {
-            return self._communicationHandler.defaultLocation
-        }
+    public var defaultLocation: CLLocationCoordinate2D {
+        return self._communicationHandler.defaultLocation
     }
     
     /* ################################################################## */
@@ -842,10 +804,8 @@ public class BMLTiOSLib : NSObject {
      
      - returns:  an Array of BMLTiOSLibHierarchicalServiceBodyNode objects, each of which represents one Service body.
      */
-    public var serviceBodies: [BMLTiOSLibHierarchicalServiceBodyNode]  {
-        get {
-            return self._communicationHandler.allServiceBodies
-        }
+    public var serviceBodies: [BMLTiOSLibHierarchicalServiceBodyNode] {
+        return self._communicationHandler.allServiceBodies
     }
     
     /* ################################################################## */
@@ -856,20 +816,16 @@ public class BMLTiOSLib : NSObject {
      
      - returns:  an Array of BMLTiOSLibHierarchicalServiceBodyNode objects, each of which represents one Service body.
      */
-    public var serviceBodiesICanObserve: [BMLTiOSLibHierarchicalServiceBodyNode]  {
-        get {
-            var ret: [BMLTiOSLibHierarchicalServiceBodyNode] = []
-            
-            if self.isAdminLoggedIn {   // Have to at least be logged in.
-                for sb in self.serviceBodies {
-                    if sb.iCanObserve {
-                        ret.append(sb)
-                    }
-                }
+    public var serviceBodiesICanObserve: [BMLTiOSLibHierarchicalServiceBodyNode] {
+        var ret: [BMLTiOSLibHierarchicalServiceBodyNode] = []
+        
+        if self.isAdminLoggedIn {   // Have to at least be logged in.
+            for sb in self.serviceBodies where sb.iCanObserve {
+                ret.append(sb)
             }
-            
-            return ret
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -880,20 +836,16 @@ public class BMLTiOSLib : NSObject {
      
      - returns:  an Array of BMLTiOSLibHierarchicalServiceBodyNode objects, each of which represents one Service body.
      */
-    public var serviceBodiesICanEdit: [BMLTiOSLibHierarchicalServiceBodyNode]  {
-        get {
-            var ret: [BMLTiOSLibHierarchicalServiceBodyNode] = []
-            
-            if self.isAdminLoggedIn {   // Have to at least be logged in.
-                for sb in self.serviceBodies {
-                    if sb.iCanEdit {
-                        ret.append(sb)
-                    }
-                }
+    public var serviceBodiesICanEdit: [BMLTiOSLibHierarchicalServiceBodyNode] {
+        var ret: [BMLTiOSLibHierarchicalServiceBodyNode] = []
+        
+        if self.isAdminLoggedIn {   // Have to at least be logged in.
+            for sb in self.serviceBodies where sb.iCanEdit {
+                ret.append(sb)
             }
-            
-            return ret
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -904,20 +856,16 @@ public class BMLTiOSLib : NSObject {
      
      - returns:  an Array of BMLTiOSLibHierarchicalServiceBodyNode objects, each of which represents one Service body.
      */
-    public var serviceBodiesICanAdminister: [BMLTiOSLibHierarchicalServiceBodyNode]  {
-        get {
-            var ret: [BMLTiOSLibHierarchicalServiceBodyNode] = []
-            
-            if self.isAdminLoggedIn {   // Have to at least be logged in.
-                for sb in self.serviceBodies {
-                    if sb.iCanAdminister {
-                        ret.append(sb)
-                    }
-                }
+    public var serviceBodiesICanAdminister: [BMLTiOSLibHierarchicalServiceBodyNode] {
+        var ret: [BMLTiOSLibHierarchicalServiceBodyNode] = []
+        
+        if self.isAdminLoggedIn {   // Have to at least be logged in.
+            for sb in self.serviceBodies where sb.iCanAdminister {
+                ret.append(sb)
             }
-            
-            return ret
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -928,27 +876,21 @@ public class BMLTiOSLib : NSObject {
      
      - returns:  a BMLTiOSLibHierarchicalServiceBodyNode object that is the root of the hierarchy. Look in its "children" property.
      */
-    public var hierarchicalServiceBodies: BMLTiOSLibHierarchicalServiceBodyNode  {
-        get {
-            return self._communicationHandler.hierarchicalServiceBodies
-        }
+    public var hierarchicalServiceBodies: BMLTiOSLibHierarchicalServiceBodyNode {
+        return self._communicationHandler.hierarchicalServiceBodies
     }
     
     /* ################################################################## */
     /** This contains all of possible meeting formats.
      */
     public var allPossibleFormats: [BMLTiOSLibFormatNode] {
-        get {
-            return self._communicationHandler.allAvailableFormats
-        }
+        return self._communicationHandler.allAvailableFormats
     }
     
     /* ################################################################## */
     /** This contains the response from our get server languages call (nil, by default). */
     public var availableServerLanguages: [BMLTiOSLibServerLang] {
-        get {
-            return self._communicationHandler._availableServerLanguages
-        }
+        return self._communicationHandler._availableServerLanguages
     }
     
     /* ################################################################## */
@@ -1006,14 +948,12 @@ public class BMLTiOSLib : NSObject {
      
      - parameter inID: The ID for the requested Service body.
      */
-    public func getServiceBodyByID(_ inID: Int)-> BMLTiOSLibHierarchicalServiceBodyNode! {
+    public func getServiceBodyByID(_ inID: Int) -> BMLTiOSLibHierarchicalServiceBodyNode! {
         var ret: BMLTiOSLibHierarchicalServiceBodyNode! = nil
         
-        for sbNode in self.serviceBodies {
-            if sbNode.id == inID {
-                ret = sbNode
-                break
-            }
+        for sbNode in self.serviceBodies where sbNode.id == inID {
+            ret = sbNode
+            break
         }
         
         return ret
@@ -1025,14 +965,12 @@ public class BMLTiOSLib : NSObject {
      
      - parameter inID: The ID for the requested format.
      */
-    public func getFormatByID(_ inID: Int)-> BMLTiOSLibFormatNode! {
+    public func getFormatByID(_ inID: Int) -> BMLTiOSLibFormatNode! {
         var ret: BMLTiOSLibFormatNode! = nil
         
-        for formatNode in self.allPossibleFormats {
-            if formatNode.id == inID {
-                ret = formatNode
-                break
-            }
+        for formatNode in self.allPossibleFormats where formatNode.id == inID {
+            ret = formatNode
+            break
         }
         
         return ret
@@ -1044,14 +982,12 @@ public class BMLTiOSLib : NSObject {
      
      - parameter inKey: The key for the requested format.
      */
-    public func getFormatByKey(_ inKey: String)-> BMLTiOSLibFormatNode! {
+    public func getFormatByKey(_ inKey: String) -> BMLTiOSLibFormatNode! {
         var ret: BMLTiOSLibFormatNode! = nil
         
-        for formatNode in self.allPossibleFormats {
-            if formatNode.key == inKey {
-                ret = formatNode
-                break
-            }
+        for formatNode in self.allPossibleFormats where formatNode.key == inKey {
+            ret = formatNode
+            break
         }
         
         return ret
@@ -1097,7 +1033,7 @@ public class BMLTiOSLib : NSObject {
      */
     public func getMeetingsObjectsByID(_ inMeetingIDArray: [Int], searchType inSearchResultsType: BMLTiOSLibSearchCriteria.SearchCriteriaExtent = .BothMeetingsAndFormats) {
         self.searchCriteria.clearAll()
-        self.searchCriteria.searchString = inMeetingIDArray.map{String($0)}.joined(separator: ",")  // Generates a CSV list of integers.
+        self.searchCriteria.searchString = inMeetingIDArray.map { String($0) }.joined(separator: ",")  // Generates a CSV list of integers.
         self._communicationHandler.meetingSearch(self.searchCriteria.generateSearchURI(inSearchResultsType))
     }
     
@@ -1268,7 +1204,7 @@ public class BMLTiOSLib : NSObject {
      
      - returns:  a Bool, which is true, if the connection is to a valid server with semantic admin on.
      */
-    public func adminLogin(loginID inLoginID:String, password inPassword:String) -> Bool {
+    public func adminLogin(loginID inLoginID: String, password inPassword: String) -> Bool {
         return self._communicationHandler.adminLogin(loginID: inLoginID, password: inPassword)
     }
     
@@ -1286,7 +1222,7 @@ public class BMLTiOSLib : NSObject {
     /**
      - returns:  If we are logged in as an admin, this will indicate the level of permission we have with a given Service body.
      */
-    public func permissions(forServiceBody inServiceBody:BMLTiOSLibHierarchicalServiceBodyNode) -> BMLTiOSLibPermissions {
+    public func permissions(forServiceBody inServiceBody: BMLTiOSLibHierarchicalServiceBodyNode) -> BMLTiOSLibPermissions {
         return self._communicationHandler.permissions(forServiceBody: inServiceBody)
     }
     
@@ -1369,7 +1305,7 @@ public class BMLTiOSLib : NSObject {
  this, they should call the main instance's performMeetingSearch(_:) method. The main instance will ask the Search Criteria instance to
  create a URI parameter list that will describe the search.
  */
-public class BMLTiOSLibSearchCriteria : NSObject {
+public class BMLTiOSLibSearchCriteria: NSObject {
     /* ############################################################## */
     // MARK: Public Typealiases
     /* ############################################################## */
@@ -1384,7 +1320,7 @@ public class BMLTiOSLibSearchCriteria : NSObject {
     public typealias SelectableFormatList = [SelectableFormatItem]
     
     /** This allows us to differentiate weekday objects. */
-    public typealias SelectableWeekdayDictionary = [WeekdayIndex:SelectionState]
+    public typealias SelectableWeekdayDictionary = [WeekdayIndex: SelectionState]
     
     /** This is used to specify a field, and a value for that field */
     public typealias SpecificFieldValueTuple = (fieldKey: String, value: String, completeMatch: Bool, caseSensitive: Bool)
@@ -1456,7 +1392,7 @@ public class BMLTiOSLibSearchCriteria : NSObject {
     
     private var _serviceBodies: SelectableServiceBodyList
     private var _formats: SelectableFormatList
-    private var _weekdays:SelectableWeekdayDictionary = [.Sunday:.Clear,.Monday:.Clear,.Tuesday:.Clear,.Wednesday:.Clear,.Thursday:.Clear,.Friday:.Clear,.Saturday:.Clear]
+    private var _weekdays: SelectableWeekdayDictionary = [.Sunday: .Clear, .Monday: .Clear, .Tuesday: .Clear, .Wednesday: .Clear, .Thursday: .Clear, .Friday: .Clear, .Saturday: .Clear]
     private var _searchString: String = ""
     private var _searchIsALocation: Bool = false
     private var _stringSearchAll: Bool = false
@@ -1500,26 +1436,22 @@ public class BMLTiOSLibSearchCriteria : NSObject {
         
         // Start with Service bodies
         
-        for item in self.serviceBodies {
-            if item.selection != .Clear {
-                ret += "&services[]="
-                if item.selection == .Deselected {
-                    ret += "-"
-                }
-                ret += String(item.item.id)
+        for item in self.serviceBodies where item.selection != .Clear {
+            ret += "&services[]="
+            if item.selection == .Deselected {
+                ret += "-"
             }
+            ret += String(item.item.id)
         }
         
         // Next, we do formats.
         
-        for item in self.formats {
-            if item.selection != .Clear {
-                ret += "&formats[]="
-                if item.selection == .Deselected {
-                    ret += "-"
-                }
-                ret += String(item.item.id)
+        for item in self.formats where item.selection != .Clear {
+            ret += "&formats[]="
+            if item.selection == .Deselected {
+                ret += "-"
             }
+            ret += String(item.item.id)
         }
         
         // And then weekdays.
@@ -1680,7 +1612,7 @@ public class BMLTiOSLibSearchCriteria : NSObject {
      Accessor for our internal Service body list.
      */
     public var serviceBodies: SelectableServiceBodyList {
-        get { return self._serviceBodies }
+        return self._serviceBodies
     }
     
     /* ############################################################## */
@@ -1688,7 +1620,7 @@ public class BMLTiOSLibSearchCriteria : NSObject {
      Accessor for our internal format list.
      */
     public var formats: SelectableFormatList {
-        get { return self._formats }
+        return self._formats
     }
     
     /* ############################################################## */
@@ -2008,69 +1940,67 @@ public class BMLTiOSLibSearchCriteria : NSObject {
      - returns:  true, if there is a search criteria set.
      */
     public var isDirty: Bool {
-        get {
-            var ret: Bool = false
-            
-            for sb in self._serviceBodies {
-                ret = (sb.selection != .Clear) ? true : ret
-            }
-            
-            for fmt in self._formats {
-                ret = (fmt.selection != .Clear) ? true : ret
-            }
-            
-            for wd in self._weekdays {
-                ret = (wd.value != .Clear) ? true : ret
-            }
-            
-            if !self._searchString.isEmpty {
-                ret = true
-            }
-            
-            if nil != self._searchLocation {
-                ret = true
-            }
-            
-            if nil != self._startTimeInSeconds {
-                ret = true
-            }
-            
-            if nil != self._endTimeInSeconds {
-                ret = true
-            }
-            
-            if nil != self._durationTimeInSeconds {
-                ret = true
-            }
-            
-            if (nil != self._specificFieldValue) && !self._specificFieldValue!.fieldKey.isEmpty {
-                ret = true
-            }
-            
-            // Let's see if we have a start time specified.
-            
-            if nil != self.startTimeInSeconds {
-                ret = true
-            }
-            
-            // Let's see if we have an end time specified.
-            
-            if nil != self.endTimeInSeconds {
-                ret = true
-            }
-            
-            // Let's see if we have a duration time specified.
-            
-            if nil != self.durationTimeInSeconds {
-                ret = true
-            }
-            
-            return ret
+        var ret: Bool = false
+        
+        for sb in self._serviceBodies {
+            ret = (sb.selection != .Clear) ? true : ret
         }
+        
+        for fmt in self._formats {
+            ret = (fmt.selection != .Clear) ? true : ret
+        }
+        
+        for wd in self._weekdays {
+            ret = (wd.value != .Clear) ? true : ret
+        }
+        
+        if !self._searchString.isEmpty {
+            ret = true
+        }
+        
+        if nil != self._searchLocation {
+            ret = true
+        }
+        
+        if nil != self._startTimeInSeconds {
+            ret = true
+        }
+        
+        if nil != self._endTimeInSeconds {
+            ret = true
+        }
+        
+        if nil != self._durationTimeInSeconds {
+            ret = true
+        }
+        
+        if (nil != self._specificFieldValue) && !self._specificFieldValue!.fieldKey.isEmpty {
+            ret = true
+        }
+        
+        // Let's see if we have a start time specified.
+        
+        if nil != self.startTimeInSeconds {
+            ret = true
+        }
+        
+        // Let's see if we have an end time specified.
+        
+        if nil != self.endTimeInSeconds {
+            ret = true
+        }
+        
+        // Let's see if we have a duration time specified.
+        
+        if nil != self.durationTimeInSeconds {
+            ret = true
+        }
+        
+        return ret
     }
     
     /* ############################################################## */
-    // MARK * Public Initializer
+    // MARK: Public Initializer
     /* ############################################################## */
     /**
      Default initializer. We must have at least the server comm.
@@ -2139,10 +2069,8 @@ public class BMLTiOSLibSearchCriteria : NSObject {
      - returns:  the wrapper item for that Service body object.
      */
     public func getServiceBodyElementFromServiceBodyObject(_ inObject: BMLTiOSLibHierarchicalServiceBodyNode) -> SelectableServiceBodyItem! {
-        for item in self.serviceBodies {
-            if item.item == inObject {
-                return item
-            }
+        for item in self.serviceBodies where item.item == inObject {
+            return item
         }
         
         return nil
@@ -2184,13 +2112,11 @@ public class BMLTiOSLibMeetingNodeSimpleDictionaryElement: NSObject {
         Accessor for the handler's BMLTiOSLib library (The Handler's handler).
      */
     public var library: BMLTiOSLib {
-        get{
-            return self.handler._handler
-        }
+        return self.handler._handler
     }
     
     /* ################################################################## */
-    // MARK * Public Initializer
+    // MARK: Public Initializer
     /* ################################################################## */
     /**
         Default Initializer
@@ -2217,7 +2143,7 @@ public class BMLTiOSLibChangedMeeting: NSObject {
     // MARK: Private Properties
     /* ################################################################## */
     /** This is a Dictionary object with the raw JSON response object */
-    private let _rawObject: [String:AnyObject?]
+    private let _rawObject: [String: AnyObject?]
     /** This is the "owning" BMLTiOSLib object for this change */
     unowned private let _handler: BMLTiOSLib
     
@@ -2228,54 +2154,48 @@ public class BMLTiOSLibChangedMeeting: NSObject {
      - returns:  The changed meeting's BMLT ID.
      */
     public var meetingID: Int {
-        get {
-            var ret: Int = 0
-            
-            if let idContainer = self._rawObject["changeMeeting"] as? [String:String] {
-                if let id = idContainer["id"] {
-                    if let idInt = Int(id) {
-                        ret = idInt
-                    }
-                }
+        var ret: Int = 0
+        
+        if let idContainer = self._rawObject["changeMeeting"] as? [String: String] {
+            if let id = idContainer["id"], let idInt = Int(id) {
+                ret = idInt
             }
-            return ret
         }
+        return ret
     }
 
     /* ################################################################## */
     /**
      - returns:  All the various field changes associated with this meeting change.
      */
-    public var meetingChanges: [String:[String]] {
-        get {
-            var ret: [String:[String]] = [:]
-            
-            if let fieldsContainer = self._rawObject["field"] as? [String:AnyObject?] {
-                if let key = fieldsContainer["key"] as? String {
-                    if let oldValue = self._rawObject["oldValue"] as? String {
-                        if let newValue = self._rawObject["newValue"] as? String {
-                            ret[key] = [oldValue,newValue]
-                        }
+    public var meetingChanges: [String: [String]] {
+        var ret: [String: [String]] = [:]
+        
+        if let fieldsContainer = self._rawObject["field"] as? [String: AnyObject?] {
+            if let key = fieldsContainer["key"] as? String {
+                if let oldValue = self._rawObject["oldValue"] as? String {
+                    if let newValue = self._rawObject["newValue"] as? String {
+                        ret[key] = [oldValue, newValue]
                     }
                 }
-            } else {
-                if let fieldsArray = self._rawObject["field"] as? [[String:AnyObject?]] {
-                    for field in fieldsArray {
-                        if let attributes = field["@attributes"] as? [String:String] {
-                            if let key = attributes["key"] {
-                                if let oldValue = field["oldValue"] as? String {
-                                    if let newValue = field["newValue"] as? String {
-                                        ret[key] = [oldValue,newValue]
-                                    }
+            }
+        } else {
+            if let fieldsArray = self._rawObject["field"] as? [[String: AnyObject?]] {
+                for field in fieldsArray {
+                    if let attributes = field["@attributes"] as? [String: String] {
+                        if let key = attributes["key"] {
+                            if let oldValue = field["oldValue"] as? String {
+                                if let newValue = field["newValue"] as? String {
+                                    ret[key] = [oldValue, newValue]
                                 }
                             }
                         }
                     }
                 }
             }
-            
-            return ret
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2283,18 +2203,16 @@ public class BMLTiOSLibChangedMeeting: NSObject {
      - returns:  A textual description of the change.
      */
     override public var description: String {
-        get {
-            var ret: String = "Meeting Change for Meeting ID " + String(self.meetingID)
-            
-            for key in self.meetingChanges.keys {
-                ret += "\n"
-                ret += key
-                ret += " changed from " + (self.meetingChanges[key]?[0])!
-                ret += " to " + (self.meetingChanges[key]?[1])!
-            }
-            
-            return ret
+        var ret: String = "Meeting Change for Meeting ID " + String(self.meetingID)
+        
+        for key in self.meetingChanges.keys {
+            ret += "\n"
+            ret += key
+            ret += " changed from " + (self.meetingChanges[key]?[0])!
+            ret += " to " + (self.meetingChanges[key]?[1])!
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2306,7 +2224,7 @@ public class BMLTiOSLibChangedMeeting: NSObject {
      - parameter inDictionary: This is a Dictionary object with the raw JSON response object.
      - parameter inHandler: This is the "owning" BMLTiOSLib object for this change.
      */
-    public init(_ inDictionary: [String:AnyObject?], inHandler: BMLTiOSLib) {
+    public init(_ inDictionary: [String: AnyObject?], inHandler: BMLTiOSLib) {
         self._rawObject = inDictionary
         self._handler = inHandler
     }
@@ -2323,7 +2241,7 @@ public class BMLTiOSLibChangeNode: NSObject {
     // MARK: Private Properties
     /* ################################################################## */
     /** This is a Dictionary object with the raw JSON response object */
-    private let _rawObject: [String:AnyObject?]
+    private let _rawObject: [String: AnyObject?]
     /** This is the "owning" BMLTiOSLib object for this change */
     unowned private let _handler: BMLTiOSLib
     
@@ -2342,16 +2260,14 @@ public class BMLTiOSLibChangeNode: NSObject {
      - returns:  The date the change was made.
      */
     public var changeDate: Date! {
-        get {
-            var ret: Date! = nil
-            if let epochDateString = self._rawObject["date_int"] {
-                if let dateInt = TimeInterval((epochDateString as? String)!) {
-                    ret = Date(timeIntervalSince1970: dateInt)
-                }
+        var ret: Date! = nil
+        if let epochDateString = self._rawObject["date_int"] {
+            if let dateInt = TimeInterval((epochDateString as? String)!) {
+                ret = Date(timeIntervalSince1970: dateInt)
             }
-            
-            return ret
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2359,14 +2275,12 @@ public class BMLTiOSLibChangeNode: NSObject {
      - returns:  The name of the administrator that made the change.
      */
     public var changeMaker: String {
-        get {
-            var ret: String = ""
-            if let userName = self._rawObject["user_name"] as? String {
-                ret = userName
-            }
-            
-            return ret
+        var ret: String = ""
+        if let userName = self._rawObject["user_name"] as? String {
+            ret = userName
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2374,16 +2288,14 @@ public class BMLTiOSLibChangeNode: NSObject {
      - returns:  The ID of the change.
      */
     public var id: Int {
-        get {
-            var ret: Int = 0
-            if let change_id_string = self._rawObject["change_id"] as? String {
-                if let change_id = Int(change_id_string) {
-                    ret = change_id
-                }
+        var ret: Int = 0
+        if let change_id_string = self._rawObject["change_id"] as? String {
+            if let change_id = Int(change_id_string) {
+                ret = change_id
             }
-            
-            return ret
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2391,16 +2303,14 @@ public class BMLTiOSLibChangeNode: NSObject {
      - returns:  The Service body to which the changed meeting belongs.
      */
     public var serviceBody: BMLTiOSLibHierarchicalServiceBodyNode! {
-        get {
-            var ret: BMLTiOSLibHierarchicalServiceBodyNode! = nil
-            if let sbString = self._rawObject["service_body_id"] {
-                if let sbInt = Int((sbString as? String)!) {
-                    ret = self._handler.getServiceBodyByID(sbInt)
-                }
+        var ret: BMLTiOSLibHierarchicalServiceBodyNode! = nil
+        if let sbString = self._rawObject["service_body_id"] {
+            if let sbInt = Int((sbString as? String)!) {
+                ret = self._handler.getServiceBodyByID(sbInt)
             }
-            
-            return ret
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2408,14 +2318,12 @@ public class BMLTiOSLibChangeNode: NSObject {
      - returns:  True, if the meeting currently exists.
      */
     public var meetingCurrentlyExists: Bool {
-        get {
-            var ret: Bool = false
-            if let keyString = self._rawObject["meeting_exists"] as? String {
-                ret = "1" == keyString
-            }
-            
-            return ret
+        var ret: Bool = false
+        if let keyString = self._rawObject["meeting_exists"] as? String {
+            ret = "1" == keyString
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2423,14 +2331,12 @@ public class BMLTiOSLibChangeNode: NSObject {
      - returns:  The listed change details.
      */
     public var details: String {
-        get {
-            var ret: String = ""
-            if let keyString = self._rawObject["details"] as? String {
-                ret = keyString.replacingOccurrences(of: "&quot;", with: "\"").replacingOccurrences(of: "&amp;", with: "&")
-            }
-            
-            return ret
+        var ret: String = ""
+        if let keyString = self._rawObject["details"] as? String {
+            ret = keyString.replacingOccurrences(of: "&quot;", with: "\"").replacingOccurrences(of: "&amp;", with: "&")
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2438,15 +2344,13 @@ public class BMLTiOSLibChangeNode: NSObject {
      - returns:  The listed change meeting ID.
      */
     public var meeting_id: Int {
-        get {
-            var ret: Int = 0
-            
-            if let idString = self._rawObject["meeting_id"] as? String {
-                ret = Int(idString)!
-            }
-            
-            return ret
+        var ret: Int = 0
+        
+        if let idString = self._rawObject["meeting_id"] as? String {
+            ret = Int(idString)!
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2454,9 +2358,7 @@ public class BMLTiOSLibChangeNode: NSObject {
      - returns:  True, if the meeting was created by this change.
      */
     public var meetingWasCreated: Bool {
-        get {
-            return nil == self.beforeObject
-        }
+        return nil == self.beforeObject
     }
     
     /* ################################################################## */
@@ -2464,9 +2366,7 @@ public class BMLTiOSLibChangeNode: NSObject {
      - returns:  True, if the meeting was deleted by this change.
      */
     public var meetingWasDeleted: Bool {
-        get {
-            return nil == self.afterObject
-        }
+        return nil == self.afterObject
     }
     
     /* ################################################################## */
@@ -2476,60 +2376,56 @@ public class BMLTiOSLibChangeNode: NSObject {
      Each Dictionary entry is described by the field key. The content is a 2-element String Array, with 0 being the "before" value and 1 being the "after" value
      */
     public var meetingWasChanged: [String: [String]]! {
-        get {
-            var ret: [String: [String]]! = nil
+        var ret: [String: [String]]! = nil
+        
+        if (nil != self.beforeObject) && (nil != self.afterObject) {
+            var keys = self._handler.availableMeetingValueKeys
+            keys.append("published")
             
-            if (nil != self.beforeObject) && (nil != self.afterObject) {
-                var keys = self._handler.availableMeetingValueKeys
-                keys.append("published")
+            for key in keys {
+                let beforeValue = self.beforeObject[key]
+                let afterValue = self.afterObject[key]
                 
-                for key in keys {
-                    let beforeValue = self.beforeObject[key]
-                    let afterValue = self.afterObject[key]
-                    
-                    if beforeValue != afterValue {
-                        if nil == ret {
-                            ret = [:]
-                        }
-                        ret[key] = [(nil != beforeValue) ? beforeValue! : "", (nil != afterValue) ? afterValue! : ""]
+                if beforeValue != afterValue {
+                    if nil == ret {
+                        ret = [:]
                     }
+                    ret[key] = [(nil != beforeValue) ? beforeValue! : "", (nil != afterValue) ? afterValue! : ""]
                 }
             }
-            
-            return ret
         }
+        
+        return ret
     }
     
     /* ################################################################## */
     /**
      */
     override public var description: String {
-        get {
-            var ret: String = ""
-            
-            let dateformatter = DateFormatter()
-            
-            dateformatter.dateFormat = "h:mm a MMMM d, YYYY"
-            
-            let changeDate = dateformatter.string(from: self.changeDate)
-            
-            if self.meetingWasCreated {
-                ret += "\(changeDate): \(self.changeMaker) created this meeting."
+        var ret: String = ""
+        
+        let dateformatter = DateFormatter()
+        
+        dateformatter.dateFormat = "h:mm a MMMM d, YYYY"
+        
+        let changeDate = dateformatter.string(from: self.changeDate)
+        
+        if self.meetingWasCreated {
+            ret += "\(changeDate): \(self.changeMaker) created this meeting."
+        } else {
+            if self.meetingWasDeleted {
+                ret += "\(changeDate): \(self.changeMaker) deleted this meeting."
             } else {
-                if self.meetingWasDeleted {
-                    ret += "\(changeDate): \(self.changeMaker) deleted this meeting."
-                } else {
-                    ret += "\(changeDate): \(self.changeMaker) changed this meeting:"
-                    if let changes = self.meetingWasChanged {
-                        for change in changes {
-                            ret += ("\n    " + change.key + " changed from \"" + change.value[0] + "\" to \"" + change.value[1] + "\"")
-                        }
+                ret += "\(changeDate): \(self.changeMaker) changed this meeting:"
+                if let changes = self.meetingWasChanged {
+                    for change in changes {
+                        ret += ("\n    " + change.key + " changed from \"" + change.value[0] + "\" to \"" + change.value[1] + "\"")
                     }
                 }
             }
-            
-            return ret
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2541,13 +2437,13 @@ public class BMLTiOSLibChangeNode: NSObject {
      - parameter inDictionary: This is a Dictionary object with the raw JSON response object.
      - parameter inHandler: This is the "owning" BMLTiOSLib object for this change.
      */
-    public init(_ inDictionary: [String:AnyObject?], inHandler: BMLTiOSLib) {
+    public init(_ inDictionary: [String: AnyObject?], inHandler: BMLTiOSLib) {
         self._rawObject = inDictionary
         self._handler = inHandler
         
-        if let beforeAfterJSON = inDictionary["json_data"] as? [String:[String:AnyObject?]] {
+        if let beforeAfterJSON = inDictionary["json_data"] as? [String: [String: AnyObject?]] {
             if let beforeObject = beforeAfterJSON["before"] {
-                var allStringObject: [String:String] = [:]
+                var allStringObject: [String: String] = [:]
                 for key in beforeObject.keys {
                     if let strVal = beforeObject[key] as? String {
                         allStringObject[key] = strVal
@@ -2563,7 +2459,7 @@ public class BMLTiOSLibChangeNode: NSObject {
             }
             
             if let afterObject = beforeAfterJSON["after"] {
-                var allStringObject: [String:String] = [:]
+                var allStringObject: [String: String] = [:]
                 for key in afterObject.keys {
                     if let strVal = afterObject[key] as? String {
                         allStringObject[key] = strVal
@@ -2595,7 +2491,7 @@ public class BMLTiOSLibChangeNode: NSObject {
     public func revertMeetingToBeforeThisChange() -> Bool {
         if let beforeObject = self.beforeObject {
             if beforeObject.isEditable {
-                return (beforeObject as! BMLTiOSLibEditableMeetingNode).revertMeetingToBeforeThisChange(self)
+                return (beforeObject as? BMLTiOSLibEditableMeetingNode)!.revertMeetingToBeforeThisChange(self)
             }
         }
         
@@ -2644,18 +2540,16 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      This tells us whether or not the device is set for military time.
      */
     private var _using12hClockFormat: Bool {
-        get {
-            let formatter = DateFormatter()
-            formatter.locale = Locale.current
-            formatter.dateStyle = .none
-            formatter.timeStyle = .short
-            
-            let dateString = formatter.string(from: Date())
-            let amRange = dateString.range(of: formatter.amSymbol)
-            let pmRange = dateString.range(of: formatter.pmSymbol)
-            
-            return !(pmRange == nil && amRange == nil)
-        }
+        let formatter = DateFormatter()
+        formatter.locale = Locale.current
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        
+        let dateString = formatter.string(from: Date())
+        let amRange = dateString.range(of: formatter.amSymbol)
+        let pmRange = dateString.range(of: formatter.pmSymbol)
+        
+        return !(pmRange == nil && amRange == nil)
     }
 
     /* ################################################################## */
@@ -2701,7 +2595,7 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
     // MARK: Internal Properties
     /* ################################################################## */
     /** This will contain the "raw" meeting data. It isn't meant to be exposed. */
-    private var _rawMeeting: [String:String]
+    private var _rawMeeting: [String: String]
     
     /* ################################################################## */
     // MARK: Internal Methods
@@ -2712,61 +2606,59 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with a basic address, in US format.
      */
     private var _USAddressParser: String {
-        get {
-            var ret: String = ""    // We will build this string up from location information.
-            
-            let name = self.locationName
-            let street = self.locationStreetAddress
-            let borough = self.locationBorough
-            let town = self.locationTown
-            let state = self.locationState
-            let zip = self.locationZip
-            
-            if !name.isEmpty {  // We check each field to make sure it isn't empty.
-                ret = name
-            }
-            
-            if !street.isEmpty {
-                if !ret.isEmpty {
-                    ret += ", "
-                }
-                ret += street
-            }
-            
-            // Boroughs are treated a bit differently, as they are often the primary address for a given city area.
-            if !borough.isEmpty {
-                if !ret.isEmpty {
-                    ret += ", "
-                }
-                ret += borough
-                if !town.isEmpty {
-                    ret += " (" + town + ")"
-                }
-            } else {
-                if !town.isEmpty {
-                    if !ret.isEmpty {
-                        ret += ", "
-                    }
-                    ret += town
-                }
-            }
-            
-            if !state.isEmpty {
-                if !ret.isEmpty {
-                    ret += ", "
-                }
-                ret += state
-            }
-            
-            if !zip.isEmpty {
-                if !ret.isEmpty {
-                    ret += " "
-                }
-                ret += zip
-            }
-            
-            return ret
+        var ret: String = ""    // We will build this string up from location information.
+        
+        let name = self.locationName
+        let street = self.locationStreetAddress
+        let borough = self.locationBorough
+        let town = self.locationTown
+        let state = self.locationState
+        let zip = self.locationZip
+        
+        if !name.isEmpty {  // We check each field to make sure it isn't empty.
+            ret = name
         }
+        
+        if !street.isEmpty {
+            if !ret.isEmpty {
+                ret += ", "
+            }
+            ret += street
+        }
+        
+        // Boroughs are treated a bit differently, as they are often the primary address for a given city area.
+        if !borough.isEmpty {
+            if !ret.isEmpty {
+                ret += ", "
+            }
+            ret += borough
+            if !town.isEmpty {
+                ret += " (" + town + ")"
+            }
+        } else {
+            if !town.isEmpty {
+                if !ret.isEmpty {
+                    ret += ", "
+                }
+                ret += town
+            }
+        }
+        
+        if !state.isEmpty {
+            if !ret.isEmpty {
+                ret += ", "
+            }
+            ret += state
+        }
+        
+        if !zip.isEmpty {
+            if !ret.isEmpty {
+                ret += " "
+            }
+            ret += zip
+        }
+        
+        return ret
     }
     
     /** These are the standard keys that all meeting objects should have available (They may not all be filled, though). */
@@ -2786,9 +2678,7 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
     /* ################################################################## */
     /** This class is not editable. */
     public var isEditable: Bool {
-        get {
-            return false
-        }
+        return false
     }
     
     /* ################################################################## */
@@ -2797,36 +2687,34 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  all of the available keys in our dictionary.
      */
     public var keys: [String] {
-        get {
-            var sortOrder = type(of: self).standardKeys
-            
-            sortOrder.append("published")
-            
-            let meetingKeys = self.rawMeeting.keys.sorted()
-            
-            var key_array:[String] = []
-            
-            for key in sortOrder {
-                if meetingKeys.contains(key) {
-                    key_array.append(key)
-                }
+        var sortOrder = type(of: self).standardKeys
+        
+        sortOrder.append("published")
+        
+        let meetingKeys = self.rawMeeting.keys.sorted()
+        
+        var key_array: [String] = []
+        
+        for key in sortOrder {
+            if meetingKeys.contains(key) {
+                key_array.append(key)
             }
-            
-            for key in meetingKeys {
-                if !key_array.contains(key) {
-                    key_array.append(key)
-                }
-            }
-            
-            return key_array
         }
+        
+        for key in meetingKeys {
+            if !key_array.contains(key) {
+                key_array.append(key)
+            }
+        }
+        
+        return key_array
     }
     
     /* ################################################################## */
     /**
      - returns:  Our internal editable instance instead of the read-only one for the superclass.
      */
-    public var rawMeeting: [String:String] {
+    public var rawMeeting: [String: String] {
         get { return self._rawMeeting }
         set {
             if self.isEditable {
@@ -2840,15 +2728,13 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  An Int, with the meeting BMLT ID.
      */
     public var id: Int {
-        get {
-            var ret: Int = 0
-            
-            if let val = Int(self["id_bigint"]) {
-                ret = val
-            }
-            
-            return ret
+        var ret: Int = 0
+        
+        if let val = Int(self["id_bigint"]) {
+            ret = val
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2856,15 +2742,13 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with the meeting NAWS ID.
      */
     public var worldID: String {
-        get {
-            var ret: String = ""
-            
-            if let val = self["worldid_mixed"] {
-                ret = val
-            }
-            
-            return ret
+        var ret: String = ""
+        
+        if let val = self["worldid_mixed"] {
+            ret = val
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2872,15 +2756,13 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  An Int, with the meeting's Service body BMLT ID.
      */
     public var serviceBodyId: Int {
-        get {
-            var ret: Int = 0
-            
-            if let val = Int(self["service_body_bigint"]) {
-                ret = val
-            }
-            
-            return ret
+        var ret: Int = 0
+        
+        if let val = Int(self["service_body_bigint"]) {
+            ret = val
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2888,9 +2770,7 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  The meeting's Service body object. nil, if no Service body (should never happen).
      */
     public var serviceBody: BMLTiOSLibHierarchicalServiceBodyNode! {
-        get {
-            return self._handler.getServiceBodyByID(self.serviceBodyId)
-        }
+        return self._handler.getServiceBodyByID(self.serviceBodyId)
     }
     
     /* ################################################################## */
@@ -2898,19 +2778,17 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  an array of format objects.
      */
     public var formats: [BMLTiOSLibFormatNode] {
-        get {
-            let formatIDArray = self.formatsAsCSVList.components(separatedBy: ",")
-            
-            var ret: [BMLTiOSLibFormatNode] = []
-            
-            for formatKey in formatIDArray {
-                if let format = self._handler.getFormatByKey(formatKey) {
-                    ret.append(format)
-                }
+        let formatIDArray = self.formatsAsCSVList.components(separatedBy: ",")
+        
+        var ret: [BMLTiOSLibFormatNode] = []
+        
+        for formatKey in formatIDArray {
+            if let format = self._handler.getFormatByKey(formatKey) {
+                ret.append(format)
             }
-            
-            return ret
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2918,15 +2796,13 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  a CSV string of format codes, sorted alphabetically.
      */
     public var formatsAsCSVList: String {
-        get {
-            var ret: String = ""
-            
-            if let list = self._rawMeeting["formats"]?.components(separatedBy: ",").sorted() {
-                ret = list.joined(separator: ",")
-            }
-            
-            return ret
+        var ret: String = ""
+        
+        if let list = self._rawMeeting["formats"]?.components(separatedBy: ",").sorted() {
+            ret = list.joined(separator: ",")
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2934,13 +2810,11 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A Bool. True, if the meeting is published.
      */
     public var published: Bool {
-        get {
-            var ret: Bool = false
-            if let pub = self["published"] {
-                ret = pub == "1"
-            }
-            return ret
+        var ret: Bool = false
+        if let pub = self["published"] {
+            ret = pub == "1"
         }
+        return ret
     }
     
     /* ################################################################## */
@@ -2948,13 +2822,11 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with the meeting name.
      */
     public var name: String {
-        get {
-            var ret: String = ""
-            if let name = self["meeting_name"] {
-                ret = name
-            }
-            return ret
+        var ret: String = ""
+        if let name = self["meeting_name"] {
+            ret = name
         }
+        return ret
     }
     
     /* ################################################################## */
@@ -2962,17 +2834,15 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  An Int, with the weekday (1 = Sunday, 7 = Saturday).
      */
     public var weekdayIndex: Int {
-        get {
-            var ret: Int = 0
-            
-            if let weekday = self["weekday_tinyint"] {
-                if let val = Int(weekday) {
-                    ret = val
-                }
+        var ret: Int = 0
+        
+        if let weekday = self["weekday_tinyint"] {
+            if let val = Int(weekday) {
+                ret = val
             }
-            
-            return ret
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -2980,20 +2850,18 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with the start time in military format ("HH:MM").
      */
     public var timeString: String {
-        get {
-            var ret: String = "00:00"
-            
-            if let time = self["start_time"] {
-                var timeComponents = time.components(separatedBy: ":").map{Int($0)}
-                if (23 == timeComponents[0]!) && (54 < timeComponents[1]!) {
-                    timeComponents[0] = 24
-                    timeComponents[1] = 0
-                }
-                ret = String(format: "%02d:%02d", timeComponents[0]!, timeComponents[1]!)
+        var ret: String = "00:00"
+        
+        if let time = self["start_time"] {
+            var timeComponents = time.components(separatedBy: ":").map { Int($0) }
+            if (23 == timeComponents[0]!) && (54 < timeComponents[1]!) {
+                timeComponents[0] = 24
+                timeComponents[1] = 0
             }
-            
-            return ret
+            ret = String(format: "%02d:%02d", timeComponents[0]!, timeComponents[1]!)
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -3001,16 +2869,14 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with the duration ("HH:MM").
      */
     public var durationString: String {
-        get {
-            var ret: String = "00:00"
-            
-            if let time = self["duration_time"] {
-                let timeComponents = time.components(separatedBy: ":").map{Int($0)}
-                ret = String(format: "%02d:%02d", timeComponents[0]!, timeComponents[1]!)
-            }
-            
-            return ret
+        var ret: String = "00:00"
+        
+        if let time = self["duration_time"] {
+            let timeComponents = time.components(separatedBy: ":").map { Int($0) }
+            ret = String(format: "%02d:%02d", timeComponents[0]!, timeComponents[1]!)
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -3018,21 +2884,19 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  An Integer, with the duration in minutes.
      */
     public var durationInMinutes: Int {
-        get {
-            var ret: Int = 0
-            
-            if let time = self["duration_time"] {
-                let timeComponents = time.components(separatedBy: ":").map{Int($0)}
-                if let hours = timeComponents[0] {
-                    ret = hours * 60
-                }
-                if let minutes = timeComponents[1] {
-                    ret += minutes
-                }
+        var ret: Int = 0
+        
+        if let time = self["duration_time"] {
+            let timeComponents = time.components(separatedBy: ":").map { Int($0) }
+            if let hours = timeComponents[0] {
+                ret = hours * 60
             }
-            
-            return ret
+            if let minutes = timeComponents[1] {
+                ret += minutes
+            }
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -3040,19 +2904,17 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  an optional DateComponents object, with the time of the meeting.
      */
     public var startTime: DateComponents! {
-        get {
-            var ret: DateComponents! = nil
-            if let time = self["start_time"] {
-                var timeComponents = time.components(separatedBy: ":").map{Int($0)}
-                
-                if 1 < timeComponents.count {
-                    // Create our answer from the components of the result.
-                    ret = DateComponents(calendar: nil, timeZone: nil, era: nil, year: nil, month: nil, day: nil, hour: timeComponents[0]!, minute: timeComponents[1]!, second: 0, nanosecond: nil, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
-                }
-            }
+        var ret: DateComponents! = nil
+        if let time = self["start_time"] {
+            var timeComponents = time.components(separatedBy: ":").map { Int($0) }
             
-            return ret
+            if 1 < timeComponents.count {
+                // Create our answer from the components of the result.
+                ret = DateComponents(calendar: nil, timeZone: nil, era: nil, year: nil, month: nil, day: nil, hour: timeComponents[0]!, minute: timeComponents[1]!, second: 0, nanosecond: nil, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
+            }
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -3060,76 +2922,70 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  an optional DateComponents object, with the weekday and time of the meeting.
      */
     public var startTimeAndDay: DateComponents! {
-        get {
-            var ret: DateComponents! = nil
-            if let time = self["start_time"] {
-                var timeComponents = time.components(separatedBy: ":").map{Int($0)}
-                
-                if 1 < timeComponents.count {
-                    var weekdayIndex = self.weekdayIndex
-                    if (23 == timeComponents[0]!) && (54 < timeComponents[1]!) {
-                        weekdayIndex += 1
-                        if 7 < weekdayIndex {
-                            weekdayIndex = 1
-                        }
-                        timeComponents = [0, 0]
-                    }
-                    
-                    // Create our answer from the components of the result.
-                    ret = DateComponents(calendar: nil, timeZone: nil, era: nil, year: nil, month: nil, day: nil, hour: timeComponents[0]!, minute: timeComponents[1]!, second: 0, nanosecond: nil, weekday: weekdayIndex, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
-                }
-            }
+        var ret: DateComponents! = nil
+        if let time = self["start_time"] {
+            var timeComponents = time.components(separatedBy: ":").map { Int($0) }
             
-            return ret
+            if 1 < timeComponents.count {
+                var weekdayIndex = self.weekdayIndex
+                if (23 == timeComponents[0]!) && (54 < timeComponents[1]!) {
+                    weekdayIndex += 1
+                    if 7 < weekdayIndex {
+                        weekdayIndex = 1
+                    }
+                    timeComponents = [0, 0]
+                }
+                
+                // Create our answer from the components of the result.
+                ret = DateComponents(calendar: nil, timeZone: nil, era: nil, year: nil, month: nil, day: nil, hour: timeComponents[0]!, minute: timeComponents[1]!, second: 0, nanosecond: nil, weekday: weekdayIndex, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
+            }
         }
+        
+        return ret
     }
+
     /* ################################################################## */
     /**
      - returns:  returns an integer that allows sorting quickly. Weekday is 1,000s, hours are 100s, and minutes are 1s.
      */
     public var timeDayAsInteger: Int {
-        get {
-            var ret: Int = 0
-            if let time = self["start_time"] {
-                var timeComponents = time.components(separatedBy: ":").map{Int($0)}
-                
-                if 1 < timeComponents.count {
-                    var weekdayIndex = self.weekdayIndex
-                    if (23 == timeComponents[0]!) && (54 < timeComponents[1]!) {
-                        weekdayIndex += 1
-                        if 7 < weekdayIndex {
-                            weekdayIndex = 1
-                        }
-                        timeComponents = [0, 0]
-                    }
-                    
-                    ret = (weekdayIndex * 10000) + (timeComponents[0]! * 100) + timeComponents[1]!
-                }
-            }
+        var ret: Int = 0
+        if let time = self["start_time"] {
+            var timeComponents = time.components(separatedBy: ":").map { Int($0) }
             
-            return ret
+            if 1 < timeComponents.count {
+                var weekdayIndex = self.weekdayIndex
+                if (23 == timeComponents[0]!) && (54 < timeComponents[1]!) {
+                    weekdayIndex += 1
+                    if 7 < weekdayIndex {
+                        weekdayIndex = 1
+                    }
+                    timeComponents = [0, 0]
+                }
+                
+                ret = (weekdayIndex * 10000) + (timeComponents[0]! * 100) + timeComponents[1]!
+            }
         }
+        
+        return ret
     }
-    
     
     /* ################################################################## */
     /**
      - returns:  an optional Date object, with the next occurrence of the meeting (from now).
      */
     public var nextStartDate: Date! {
-        get {
-            var ret: Date! = nil
-            let now = Date()
-            
-            let myCalendar = Calendar.current
-            if let meetingEvent = self.startTimeAndDay {
-                if let nextMeeting = myCalendar.nextDate(after: now, matching: meetingEvent, matchingPolicy: .nextTimePreservingSmallerComponents) {
-                    ret = nextMeeting
-                }
+        var ret: Date! = nil
+        let now = Date()
+        
+        let myCalendar = Calendar.current
+        if let meetingEvent = self.startTimeAndDay {
+            if let nextMeeting = myCalendar.nextDate(after: now, matching: meetingEvent, matchingPolicy: .nextTimePreservingSmallerComponents) {
+                ret = nextMeeting
             }
-            
-            return ret
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -3137,14 +2993,12 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  The location (optional).
      */
     public var locationCoords: CLLocationCoordinate2D! {
-        get {
-            if let long = CLLocationDegrees(self["longitude"]) {
-                if let lat = CLLocationDegrees(self["latitude"]) {
-                    return CLLocationCoordinate2D(latitude: lat, longitude: long)
-                }
+        if let long = CLLocationDegrees(self["longitude"]) {
+            if let lat = CLLocationDegrees(self["latitude"]) {
+                return CLLocationCoordinate2D(latitude: lat, longitude: long)
             }
-            return nil
         }
+        return nil
     }
     
     /* ################################################################## */
@@ -3152,13 +3006,11 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with the location building name.
      */
     public var locationName: String {
-        get {
-            var ret: String = ""
-            if let name = self["location_text"] {
-                ret = name
-            }
-            return ret
+        var ret: String = ""
+        if let name = self["location_text"] {
+            ret = name
         }
+        return ret
     }
     
     /* ################################################################## */
@@ -3166,13 +3018,11 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with the location street address.
      */
     public var locationStreetAddress: String {
-        get {
-            var ret: String = ""
-            if let name = self["location_street"] {
-                ret = name
-            }
-            return ret
+        var ret: String = ""
+        if let name = self["location_street"] {
+            ret = name
         }
+        return ret
     }
     
     /* ################################################################## */
@@ -3180,13 +3030,11 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with the location borough.
      */
     public var locationBorough: String {
-        get {
-            var ret: String = ""
-            if let name = self["location_city_subsection"] {
-                ret = name
-            }
-            return ret
+        var ret: String = ""
+        if let name = self["location_city_subsection"] {
+            ret = name
         }
+        return ret
     }
     
     /* ################################################################## */
@@ -3194,13 +3042,11 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with the location neigborhood.
      */
     public var locationNeighborhood: String {
-        get {
-            var ret: String = ""
-            if let name = self["location_neighborhood"] {
-                ret = name
-            }
-            return ret
+        var ret: String = ""
+        if let name = self["location_neighborhood"] {
+            ret = name
         }
+        return ret
     }
     
     /* ################################################################## */
@@ -3208,13 +3054,11 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with the location town.
      */
     public var locationTown: String {
-        get {
-            var ret: String = ""
-            if let name = self["location_municipality"] {
-                ret = name
-            }
-            return ret
+        var ret: String = ""
+        if let name = self["location_municipality"] {
+            ret = name
         }
+        return ret
     }
     
     /* ################################################################## */
@@ -3222,13 +3066,11 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with the location county.
      */
     public var locationCounty: String {
-        get {
-            var ret: String = ""
-            if let name = self["location_sub_province"] {
-                ret = name
-            }
-            return ret
+        var ret: String = ""
+        if let name = self["location_sub_province"] {
+            ret = name
         }
+        return ret
     }
     
     /* ################################################################## */
@@ -3236,13 +3078,11 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with the location state/province.
      */
     public var locationState: String {
-        get {
-            var ret: String = ""
-            if let name = self["location_province"] {
-                ret = name
-            }
-            return ret
+        var ret: String = ""
+        if let name = self["location_province"] {
+            ret = name
         }
+        return ret
     }
     
     /* ################################################################## */
@@ -3250,13 +3090,11 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with the location zip code/postal code.
      */
     public var locationZip: String {
-        get {
-            var ret: String = ""
-            if let name = self["location_postal_code_1"] {
-                ret = name
-            }
-            return ret
+        var ret: String = ""
+        if let name = self["location_postal_code_1"] {
+            ret = name
         }
+        return ret
     }
     
     /* ################################################################## */
@@ -3264,13 +3102,11 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with the location nation.
      */
     public var locationNation: String {
-        get {
-            var ret: String = ""
-            if let name = self["location_nation"] {
-                ret = name
-            }
-            return ret
+        var ret: String = ""
+        if let name = self["location_nation"] {
+            ret = name
         }
+        return ret
     }
     
     /* ################################################################## */
@@ -3278,13 +3114,11 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with additional location info.
      */
     public var locationInfo: String {
-        get {
-            var ret: String = ""
-            if let name = self["location_info"] {
-                ret = name
-            }
-            return ret
+        var ret: String = ""
+        if let name = self["location_info"] {
+            ret = name
         }
+        return ret
     }
     
     /* ################################################################## */
@@ -3292,13 +3126,11 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with the comments.
      */
     public var comments: String {
-        get {
-            var ret: String = ""
-            if let name = self["comments"] {
-                ret = name
-            }
-            return ret
+        var ret: String = ""
+        if let name = self["comments"] {
+            ret = name
         }
+        return ret
     }
     
     /* ################################################################## */
@@ -3308,15 +3140,13 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns: the distance from the search center (may not be applicable, in which case it will be 0).
      */
     public var distanceInMiles: Double {
-        get {
-            var ret: Double = 0
-            
-            if let val = Double(self["distance_in_miles"]) {
-                ret = val
-            }
-            
-            return ret
+        var ret: Double = 0
+        
+        if let val = Double(self["distance_in_miles"]) {
+            ret = val
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -3326,15 +3156,13 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns: the distance from the search center (may not be applicable, in which case it will be 0).
      */
     public var distanceInKm: Double {
-        get {
-            var ret: Double = 0
-            
-            if let val = Double(self["distance_in_km"]) {
-                ret = val
-            }
-            
-            return ret
+        var ret: Double = 0
+        
+        if let val = Double(self["distance_in_km"]) {
+            ret = val
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -3348,24 +3176,22 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with a basic address.
      */
     public var basicAddress: String {
-        get {
-            // See if we have specified an address format in the info.plist file.
-            if let addressParserType = Bundle.main.object(forInfoDictionaryKey: "BMLTiOSLibAddressParser") as? String {
-                switch addressParserType {
-                default:    // Currently, this is the only one.
-                    return self._USAddressParser
-                }
+        // See if we have specified an address format in the info.plist file.
+        if let addressParserType = Bundle.main.object(forInfoDictionaryKey: "BMLTiOSLibAddressParser") as? String {
+            switch addressParserType {
+            default:    // Currently, this is the only one.
+                return self._USAddressParser
             }
-            
-            return self._USAddressParser    // Default is US format.
         }
+        
+        return self._USAddressParser    // Default is US format.
     }
     
     /* ################################################################## */
     /**
      This is always false for this class.
      */
-    public var isDirty: Bool {get { return false }}
+    public var isDirty: Bool { return false }
     
     /* ################################################################## */
     /**
@@ -3378,22 +3204,20 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - returns:  A String, with the essential Meeting Info.
      */
     override public var description: String {
-        get {
-            let dateformatter = DateFormatter()
-            
-            if self._using12hClockFormat {
-                dateformatter.dateFormat = "EEEE, h:mm a"
-            } else {
-                dateformatter.dateFormat = "EEEE, H:mm"
-            }
-            
-            if let nextStartDate = self.nextStartDate {
-                let nextDate = dateformatter.string(from: nextStartDate)
-                let formats = self.formatsAsCSVList.isEmpty ? "" : " (" + self.formatsAsCSVList + ")"
-                return "\(nextDate)\n\(self.name)\(formats)\n\(self.basicAddress)"
-            } else {
-                return "\(self.name) (\(self.formatsAsCSVList))\n\(self.basicAddress)"
-            }
+        let dateformatter = DateFormatter()
+        
+        if self._using12hClockFormat {
+            dateformatter.dateFormat = "EEEE, h:mm a"
+        } else {
+            dateformatter.dateFormat = "EEEE, H:mm"
+        }
+        
+        if let nextStartDate = self.nextStartDate {
+            let nextDate = dateformatter.string(from: nextStartDate)
+            let formats = self.formatsAsCSVList.isEmpty ? "" : " (" + self.formatsAsCSVList + ")"
+            return "\(nextDate)\n\(self.name)\(formats)\n\(self.basicAddress)"
+        } else {
+            return "\(self.name) (\(self.formatsAsCSVList))\n\(self.basicAddress)"
         }
     }
     
@@ -3406,7 +3230,7 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      - parameter inRawMeeting: This is a Dictionary that describes the meeting. If empty, then a default meeting will be created.
      - parameter inHandler: This is the BMLTiOSLib object that "owns" this meeting
      */
-    public init(_ inRawMeeting: [String:String], inHandler: BMLTiOSLib) {
+    public init(_ inRawMeeting: [String: String], inHandler: BMLTiOSLib) {
         var myMeeting = inRawMeeting
         // If we have an empty meeting, we fill it with a default (empty) dataset.
         if 0 == myMeeting.count {
@@ -3498,7 +3322,7 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      
      - returns: true, if the meeting starts on or after the given test time.
      */
-    public func meetingStartsOnOrAfterThisTime(_ inTime : NSDateComponents) -> Bool {
+    public func meetingStartsOnOrAfterThisTime(_ inTime: NSDateComponents) -> Bool {
         if let myStartTime = self.startTimeAndDay {
             if var startHour = myStartTime.hour {
                 if let startMinute = myStartTime.minute {
@@ -3527,7 +3351,7 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      
      - returns: true, if the meeting starts on or before the given test time.
      */
-    public func meetingStartsOnOrBeforeThisTime(_ inTime : NSDateComponents) -> Bool {
+    public func meetingStartsOnOrBeforeThisTime(_ inTime: NSDateComponents) -> Bool {
         if let myStartTime = self.startTimeAndDay {
             if var startHour = myStartTime.hour {
                 if let startMinute = myStartTime.minute {
@@ -3556,7 +3380,7 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      
      - returns: true, if the meeting ends at or before the given test time.
      */
-    public func meetingEndsAtOrBeforeThisTime(_ inTime : NSDateComponents) -> Bool {
+    public func meetingEndsAtOrBeforeThisTime(_ inTime: NSDateComponents) -> Bool {
         if let myStartTime = self.startTimeAndDay {
             if var startHour = myStartTime.hour {
                 if let startMinute = myStartTime.minute {
@@ -3591,7 +3415,7 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
         var nextIndex = 0
         let keys = self.keys
         // Return a "bottom-up" iterator for the list.
-        return AnyIterator() {
+        return AnyIterator {
             if nextIndex == self.keys.count {
                 return nil
             }
@@ -3617,7 +3441,7 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
     /* ################################################################## */
     // MARK: Private Properties
     /* ################################################################## */
-    var _originalObject: [String:String] = [:]
+    var _originalObject: [String: String] = [:]
     
     /* ################################################################## */
     // MARK: Public Calculated Properties
@@ -3632,18 +3456,14 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
      
      - returns:  an Array of BMLTiOSLibHierarchicalServiceBodyNode objects, each of which represents one Service body.
      */
-    public var serviceBodiesICanBelongTo: [BMLTiOSLibHierarchicalServiceBodyNode]  {
-        get {
-            return self._handler.serviceBodiesICanEdit
-        }
+    public var serviceBodiesICanBelongTo: [BMLTiOSLibHierarchicalServiceBodyNode] {
+        return self._handler.serviceBodiesICanEdit
     }
     
     /* ################################################################## */
     /** This class is editable. */
     override public var isEditable: Bool {
-        get {
-            return true
-        }
+        return true
     }
     
     /* ################################################################## */
@@ -3659,10 +3479,8 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
         
         set {
             var formatList: [String] = []
-            for format in newValue {
-                if let _ = self._handler.getFormatByID(format.id) {
-                    formatList.append(format.key)
-                }
+            for format in newValue where nil != self._handler.getFormatByID(format.id) {
+                formatList.append(format.key)
             }
             self.formatsAsCSVList = formatList.joined(separator: ",")
         }
@@ -3964,7 +3782,7 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
         }
         
         set {
-            var timeComponents = newValue.components(separatedBy: ":").map{Int($0)}
+            var timeComponents = newValue.components(separatedBy: ":").map { Int($0) }
             // See if we need to parse as a simple number.
             if 1 == timeComponents.count {
                 if let simpleNumber = Int(timeString) {
@@ -3999,7 +3817,7 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
         }
         
         set {
-            let timeComponents = newValue.components(separatedBy: ":").map{Int($0)}
+            let timeComponents = newValue.components(separatedBy: ":").map { Int($0) }
             var hours = (nil != timeComponents[0]) ? timeComponents[0]! : 0
             var minutes = (nil != timeComponents[1]) ? timeComponents[1]! : 0
             
@@ -4103,7 +3921,7 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
         }
         
         set {
-            let myCalendar:Calendar = Calendar.current
+            let myCalendar: Calendar = Calendar.current
             let unitFlags: NSCalendar.Unit = [NSCalendar.Unit.hour, NSCalendar.Unit.minute, NSCalendar.Unit.weekday]
             let myComponents = (myCalendar as NSCalendar).components(unitFlags, from: newValue)
             self.startTimeAndDay = myComponents
@@ -4115,39 +3933,35 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
      - returns:  true, if the meeting data has changed from its original instance.
      */
     override public var isDirty: Bool {
-        get {
-            var ret: Bool = false
-            
-            // No-brainer
-            if self._originalObject.count != self.rawMeeting.count {
-                ret = true
-            } else {    // Hunt through our keys, looking for differences from the original.
-                for key in self._originalObject.keys {
-                    if "id_bigint" != key { // Can't change the ID
-                        if let origValue = self._originalObject[key] {
-                            if let newValue = self.rawMeeting[key] {
-                                if "formats" == key {
-                                    // We do this, because we may change the order, without actually changing the value.
-                                    let origKeys = origValue.components(separatedBy: ",").sorted()
-                                    let newKeys = newValue.components(separatedBy: ",").sorted()
-                                    ret = newKeys != origKeys
-                                } else {
-                                    ret = newValue != origValue
-                                }
-                            } else {
-                                ret = false
-                            }
+        var ret: Bool = false
+        
+        // No-brainer
+        if self._originalObject.count != self.rawMeeting.count {
+            ret = true
+        } else {    // Hunt through our keys, looking for differences from the original.
+            for key in self._originalObject.keys where "id_bigint" != key { // Can't change the ID
+                if let origValue = self._originalObject[key] {
+                    if let newValue = self.rawMeeting[key] {
+                        if "formats" == key {
+                            // We do this, because we may change the order, without actually changing the value.
+                            let origKeys = origValue.components(separatedBy: ",").sorted()
+                            let newKeys = newValue.components(separatedBy: ",").sorted()
+                            ret = newKeys != origKeys
+                        } else {
+                            ret = newValue != origValue
                         }
-                        
-                        if ret {    // We stop if we are dirty.
-                            break
-                        }
+                    } else {
+                        ret = false
                     }
                 }
-            }
             
-            return ret
+                if ret {    // We stop if we are dirty.
+                    break
+                }
+            }
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -4159,7 +3973,7 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
      - parameter inRawMeeting: This is a Dictionary that describes the meeting.
      - parameter inHandler: This is the BMLTiOSLib object that "owns" this meeting
      */
-    override public init(_ inRawMeeting: [String:String], inHandler: BMLTiOSLib) {
+    override public init(_ inRawMeeting: [String: String], inHandler: BMLTiOSLib) {
         super.init(inRawMeeting, inHandler: inHandler)
         self._originalObject = self.rawMeeting
     }
@@ -4186,13 +4000,11 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
      
      - parameter inFormatObject: The format object to be added.
      */
-    public func addFormat(_ inFormatObject :BMLTiOSLibFormatNode) {
+    public func addFormat(_ inFormatObject: BMLTiOSLibFormatNode) {
         var found: Bool = false
-        for formatObject in self.formats {
-            if formatObject == inFormatObject {
-                found = true
-                break
-            }
+        for formatObject in self.formats where formatObject == inFormatObject {
+            found = true
+            break
         }
         
         if !found {
@@ -4208,7 +4020,7 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
      
      - parameter inFormatObject: The format object to be removed.
      */
-    public func removeFormat(_ inFormatObject :BMLTiOSLibFormatNode) {
+    public func removeFormat(_ inFormatObject: BMLTiOSLibFormatNode) {
         var index: Int = 0
         for formatObject in self.formats {
             if formatObject == inFormatObject {
@@ -4285,7 +4097,7 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
                 ret = true
             }
         } else {
-            if let _ = self.rawMeeting[inKey] {
+            if nil != self.rawMeeting[inKey] {
                 ret = true
             }
         }
@@ -4384,7 +4196,7 @@ public class BMLTiOSLibFormatNode: NSObject {
     // MARK: Private Properties
     /* ################################################################## */
     /** This will contain the "raw" format data. It isn't meant to be exposed. */
-    private let _rawFormat: [String:String]
+    private let _rawFormat: [String: String]
 
     /* ################################################################## */
     // MARK: Public Properties
@@ -4399,9 +4211,7 @@ public class BMLTiOSLibFormatNode: NSObject {
      - returns:  all of the available keys in our dictionary.
      */
     public var keys: [String] {
-        get {
-            return Array(self._rawFormat.keys)
-        }
+        return Array(self._rawFormat.keys)
     }
     
     /* ################################################################## */
@@ -4409,9 +4219,7 @@ public class BMLTiOSLibFormatNode: NSObject {
      - returns:  An optional Int, with the format Shared ID.
      */
     public var id: Int! {
-        get {
-            return Int(self._rawFormat["id"]!)
-        }
+        return Int(self._rawFormat["id"]!)
     }
     
     /* ################################################################## */
@@ -4419,9 +4227,7 @@ public class BMLTiOSLibFormatNode: NSObject {
      - returns:  An optional String, with the format key.
      */
     public var key: String! {
-        get {
-            return self._rawFormat["key_string"]!
-        }
+        return self._rawFormat["key_string"]!
     }
     
     /* ################################################################## */
@@ -4429,9 +4235,7 @@ public class BMLTiOSLibFormatNode: NSObject {
      - returns:  An optional String, with the format name.
      */
     public var name: String! {
-        get {
-            return self._rawFormat["name_string"]!
-        }
+        return self._rawFormat["name_string"]!
     }
     
     /* ################################################################## */
@@ -4439,9 +4243,7 @@ public class BMLTiOSLibFormatNode: NSObject {
      - returns:  An optional String, with the format description.
      */
     override public var description: String {
-        get {
-            return self._rawFormat["description_string"]!
-        }
+        return self._rawFormat["description_string"]!
     }
     
     /* ################################################################## */
@@ -4449,9 +4251,7 @@ public class BMLTiOSLibFormatNode: NSObject {
      - returns:  An optional String, with the format language indicator.
      */
     public var lang: String! {
-        get {
-            return self._rawFormat["lang"]!
-        }
+        return self._rawFormat["lang"]!
     }
     
     /* ################################################################## */
@@ -4459,9 +4259,7 @@ public class BMLTiOSLibFormatNode: NSObject {
      - returns:  An optional String, with the format World ID (which may not be available, returning an empty string).
      */
     public var worldID: String! {
-        get {
-            return self._rawFormat["world_id"]!
-        }
+        return self._rawFormat["world_id"]!
     }
     
     /* ################################################################## */
@@ -4472,7 +4270,7 @@ public class BMLTiOSLibFormatNode: NSObject {
      
      - parameter inRawFormat: This is a Dictionary that describes the format.
      */
-    public init(_ inRawFormat: [String:String], inExtraData: AnyObject?) {
+    public init(_ inRawFormat: [String: String], inExtraData: AnyObject?) {
         self._rawFormat = inRawFormat
         self.extraData = inExtraData
     }
@@ -4488,7 +4286,7 @@ public class BMLTiOSLibServerLang: NSObject {
     /* ################################################################## */
     // MARK: Private Properties
     /* ################################################################## */
-    private let _serverInfoDictionary: [String:String]
+    private let _serverInfoDictionary: [String: String]
     
     /* ################################################################## */
     // MARK: Public Calculated Properties
@@ -4498,14 +4296,12 @@ public class BMLTiOSLibServerLang: NSObject {
      
      - returns:  the Server Info element, as a String.
      */
-    public subscript(_ inString:String) -> String! {
-        get {
-            if let value = self._serverInfoDictionary[inString] {
-                return value
-            }
-            
-            return nil
+    public subscript(_ inString: String) -> String! {
+        if let value = self._serverInfoDictionary[inString] {
+            return value
         }
+        
+        return nil
     }
     
     /* ################################################################## */
@@ -4513,13 +4309,11 @@ public class BMLTiOSLibServerLang: NSObject {
      - returns:  the language key.
      */
     public var langKey: String {
-        get {
-            if let keyString = self["key"] {
-                return keyString
-            }
-            
-            return ""
+        if let keyString = self["key"] {
+            return keyString
         }
+        
+        return ""
     }
     
     /* ################################################################## */
@@ -4527,13 +4321,11 @@ public class BMLTiOSLibServerLang: NSObject {
      - returns:  the language name.
      */
     public var langName: String {
-        get {
-            if let nameString = self["name"] {
-                return nameString
-            }
-            
-            return ""
+        if let nameString = self["name"] {
+            return nameString
         }
+        
+        return ""
     }
     
     /* ################################################################## */
@@ -4541,13 +4333,11 @@ public class BMLTiOSLibServerLang: NSObject {
      :returns true, if this is the default Server language.
      */
     public var isDefault: Bool {
-        get {
-            if let defString = self["default"] {
-                return "0" != defString
-            }
-            
-            return false
+        if let defString = self["default"] {
+            return "0" != defString
         }
+        
+        return false
     }
     
     /* ################################################################## */
@@ -4557,7 +4347,7 @@ public class BMLTiOSLibServerLang: NSObject {
      Simple direct initializer.
      - parameter inLang: This is a Dictionary that contains the info returned from the server.
      */
-    public init(_ inLang: [String:String]) {
+    public init(_ inLang: [String: String]) {
         self._serverInfoDictionary = inLang
         super.init()
     }
@@ -4586,7 +4376,7 @@ public class BMLTiOSLibHierarchicalServiceBodyNode: NSObject {
     /** The parent node for this object. Nil if top-level. */
     public var parent: BMLTiOSLibHierarchicalServiceBodyNode! = nil
     /** The Service body information for this node. */
-    public var serviceBody: [String:String]! = nil
+    public var serviceBody: [String: String]! = nil
     /** An array of "child" nodes. May be empty, if we are a "leaf." */
     public var children: [BMLTiOSLibHierarchicalServiceBodyNode] = []
     /** This is whatever data the user wants to attach to the node. */
@@ -4599,9 +4389,7 @@ public class BMLTiOSLibHierarchicalServiceBodyNode: NSObject {
      - returns:  all of the available keys in our dictionary.
      */
     public var keys: [String] {
-        get {
-            return Array(self.serviceBody.keys)
-        }
+        return Array(self.serviceBody.keys)
     }
     
     /* ################################################################## */
@@ -4609,15 +4397,13 @@ public class BMLTiOSLibHierarchicalServiceBodyNode: NSObject {
      - returns:  the Service body ID as an Int. If there is no ID, it returns 0 (Should never happen).
      */
     public var id: Int {
-        get{
-            if let ret1 = self.serviceBody["id"] {
-                if let id = Int(ret1) {
-                    return id
-                }
+        if let ret1 = self.serviceBody["id"] {
+            if let id = Int(ret1) {
+                return id
             }
-            
-            return 0
         }
+        
+        return 0
     }
     
     /* ################################################################## */
@@ -4625,13 +4411,11 @@ public class BMLTiOSLibHierarchicalServiceBodyNode: NSObject {
      - returns:  the Service body name as a String. If there is no name, it returns blank.
      */
     public var name: String {
-        get {
-            if let name = self.serviceBody["name"] {
-                return name
-            }
-            
-            return ""
+        if let name = self.serviceBody["name"] {
+            return name
         }
+        
+        return ""
     }
     
     /* ################################################################## */
@@ -4639,16 +4423,14 @@ public class BMLTiOSLibHierarchicalServiceBodyNode: NSObject {
      - returns:  the Service body description as a String. If there is no description, it returns the name.
      */
     override public var description: String {
-        get {
-            if let description = self.serviceBody["description"] {
-                if description.isEmpty {
-                    return self.name
-                }
-                return description
+        if let description = self.serviceBody["description"] {
+            if description.isEmpty {
+                return self.name
             }
-            
-            return ""
+            return description
         }
+        
+        return ""
     }
     
     /* ################################################################## */
@@ -4656,9 +4438,7 @@ public class BMLTiOSLibHierarchicalServiceBodyNode: NSObject {
      - returns:  If we are logged in as an admin, and have administrator rights for this Service body, we get a true.
      */
     public var iCanAdminister: Bool {
-        get {
-            return BMLTiOSLibPermissions.Administrator.rawValue == self.permissions.rawValue
-        }
+        return BMLTiOSLibPermissions.Administrator.rawValue == self.permissions.rawValue
     }
     
     /* ################################################################## */
@@ -4666,9 +4446,7 @@ public class BMLTiOSLibHierarchicalServiceBodyNode: NSObject {
      - returns:  If we are logged in as an admin, and have edit rights for this Service body, we get a true.
      */
     public var iCanEdit: Bool {
-        get {
-            return BMLTiOSLibPermissions.Editor.rawValue <= self.permissions.rawValue
-        }
+        return BMLTiOSLibPermissions.Editor.rawValue <= self.permissions.rawValue
     }
     
     /* ################################################################## */
@@ -4676,9 +4454,7 @@ public class BMLTiOSLibHierarchicalServiceBodyNode: NSObject {
      - returns:  If we are logged in as an admin, and have observer rights for this Service body, we get a true.
      */
     public var iCanObserve: Bool {
-        get {
-            return BMLTiOSLibPermissions.Observer.rawValue <= self.permissions.rawValue
-        }
+        return BMLTiOSLibPermissions.Observer.rawValue <= self.permissions.rawValue
     }
     
     /* ################################################################## */
@@ -4686,9 +4462,7 @@ public class BMLTiOSLibHierarchicalServiceBodyNode: NSObject {
      - returns:  If we are logged in as an admin, this will indicate the level of permission we have with this Service body.
      */
     public var permissions: BMLTiOSLibPermissions {
-        get {
-            return self.serverComm.permissions(forServiceBody: self)
-        }
+        return self.serverComm.permissions(forServiceBody: self)
     }
     
     /* ################################################################## */
@@ -4696,9 +4470,7 @@ public class BMLTiOSLibHierarchicalServiceBodyNode: NSObject {
      - returns:  true, if we have a parent.
      */
     public var hasParent: Bool {
-        get {
-            return nil != self.parent
-        }
+        return nil != self.parent
     }
     
     /* ################################################################## */
@@ -4706,9 +4478,7 @@ public class BMLTiOSLibHierarchicalServiceBodyNode: NSObject {
      - returns:  true, if we have children.
      */
     public var hasChildren: Bool {
-        get {
-            return !self.children.isEmpty
-        }
+        return !self.children.isEmpty
     }
     
     /* ################################################################## */
@@ -4716,17 +4486,15 @@ public class BMLTiOSLibHierarchicalServiceBodyNode: NSObject {
      - returns:  the total number of children, including children of children, etc.
      */
     public var completeChildCount: Int {
-        get {
-            var ret : Int = 0
-            
-            if !self.children.isEmpty {
-                for shorty in self.children {
-                    ret += (1 + shorty.completeChildCount)
-                }
+        var ret: Int = 0
+        
+        if !self.children.isEmpty {
+            for shorty in self.children {
+                ret += (1 + shorty.completeChildCount)
             }
-            
-            return ret
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -4734,21 +4502,19 @@ public class BMLTiOSLibHierarchicalServiceBodyNode: NSObject {
      - returns:  how many levels down we are. 0 is top-level (no parent).
      */
     public var howDeepInTheRabbitHoleAmI: Int {
-        get {
-            var ret: Int = 0
-            
-            var parent = self.parent
-            
-            while nil != parent {
-                parent = parent!.parent
-                if nil == parent {
-                    break
-                }
-                ret += 1
+        var ret: Int = 0
+        
+        var parent = self.parent
+        
+        while nil != parent {
+            parent = parent!.parent
+            if nil == parent {
+                break
             }
-            
-            return ret
+            ret += 1
         }
+        
+        return ret
     }
     
     /* ################################################################## */
@@ -4788,7 +4554,7 @@ public class BMLTiOSLibHierarchicalServiceBodyNode: NSObject {
      - parameter serviceBody: a Dictionary<String,String>, containing the Service body information.
      - parameter chidren: This is an Array of BMLTiOSLibHierarchicalServiceBodyNode objects, which are the children for this node.
      */
-    public init(inServerComm: BMLTiOSLib, parent: BMLTiOSLibHierarchicalServiceBodyNode!, serviceBody: [String:String]!, children: [BMLTiOSLibHierarchicalServiceBodyNode]) {
+    public init(inServerComm: BMLTiOSLib, parent: BMLTiOSLibHierarchicalServiceBodyNode!, serviceBody: [String: String]!, children: [BMLTiOSLibHierarchicalServiceBodyNode]) {
         self.parent = parent
         self.serviceBody = serviceBody
         self.children = children
