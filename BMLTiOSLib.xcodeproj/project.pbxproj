@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EDDFAFBBB92FE7EC60A1223 /* Pods_BMLTiOSLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3FA16D6D95473857AA7AAB /* Pods_BMLTiOSLib.framework */; };
 		77DBD79D1FDEAEEB008F110F /* BMLTiOSLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DBD79B1FDEAEEB008F110F /* BMLTiOSLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DBD7A71FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A41FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift */; };
 		77DBD7A81FDEAFBF008F110F /* BMLTCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A51FDEAFBF008F110F /* BMLTCommunicator.swift */; };
@@ -72,6 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		57DB341D667253D0EBA749D6 /* Pods-BMLTiOSLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMLTiOSLib.release.xcconfig"; path = "Pods/Target Support Files/Pods-BMLTiOSLib/Pods-BMLTiOSLib.release.xcconfig"; sourceTree = "<group>"; };
 		7790839A1FDEB5CD0032C2B8 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		77DBD7981FDEAEEB008F110F /* BMLTiOSLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BMLTiOSLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DBD79B1FDEAEEB008F110F /* BMLTiOSLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLTiOSLib.h; sourceTree = "<group>"; };
@@ -116,6 +118,8 @@
 		77DBD8191FDEB183008F110F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		77DBD81A1FDEB183008F110F /* BMLTiOSLib.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BMLTiOSLib.podspec; sourceTree = "<group>"; };
 		77DBD81B1FDEB183008F110F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		A1AEFBC9AB9CB1715F03A473 /* Pods-BMLTiOSLib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMLTiOSLib.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMLTiOSLib/Pods-BMLTiOSLib.debug.xcconfig"; sourceTree = "<group>"; };
+		BA3FA16D6D95473857AA7AAB /* Pods_BMLTiOSLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMLTiOSLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EDDFAFBBB92FE7EC60A1223 /* Pods_BMLTiOSLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +142,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AEAB784A039D14DA0430C9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1AEFBC9AB9CB1715F03A473 /* Pods-BMLTiOSLib.debug.xcconfig */,
+				57DB341D667253D0EBA749D6 /* Pods-BMLTiOSLib.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		77DBD78E1FDEAEEB008F110F = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +161,8 @@
 				77DBD7A31FDEAFBF008F110F /* Framework Project */,
 				77DBD7C01FDEB027008F110F /* Test Harness Project */,
 				77DBD7991FDEAEEB008F110F /* Products */,
+				0AEAB784A039D14DA0430C9F /* Pods */,
+				9F2AEF357313BE8BEE338456 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -229,6 +245,14 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		9F2AEF357313BE8BEE338456 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA3FA16D6D95473857AA7AAB /* Pods_BMLTiOSLib.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -247,10 +271,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77DBD7A01FDEAEEB008F110F /* Build configuration list for PBXNativeTarget "BMLTiOSLib" */;
 			buildPhases = (
+				9D6906C6DF63DE8739572A6A /* [CP] Check Pods Manifest.lock */,
+				77BAC1141FDEBC120036577C /* SwiftLint */,
 				77DBD7931FDEAEEB008F110F /* Sources */,
 				77DBD7941FDEAEEB008F110F /* Frameworks */,
 				77DBD7951FDEAEEB008F110F /* Headers */,
 				77DBD7961FDEAEEB008F110F /* Resources */,
+				C70DB1288D77E4A811DD4110 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -352,6 +379,56 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		77BAC1141FDEBC120036577C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"\n";
+		};
+		9D6906C6DF63DE8739572A6A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BMLTiOSLib-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C70DB1288D77E4A811DD4110 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BMLTiOSLib/Pods-BMLTiOSLib-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		77DBD7931FDEAEEB008F110F /* Sources */ = {
@@ -643,9 +720,10 @@
 		};
 		77DBD7A11FDEAEEB008F110F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1AEFBC9AB9CB1715F03A473 /* Pods-BMLTiOSLib.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = P53V4JS928;
@@ -665,6 +743,7 @@
 		};
 		77DBD7A21FDEAEEB008F110F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57DB341D667253D0EBA749D6 /* Pods-BMLTiOSLib.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
