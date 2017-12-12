@@ -200,7 +200,7 @@ NICE TO HAVE
 
 CHANGELIST
 ----------
-***Version 1.2.0* ** *- December 12, 2017*
+***Version 1.2.1* ** *- December 12, 2017*
 
 - This implements a bunch of internal structural changes to satisfy [SwiftLint[(https://github.com/realm/SwiftLint), a utility for improving code quality. There should be absolutely no visible external changes, but it's a big change, internally.
 - Removed the "auto [Jazzy](https://github.com/realm/jazzy)" documentation generator, as it slows down the build, and we can easily do it manually.
