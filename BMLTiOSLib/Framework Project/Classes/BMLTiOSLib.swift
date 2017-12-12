@@ -1435,6 +1435,51 @@ public class BMLTiOSLibSearchCriteria: NSObject {
         
         // Start with Service bodies
         
+        ret = self.appendServiceBodies(ret)
+        
+        // Next, we do formats.
+        
+        ret = self.appendFormats(ret)
+
+        // And then weekdays.
+        
+        ret = self.appendWeekdays(ret)
+
+        // Next, look for a search string
+        
+        ret = self.appendSearchString(ret)
+        
+        // Let's see if we have a start time specified.
+        
+        ret = self.appendStartTime(ret)
+
+        // Let's see if we have an end time specified.
+        
+        ret = self.appendEndTime(ret)
+
+        // Let's see if we have a duration time specified.
+        
+        ret = self.appendDurationTime(ret)
+
+        // Now, see if we are asking for a specific value of a field.
+        
+        ret = self.appendFieldValue(ret)
+
+        // If we are a logged-in admin, then we can pick our published status.
+        if self._serverComm.isAdminLoggedIn {
+            ret += "&advanced_published=" + ((.Published == self.publishedStatus) ? "1" : ((.Both == self.publishedStatus) ? "0" : "-1"))
+        }
+        
+        // Return the search parameter list.
+        return ret
+    }
+    
+    /* ############################################################## */
+    /**
+     */
+    func appendServiceBodies(_ retIn: String) -> String {
+        var ret = retIn
+        
         for item in self.serviceBodies where item.selection != .Clear {
             ret += "&services[]="
             if item.selection == .Deselected {
@@ -1443,7 +1488,14 @@ public class BMLTiOSLibSearchCriteria: NSObject {
             ret += String(item.item.id)
         }
         
-        // Next, we do formats.
+        return ret
+    }
+    
+    /* ############################################################## */
+    /**
+     */
+    func appendFormats(_ retIn: String) -> String {
+        var ret = retIn
         
         for item in self.formats where item.selection != .Clear {
             ret += "&formats[]="
@@ -1452,8 +1504,15 @@ public class BMLTiOSLibSearchCriteria: NSObject {
             }
             ret += String(item.item.id)
         }
-        
-        // And then weekdays.
+
+        return ret
+    }
+    
+    /* ############################################################## */
+    /**
+     */
+    func appendWeekdays(_ retIn: String) -> String {
+        var ret = retIn
         
         for i in self._weekdays.keys {
             if let weekday = self._weekdays[i] {
@@ -1467,7 +1526,14 @@ public class BMLTiOSLibSearchCriteria: NSObject {
             }
         }
         
-        // Next, look for a search string
+        return ret
+    }
+    
+    /* ############################################################## */
+    /**
+     */
+    func appendSearchString(_ retIn: String) -> String {
+        var ret = retIn
         
         var isSearchString: Bool = false    // If the location is determined by a string geocode, then we use a different radius parameter.
         
@@ -1487,7 +1553,7 @@ public class BMLTiOSLibSearchCriteria: NSObject {
                 }
             }
         }
-        
+
         // Next, see if a location was specified. This is ignored if a location search string was provided.
         
         if !(!self._searchString.isEmpty && self._searchIsALocation) && (nil != self._searchLocation) {
@@ -1520,8 +1586,15 @@ public class BMLTiOSLibSearchCriteria: NSObject {
                 ret += String(format: "%.4g", radius)
             }
         }
-        
-        // Let's see if we have a start time specified.
+
+        return ret
+    }
+    
+    /* ############################################################## */
+    /**
+     */
+    func appendStartTime(_ retIn: String) -> String {
+        var ret = retIn
         
         if nil != self.startTimeInSeconds {
             var minutes: Int = Int(self.startTimeInSeconds!) / 60
@@ -1539,7 +1612,14 @@ public class BMLTiOSLibSearchCriteria: NSObject {
             }
         }
         
-        // Let's see if we have an end time specified.
+        return ret
+    }
+    
+    /* ############################################################## */
+    /**
+     */
+    func appendEndTime(_ retIn: String) -> String {
+        var ret = retIn
         
         if nil != self.endTimeInSeconds {
             var minutes: Int = Int(self.endTimeInSeconds!) / 60
@@ -1555,7 +1635,14 @@ public class BMLTiOSLibSearchCriteria: NSObject {
             }
         }
         
-        // Let's see if we have a duration time specified.
+        return ret
+    }
+    
+    /* ############################################################## */
+    /**
+     */
+    func appendDurationTime(_ retIn: String) -> String {
+        var ret = retIn
         
         if nil != self.durationTimeInSeconds {
             let hours: Int = Int(self.durationTimeInSeconds! / 3600)
@@ -1572,7 +1659,14 @@ public class BMLTiOSLibSearchCriteria: NSObject {
             }
         }
         
-        // Now, see if we are asking for a specific value of a field.
+        return ret
+    }
+    
+    /* ############################################################## */
+    /**
+     */
+    func appendFieldValue(_ retIn: String) -> String {
+        var ret = retIn
         
         if (nil != self._specificFieldValue) && !self._specificFieldValue!.fieldKey.isEmpty {
             ret += "&meeting_key=" + self._specificFieldValue!.fieldKey.URLEncodedString()!
@@ -1585,16 +1679,10 @@ public class BMLTiOSLibSearchCriteria: NSObject {
                 ret += "&meeting_key_contains=0"
             }
         }
-        
-        // If we are a logged-in admin, then we can pick our published status.
-        if self._serverComm.isAdminLoggedIn {
-            ret += "&advanced_published=" + ((.Published == self.publishedStatus) ? "1" : ((.Both == self.publishedStatus) ? "0" : "-1"))
-        }
-        
-        // Return the search parameter list.
+
         return ret
     }
-    
+
     /* ############################################################## */
     // MARK: Public Calculated Properties
     /* ############################################################## */

@@ -202,7 +202,10 @@ class AllChangesListViewController: BaseTestViewController {
     /**
      */
     func updateChangeResults(inChanges: [BMLTiOSLibChangeNode]) {
-        self.getChangesButton.isEnabled = true
+        if nil != self.getChangesButton {
+            self.getChangesButton.isEnabled = true
+        }
+        
         self.changesObjects = inChanges
         
         if 0 < inChanges.count {

@@ -853,7 +853,9 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
         if let reuseID = reuseIDs[indexPath.row] {
             ret = tableView.dequeueReusableCell(withIdentifier: reuseIDs[indexPath.row]!)
             
-            if nil == ret, ret = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: reuseID) {
+            if nil == ret {
+                ret = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: reuseID)
+                
                 ret.backgroundColor = UIColor.clear
                 
                 switch indexPath.row {

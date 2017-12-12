@@ -180,13 +180,13 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
                     
                     switch indexPath.row {
                     case TableRows.FormatRow.rawValue:
-                        ret = self.handleFormatRow(tableView, indexPath: indexPath, ret: ret)
+                        ret = self.handleFormatRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
 
                     case TableRows.LoginRow.rawValue:
                         ret = self.handleLoginRow(tableView, indexPath: indexPath, ret: ret)
 
                     case TableRows.LocationRow.rawValue:
-                        ret = self.handleLocationRow(tableView, indexPath: indexPath, ret: ret)
+                        ret = self.handleLocationRow(tableView, indexPath: indexPath, ret: ret, reuseID: reuseID)
                         
                     default:
                         break
@@ -201,7 +201,7 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
     /* ################################################################## */
     /**
      */
-    func handleFormatRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell) -> UITableViewCell {
+    func handleFormatRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell, reuseID: String) -> UITableViewCell {
         if nil == self._formatCellView {
             _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
         }
@@ -279,7 +279,7 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
     /* ################################################################## */
     /**
      */
-    func handleLocationRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell) -> UITableViewCell {
+    func handleLocationRow(_ tableView: UITableView, indexPath: IndexPath, ret: UITableViewCell, reuseID: String) -> UITableViewCell {
         if nil == self._mapView {
             _ = UINib(nibName: reuseID, bundle: nil).instantiate(withOwner: self, options: nil)[0]
         }
