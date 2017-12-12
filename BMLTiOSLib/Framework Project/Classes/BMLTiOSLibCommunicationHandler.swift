@@ -1653,6 +1653,11 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
 
     /* ################################################################## */
     /**
+     The response callback (second part to reduce CC). This acts as a dispatcher, calling the appropriate handler.
+     
+     - parameter inHandler: The handler for this call.
+     - parameter parsedObject: The partly-parsed response.
+     - parameter inResponseData: The JSON data object. If nil, the call failed to produce. Check the handler's error data member.
      */
     func handleCallType(_ callType: String, parsedObject: AnyObject?, inResponseData: Any) {
         switch callType {  // See what this call wanted us to do.
@@ -1695,18 +1700,60 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
                 }
             }
             
-        case BMLTiOSLibCommunicationHandlerSuffixes.AdminSaveMeetingChanges.rawValue:
-            if let savedChanges = parsedObject as? [String: AnyObject?] {
-                self.handleMeetingEditSaveResponse(savedChanges)
-            } else {
-                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.AdminSaveMeetingChanges, inBadData: inResponseData as AnyObject?)
-            }
-            
+        default:
+            self.handleCallTypePartDeux(callType, parsedObject: parsedObject, inResponseData: inResponseData)
+        }
+    }
+
+    /* ################################################################## */
+    /**
+     The response callback (third part to reduce CC). This acts as a dispatcher, calling the appropriate handler.
+     
+     - parameter inHandler: The handler for this call.
+     - parameter parsedObject: The partly-parsed response.
+     - parameter inResponseData: The JSON data object. If nil, the call failed to produce. Check the handler's error data member.
+     */
+    func handleCallTypePartDeux(_ callType: String, parsedObject: AnyObject?, inResponseData: Any) {
+        switch callType {  // See what this call wanted us to do.
         case BMLTiOSLibCommunicationHandlerSuffixes.GetChanges.rawValue:
             if let changeArray = parsedObject as? [BMLTiOSLibChangeNode] {
                 self.handleGetChangesResponse(changeArray, inMeetingNode: nil, inDeletedMeetingsOnly: false)
             } else {
                 self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.GetChanges, inBadData: inResponseData as AnyObject?)
+            }
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.SendMessageToContact.rawValue:
+            self.handleSentMessageResponse(parsedObject)
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.AdminLogin.rawValue:
+            self.handleLoginResponse((parsedObject as? String)!)
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.AdminPermissions.rawValue:
+            self.handlePermissionResponse(parsedObject)
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.AdminLogout.rawValue:
+            self.handleLogoutResponse()
+            
+        default:
+            self.handleCallTypePartTwee(callType, parsedObject: parsedObject, inResponseData: inResponseData)
+        }
+    }
+
+    /* ################################################################## */
+    /**
+     The response callback (fourth part to reduce CC). This acts as a dispatcher, calling the appropriate handler.
+     
+     - parameter inHandler: The handler for this call.
+     - parameter parsedObject: The partly-parsed response.
+     - parameter inResponseData: The JSON data object. If nil, the call failed to produce. Check the handler's error data member.
+     */
+    func handleCallTypePartTwee(_ callType: String, parsedObject: AnyObject?, inResponseData: Any) {
+        switch callType {  // See what this call wanted us to do.
+        case BMLTiOSLibCommunicationHandlerSuffixes.AdminSaveMeetingChanges.rawValue:
+            if let savedChanges = parsedObject as? [String: AnyObject?] {
+                self.handleMeetingEditSaveResponse(savedChanges)
+            } else {
+                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.AdminSaveMeetingChanges, inBadData: inResponseData as AnyObject?)
             }
             
         case BMLTiOSLibCommunicationHandlerSuffixes.AdminRestoreDeletedMtg.rawValue:
@@ -1716,6 +1763,21 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
                 self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.AdminRestoreDeletedMtg, inBadData: inResponseData as AnyObject?)
             }
             
+        default:
+            self.handleCallTypeLastPartISwear(callType, parsedObject: parsedObject, inResponseData: inResponseData)
+        }
+    }
+
+    /* ################################################################## */
+    /**
+     The response callback (fifth part to reduce CC). This acts as a dispatcher, calling the appropriate handler.
+     
+     - parameter inHandler: The handler for this call.
+     - parameter parsedObject: The partly-parsed response.
+     - parameter inResponseData: The JSON data object. If nil, the call failed to produce. Check the handler's error data member.
+     */
+    func handleCallTypeLastPartISwear(_ callType: String, parsedObject: AnyObject?, inResponseData: Any) {
+        switch callType {  // See what this call wanted us to do.
         case BMLTiOSLibCommunicationHandlerSuffixes.GetRestoredMeetingInfo.rawValue:
             if let meetingNodes = parsedObject as? [String: [BMLTiOSLibEditableMeetingNode]] {
                 self.handleRestoreMeetingInfoResponse(meetingNodes)
@@ -1743,18 +1805,6 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
             } else {
                 self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.AdminRollbackMtg, inBadData: inResponseData as AnyObject?)
             }
-            
-        case BMLTiOSLibCommunicationHandlerSuffixes.AdminLogin.rawValue:
-            self.handleLoginResponse((parsedObject as? String)!)
-            
-        case BMLTiOSLibCommunicationHandlerSuffixes.SendMessageToContact.rawValue:
-            self.handleSentMessageResponse(parsedObject)
-            
-        case BMLTiOSLibCommunicationHandlerSuffixes.AdminPermissions.rawValue:
-            self.handlePermissionResponse(parsedObject)
-            
-        case BMLTiOSLibCommunicationHandlerSuffixes.AdminLogout.rawValue:
-            self.handleLogoutResponse()
             
         default:
             self.errorDescription = .CommError

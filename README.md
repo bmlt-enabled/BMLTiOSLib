@@ -15,7 +15,7 @@ Because [Apple now requires that iOS apps only interact with SSL servers](https:
 
 For easy testing, you can connect to [the BMLT Test Server](https://tkddevel.com/bmltwork/bmlt/main_server/), which uses SSL. This database may change a lot, as it is our main test bed, but it will always have the ability to be accessed via SSL.
 
-[The BMLTiOSLib Tester app](https://bitbucket.org/bmlt/bmltioslib/src/master/BMLTiOSLib%20Tester) is not pretty. It's not meant to be. It's a space shuttle cockpit program that's designed to let us press all the various buttons.
+[The BMLTiOSLib Tester app](https://bitbucket.org/bmlt/bmltioslib/src/master/BMLTiOSLib%20Tester) is not pretty. It's not meant to be. It's a space shuttle cockpit program that's designed to let us press all the various buttons. It also has a couple of issues with operation that, quite frankly, aren't a priority to fix, as [we now have several "real world" implementations](https://bmlt.magshare.net/satellites/bmlt-ios-apps/) that stress the BMLTiOSLib a great deal more than this ugly little duckling.
 
 [This is the documentation page for the BMLTiOSLib.](https://bmlt.magshare.net/bmltioslib/)
 
@@ -200,9 +200,10 @@ NICE TO HAVE
 
 CHANGELIST
 ----------
-***Version 1.1.3* ** *- December 10, 2017*
+***Version 1.2.0* ** *- December 12, 2017*
 
-- This is actually an "interim" version that needed to be created in order to allow me to work with Cocoapods.
+- This implements a bunch of internal structural changes to satisfy [SwiftLint[(https://github.com/realm/SwiftLint), a utility for improving code quality. There should be absolutely no visible external changes, but it's a big change, internally.
+- Removed the "auto [Jazzy](https://github.com/realm/jazzy)" documentation generator, as it slows down the build, and we can easily do it manually.
 
 ***Version 1.1.2* ** *- December 5, 2017*
 
