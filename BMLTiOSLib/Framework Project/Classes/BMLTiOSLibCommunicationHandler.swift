@@ -1631,126 +1631,133 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
                     }
                     self._activeCommunicator = nil // OK. We're done.
                 } else {
-                    let callType = inRefCon as? String  // We send a key in as a string.
-                    
-                    // Special handler for deleted meetings.
-                    if BMLTiOSLibCommunicationHandlerSuffixes.GetDeletedMeetings.rawValue == callType {
-                        if nil != parsedObject {
-                            self.handleGetChangesResponse((parsedObject as? [BMLTiOSLibChangeNode])!, inMeetingNode: nil, inDeletedMeetingsOnly: true)
+                    if let callType = inRefCon as? String { // We send a key in as a string.
+                        // Special handler for deleted meetings.
+                        if BMLTiOSLibCommunicationHandlerSuffixes.GetDeletedMeetings.rawValue == callType {
+                            if nil != parsedObject {
+                                self.handleGetChangesResponse((parsedObject as? [BMLTiOSLibChangeNode])!, inMeetingNode: nil, inDeletedMeetingsOnly: true)
+                            } else {
+                                self.handleGetChangesResponse([], inMeetingNode: nil, inDeletedMeetingsOnly: true)
+                            }
+                            self._activeCommunicator = nil // OK. We're done.
                         } else {
-                            self.handleGetChangesResponse([], inMeetingNode: nil, inDeletedMeetingsOnly: true)
-                        }
-                        self._activeCommunicator = nil // OK. We're done.
-                    } else {
-                        self._activeCommunicator = nil // OK. We're done.
-                        
-                        switch callType {  // See what this call wanted us to do.
-                        case BMLTiOSLibCommunicationHandlerSuffixes.ServerTest.rawValue?:
-                            if let testResponse = parsedObject as? BMLTiOSLibServerInfo {
-                                self.handleServerTest(testResponse)
-                            } else {
-                                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.ServerTest, inBadData: inResponseData as AnyObject?)
-                            }
+                            self._activeCommunicator = nil // OK. We're done.
                             
-                        case BMLTiOSLibCommunicationHandlerSuffixes.GetServiceBodies.rawValue?:
-                            if let serviceBodies = parsedObject as? [[String: String]] {
-                                self.handleServiceBodies(serviceBodies)
-                            } else {
-                                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.GetServiceBodies, inBadData: inResponseData as AnyObject?)
-                            }
-                            
-                        case BMLTiOSLibCommunicationHandlerSuffixes.GetFormats.rawValue?:
-                            if let formats = parsedObject as? [String: [BMLTiOSLibFormatNode]] {
-                                self.handleFormats(formats)
-                            } else {
-                                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.GetFormats, inBadData: inResponseData as AnyObject?)
-                            }
-
-                        case BMLTiOSLibCommunicationHandlerSuffixes.GetLangs.rawValue?:
-                            if let langs = parsedObject as? [BMLTiOSLibServerLang] {
-                                self.handleLangs(langs)
-                            } else {
-                                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.GetLangs, inBadData: inResponseData as AnyObject?)
-                            }
-                           
-                        case BMLTiOSLibCommunicationHandlerSuffixes.MeetingSearch.rawValue?:
-                            if let meetings = parsedObject as? [String: AnyObject?] {
-                                self.handleMeetingSearchResponse(meetings)
-                            } else {
-                                if nil == parsedObject {
-                                    self.handleMeetingSearchResponse([:])
-                                } else {
-                                    self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.MeetingSearch, inBadData: inResponseData as AnyObject?)
-                                }
-                            }
-                            
-                        case BMLTiOSLibCommunicationHandlerSuffixes.AdminSaveMeetingChanges.rawValue?:
-                            if let savedChanges = parsedObject as? [String: AnyObject?] {
-                                self.handleMeetingEditSaveResponse(savedChanges)
-                            } else {
-                                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.AdminSaveMeetingChanges, inBadData: inResponseData as AnyObject?)
-                            }
-                            
-                        case BMLTiOSLibCommunicationHandlerSuffixes.GetChanges.rawValue?:
-                            if let changeArray = parsedObject as? [BMLTiOSLibChangeNode] {
-                                self.handleGetChangesResponse(changeArray, inMeetingNode: nil, inDeletedMeetingsOnly: false)
-                            } else {
-                                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.GetChanges, inBadData: inResponseData as AnyObject?)
-                            }
-                            
-                        case BMLTiOSLibCommunicationHandlerSuffixes.AdminRestoreDeletedMtg.rawValue?:
-                            if let savedChanges = parsedObject as? [String: AnyObject?] {
-                                self.handleRestoreMeetingResponse(savedChanges)
-                            } else {
-                                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.AdminRestoreDeletedMtg, inBadData: inResponseData as AnyObject?)
-                            }
-                            
-                        case BMLTiOSLibCommunicationHandlerSuffixes.GetRestoredMeetingInfo.rawValue?:
-                            if let meetingNodes = parsedObject as? [String: [BMLTiOSLibEditableMeetingNode]] {
-                                self.handleRestoreMeetingInfoResponse(meetingNodes)
-                            } else {
-                                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.GetRestoredMeetingInfo, inBadData: inResponseData as AnyObject?)
-                            }
-                            
-                        case BMLTiOSLibCommunicationHandlerSuffixes.GetRollbackMeetingInfo.rawValue?:
-                            if let meetingNodes = parsedObject as? [String: [BMLTiOSLibEditableMeetingNode]] {
-                                self.handleRollbackMeetingInfoResponse(meetingNodes)
-                            } else {
-                                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.GetRollbackMeetingInfo, inBadData: inResponseData as AnyObject?)
-                            }
-                            
-                        case BMLTiOSLibCommunicationHandlerSuffixes.AdminDeleteMtg.rawValue?:
-                            if let savedChanges = parsedObject as? [String: AnyObject?] {
-                                self.handleDeletedMeetingResponse(savedChanges)
-                            } else {
-                                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.AdminDeleteMtg, inBadData: inResponseData as AnyObject?)
-                            }
-                            
-                        case BMLTiOSLibCommunicationHandlerSuffixes.AdminRollbackMtg.rawValue?:
-                            if let savedChanges = parsedObject as? [String: AnyObject?] {
-                                self.handleRollbackMeetingResponse(savedChanges)
-                            } else {
-                                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.AdminRollbackMtg, inBadData: inResponseData as AnyObject?)
-                            }
-                         
-                        case BMLTiOSLibCommunicationHandlerSuffixes.AdminLogin.rawValue?:
-                            self.handleLoginResponse((parsedObject as? String)!)
-                            
-                        case BMLTiOSLibCommunicationHandlerSuffixes.SendMessageToContact.rawValue?:
-                            self.handleSentMessageResponse(parsedObject)
-                            
-                        case BMLTiOSLibCommunicationHandlerSuffixes.AdminPermissions.rawValue?:
-                            self.handlePermissionResponse(parsedObject)
-                            
-                        case BMLTiOSLibCommunicationHandlerSuffixes.AdminLogout.rawValue?:
-                            self.handleLogoutResponse()
-                            
-                        default:
-                            self.errorDescription = .CommError
+                            self.handleCallType(callType, parsedObject: parsedObject, inResponseData: inResponseData)
                         }
                     }
                 }
             }
+        }
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    func handleCallType(_ callType: String, parsedObject: AnyObject?, inResponseData: Any) {
+        switch callType {  // See what this call wanted us to do.
+        case BMLTiOSLibCommunicationHandlerSuffixes.ServerTest.rawValue:
+            if let testResponse = parsedObject as? BMLTiOSLibServerInfo {
+                self.handleServerTest(testResponse)
+            } else {
+                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.ServerTest, inBadData: inResponseData as AnyObject?)
+            }
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.GetServiceBodies.rawValue:
+            if let serviceBodies = parsedObject as? [[String: String]] {
+                self.handleServiceBodies(serviceBodies)
+            } else {
+                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.GetServiceBodies, inBadData: inResponseData as AnyObject?)
+            }
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.GetFormats.rawValue:
+            if let formats = parsedObject as? [String: [BMLTiOSLibFormatNode]] {
+                self.handleFormats(formats)
+            } else {
+                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.GetFormats, inBadData: inResponseData as AnyObject?)
+            }
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.GetLangs.rawValue:
+            if let langs = parsedObject as? [BMLTiOSLibServerLang] {
+                self.handleLangs(langs)
+            } else {
+                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.GetLangs, inBadData: inResponseData as AnyObject?)
+            }
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.MeetingSearch.rawValue:
+            if let meetings = parsedObject as? [String: AnyObject?] {
+                self.handleMeetingSearchResponse(meetings)
+            } else {
+                if nil == parsedObject {
+                    self.handleMeetingSearchResponse([:])
+                } else {
+                    self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.MeetingSearch, inBadData: inResponseData as AnyObject?)
+                }
+            }
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.AdminSaveMeetingChanges.rawValue:
+            if let savedChanges = parsedObject as? [String: AnyObject?] {
+                self.handleMeetingEditSaveResponse(savedChanges)
+            } else {
+                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.AdminSaveMeetingChanges, inBadData: inResponseData as AnyObject?)
+            }
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.GetChanges.rawValue:
+            if let changeArray = parsedObject as? [BMLTiOSLibChangeNode] {
+                self.handleGetChangesResponse(changeArray, inMeetingNode: nil, inDeletedMeetingsOnly: false)
+            } else {
+                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.GetChanges, inBadData: inResponseData as AnyObject?)
+            }
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.AdminRestoreDeletedMtg.rawValue:
+            if let savedChanges = parsedObject as? [String: AnyObject?] {
+                self.handleRestoreMeetingResponse(savedChanges)
+            } else {
+                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.AdminRestoreDeletedMtg, inBadData: inResponseData as AnyObject?)
+            }
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.GetRestoredMeetingInfo.rawValue:
+            if let meetingNodes = parsedObject as? [String: [BMLTiOSLibEditableMeetingNode]] {
+                self.handleRestoreMeetingInfoResponse(meetingNodes)
+            } else {
+                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.GetRestoredMeetingInfo, inBadData: inResponseData as AnyObject?)
+            }
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.GetRollbackMeetingInfo.rawValue:
+            if let meetingNodes = parsedObject as? [String: [BMLTiOSLibEditableMeetingNode]] {
+                self.handleRollbackMeetingInfoResponse(meetingNodes)
+            } else {
+                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.GetRollbackMeetingInfo, inBadData: inResponseData as AnyObject?)
+            }
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.AdminDeleteMtg.rawValue:
+            if let savedChanges = parsedObject as? [String: AnyObject?] {
+                self.handleDeletedMeetingResponse(savedChanges)
+            } else {
+                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.AdminDeleteMtg, inBadData: inResponseData as AnyObject?)
+            }
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.AdminRollbackMtg.rawValue:
+            if let savedChanges = parsedObject as? [String: AnyObject?] {
+                self.handleRollbackMeetingResponse(savedChanges)
+            } else {
+                self.handleCommunicationError(BMLTiOSLibCommunicationHandlerSuffixes.AdminRollbackMtg, inBadData: inResponseData as AnyObject?)
+            }
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.AdminLogin.rawValue:
+            self.handleLoginResponse((parsedObject as? String)!)
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.SendMessageToContact.rawValue:
+            self.handleSentMessageResponse(parsedObject)
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.AdminPermissions.rawValue:
+            self.handlePermissionResponse(parsedObject)
+            
+        case BMLTiOSLibCommunicationHandlerSuffixes.AdminLogout.rawValue:
+            self.handleLogoutResponse()
+            
+        default:
+            self.errorDescription = .CommError
         }
     }
 }
