@@ -1338,6 +1338,11 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
     
     /* ################################################################## */
     /**
+     This is a specialized parser for meeting/format search results.
+     
+     - parameter inResponseData: The JSON data object as an NSDictionary.
+     
+     - returns:  The result of the parse.
      */
     func parseMeetingsAndFormatsJSONObject(inResponseData: NSDictionary) -> [String: [AnyObject?]] {
         var retTemp: [String: [AnyObject?]] = [:]
@@ -1348,6 +1353,11 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
     
     /* ################################################################## */
     /**
+     This is a specialized parser for meeting search results without accompanying formats.
+     
+     - parameter inResponseData: The JSON data object as an NSDictionary.
+     
+     - returns:  The result of the parse.
      */
     func parseMeetingsAloneJSONObject(inResponseData: NSDictionary) -> [String: [AnyObject?]] {
         var retTemp: [String: [AnyObject?]] = [:]
@@ -1357,6 +1367,11 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
 
     /* ################################################################## */
     /**
+     This is a specialized parser for change responses.
+     
+     - parameter inResponseData: The JSON data object as an NSDictionary.
+     
+     - returns:  The result of the parse.
      */
     func parseChangeJSONObject(inResponseData: NSDictionary) -> [String: [String: String]] {
         var retTemp: [String: [String: String]] = [:]
@@ -1376,6 +1391,11 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
 
     /* ################################################################## */
     /**
+     This is a specialized parser for format responses.
+     
+     - parameter inResponseData: The JSON data object as an NSDictionary.
+     
+     - returns:  The result of the parse.
      */
     func parseFormatsJSONObject(inResponseData: NSDictionary) -> [String: [AnyObject?]] {
         var retTemp: [String: [AnyObject?]] = [:]
@@ -1389,6 +1409,11 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
 
     /* ################################################################## */
     /**
+     This is a specialized parser for "generic" objects.
+     
+     - parameter inResponseData: The JSON data object as an NSDictionary.
+     
+     - returns:  The result of the parse.
      */
     func parseGenericJSONObject(keys: [NSString], inResponseData: NSDictionary) -> [String: Any?] {
         var retDict: [String: Any?] = [:]
