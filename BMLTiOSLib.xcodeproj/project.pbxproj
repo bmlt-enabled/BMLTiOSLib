@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EDDFAFBBB92FE7EC60A1223 /* Pods_BMLTiOSLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3FA16D6D95473857AA7AAB /* Pods_BMLTiOSLib.framework */; };
 		772570A51FDF12C400297473 /* ChangeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C51FDEB027008F110F /* ChangeListViewController.swift */; };
 		772570A61FDF12C400297473 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C31FDEB027008F110F /* ConnectViewController.swift */; };
 		772570A71FDF12C400297473 /* BMLTiOSLibTesterAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EC1FDEB027008F110F /* BMLTiOSLibTesterAppDelegate.swift */; };
@@ -109,8 +108,8 @@
 
 /* Begin PBXFileReference section */
 		57DB341D667253D0EBA749D6 /* Pods-BMLTiOSLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMLTiOSLib.release.xcconfig"; path = "Pods/Target Support Files/Pods-BMLTiOSLib/Pods-BMLTiOSLib.release.xcconfig"; sourceTree = "<group>"; };
+		771B00961FE197BE004C6CC7 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		772570CD1FDF12C400297473 /* BMLTiOSLib Test Harness (Direct).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMLTiOSLib Test Harness (Direct).app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		772570CE1FDF12C400297473 /* BMLTiOSLib Test Harness copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BMLTiOSLib Test Harness copy-Info.plist"; path = "/Users/cmarshall/Documents/Development/iOS/BMLTiOSLib/BMLTiOSLib Test Harness copy-Info.plist"; sourceTree = "<absolute>"; };
 		7790839A1FDEB5CD0032C2B8 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		77DBD7981FDEAEEB008F110F /* BMLTiOSLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BMLTiOSLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DBD79B1FDEAEEB008F110F /* BMLTiOSLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLTiOSLib.h; sourceTree = "<group>"; };
@@ -171,7 +170,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EDDFAFBBB92FE7EC60A1223 /* Pods_BMLTiOSLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,12 +218,12 @@
 				7790839A1FDEB5CD0032C2B8 /* Podfile */,
 				77DBD81B1FDEB183008F110F /* LICENSE */,
 				77DBD8191FDEB183008F110F /* README.md */,
+				771B00961FE197BE004C6CC7 /* CHANGELOG.md */,
 				77DBD7A31FDEAFBF008F110F /* Framework Project */,
 				77DBD7C01FDEB027008F110F /* Test Harness Project */,
 				77DBD7991FDEAEEB008F110F /* Products */,
 				0AEAB784A039D14DA0430C9F /* Pods */,
 				9F2AEF357313BE8BEE338456 /* Frameworks */,
-				772570CE1FDF12C400297473 /* BMLTiOSLib Test Harness copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -735,7 +733,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P53V4JS928;
-				INFOPLIST_FILE = "BMLTiOSLib Test Harness copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BMLTiOSLib/Test Harness Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -750,7 +748,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P53V4JS928;
-				INFOPLIST_FILE = "BMLTiOSLib Test Harness copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BMLTiOSLib/Test Harness Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";

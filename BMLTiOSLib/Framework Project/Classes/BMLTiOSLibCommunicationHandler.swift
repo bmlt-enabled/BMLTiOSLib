@@ -198,6 +198,9 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
     
     /* ########################################################## */
     /**
+     This funtion deletes the node hierarchy passed in. It recurseively walks the hierarchy.
+     
+     - parameter inNode: This is the root node of the hierarchy we are to delete.
      */
     func deleteNodes(_ inNode: BMLTiOSLibHierarchicalServiceBodyNode) {
         if 0 < inNode.children.count {
@@ -1111,6 +1114,14 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
     
     /* ################################################################## */
     /**
+     This parses an uncategorized JSON object.
+     Parsing is recursive, so we dole out parsing to the main handlers.
+     
+     - parameter inResponseData: The JSON data object. If nil, the call failed to produce. Check the handler's error data member.
+     - parameter error: Any errors that occurred
+     - parameter refCon: The data/object passed in via the 'refCon' parameter in the initializer.
+     
+     - returns:  An object, parsed from the data. This is returned as a generic AnyObject optional, but it will actually be an array or dictionary or smart object. It may be an Error object.
      */
     func parseJSONOtherHandler(_ inResponseData: Any?, error inError: Error?, refCon inRefCon: Any?) -> AnyObject? {
         var ret: AnyObject? = nil
@@ -1118,6 +1129,8 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
         // Arrays are a bit simpler.
         if inResponseData is NSArray {
             ret = self.parseJSONArray((inResponseData as? NSArray)!) as AnyObject?
+            
+            // See if this was a "meetings only" or "formats only" object, in which case, we create a labeled container.
             if ret is [BMLTiOSLibMeetingNode] {
                 ret = ["meetings": ret] as AnyObject?
             } else {
@@ -1137,6 +1150,7 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
                     }
                 }
             } else {
+                // We handle numbers as numbers.
                 if inResponseData is NSNumber {
                     ret = self.parseJSONNumber((inResponseData as? NSNumber)!) as AnyObject?
                 } else {
@@ -1158,6 +1172,14 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
 
     /* ################################################################## */
     /**
+     This parses a Dictionary JSON object.
+     Parsing is recursive, so we dole out parsing to the main handlers.
+     
+     - parameter inResponseData: The JSON data object. If nil, the call failed to produce. Check the handler's error data member.
+     - parameter error: Any errors that occurred
+     - parameter refCon: The data/object passed in via the 'refCon' parameter in the initializer.
+     
+     - returns:  An object, parsed from the data. This is returned as a generic AnyObject optional, but it will actually be an array or dictionary or smart object. It may be an Error object.
      */
     func parseJSONDictionaryHandler(_ inResponseData: Any?, error inError: Error?, refCon inRefCon: Any?) -> AnyObject? {
         var ret: AnyObject? = self.parseJSONDictionary((inResponseData as? NSDictionary)!)
