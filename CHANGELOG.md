@@ -6,7 +6,7 @@
 
 ***Version 1.2.1* ** *- December 12, 2017*
 
-- This implements a bunch of internal structural changes to satisfy [SwiftLint[(https://github.com/realm/SwiftLint), a utility for improving code quality. There should be absolutely no visible external changes, but it's a big change, internally.
+- This implements a bunch of internal structural changes to satisfy [SwiftLint](https://github.com/realm/SwiftLint), a utility for improving code quality. There should be absolutely no visible external changes, but it's a big change, internally.
 - Removed the "auto [Jazzy](https://github.com/realm/jazzy)" documentation generator, as it slows down the build, and we can easily do it manually.
 - Added a "Direct" test harness app. This implements the framework files directly, so it's easier to step through everything.
 
