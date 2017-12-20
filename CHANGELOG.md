@@ -1,3 +1,7 @@
+***Version 1.2.2* ** *- December 20, 2017*
+
+- Broke the main class file into a bunch of smaller files (some, MUCH smaller), to keep Cocopods happy. Absolutely no functional changes.
+
 ***Version 1.2.2* ** *- December 13, 2017*
 
 - Broke this changelog out into a separate file. Cocoapods is not updating the README, and I'm hoping that having the changelog in a separate file might encourage it to be updated.
