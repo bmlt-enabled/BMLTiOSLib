@@ -100,7 +100,7 @@ You determine if the connection was successful by checking the `serverIsValid` i
 
 ```
 
-If any errors occurred, this  `BMLTiOSLibDelegate`  calls is made:
+If any errors occurred, this  `BMLTiOSLibDelegate`  call is made:
 
 
 ```
