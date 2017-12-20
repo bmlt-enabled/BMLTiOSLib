@@ -151,6 +151,7 @@ public class ConnectViewController: UIViewController, BMLTiOSLibDelegate, UIText
     /* ################################################################## */
     /**
      - parameter inLibInstance: the BMLTiOSLib instance.
+     - parameter serverIsValid: true, if the server is properly available and the BMLTiOSLib instance is properly initialized. If it is false, you should stop using the BMLTiOSLib instance.
      */
     public func bmltLibInstance(_ inLibInstance: BMLTiOSLib, serverIsValid: Bool) {
         var resultString: String = ""
@@ -232,6 +233,7 @@ public class ConnectViewController: UIViewController, BMLTiOSLibDelegate, UIText
     /* ################################################################## */
     /**
      - parameter inLibInstance: the BMLTiOSLib instance.
+     - parameter loginChangedTo: True, if the user is successfully logged in. False, otherwise.
      */
     public func bmltLibInstance(_ inLibInstance: BMLTiOSLib, loginChangedTo: Bool) {
         // Belt and suspenders. We must be allowed to semantically administer.
@@ -245,6 +247,7 @@ public class ConnectViewController: UIViewController, BMLTiOSLibDelegate, UIText
     /* ################################################################## */
     /**
      - parameter inLibInstance: the BMLTiOSLib instance.
+     - parameter errorOccurred: The error that occurred.
      */
     public func bmltLibInstance(_ inLibInstance: BMLTiOSLib, errorOccurred: Error) {
         self.displayErrorAlert("BMLTiOSLib Error!", inMessage: errorOccurred.localizedDescription)
@@ -252,11 +255,15 @@ public class ConnectViewController: UIViewController, BMLTiOSLibDelegate, UIText
     
     /* ################################################################## */
     /**
+     - parameter inLibInstance: the BMLTiOSLib instance.
+     - parameter formatSearchResults: The format search results. An Array of format objects.
+     - parameter isAllUsedFormats: If true, then this is all possible formats on the server; not just those used in meetings.
      */
     public func bmltLibInstance(_ inLibInstance: BMLTiOSLib, formatSearchResults: [BMLTiOSLibFormatNode], isAllUsedFormats: Bool) {
         self.myTabController.updateFormatSearchResults(inFormats: formatSearchResults, isAllUsedFormats: isAllUsedFormats)
     }
     
+    /* ################################################################## */
     /**
      - parameter inLibInstance: the BMLTiOSLib instance.
      - parameter meetingSearchResults: An array of meeting objects.
