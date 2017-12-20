@@ -1,5 +1,4 @@
-BMLTiOSLib
-==========
+# BMLTiOSLib
 
 **NOTE:** A technical discussion of this library [is available on this Web site](https://bmlt.magshare.net/specific-topics/bmltioslib/).
 
@@ -19,8 +18,7 @@ For easy testing, you can connect to [the BMLT Test Server](https://tkddevel.com
 
 [This is the documentation page for the BMLTiOSLib.](https://bmlt.magshare.net/bmltioslib/)
 
-UNDER THE HOOD
---------------
+## UNDER THE HOOD
 
 The BMLTiOSLib communicates with the Root Server using [the BMLT JSON Semantic Interface](http://bmlt.magshare.net/semantic/how-to-use-the-semantic-interface/).
 
@@ -34,10 +32,9 @@ When you instantiate an instance of BMLTiOSLib, you register your app as a [```B
 
 You then use the functional interface to operate the connection.
 
-USAGE (Taken from the actual file documentation):
--------------------------------------------------
+## USAGE (Taken from the actual file documentation):
 
- The BMLTiOSLib class represents the public interface to the BMLTiOSLib framework.
+ The [```BMLTiOSLib```](https://bmlt.magshare.net/bmlt-doc/07-BMLTiOSLib/Classes/BMLTiOSLib.html) class represents the public interface to the BMLTiOSLib framework.
  
  This class needs to be instantiated with a URI to a valid [Root Server](http://bmlt.magshare.net/installing-a-new-root-server/) (the same URI used to log in), and a BMLTiOSLibDelegate delegate instance.
  
@@ -49,7 +46,7 @@ USAGE (Taken from the actual file documentation):
  
  The session is required to be maintained for Semantic Administration. You cannot share a session across instances of BMLTiOSLib.
  
- **BASIC SERVER INFORMATION:**
+## BASIC SERVER INFORMATION:
  
  Once you have successfully connected (established a session) to the Root Server, this instance will have some fundamental information available about that server.
  
@@ -85,7 +82,8 @@ USAGE (Taken from the actual file documentation):
 
 - ```availableServerLanguages``` (an Array of language objects).
 
- **MEETING SEARCHES:**
+
+## MEETING SEARCHES:
  
  The way that you do a meeting search with this class, is to acquire the instance's searchCriteria object, and use its various properties to set up your desired search.
  
@@ -101,37 +99,27 @@ USAGE (Taken from the actual file documentation):
  
  If there are no results, they will be called with empty Arrays.
  
- **MEETING CHANGES:**
+## MEETING CHANGES:
  
  You can query for meeting changes, including deleted meetings (and you can restore deleted meetings if you are an authorized administrator).
  
  You do this by calling one of these methods:
  
-- getAllMeetingChanges(meetingID:Int?)
-
-- getAllMeetingChanges(serviceBodyID:Int?)
-
-- getAllMeetingChanges(meeting:BMLTiOSLibMeetingNode?)
-
-- getAllMeetingChanges(fromDate:Date?,toDate:Date?)
-
-- getAllMeetingChanges(fromDate:Date?,toDate:Date?,meetingID:Int?)
-
-- getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?)
-
-- getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?,meetingID:Int?)
-
-- getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?,meetingID:Int?,userID:Int?)
-
-- getDeletedMeetingChanges()
-
-- getDeletedMeetingChanges(serviceBodyID:Int?)
-
-- getDeletedMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?)
+- ```getAllMeetingChanges(meetingID:Int?)```
+- ```getAllMeetingChanges(serviceBodyID:Int?)```
+- ```getAllMeetingChanges(meeting:BMLTiOSLibMeetingNode?)```
+- ```getAllMeetingChanges(fromDate:Date?,toDate:Date?)```
+- ```getAllMeetingChanges(fromDate:Date?,toDate:Date?,meetingID:Int?)```
+- ```getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?)```
+- ```getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?,meetingID:Int?)```
+- ```getAllMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?,meetingID:Int?,userID:Int?)```
+- ```getDeletedMeetingChanges()```
+- ```getDeletedMeetingChanges(serviceBodyID:Int?)```
+- ```getDeletedMeetingChanges(fromDate:Date?,toDate:Date?,serviceBodyID:Int?)```
 
  After calling one of the above methods, your delegate is called back with the ```bmltLibInstance(_:BMLTiOSLib,changeListResults:[BMLTiOSLibChangeNode])``` method; which will have an Array of the requested change objects. You can then use these objects to revert meetings, or restore deleted meetings.
 
- **ROLLING BACK AND UNDELETING MEETINGS:**
+## ROLLING BACK AND UNDELETING MEETINGS:
 
  Selecting the ```saveMeetingToBeforeThisChange()``` of a change or editable meeting object will use the restore deleted or rollback function of the Semantic Admin interface (as long as you are logged in as an administrator, and have sufficient rights to edit the meeting).
  We do allow you to take the "before" record of the meeting (found in the ```json_data``` JSON response, or the ```beforeObject``` property of the change record object), and save that.
@@ -140,7 +128,7 @@ USAGE (Taken from the actual file documentation):
  Remember that the "beforeObject" and "afterObject" properties are fully-qualified meeting objects, and, if editable, can be saved, which overwrites whatever is currently in the database (It's exactly like saving a changed meeting record).
  You revert a meeting by calling the ```revertMeetingToBeforeThisChange()``` method of the change record object concerned. It's quite simple.
 
- **NEW MEETINGS:**
+## NEW MEETINGS:
  
  Creating new meetings is easy (as long as you are logged in as an administrator, and have sufficient rights to create a meeting).
  
@@ -150,7 +138,7 @@ USAGE (Taken from the actual file documentation):
  
  The newMeetingAdded parameter will contain an object that models the newly-created meeting (including the new ID, if it was a brand-new meeting).
  
- **SENDING MESSAGES TO MEETING CONTACTS:**
+## SENDING MESSAGES TO MEETING CONTACTS:
  
  In some Root Servers, the administrator can choose to enable the ability for users of the site to send messages to designated contacts for meetings (or the Service Body Administrator responsible for the meeting).
  
@@ -158,7 +146,7 @@ USAGE (Taken from the actual file documentation):
  
  When the message has been sent, your delegate is called with the ```bmltLibInstance(_:BMLTiOSLib,sendMessageSuccessful:Bool)``` method.
  
- **ADMINISTRATION:**
+## ADMINISTRATION:
  
  In order to perform administration on the Root Server, you need to log in with the ```adminLogin(loginID:String,password:String)``` method. The login will remain valid for the lifetime of this object (and its connection session), or until the adminLogout() method is called.
  
@@ -183,16 +171,14 @@ USAGE (Taken from the actual file documentation):
  If the change was inappropriate for the meeting, the call will return false. If it was successful, the meeting's state will be reverted to that in the change record, but will not yet be sent to the server. You still need to call ```saveChanges()```.
 
 
-**As of December, 2017:**
+## As of December, 2017:
 
-TO DO
------
+### TO DO
 
 - Make tasks interruptable without terminating the session. Currently, the way to terminate a task is to terminate the session. This works great for search apps, but not so good for admin apps, as the session carries the login. If you terminate the session, you force the user to log back in.
 - Make the library multi-tasking. Currently, the library works in a single-threaded manner. It should be able to handle multiple simultaneous tasks.
 
-NICE TO HAVE
-------------
+### NICE TO HAVE
 
 - Test against a simple TVOS Swift app
 
