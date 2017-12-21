@@ -1,4 +1,4 @@
-<div style="text-align:center" /><a href="https://bmlt.magshare.net/specific-topics/bmltioslib/"><img alt="BMLTiOSLib Icon" src="https://bmlt.magshare.net/wp-content/uploads/2017/01/BMLTLogo.png" style="width:100px;display:block;margin:auto;margin-top:1em" /></a></div>
+![BMLTiOSLib Icon](https://bmlt.magshare.net/wp-content/uploads/2017/01/BMLTLogo.png)
 
 # BMLTiOSLib
 

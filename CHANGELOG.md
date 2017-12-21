@@ -1,5 +1,11 @@
 # BMLTiOSLib Change Log
 
+## 1.2.4
+
+- **December 21, 2017**
+
+- Added SPM Support (no operational changes).
+
 ## 1.2.3
 
 - **December 20, 2017**

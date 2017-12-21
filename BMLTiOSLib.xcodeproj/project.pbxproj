@@ -134,6 +134,7 @@
 		57DB341D667253D0EBA749D6 /* Pods-BMLTiOSLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMLTiOSLib.release.xcconfig"; path = "Pods/Target Support Files/Pods-BMLTiOSLib/Pods-BMLTiOSLib.release.xcconfig"; sourceTree = "<group>"; };
 		771B00961FE197BE004C6CC7 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		772570CD1FDF12C400297473 /* BMLTiOSLib Test Harness (Direct).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMLTiOSLib Test Harness (Direct).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		772B79FE1FEC1A7B002ACDAB /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		775D89E61FEC11EB002BD8C3 /* BMLTiOSLibFormatContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibFormatContainer.swift; sourceTree = "<group>"; };
 		775D89E91FEC12C2002BD8C3 /* BMLTiOSLibEditableMeetingNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibEditableMeetingNode.swift; sourceTree = "<group>"; };
 		775D89EC1FEC13D5002BD8C3 /* BMLTiOSLibHierarchicalServiceBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibHierarchicalServiceBodyNode.swift; sourceTree = "<group>"; };
@@ -255,6 +256,7 @@
 				77DBD81B1FDEB183008F110F /* LICENSE */,
 				77DBD8191FDEB183008F110F /* README.md */,
 				771B00961FE197BE004C6CC7 /* CHANGELOG.md */,
+				772B79FE1FEC1A7B002ACDAB /* Package.swift */,
 				77DBD7A31FDEAFBF008F110F /* Framework Project */,
 				77DBD7C01FDEB027008F110F /* Test Harness Project */,
 				77DBD7991FDEAEEB008F110F /* Products */,
