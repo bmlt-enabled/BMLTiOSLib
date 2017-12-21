@@ -746,7 +746,7 @@ public class BMLTiOSLib: NSObject {
     }
     
     /* ################################################################## */
-    /** This contains all of possible meeting formats.
+    /** This contains all of the possible meeting formats.
      */
     public var allPossibleFormats: [BMLTiOSLibFormatNode] {
         return self._communicationHandler.allAvailableFormats
