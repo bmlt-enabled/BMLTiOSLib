@@ -1,4 +1,4 @@
-***Version 1.2.2* ** *- December 20, 2017*
+***Version 1.2.3* ** *- December 20, 2017*
 
 - Broke the main class file into a bunch of smaller files (some, MUCH smaller), to keep Cocopods happy. Absolutely no functional changes.
 
