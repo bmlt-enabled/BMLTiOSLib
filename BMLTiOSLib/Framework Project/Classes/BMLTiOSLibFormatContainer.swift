@@ -1,10 +1,10 @@
 //
-//  BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift
+//  BMLTiOSLibFormatContainer.swift
 //  BMLTiOSLib
 //
 //  Created by MAGSHARE
 //
-//  https://bmlt.magshare.net/bmltioslib/
+//  https: //bmlt.magshare.net/bmltioslib/
 //
 //  This software is licensed under the MIT License.
 //  Copyright (c) 2017 MAGSHARE
@@ -30,45 +30,31 @@
 import Foundation
 
 /* ###################################################################################################################################### */
-// MARK: - Meeting Iterator Element Class -
+// MARK: - Format Container Class -
 /* ###################################################################################################################################### */
 /**
- This is a special "sub-micro class" for iterating through the fields of this meeting.
+ This is a special "micro class" for wrapping the formats.
  */
-public class BMLTiOSLibMeetingNodeSimpleDictionaryElement: NSObject {
+public class BMLTiOSLibFormatContainer {
     /* ################################################################## */
     // MARK: Public Properties
     /* ################################################################## */
-    /** The Dictionary key */
-    public let key: String
-    /** The element value */
-    public let value: String
-    /** The meeting node that "owns" this element. */
-    unowned public let handler: BMLTiOSLibMeetingNode
-    
-    /* ################################################################## */
-    // MARK: Public Calculated Properties
-    /* ################################################################## */
-    /**
-     Accessor for the handler's BMLTiOSLib library (The Handler's handler).
-     */
-    public var library: BMLTiOSLib {
-        return self.handler._handler
-    }
+    /** This is the actual Format node. */
+    public var item: BMLTiOSLibFormatNode
+    /** This is the selection state for this node. */
+    public var selection: BMLTiOSLibSearchCriteria.SelectionState
+    /** This is any extra data that the user may want to attach to this instance. */
+    public var extraData: AnyObject?
     
     /* ################################################################## */
     // MARK: Public Initializer
     /* ################################################################## */
     /**
-     Default Initializer
-     
-     - parameter key: The key for this node.
-     - parameter value: The value to assign for the key
-     - parameter handler: The BMLTiOSLibMeetingNode object that "owns" this data object.
+     Simple direct initializer.
      */
-    public init(key: String, value: String, handler: BMLTiOSLibMeetingNode) {
-        self.key = key
-        self.value = value
-        self.handler = handler
+    public init(item: BMLTiOSLibFormatNode, selection: BMLTiOSLibSearchCriteria.SelectionState, extraData: AnyObject?) {
+        self.item = item
+        self.selection = selection
+        self.extraData = extraData
     }
 }

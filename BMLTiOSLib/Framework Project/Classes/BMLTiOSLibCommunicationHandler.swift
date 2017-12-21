@@ -4,7 +4,7 @@
 //
 //  Created by MAGSHARE
 //
-//  https: //bmlt.magshare.net/bmltioslib/
+//  https://bmlt.magshare.net/bmltioslib/
 //
 //  This software is licensed under the MIT License.
 //  Copyright (c) 2017 MAGSHARE

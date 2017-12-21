@@ -1,5 +1,5 @@
 //
-//  BMLTiOSLib.swift
+//  BMLTiOSLibSearchCriteria.swift
 //  BMLTiOSLib
 //
 //  Created by MAGSHARE

@@ -1160,36 +1160,6 @@ public class BMLTiOSLib: NSObject {
 }
 
 /* ###################################################################################################################################### */
-// MARK: - Format Container Class -
-/* ###################################################################################################################################### */
-/**
- This is a special "micro class" for wrapping the formats.
- */
-public class BMLTiOSLibFormatContainer {
-    /* ################################################################## */
-    // MARK: Public Properties
-    /* ################################################################## */
-    /** This is the actual Format node. */
-    public var item: BMLTiOSLibFormatNode
-    /** This is the selection state for this node. */
-    public var selection: BMLTiOSLibSearchCriteria.SelectionState
-    /** This is any extra data that the user may want to attach to this instance. */
-    public var extraData: AnyObject?
-    
-    /* ################################################################## */
-    // MARK: Public Initializer
-    /* ################################################################## */
-    /**
-     Simple direct initializer.
-     */
-    public init(item: BMLTiOSLibFormatNode, selection: BMLTiOSLibSearchCriteria.SelectionState, extraData: AnyObject?) {
-        self.item = item
-        self.selection = selection
-        self.extraData = extraData
-    }
-}
-
-/* ###################################################################################################################################### */
 // MARK: - Public Enumerations -
 /* ######################################################################################################################################
     Most of these string descriptions and domains are designed to be replaced by localized strings, so they are just keys.

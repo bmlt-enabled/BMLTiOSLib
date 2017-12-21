@@ -1,5 +1,5 @@
 //
-//  BMLTiOSLibCommunicationHandler.swift
+//  BMLTiOSLibServerInfo.swift
 //  BMLTiOSLib
 //
 //  Created by MAGSHARE
