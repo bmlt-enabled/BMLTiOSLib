@@ -1,32 +1,48 @@
-***Version 1.2.3* ** *- December 20, 2017*
+# BMLTiOSLib Change Log
+
+## 1.2.3
+
+- **December 20, 2017**
 
 - Broke the main class file into a bunch of smaller files (some, MUCH smaller), to keep Cocopods happy. Absolutely no functional changes.
 
-***Version 1.2.2* ** *- December 13, 2017*
+## 1.2.2
+
+- **December 13, 2017**
 
 - Broke this changelog out into a separate file. Cocoapods is not updating the README, and I'm hoping that having the changelog in a separate file might encourage it to be updated.
 - Improved the commenting, documentation and code formatting of the exported classes.
 - Some general project cleanup.
 
-***Version 1.2.1* ** *- December 12, 2017*
+## 1.2.1
+
+- **December 12, 2017**
 
 - This implements a bunch of internal structural changes to satisfy [SwiftLint](https://github.com/realm/SwiftLint), a utility for improving code quality. There should be absolutely no visible external changes, but it's a big change, internally.
 - Removed the "auto [Jazzy](https://github.com/realm/jazzy)" documentation generator, as it slows down the build, and we can easily do it manually.
 - Added a "Direct" test harness app. This implements the framework files directly, so it's easier to step through everything.
 
-***Version 1.1.2* ** *- December 5, 2017*
+## 1.1.2
+
+- **December 5, 2017**
 
 - Updated to latest Xcode version.
 
-***Version 1.1.1.3001* ** *- November 29, 2017*
+## 1.1.1.3001
+
+- **November 29, 2017**
 
 - Spruced up this README, and tweaked some settings in the project.
 
-***Version 1.1.1.3000* ** *- November 23, 2017*
+## 1.1.1.3000
+
+- **November 23, 2017**
 
 - There was a possibility of a crash if the session was terminated without a connection.
 
-***Version 1.1.0* ** *- November 14, 2017*
+## 1.1.0
+
+- **November 14, 2017**
 
 - Some basic refactoring to make the library more "Swift-studly."
 - Made some references weak/unowned that should have been declared as such. Even though it has not (yet) resulted in a leak, it could.
@@ -36,7 +52,9 @@
 - Moving repo to GitHub, as GitHub and CocoaPods play better together.
 - Fixed an issue with the search tab sometimes crashing when selected (test app).
 
-***Version 1.0.1.3000* ** *- August 27, 2017*
+## 1.0.1.3000
+
+- **August 27, 2017**
 
 - Fixed a possible crash that could be triggered by bad data in the weekday_index.
 - Fixed a bug in the integer day and time (used for sorting).
@@ -46,23 +64,31 @@
 - Slight update for the latest Xcode.
 - Fixed an issue where Service bodies with no type would pooch the app.
 
-***Version 1.0.0.3000* ** *- January 25, 2017*
+## 1.0.0.3000
+
+- **January 25, 2017**
 
 - The BMLTiOSLibDelegate protocol now has almost all its functions optional.
 - Switched the project to the MIT License. That's better for a project that is destined to be included in other projects, some of which may be commercial.
 - This will be a Swift-only library. I have given up on supporting Objective-C. Not that big a loss.
 
-***Version 1.0.0.2001* ** *- January 14, 2017*
+## 1.0.0.2001
+
+- **January 14, 2017**
 
 - Added the silly CYA plist thing that says I'm not consorting with turrists using encryption.
 
-***Version 1.0.0.2000* ** *- January 14, 2017*
+## 1.0.0.2000
+
+- **January 14, 2017**
 
 - First Beta Release of the BMLTiOSLib Project.
 - This will include simple demo apps that use the framework.
 - Added a "performMeetingSearch()" method to the search criteria object, to make it convenient for apps to use just that object as their interaction.
 
-***Version 1.0.0.1000* ** *- January 9, 2017*
+## 1.0.0.1000
+
+- **January 9, 2017**
 
 - First Alpha Release of the BMLTiOSLib Project.
 
