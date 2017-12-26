@@ -2,9 +2,10 @@
 
 ## 1.2.4
 
-- **December 21, 2017**
+- **December 26, 2017**
 
 - Added SPM Support (no operational changes).
+- Added a CWD saver to the Jazzy script. This will allow it to be reintegrated into the build phases.
 
 ## 1.2.3
 
