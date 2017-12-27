@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
     spec.name                       = 'BMLTiOSLib'
-    spec.summary                    = 'An iOS Framework that provides a driver-level interaction with BMLT Root Serverspec.'
-    spec.description                = 'The BMLTiOSLib is a Swift shared framework designed to allow easy development of iOS BMLT appspec. It completely abstracts the connection to BMLT Root Servers, including administration functionspec.'
+    spec.summary                    = 'An iOS Framework that provides a driver-level interaction with BMLT Root Servers.'
+    spec.description                = 'The BMLTiOSLib is a Swift shared framework designed to allow easy development of iOS BMLT apps. It completely abstracts the connection to BMLT Root Servers, including administration functions.'
     spec.version                    = '1.2.4'
     spec.platform                   = :ios, '9.0'
     spec.homepage                   = 'https://bmlt.magshare.net/BMLTiOSLib'
