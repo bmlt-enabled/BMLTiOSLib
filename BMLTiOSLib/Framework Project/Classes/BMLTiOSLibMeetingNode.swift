@@ -460,7 +460,7 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
             if 1 < timeComponents.count {
                 var weekdayIndex = self.weekdayIndex - Calendar.current.firstWeekday
                 
-                if 1 > weekdayIndex {
+                if 0 > weekdayIndex {
                     weekdayIndex += 7
                 }
                 
