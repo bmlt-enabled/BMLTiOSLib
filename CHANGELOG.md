@@ -1,6 +1,6 @@
 # BMLTiOSLib Change Log
 
-## 1.2.5
+## 1.2.6
 
 - **January 7, 2018**
 
