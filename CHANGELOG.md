@@ -1,5 +1,11 @@
 # BMLTiOSLib Change Log
 
+## 1.2.5
+
+- **January 7, 2018**
+
+- Tweaked the sort value to account for weeks that start on days other than Sunday.
+
 ## 1.2.4
 
 - **December 26, 2017**

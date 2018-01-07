@@ -458,7 +458,12 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
             var timeComponents = time.components(separatedBy: ":").map { Int($0) }
             
             if 1 < timeComponents.count {
-                var weekdayIndex = self.weekdayIndex
+                var weekdayIndex = self.weekdayIndex - Calendar.current.firstWeekday
+                
+                if 1 > weekdayIndex {
+                    weekdayIndex += 7
+                }
+                
                 if (23 == timeComponents[0]!) && (54 < timeComponents[1]!) {
                     weekdayIndex += 1
                     if 7 < weekdayIndex {
