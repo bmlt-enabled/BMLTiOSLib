@@ -451,6 +451,8 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
     /* ################################################################## */
     /**
      - returns: returns an integer that allows sorting quickly. Weekday is 1,000s, hours are 100s, and minutes are 1s.
+     NOTE: This value reflects the localized start day of the week (the others do not). This is because the reason for this value is for sorting.
+     That means that if the week starts on Monday, then the weekday index will be 1 if the meeting is on Monday, and 7 if on Sunday.
      */
     public var timeDayAsInteger: Int {
         var ret: Int = 0
