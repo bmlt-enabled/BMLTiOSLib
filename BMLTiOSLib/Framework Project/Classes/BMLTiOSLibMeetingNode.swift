@@ -716,15 +716,15 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
      */
     override public var description: String {
         let dateformatter = DateFormatter()
-        
+
         if self._using12hClockFormat {
-            dateformatter.dateFormat = "EEEE, h:mm a"
+            dateformatter.dateFormat = "h:mm a"
         } else {
-            dateformatter.dateFormat = "EEEE, H:mm"
+            dateformatter.dateFormat = "H:mm"
         }
         
         if let nextStartDate = self.nextStartDate {
-            let nextDate = dateformatter.string(from: nextStartDate)
+            let nextDate = dateformatter.string(from: nextStartDate).uppercased()
             let formats = self.formatsAsCSVList.isEmpty ? "" : " (" + self.formatsAsCSVList + ")"
             return "\(nextDate)\n\(self.name)\(formats)\n\(self.basicAddress)"
         } else {

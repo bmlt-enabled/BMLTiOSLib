@@ -1,5 +1,11 @@
 # BMLTiOSLib Change Log
 
+## 1.2.7
+
+- **March 15, 2018**
+
+- Force weekdays to be all uppercase in the description. Some localizations have only lowercase.
+
 ## 1.2.6
 
 - **January 7, 2018**
