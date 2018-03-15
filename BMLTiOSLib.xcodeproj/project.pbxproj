@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		283647884EBCD825E72C5D77 /* Pods_BMLTiOSLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3FA16D6D95473857AA7AAB /* Pods_BMLTiOSLib.framework */; };
 		772570A51FDF12C400297473 /* ChangeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C51FDEB027008F110F /* ChangeListViewController.swift */; };
 		772570A61FDF12C400297473 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C31FDEB027008F110F /* ConnectViewController.swift */; };
 		772570A71FDF12C400297473 /* BMLTiOSLibTesterAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EC1FDEB027008F110F /* BMLTiOSLibTesterAppDelegate.swift */; };
@@ -207,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				283647884EBCD825E72C5D77 /* Pods_BMLTiOSLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
