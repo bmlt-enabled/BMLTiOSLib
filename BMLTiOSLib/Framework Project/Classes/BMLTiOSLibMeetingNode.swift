@@ -31,6 +31,20 @@ import Foundation
 import CoreLocation
 
 /* ###################################################################################################################################### */
+// MARK: - String Extension for Uppercasing -
+/* ###################################################################################################################################### */
+/**
+ This extension lets us uppercase only the first letter of the string (used for weekdays).
+ From here: https://stackoverflow.com/a/28288340/879365
+ */
+extension String {
+    var firstUppercased: String {
+        guard let first = first else { return "" }
+        return String(first).uppercased() + dropFirst()
+    }
+}
+
+/* ###################################################################################################################################### */
 // MARK: - Meeting Class -
 /* ###################################################################################################################################### */
 /**
@@ -718,13 +732,13 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
         let dateformatter = DateFormatter()
 
         if self._using12hClockFormat {
-            dateformatter.dateFormat = "h:mm a"
+            dateformatter.dateFormat = "EEEE, h:mm a"
         } else {
-            dateformatter.dateFormat = "H:mm"
+            dateformatter.dateFormat = "EEEE, H:mm"
         }
         
         if let nextStartDate = self.nextStartDate {
-            let nextDate = dateformatter.string(from: nextStartDate).uppercased()
+            let nextDate = dateformatter.string(from: nextStartDate).firstUppercased
             let formats = self.formatsAsCSVList.isEmpty ? "" : " (" + self.formatsAsCSVList + ")"
             return "\(nextDate)\n\(self.name)\(formats)\n\(self.basicAddress)"
         } else {
