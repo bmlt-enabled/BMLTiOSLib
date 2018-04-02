@@ -1553,7 +1553,7 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
                     } else if value is NSArray {
                         value = self.parseJSONArray((value as? NSArray)!)!
                     } else if value is NSNumber {
-                        value = self.parseJSONNumber((value as? NSNumber)!) as AnyObject?!
+                        value = self.parseJSONNumber((value as? NSNumber)!) as Any
                     }
                     
                     infoDictionary[keyString] = value as AnyObject

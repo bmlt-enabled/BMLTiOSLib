@@ -139,6 +139,20 @@ extension String {
     }
 }
 
+/* ###################################################################################################################################### */
+/**
+ This is used to get the app name from the bundle.
+ */
+extension Bundle {
+    /* ################################################################## */
+    /**
+     - returns: the bundle app name.
+     */
+    var appName: String? {
+        return object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
+    }
+}
+
 // MARK: - Protocols -
 /* ###################################################################################################################################### */
 /**
@@ -369,10 +383,24 @@ class BMLTSession: NSObject, URLSessionDataDelegate, BMLTCommunicatorDataSourceP
             self.mySession = Foundation.URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
         }
         
+        // This is a bit kludgy, but it's a way to let the server know we're coming from an iOS app.
+        var appDisplayName: String = "callingApp=BMLTiOSLib"
+        
+        if let appName = Bundle.main.appName?.URLEncodedString() {
+            appDisplayName += ("+" + appName)
+        }
+        
+        let suffix = inURIAsAString.suffix(4).lowercased()
+        
+        if ".php" == suffix {
+            appDisplayName = "?" + appDisplayName
+        } else {
+            appDisplayName = "&" + appDisplayName
+        }
         var ret: Bool = false
         
         // This is because it is possible to crash the app by inserting a less-than character into a URI.
-        let uriString = inURIAsAString.replacingOccurrences(of: "<", with: "%3C")
+        let uriString = inURIAsAString.replacingOccurrences(of: "<", with: "%3C") + appDisplayName
 
         if let url = URL(string: uriString) {
             // Assuming we have a completion block and a URI, we will actually try to get a version from the server (determine its validity).

@@ -2,7 +2,11 @@
 
 ## 1.2.8
 
-- **March 17, 2018**
+- **April 2, 2018**
+
+- Added a parameter to the end of the URI "callingApp=" that appends the app name to the call, so the server knows what's calling.
+- Xcode 9.3 updates.
+- Swift 4.1 updates.
 
 ## 1.2.7
 
