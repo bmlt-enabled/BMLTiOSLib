@@ -1,5 +1,12 @@
 # BMLTiOSLib Change Log
 
+## 1.2.9
+
+- **November 17, 2018**
+
+- Moved the repo to the organizational GitHub repo.
+- Changes to use the latest Xcode and Swift.
+
 ## 1.2.8
 
 - **April 2, 2018**

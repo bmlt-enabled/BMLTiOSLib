@@ -15,6 +15,6 @@ let package = Package(
         )
     ],
     swiftLanguageVersions: [
-        4
+        4.2
     ]
 )
