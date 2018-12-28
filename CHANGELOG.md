@@ -1,5 +1,12 @@
 # BMLTiOSLib Change Log
 
+## 1.2.10
+
+- **December 27, 2018**
+
+- Fixed a bug (Thanks Patrick!) in the way that hours was being set in the meeting node class.
+- Tweaked the LICENSE file to see if that helps CocoPods to figure out its the MIT license.
+
 ## 1.2.9
 
 - **November 17, 2018**

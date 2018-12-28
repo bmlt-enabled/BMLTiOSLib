@@ -386,7 +386,7 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
             if 1 == timeComponents.count {
                 if let simpleNumber = Int(timeString) {
                     let hours = simpleNumber / 100
-                    let minutes = simpleNumber - hours
+                    let minutes = simpleNumber - (hours * 100)
                     timeComponents[0] = hours
                     timeComponents[1] = minutes
                 }
@@ -446,7 +446,7 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
         set {
             if 1440 > newValue {    // Can't be more than 23:59
                 let hours = Int(newValue / 60)
-                let minutes = newValue - hours
+                let minutes = newValue - (hours * 60)
                 self.rawMeeting["duration_time"] = String(format: "%02d:%02d:00", hours, minutes)
             }
         }
