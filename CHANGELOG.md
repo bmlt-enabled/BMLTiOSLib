@@ -1,5 +1,12 @@
 # BMLTiOSLib Change Log
 
+## 1.2.12
+
+- **December 28, 2018**
+
+- Another minor date format tweak.
+- Tweaked the versions of the harness projects.
+
 ## 1.2.11
 
 - **December 28, 2018**

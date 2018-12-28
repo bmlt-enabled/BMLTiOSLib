@@ -199,13 +199,14 @@ public class BMLTiOSLibChangeNode: NSObject {
     
     /* ################################################################## */
     /**
+     - returns: A String, with the change as a textual description.
      */
     override public var description: String {
         var ret: String = ""
         
         let dateformatter = DateFormatter()
         
-        dateformatter.dateFormat = "h:mm a MMMM d, YYYY"
+        dateformatter.dateFormat = "h:mm a MMMM d, yyyy"
         
         let changeDate = dateformatter.string(from: self.changeDate)
         
