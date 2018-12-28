@@ -1,5 +1,11 @@
 # BMLTiOSLib Change Log
 
+## 1.2.11
+
+- **December 28, 2018**
+
+- Fixed another bug, where a date format was not specified correctly. This affected change records.
+
 ## 1.2.10
 
 - **December 27, 2018**

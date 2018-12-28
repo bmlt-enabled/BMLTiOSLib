@@ -173,11 +173,11 @@ public class SingleMeetingViewController: BaseTestViewController, UITableViewDel
 
         let alertController = UIAlertController(title: NSLocalizedString("Are You Sure?", comment: ""), message: "Do you want to delete this meeting?", preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "Nuke From Orbit", style: UIAlertActionStyle.cancel, handler: { (_) in (self.meetingObject as? BMLTiOSLibEditableMeetingNode)?.delete() })
+        let okAction = UIAlertAction(title: "Nuke From Orbit", style: UIAlertAction.Style.cancel, handler: { (_) in (self.meetingObject as? BMLTiOSLibEditableMeetingNode)?.delete() })
         
         alertController.addAction(okAction)
         
-        let cancelAction = UIAlertAction(title: "Belay That Order!", style: UIAlertActionStyle.default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Belay That Order!", style: UIAlertAction.Style.default, handler: nil)
         
         alertController.addAction(cancelAction)
         
@@ -229,11 +229,11 @@ public class SingleMeetingViewController: BaseTestViewController, UITableViewDel
         if self.meetingObject.isDirty {
             let alertController = UIAlertController(title: NSLocalizedString("Are You Sure?", comment: ""), message: "Do you want to lose the changes you made to this meeting?", preferredStyle: .alert)
             
-            let okAction = UIAlertAction(title: "Nuke From Orbit", style: UIAlertActionStyle.cancel, handler: self.resetAndClose)
+            let okAction = UIAlertAction(title: "Nuke From Orbit", style: UIAlertAction.Style.cancel, handler: self.resetAndClose)
             
             alertController.addAction(okAction)
             
-            let cancelAction = UIAlertAction(title: "Belay That Order!", style: UIAlertActionStyle.default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Belay That Order!", style: UIAlertAction.Style.default, handler: nil)
             
             alertController.addAction(cancelAction)
             
@@ -314,7 +314,7 @@ public class SingleMeetingViewController: BaseTestViewController, UITableViewDel
             value = self.meetingObject[id].trimmingCharacters(in: CharacterSet(charactersIn: " \n\t"))
         }
        
-        let ret = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: id)
+        let ret = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: id)
         
         var frame: CGRect = CGRect.zero
         
@@ -440,8 +440,8 @@ public class SingleMeetingViewController: BaseTestViewController, UITableViewDel
     /* ################################################################## */
     /**
      */
-    public func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
-        if (MKAnnotationViewDragState.none == newState) && (MKAnnotationViewDragState.dragging == oldState) {
+    public func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationView.DragState, fromOldState oldState: MKAnnotationView.DragState) {
+        if (MKAnnotationView.DragState.none == newState) && (MKAnnotationView.DragState.dragging == oldState) {
             if let mapLocation = view.annotation?.coordinate {
                 let span = self._mapView.region.span
                 let newRegion: MKCoordinateRegion = MKCoordinateRegion(center: mapLocation, span: span)

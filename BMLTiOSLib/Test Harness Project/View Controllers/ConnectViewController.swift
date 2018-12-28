@@ -54,7 +54,7 @@ public class ConnectViewController: UIViewController, BMLTiOSLibDelegate, UIText
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: NSLocalizedString(inTitle, comment: ""), message: NSLocalizedString(inMessage, comment: ""), preferredStyle: .alert)
             
-            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertActionStyle.cancel, handler: nil)
+            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.cancel, handler: nil)
             
             alertController.addAction(okAction)
             
@@ -79,7 +79,7 @@ public class ConnectViewController: UIViewController, BMLTiOSLibDelegate, UIText
      */
     func wereNotConnected() {
         self.weAreConnecting = false
-        self.connectButton.setTitle("CONNECT", for: UIControlState.normal)
+        self.connectButton.setTitle("CONNECT", for: UIControl.State.normal)
         self.connectButton.isHidden = false
         self.urlEditText.isEnabled = true
         self.resultText.isHidden = true
@@ -107,7 +107,7 @@ public class ConnectViewController: UIViewController, BMLTiOSLibDelegate, UIText
      */
     func wereConnected() {
         self.weAreConnecting = false
-        self.connectButton.setTitle("DISCONNECT", for: UIControlState.normal)
+        self.connectButton.setTitle("DISCONNECT", for: UIControl.State.normal)
         self.urlEditText.isEnabled = false
         self.connectButton.isHidden = false
         self.resultText.isHidden = false
@@ -128,7 +128,7 @@ public class ConnectViewController: UIViewController, BMLTiOSLibDelegate, UIText
      */
     @IBAction func connectButtonHit(_ sender: UIButton) {
         if let appDel = UIApplication.shared.delegate as? BMLTiOSLibTesterAppDelegate {
-            if "CONNECT" == sender.title(for: UIControlState.normal) {
+            if "CONNECT" == sender.title(for: UIControl.State.normal) {
                 self.wereConnecting()
                 appDel._libraryObject = BMLTiOSLib(inRootServerURI: self.urlEditText.text!, inDelegate: self)
             } else {

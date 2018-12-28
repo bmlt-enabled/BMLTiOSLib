@@ -174,7 +174,7 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
             }
             
             if nil == ret {
-                ret = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: reuseID)
+                ret = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: reuseID)
                 if nil != ret {
                     ret.backgroundColor = UIColor.clear
                     
@@ -264,9 +264,9 @@ class DetailedInfoController: BaseTestViewController, UITableViewDelegate, UITab
                 if nil == self.loginButtonLoggedIn {
                     self.loginButtonLoggedIn = UIButton(frame: bounds)
                     if nil != self.loginButtonLoggedIn {
-                        self.loginButtonLoggedIn.setTitle("LOG OUT", for: UIControlState.normal)
-                        self.loginButtonLoggedIn.setTitleColor(self.view.tintColor, for: UIControlState.normal)
-                        self.loginButtonLoggedIn.addTarget(self, action: #selector(DetailedInfoController.loginButtonHit(_:)), for: UIControlEvents.touchUpInside)
+                        self.loginButtonLoggedIn.setTitle("LOG OUT", for: UIControl.State.normal)
+                        self.loginButtonLoggedIn.setTitleColor(self.view.tintColor, for: UIControl.State.normal)
+                        self.loginButtonLoggedIn.addTarget(self, action: #selector(DetailedInfoController.loginButtonHit(_:)), for: UIControl.Event.touchUpInside)
                         ret.addSubview(self.loginButtonLoggedIn)
                     }
                 }

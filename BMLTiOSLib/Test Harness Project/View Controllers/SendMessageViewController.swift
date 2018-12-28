@@ -88,7 +88,7 @@ public class SendMessageViewController: BaseTestViewController, UITextViewDelega
         
         let handler = self.closeUpShop
         
-        let cancelAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: (wasSuccessful ? handler : nil))
+        let cancelAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: (wasSuccessful ? handler : nil))
         
         alertController.addAction(cancelAction)
         

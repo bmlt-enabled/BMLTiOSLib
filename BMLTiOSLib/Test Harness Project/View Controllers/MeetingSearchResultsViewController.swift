@@ -79,7 +79,7 @@ class MeetingSearchResultsViewController: BaseTestViewController, UITableViewDel
         let meeting = self.meetingSearchResults[indexPath.row]
         let reuseID: String = String(meeting.id)
 
-        let ret = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: reuseID)
+        let ret = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: reuseID)
         if let cell = UINib(nibName: "MeetingSearchResultsTableCell", bundle: nil).instantiate(withOwner: self, options: nil)[0] as? MeetingSearchResultsTableCellView {
             cell.meetingDescriptionTextView.text = meeting.description
             var bounds: CGRect = CGRect.zero

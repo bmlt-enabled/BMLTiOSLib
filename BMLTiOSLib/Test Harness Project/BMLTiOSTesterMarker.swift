@@ -183,7 +183,7 @@ class BMLTiOSLibTesterMarker: MKAnnotationView {
     func selectImage(_ inAnimated: Bool) -> UIImage! {
         var image: UIImage! = nil
         if self.isDraggable && (2 > self.meetings.count) {
-            if self.dragState == MKAnnotationViewDragState.dragging {
+            if self.dragState == MKAnnotationView.DragState.dragging {
                 if inAnimated {
                     image = self.animationFrames[self.currentFrame]
                 } else {
@@ -228,15 +228,15 @@ class BMLTiOSLibTesterMarker: MKAnnotationView {
      - parameter newDragState: The new state that should be set after this call.
      - parameter animated: True, if the state change is to be animated (ignored).
      */
-    override func setDragState(_ newDragState: MKAnnotationViewDragState, animated: Bool) {
-        var subsequentDragState = MKAnnotationViewDragState.none
+    override func setDragState(_ newDragState: MKAnnotationView.DragState, animated: Bool) {
+        var subsequentDragState = MKAnnotationView.DragState.none
         switch newDragState {
-        case MKAnnotationViewDragState.starting:
-            subsequentDragState = MKAnnotationViewDragState.dragging
+        case MKAnnotationView.DragState.starting:
+            subsequentDragState = MKAnnotationView.DragState.dragging
             self.currentFrame = 0
             self.animationFrames = []
             
-        case MKAnnotationViewDragState.dragging:
+        case MKAnnotationView.DragState.dragging:
             if animated && (0 == self.animationFrames.count) {
                 // Set up the drag animation.
                 // We have 10 frames in the drag animation.
@@ -257,13 +257,13 @@ class BMLTiOSLibTesterMarker: MKAnnotationView {
             
             _ = self.selectImage(true)
             self.currentFrame += 1
-            subsequentDragState = MKAnnotationViewDragState.dragging
+            subsequentDragState = MKAnnotationView.DragState.dragging
             if self.currentFrame == self.animationFrames.count {
                 self.currentFrame = 0
             }
 
         default:
-            subsequentDragState = MKAnnotationViewDragState.none
+            subsequentDragState = MKAnnotationView.DragState.none
         }
         
         super.dragState = subsequentDragState

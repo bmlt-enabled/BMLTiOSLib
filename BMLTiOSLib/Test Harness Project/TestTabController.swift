@@ -155,7 +155,7 @@ class TestTabController: UITabBarController {
     public func updateMeetingChanges(adminMeetingChangeComplete: BMLTiOSLibChangedMeeting!) {
         let alertController = UIAlertController(title: "Meeting Change Complete", message: adminMeetingChangeComplete.description, preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertActionStyle.cancel, handler: nil)
+        let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.cancel, handler: nil)
         
         alertController.addAction(okAction)
         

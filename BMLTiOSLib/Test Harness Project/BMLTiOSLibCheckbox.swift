@@ -50,7 +50,7 @@ class BMLTiOSLibCheckbox: UIButton {
         }
         set {
             self._selectionState = newValue
-            self.sendActions(for: UIControlEvents.valueChanged)
+            self.sendActions(for: UIControl.Event.valueChanged)
             self.setNeedsLayout()
         }
     }
@@ -66,20 +66,20 @@ class BMLTiOSLibCheckbox: UIButton {
             self.bounds.size = testImage.size
             switch self._selectionState {
             case .Clear:
-                self.setBackgroundImage(UIImage(named: "checkbox-clear"), for: UIControlState())
-                self.setBackgroundImage(UIImage(named: "checkbox-clear-highlight"), for: UIControlState.selected)
-                self.setBackgroundImage(UIImage(named: "checkbox-clear-highlight"), for: UIControlState.highlighted)
-                self.setBackgroundImage(UIImage(named: "checkbox-clear-highlight"), for: UIControlState.disabled)
+                self.setBackgroundImage(UIImage(named: "checkbox-clear"), for: UIControl.State())
+                self.setBackgroundImage(UIImage(named: "checkbox-clear-highlight"), for: UIControl.State.selected)
+                self.setBackgroundImage(UIImage(named: "checkbox-clear-highlight"), for: UIControl.State.highlighted)
+                self.setBackgroundImage(UIImage(named: "checkbox-clear-highlight"), for: UIControl.State.disabled)
             case .Selected:
-                self.setBackgroundImage(UIImage(named: "checkbox-selected"), for: UIControlState())
-                self.setBackgroundImage(UIImage(named: "checkbox-selected-highlight"), for: UIControlState.selected)
-                self.setBackgroundImage(UIImage(named: "checkbox-selected-highlight"), for: UIControlState.highlighted)
-                self.setBackgroundImage(UIImage(named: "checkbox-selected-highlight"), for: UIControlState.disabled)
+                self.setBackgroundImage(UIImage(named: "checkbox-selected"), for: UIControl.State())
+                self.setBackgroundImage(UIImage(named: "checkbox-selected-highlight"), for: UIControl.State.selected)
+                self.setBackgroundImage(UIImage(named: "checkbox-selected-highlight"), for: UIControl.State.highlighted)
+                self.setBackgroundImage(UIImage(named: "checkbox-selected-highlight"), for: UIControl.State.disabled)
             case .Deselected:
-                self.setBackgroundImage(UIImage(named: "checkbox-unselected"), for: UIControlState())
-                self.setBackgroundImage(UIImage(named: "checkbox-unselected-highlight"), for: UIControlState.selected)
-                self.setBackgroundImage(UIImage(named: "checkbox-unselected-highlight"), for: UIControlState.highlighted)
-                self.setBackgroundImage(UIImage(named: "checkbox-unselected-highlight"), for: UIControlState.disabled)
+                self.setBackgroundImage(UIImage(named: "checkbox-unselected"), for: UIControl.State())
+                self.setBackgroundImage(UIImage(named: "checkbox-unselected-highlight"), for: UIControl.State.selected)
+                self.setBackgroundImage(UIImage(named: "checkbox-unselected-highlight"), for: UIControl.State.highlighted)
+                self.setBackgroundImage(UIImage(named: "checkbox-unselected-highlight"), for: UIControl.State.disabled)
             }
         }
     }

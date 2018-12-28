@@ -115,6 +115,13 @@
 			remoteGlobalIDString = 77DBD7971FDEAEEB008F110F;
 			remoteInfo = BMLTiOSLib;
 		};
+		D4309E9B21D63A390038C6DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77DBD78F1FDEAEEB008F110F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77DBD7971FDEAEEB008F110F;
+			remoteInfo = BMLTiOSLib;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -382,6 +389,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D4309E9C21D63A390038C6DF /* PBXTargetDependency */,
 			);
 			name = "BMLTiOSLib Test Harness (Direct)";
 			productName = "BMLTiOSLib Test Harness";
@@ -439,6 +447,7 @@
 				ORGANIZATIONNAME = MAGSHARE;
 				TargetAttributes = {
 					772570A11FDF12C400297473 = {
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					77DBD7971FDEAEEB008F110F = {
@@ -448,6 +457,7 @@
 					};
 					77DBD7AD1FDEB010008F110F = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -670,6 +680,11 @@
 			target = 77DBD7971FDEAEEB008F110F /* BMLTiOSLib */;
 			targetProxy = 77DBD8161FDEB08B008F110F /* PBXContainerItemProxy */;
 		};
+		D4309E9C21D63A390038C6DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77DBD7971FDEAEEB008F110F /* BMLTiOSLib */;
+			targetProxy = D4309E9B21D63A390038C6DF /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -817,7 +832,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -835,7 +850,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1027,7 +1042,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1046,7 +1061,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

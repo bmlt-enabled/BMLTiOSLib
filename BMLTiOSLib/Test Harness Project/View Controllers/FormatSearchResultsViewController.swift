@@ -65,7 +65,7 @@ class FormatSearchResultsViewController: BaseTestViewController, UITableViewDele
     /**
      */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let ret = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "")
+        let ret = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "")
         
         var frame: CGRect = CGRect.zero
         

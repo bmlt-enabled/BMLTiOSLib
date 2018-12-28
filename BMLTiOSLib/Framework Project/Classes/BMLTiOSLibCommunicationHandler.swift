@@ -470,7 +470,7 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
             
             let dateformatter = DateFormatter()
             
-            dateformatter.dateFormat = "YYYY-MM-DD"
+            dateformatter.dateFormat = "YYYY-MM-dd"
             
             if nil != inFromDate {
                 let dateString = dateformatter.string(from: inFromDate!)
@@ -512,7 +512,7 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
            
             let dateformatter = DateFormatter()
             
-            dateformatter.dateFormat = "YYYY-MM-DD"
+            dateformatter.dateFormat = "YYYY-MM-dd"
             
             if nil != inFromDate {
                 let dateString = dateformatter.string(from: inFromDate!)

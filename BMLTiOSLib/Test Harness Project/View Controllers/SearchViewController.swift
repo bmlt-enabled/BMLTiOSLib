@@ -633,7 +633,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
                 
                 self.allCheckboxes.append(newCheckboxObject)
                 
-                newCheckboxObject.addTarget(self, action: #selector(serviceBodyCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
+                newCheckboxObject.addTarget(self, action: #selector(serviceBodyCheckboxChanged(_:)), for: UIControl.Event.valueChanged)
                 
                 bounds.size.height = self.checkboxRowHeight
                 bounds.size.width = (inContainerView.bounds.width - (bounds.size.height + 4))
@@ -684,7 +684,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
                 
                 let newCheckboxObject = BMLTiOSLibCheckbox(frame: bounds)
                 self.formatMap[newCheckboxObject] = format
-                newCheckboxObject.addTarget(self, action: #selector(formatCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
+                newCheckboxObject.addTarget(self, action: #selector(formatCheckboxChanged(_:)), for: UIControl.Event.valueChanged)
                 self.allCheckboxes.append(newCheckboxObject)
                 
                 bounds.size.height = self.checkboxRowHeight
@@ -712,7 +712,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     func clearSearchCriteria() {
         for checkbox in self.allCheckboxes {
             checkbox.selectionState = .Clear
-            checkbox.sendActions(for: UIControlEvents.touchUpInside)
+            checkbox.sendActions(for: UIControl.Event.touchUpInside)
         }
         
         if nil != self._mapView {
@@ -854,7 +854,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
             ret = tableView.dequeueReusableCell(withIdentifier: reuseIDs[indexPath.row]!)
             
             if nil == ret {
-                ret = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: reuseID)
+                ret = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: reuseID)
                 
                 ret.backgroundColor = UIColor.clear
                 
@@ -905,10 +905,10 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
         ret.bounds = bounds
         if nil == self._clearButton {
             self._clearButton = UIButton(frame: bounds)
-            self._clearButton.setTitle("Clear Search Criteria", for: UIControlState.normal)
-            self._clearButton.setTitleColor(UIColor(red: 0.5, green: 0.6, blue: 1, alpha: 1), for: UIControlState.normal)
-            self._clearButton.setTitleColor(UIColor.lightGray, for: UIControlState.disabled)
-            self._clearButton.addTarget(self, action: #selector(SearchViewController.clearButtonHit(_:)), for: UIControlEvents.touchUpInside)
+            self._clearButton.setTitle("Clear Search Criteria", for: UIControl.State.normal)
+            self._clearButton.setTitleColor(UIColor(red: 0.5, green: 0.6, blue: 1, alpha: 1), for: UIControl.State.normal)
+            self._clearButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+            self._clearButton.addTarget(self, action: #selector(SearchViewController.clearButtonHit(_:)), for: UIControl.Event.touchUpInside)
             self._clearButton.isEnabled = false
             ret.addSubview(self._clearButton)
         }
@@ -1030,7 +1030,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
                 
                 self._useLocationSwitch = UISwitch(frame: bounds)
                 self._useLocationSwitch.isOn = false
-                self._useLocationSwitch.addTarget(self, action: #selector(SearchViewController.useLocationSwitchChanged(_:)), for: UIControlEvents.valueChanged)
+                self._useLocationSwitch.addTarget(self, action: #selector(SearchViewController.useLocationSwitchChanged(_:)), for: UIControl.Event.valueChanged)
                 mapContainer.addSubview(self._useLocationSwitch)
                 
                 bounds.origin.y = 8
@@ -1074,13 +1074,13 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
             self.allCheckboxes.append(self.fridayButton)
             self.allCheckboxes.append(self.saturdayButton)
             
-            self.sundayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
-            self.mondayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
-            self.tuesdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
-            self.wednesdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
-            self.thursdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
-            self.fridayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
-            self.saturdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
+            self.sundayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControl.Event.valueChanged)
+            self.mondayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControl.Event.valueChanged)
+            self.tuesdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControl.Event.valueChanged)
+            self.wednesdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControl.Event.valueChanged)
+            self.thursdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControl.Event.valueChanged)
+            self.fridayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControl.Event.valueChanged)
+            self.saturdayButton.addTarget(self, action: #selector(weekdayCheckboxChanged(_:)), for: UIControl.Event.valueChanged)
             
             self.setWeekdayButtons()
         }
@@ -1177,8 +1177,8 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     /* ################################################################## */
     /**
      */
-    public func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
-        if (MKAnnotationViewDragState.none == newState) && (MKAnnotationViewDragState.dragging == oldState) {
+    public func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationView.DragState, fromOldState oldState: MKAnnotationView.DragState) {
+        if (MKAnnotationView.DragState.none == newState) && (MKAnnotationView.DragState.dragging == oldState) {
             if let mapLocation = view.annotation?.coordinate {
                 let span = self._mapView.region.span
                 let newRegion: MKCoordinateRegion = MKCoordinateRegion(center: mapLocation, span: span)

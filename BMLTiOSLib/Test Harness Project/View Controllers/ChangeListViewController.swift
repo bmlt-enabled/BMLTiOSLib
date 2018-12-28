@@ -66,7 +66,7 @@ class ChangeListViewController: BaseTestViewController, UITableViewDelegate, UIT
     /**
      */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let ret = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "")
+        let ret = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "")
         let beforeMeeting = self.changesObjects[indexPath.row].beforeObject
         let afterMeeting = self.changesObjects[indexPath.row].afterObject
         
@@ -153,11 +153,11 @@ class ChangeListViewController: BaseTestViewController, UITableViewDelegate, UIT
             
             let alertController = UIAlertController(title: NSLocalizedString("Are You Sure?", comment: ""), message: message, preferredStyle: .alert)
             
-            let okAction = UIAlertAction(title: "Go For It!", style: UIAlertActionStyle.cancel, handler: {(_: UIAlertAction) in tableView.deselectRow(at: indexPath, animated: true);self.setMeetingToChange(self.changesObjects[indexPath.row], undelete: nil == afterMeeting)})
+            let okAction = UIAlertAction(title: "Go For It!", style: UIAlertAction.Style.cancel, handler: {(_: UIAlertAction) in tableView.deselectRow(at: indexPath, animated: true);self.setMeetingToChange(self.changesObjects[indexPath.row], undelete: nil == afterMeeting)})
             
             alertController.addAction(okAction)
             
-            let cancelAction = UIAlertAction(title: "Belay That Order!", style: UIAlertActionStyle.default, handler: {(_: UIAlertAction) in tableView.deselectRow(at: indexPath, animated: true)})
+            let cancelAction = UIAlertAction(title: "Belay That Order!", style: UIAlertAction.Style.default, handler: {(_: UIAlertAction) in tableView.deselectRow(at: indexPath, animated: true)})
             
             alertController.addAction(cancelAction)
             

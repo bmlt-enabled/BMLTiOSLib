@@ -161,7 +161,7 @@ class AllChangesListViewController: BaseTestViewController {
                 
                 self.allCheckboxes.append(newCheckboxObject)
                 
-                newCheckboxObject.addTarget(self, action: #selector(serviceBodyCheckboxChanged(_:)), for: UIControlEvents.valueChanged)
+                newCheckboxObject.addTarget(self, action: #selector(serviceBodyCheckboxChanged(_:)), for: UIControl.Event.valueChanged)
                 
                 bounds.size.height = self.checkboxRowHeight
                 bounds.size.width = ((inContainerView.bounds.width) - (bounds.size.height + 4))
