@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
     spec.author                     = { 'BMLT Administrators' => 'bmlt@magshare.net' }
     spec.documentation_url          = 'https://bmlt.magshare.net/bmlt-doc/'
     spec.license                    = { :type => 'MIT', :file => 'LICENSE' }
-    spec.source                     = { :git => 'https://github.com/LittleGreenViper/BMLTiOSLib.git', :tag => spec.version.to_s }
+    spec.source                     = { :git => 'https://github.com/bmlt-enabled/BMLTiOSLib.git', :tag => spec.version.to_s }
     spec.source_files               = 'BMLTiOSLib/Framework Project/Classes/**/*'
     spec.dependency                'SwiftLint', '~> 0.24'
 end
