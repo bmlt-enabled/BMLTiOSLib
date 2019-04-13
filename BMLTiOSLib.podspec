@@ -12,5 +12,6 @@ Pod::Spec.new do |spec|
     spec.source                     = { :git => 'https://github.com/bmlt-enabled/BMLTiOSLib.git', :tag => spec.version.to_s }
     spec.source_files               = 'BMLTiOSLib/Framework Project/Classes/**/*'
     spec.dependency                'SwiftLint', '~> 0.24'
+    spec.swift_version              = '5.0'
 end
 
