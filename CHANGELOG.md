@@ -1,5 +1,11 @@
 # BMLTiOSLib Change Log
 
+## 1.2.13
+
+- **April 13, 2019**
+
+- Updated to Swift 5/Xcode 10.2. No operational changes.
+
 ## 1.2.12
 
 - **December 28, 2018**
