@@ -92,7 +92,7 @@ class BMLTiOSLibCheckbox: UIButton {
         - parameter event: The event driving the touch.
     */
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        if((nil != touch) && (nil != self.hitTest(touch!.location(in: self), with: event))) {
+        if nil != touch, nil != self.hitTest(touch!.location(in: self), with: event) {
             switch self.selectionState {
             case .Clear:
                 self.selectionState = .Selected

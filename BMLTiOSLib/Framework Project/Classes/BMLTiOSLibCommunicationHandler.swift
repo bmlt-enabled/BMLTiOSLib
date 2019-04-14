@@ -1088,7 +1088,7 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
      - returns:  An object, parsed from the data. This is returned as a generic AnyObject optional, but it will actually be an array or dictionary or smart object. It may be an Error object.
      */
     func parseJSONData(_ inResponseData: Any?, error inError: Error?, refCon inRefCon: Any?) -> AnyObject? {
-        var ret: AnyObject? = nil
+        var ret: AnyObject?
         
         if nil == inError {
             // See if the response data is a Dictionary
@@ -1124,7 +1124,7 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
      - returns:  An object, parsed from the data. This is returned as a generic AnyObject optional, but it will actually be an array or dictionary or smart object. It may be an Error object.
      */
     func parseJSONOtherHandler(_ inResponseData: Any?, error inError: Error?, refCon inRefCon: Any?) -> AnyObject? {
-        var ret: AnyObject? = nil
+        var ret: AnyObject?
         
         // Arrays are a bit simpler.
         if inResponseData is NSArray {
@@ -1315,7 +1315,7 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
      - returns:  The result of the parse. This may be a "smart object" that represents the Dictionary.
      */
     func parseJSONDictionary(_ inResponseData: NSDictionary) -> AnyObject? {
-        var ret: AnyObject? = nil
+        var ret: AnyObject?
         
         if let keys = inResponseData.allKeys as? [NSString] {
             // First, look for format and meeting lists (both).

@@ -83,7 +83,7 @@ extension String {
         if parameters.isEmpty {
             return nil
         }
-        var queryString: String? = nil
+        var queryString: String?
         for (key, value) in parameters {
             if let encodedKey = key.URLEncodedString() {
                 if let encodedValue = value.URLEncodedString() {
