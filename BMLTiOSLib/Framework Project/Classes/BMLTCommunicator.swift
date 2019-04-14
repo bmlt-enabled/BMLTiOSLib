@@ -322,9 +322,11 @@ class BMLTSession: NSObject, URLSessionDataDelegate, BMLTCommunicatorDataSourceP
         if (inSession == self.mySession) && (nil != self.myCurrentTask) {  // Make sure this is us.
             // This weird dance is because there's funky stuff going on under the hood, and this
             // will ensure that we have a separate, new copy of the data.
-            didReceive.withUnsafeBytes {(bytes: UnsafePointer<CChar>) -> Void in
-                let myDataObject: Data = Data(bytes: bytes, count: didReceive.underestimatedCount)
-                self.myCurrentTask.data.append(myDataObject)
+            didReceive.withUnsafeBytes {(bytes: UnsafeRawBufferPointer) -> Void in
+                if let baseAddr = bytes.baseAddress {
+                    let myDataObject = Data(bytes: baseAddr, count: didReceive.underestimatedCount)
+                    self.myCurrentTask.data.append(myDataObject)
+                }
             }
         }
     }
