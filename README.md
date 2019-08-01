@@ -16,6 +16,28 @@ This project is an [iOS Shared Framework](https://developer.apple.com/library/co
 
 For easy testing, you can connect to [the BMLT Test Server](https://bmltserver.org/main_server), which uses SSL. This database may change a lot, as it is our main test bed, but it will always have the ability to be accessed via SSL. [The BMLTiOSLib Tester app](https://github.com/bmlt-enabled/BMLTiOSLib/tree/master/BMLTiOSLib/Test%20Harness%20Project) is not pretty. It's not meant to be. It's a space shuttle cockpit program that's designed to let us press all the various buttons. It also has a couple of issues with operation that, quite frankly, aren't a priority to fix, as [we now have several "real world" implementations](https://bmlt.app/satellites/bmlt-ios-apps/) that stress the BMLTiOSLib a great deal more than this ugly little duckling. [This is the documentation page for the BMLTiOSLib.](https://bmlt.app/bmltioslib/)
 
+## INSTALLATION
+
+### As A [CocoaPod](https://cocoapods.org):
+
+To use this as a [CocoaPod](https://cocoapods.org), simply add the following to your [podfile](https://guides.cocoapods.org/using/the-podfile.html):
+
+    pod 'BMLTiOSLib'
+
+And then `cd` to the project directory, and execute `pod install` or `pod update`.
+
+### Using [Carthage](https://github.com/Carthage/Carthage):
+
+To use this from [Carthage](https://github.com/Carthage/Carthage), simply add the following to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
+
+    github "https://github.com/bmlt-enabled/BMLTiOSLib/"
+
+And then `cd` to the project directory, and execute `carthage update`.
+
+### Directly:
+
+You can also directly access this project from its [location as a GitHub repo](https://github.com/bmlt-enabled/BMLTiOSLib), and include it into your project.
+
 ## UNDER THE HOOD
 
 The BMLTiOSLib communicates with the Root Server using [the BMLT JSON Semantic Interface](http://bmlt.magshare.net/semantic/how-to-use-the-semantic-interface/). Administration is done using [the BMLT Administrative Semantic Interface](http://bmlt.magshare.net/semantic/semantic-administration/) (Also JSON). The whole idea is to completely abstract the communication layer from the app development process. BMLTiOSLib provides a simple, error-checked functional interface to the BMLT. Interaction with the BMLTiOSLib is done via Apple's [Delegation Pattern](https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Delegation.html). When you instantiate an instance of BMLTiOSLib, you register your app as a [BMLTiOSLibDelegate](https://bmlt-enabled.github.io/BMLTiOSLib/Protocols/BMLTiOSLibDelegate.html) delegate instance, and it will receive events as they come in. You then use the functional interface to operate the connection.
