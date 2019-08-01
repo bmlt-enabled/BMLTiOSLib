@@ -1,5 +1,7 @@
 ![BMLTiOSLib Icon](https://bmlt.app/wp-content/uploads/2017/01/BMLTLogo.png)
 
+*[This document, as a GitHup Pages Site](https://bmlt-enabled.github.io/BMLTiOSLib/)*
+
 # BMLTiOSLib
 
 **NOTE:** A detailed, example-rich technical discussion of this library [is available on this Web site](https://bmlt.app/specific-topics/bmltioslib/).
@@ -7,8 +9,6 @@
 The BMLTiOSLib fits between [the BMLT Root Server's Semantic Interface](https://bmlt.app/semantic/) and your iOS app:
 
 ![Chart, Showing Where the BMLTiOSLib Fits](https://bmlt.app/wp-content/uploads/2017/01/BMLTiOSLibSetup.png)
-
-[This document, as a GitHup Pages Site](https://bmlt-enabled.github.io/BMLTiOSLib/)
 
 This project is an [iOS Shared Framework](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPFrameworks/Tasks/CreatingFrameworks.html), designed to ease integration of a BMLT Root Server into an iOS client (it may also work for MacOS, but we're not there yet). The BMLTiOSLib is a Swift-only framework. It won't support Objective-C. The [BMLTiOSLib/Framework](https://github.com/bmlt-enabled/BMLTiOSLib/tree/master/BMLTiOSLib/Framework%20Project) directory has the relevant exported classes. The [BMLTiOSLib/Test Harness Project](https://github.com/bmlt-enabled/BMLTiOSLib/tree/master/BMLTiOSLib/Test%20Harness%20Project) directory implements a fairly complex program that we've written to exercise the library. Because [Apple now requires that iOS apps only interact with SSL servers](https://techcrunch.com/2016/06/14/apple-will-require-https-connections-for-ios-apps-by-the-end-of-2016/), it's a bit complex to test. We don't want to compromise security by allowing connections to self-signed certs, so we can't test with localhost.
 

@@ -4,120 +4,145 @@
     <title>BMLTiOSLib  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
     
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
+
+
     <a title="BMLTiOSLib  Reference"></a>
-    <header>
-      <div class="content-wrapper">
-        <p><a href="index.html">BMLTiOSLib Docs</a> (100% documented)</p>
-        <p class="header-right"><a href="https://github.com/bmlt-enabled/BMLTiOSLib"><img src="img/gh.png"/>View on GitHub</a></p>
-      </div>
-    </header>
-    <div class="content-wrapper">
-      <p id="breadcrumbs">
-        <a href="index.html">BMLTiOSLib Reference</a>
-        <img id="carat" src="img/carat.png" />
-        BMLTiOSLib  Reference
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          BMLTiOSLib Docs
+        </a>
+         (100% documented)
       </p>
-    </div>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/bmlt-enabled/BMLTiOSLib">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">BMLTiOSLib Reference</a>
+      <img class="carat" src="img/carat.png" />
+      BMLTiOSLib  Reference
+    </p>
+
     <div class="content-wrapper">
-      <nav class="sidebar">
+      <nav class="navigation">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="Classes.html">Classes</a>
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLib.html">BMLTiOSLib</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLib.html">BMLTiOSLib</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLibChangeNode.html">BMLTiOSLibChangeNode</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLibChangeNode.html">BMLTiOSLibChangeNode</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLibChangedMeeting.html">BMLTiOSLibChangedMeeting</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLibChangedMeeting.html">BMLTiOSLibChangedMeeting</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLibEditableMeetingNode.html">BMLTiOSLibEditableMeetingNode</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLibEditableMeetingNode.html">BMLTiOSLibEditableMeetingNode</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLibFormatContainer.html">BMLTiOSLibFormatContainer</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLibFormatContainer.html">BMLTiOSLibFormatContainer</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLibFormatNode.html">BMLTiOSLibFormatNode</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLibFormatNode.html">BMLTiOSLibFormatNode</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLibMeetingNode.html">BMLTiOSLibMeetingNode</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLibMeetingNode.html">BMLTiOSLibMeetingNode</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLibMeetingNodeSimpleDictionaryElement.html">BMLTiOSLibMeetingNodeSimpleDictionaryElement</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLibMeetingNodeSimpleDictionaryElement.html">BMLTiOSLibMeetingNodeSimpleDictionaryElement</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLibSearchCriteria.html">BMLTiOSLibSearchCriteria</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLibSearchCriteria.html">BMLTiOSLibSearchCriteria</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLibSearchCriteria/SelectionState.html">– SelectionState</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLibSearchCriteria/SelectionState.html">– SelectionState</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLibSearchCriteria/SearchCriteriaExtent.html">– SearchCriteriaExtent</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLibSearchCriteria/SearchCriteriaExtent.html">– SearchCriteriaExtent</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLibSearchCriteria/SearchCriteriaPublishedStatus.html">– SearchCriteriaPublishedStatus</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLibSearchCriteria/SearchCriteriaPublishedStatus.html">– SearchCriteriaPublishedStatus</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLibSearchCriteria/WeekdayIndex.html">– WeekdayIndex</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLibSearchCriteria/WeekdayIndex.html">– WeekdayIndex</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLibServerLang.html">BMLTiOSLibServerLang</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLibServerLang.html">BMLTiOSLibServerLang</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BMLTiOSLibServiceBodyContainer.html">BMLTiOSLibServiceBodyContainer</a>
+                <a class="nav-group-task-link" href="Classes/BMLTiOSLibServiceBodyContainer.html">BMLTiOSLibServiceBodyContainer</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Enums.html">Enumerations</a>
+            <a class="nav-group-name-link" href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Enums/BMLTiOSLibCommunicationHandlerBadTestReasons.html">BMLTiOSLibCommunicationHandlerBadTestReasons</a>
+                <a class="nav-group-task-link" href="Enums/BMLTiOSLibCommunicationHandlerBadTestReasons.html">BMLTiOSLibCommunicationHandlerBadTestReasons</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/BMLTiOSLibDistanceUnits.html">BMLTiOSLibDistanceUnits</a>
+                <a class="nav-group-task-link" href="Enums/BMLTiOSLibDistanceUnits.html">BMLTiOSLibDistanceUnits</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/BMLTiOSLibErrorCodes.html">BMLTiOSLibErrorCodes</a>
+                <a class="nav-group-task-link" href="Enums/BMLTiOSLibErrorCodes.html">BMLTiOSLibErrorCodes</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/BMLTiOSLibErrorDescriptions.html">BMLTiOSLibErrorDescriptions</a>
+                <a class="nav-group-task-link" href="Enums/BMLTiOSLibErrorDescriptions.html">BMLTiOSLibErrorDescriptions</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/BMLTiOSLibErrorDomains.html">BMLTiOSLibErrorDomains</a>
+                <a class="nav-group-task-link" href="Enums/BMLTiOSLibErrorDomains.html">BMLTiOSLibErrorDomains</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/BMLTiOSLibPermissions.html">BMLTiOSLibPermissions</a>
+                <a class="nav-group-task-link" href="Enums/BMLTiOSLibPermissions.html">BMLTiOSLibPermissions</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Protocols.html">Protocols</a>
+            <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Protocols/BMLTiOSLibDelegate.html">BMLTiOSLibDelegate</a>
+                <a class="nav-group-task-link" href="Protocols/BMLTiOSLibDelegate.html">BMLTiOSLibDelegate</a>
               </li>
             </ul>
           </li>
         </ul>
       </nav>
       <article class="main-content">
-        <section>
-          <section class="section">
+
+        <section class="section">
+          <div class="section-content">
             
             <p><img src="https://bmlt.app/wp-content/uploads/2017/01/BMLTLogo.png" alt="BMLTiOSLib Icon"></p>
+
+<p><em><a href="https://bmlt-enabled.github.io/BMLTiOSLib/">This document, as a GitHup Pages Site</a></em></p>
 <h1 id='bmltioslib' class='heading'>BMLTiOSLib</h1>
 
 <p><strong>NOTE:</strong> A detailed, example-rich technical discussion of this library <a href="https://bmlt.app/specific-topics/bmltioslib/">is available on this Web site</a>.</p>
@@ -125,8 +150,6 @@
 <p>The BMLTiOSLib fits between <a href="https://bmlt.app/semantic/">the BMLT Root Server&rsquo;s Semantic Interface</a> and your iOS app:</p>
 
 <p><img src="https://bmlt.app/wp-content/uploads/2017/01/BMLTiOSLibSetup.png" alt="Chart, Showing Where the BMLTiOSLib Fits"></p>
-
-<p><a href="https://bmlt-enabled.github.io/BMLTiOSLib/">This document, as a GitHup Pages Site</a></p>
 
 <p>This project is an <a href="https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPFrameworks/Tasks/CreatingFrameworks.html">iOS Shared Framework</a>, designed to ease integration of a BMLT Root Server into an iOS client (it may also work for MacOS, but we&rsquo;re not there yet). The BMLTiOSLib is a Swift-only framework. It won&rsquo;t support Objective-C. The <a href="https://github.com/bmlt-enabled/BMLTiOSLib/tree/master/BMLTiOSLib/Framework%20Project">BMLTiOSLib/Framework</a> directory has the relevant exported classes. The <a href="https://github.com/bmlt-enabled/BMLTiOSLib/tree/master/BMLTiOSLib/Test%20Harness%20Project">BMLTiOSLib/Test Harness Project</a> directory implements a fairly complex program that we&rsquo;ve written to exercise the library. Because <a href="https://techcrunch.com/2016/06/14/apple-will-require-https-connections-for-ios-apps-by-the-end-of-2016/">Apple now requires that iOS apps only interact with SSL servers</a>, it&rsquo;s a bit complex to test. We don&rsquo;t want to compromise security by allowing connections to self-signed certs, so we can&rsquo;t test with localhost.</p>
 
@@ -291,14 +314,16 @@
 <li><p>Test against a simple MacOS Swift app</p></li>
 </ul>
 
-          </section>
+          </div>
         </section>
-        <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://bmlt.magshare.net/BMLTiOSLib" target="_blank" rel="external">BMLT Administrators</a>. All rights reserved. (Last updated: 2019-08-01)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
-        </section>
+
+
       </article>
     </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://littlegreenviper.com" target="_blank" rel="external">Little Green Viper Software Development LLC</a>. All rights reserved. (Last updated: 2019-08-01)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
   </body>
 </div>
 </html>
