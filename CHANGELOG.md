@@ -5,6 +5,12 @@
 - **TBD**
 
 - Updated to Swift 5.1/Xcode 11.
+
+## 1.2.14.2000
+
+- **August 1, 2019**
+
+- Test release for Carthage.
 - Modified the Jazzy docs for use in GH Pages.
 - Got rid of the CocoaPods junk in the release project.
 - Ensured proper Carthage operation.
