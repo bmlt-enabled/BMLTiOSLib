@@ -15,6 +15,7 @@
 - Got rid of the CocoaPods junk in the release project.
 - Ensured proper Carthage operation.
 - Changed the initial server URI, as the original was no longer valid.
+- The minimum supported iOS version is now 11 ("Ours goes to 11").
 
 ## 1.2.13
 
