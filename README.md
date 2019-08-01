@@ -1,6 +1,6 @@
 ![BMLTiOSLib Icon](https://bmlt.app/wp-content/uploads/2017/01/BMLTLogo.png)
 
-*[This document, as a GitHup Pages Site](https://bmlt-enabled.github.io/BMLTiOSLib/)*
+*[This document, as a GitHub Pages Site](https://bmlt-enabled.github.io/BMLTiOSLib/)*
 
 # BMLTiOSLib
 
