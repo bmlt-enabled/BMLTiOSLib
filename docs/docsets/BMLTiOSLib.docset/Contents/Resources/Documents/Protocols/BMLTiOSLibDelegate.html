@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BMLTiOSLibDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/BMLTiOSLibDelegate" class="dashAnchor"></a>
+    <a title="BMLTiOSLibDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">BMLTiOSLib Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/bmlt-enabled/BMLTiOSLib"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">BMLTiOSLib Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        BMLTiOSLibDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibChangeNode.html">BMLTiOSLibChangeNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibChangedMeeting.html">BMLTiOSLibChangedMeeting</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibEditableMeetingNode.html">BMLTiOSLibEditableMeetingNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibFormatContainer.html">BMLTiOSLibFormatContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibFormatNode.html">BMLTiOSLibFormatNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibMeetingNode.html">BMLTiOSLibMeetingNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibMeetingNodeSimpleDictionaryElement.html">BMLTiOSLibMeetingNodeSimpleDictionaryElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria.html">BMLTiOSLibSearchCriteria</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/SelectionState.html">– SelectionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/SearchCriteriaExtent.html">– SearchCriteriaExtent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/SearchCriteriaPublishedStatus.html">– SearchCriteriaPublishedStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/WeekdayIndex.html">– WeekdayIndex</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibServerLang.html">BMLTiOSLibServerLang</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibServiceBodyContainer.html">BMLTiOSLibServiceBodyContainer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibCommunicationHandlerBadTestReasons.html">BMLTiOSLibCommunicationHandlerBadTestReasons</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibDistanceUnits.html">BMLTiOSLibDistanceUnits</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibErrorCodes.html">BMLTiOSLibErrorCodes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibErrorDescriptions.html">BMLTiOSLibErrorDescriptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibErrorDomains.html">BMLTiOSLibErrorDomains</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibPermissions.html">BMLTiOSLibPermissions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/BMLTiOSLibDelegate.html">BMLTiOSLibDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>BMLTiOSLibDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">BMLTiOSLibDelegate</span></code></pre>
+
+                </div>
+              </div>
+            <p>This protocol is required for any class that wants to control an instance of BMLTiOSLib.</p>
+
+<p>Only 2 of these functions are required:</p>
+
+<ul>
+<li>func bmltLibInstance(_ inLibInstance: BMLTiOSLib, serverIsValid: Bool)</li>
+<li>func bmltLibInstance(_ inLibInstance: BMLTiOSLib, errorOccurred error: Error)</li>
+</ul>
+
+<p>All the rest are optional.</p>
+
+<p>These are all called in the main thread.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:serverIsValid:"></a>
+                    <a name="//apple_ref/swift/Method/bmltLibInstance(_:serverIsValid:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:serverIsValid:">bmltLibInstance(_:serverIsValid:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>REQUIRED</strong></p>
+
+<p>Indicates whether or not the server pointed to via the URI is a valid server (the connection was successful).</p>
+
+<p>This will be called after the Root Server connection sequence has completed.</p>
+
+<p>This connection sequence consists of:</p>
+
+<ul>
+<li>Determining the fundamental validity of the URI (Connects to a Root Server). The Root Server MUST run SSL (HTTPS).</li>
+<li>Determining the fundamental validity of the Root Server (Correct version, supports the proper set of default keys).</li>
+<li>Loading the full set of available formats (They may not all be in actual use by meetings).</li>
+<li>Loading the entire set of Service bodies.</li>
+<li>Loading the entire set of languages available on the Root Server.</li>
+</ul>
+
+<p>By the time this method has been called with serverIsValid as true, the BMLTiOSLib has the following properties set and valid:</p>
+
+<ul>
+<li>searchCriteria (This will be empty and clear, but available for access).</li>
+<li>distanceUnits and distanceUnitsString</li>
+<li>availableMeetingValueKeys (This contains the Dictionary key strings that can access various meeting properties).</li>
+<li>emailMeetingContactsEnabled (True, if the Server is set to allow emails to be sent to meeting contacts).</li>
+<li>emailServiceBodyAdminsEnabled (True, if these emails will CC the Service Body Admin for that Service body, as well as the meeting contact -They may be the same email address).</li>
+<li>changeDepth (The number of changes saved per meeting).</li>
+<li>googleAPIKey (The API key for the Root Server -May not be useful for most other Servers).</li>
+<li>delegate (That will be the object that was passed in as delegate when the instance was created).</li>
+<li>rootServerURI</li>
+<li>versionAsString and versionAInt</li>
+<li>isAdminAvailable (True, if Semantic Administration is available).</li>
+<li>defaultLocation (The Root Server&rsquo;s default central location).</li>
+<li>serviceBodies (This is a <q>flat</q> Array of the Service bodies, with no hierarchy).</li>
+<li>hierarchicalServiceBodies (This maps out the Service bodies in the hierarchy they occupy on the Root Server, and this is just one node with children only -no parents or Service body). The children are all the top-level (sb_owner == 0, or <q>parentless</q>) Service bodies. The hierarchy is designed to be <q>crawled.</q></li>
+<li>allPossibleFormats (an Array of format objects available -May not all be used by the meetings).</li>
+<li>availableServerLanguages (an Array of language objects).</li>
+</ul>
+
+<p>You can&rsquo;t call any of the BMLTiOSLib communication instance methods until this callback has been invoked with a serverIsValid value of true.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">bmltLibInstance</span><span class="p">(</span><span class="n">_</span> <span class="nv">inLibInstance</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">,</span> <span class="nv">serverIsValid</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inLibInstance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the BMLTiOSLib instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inServerIsValid</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Bool, true, if the server was successfully connected. If false, you must reinstantiate BMLTiOSLib. You can&rsquo;t re-use the same instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:errorOccurred:"></a>
+                    <a name="//apple_ref/swift/Method/bmltLibInstance(_:errorOccurred:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:errorOccurred:">bmltLibInstance(_:errorOccurred:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>REQUIRED</strong></p>
+
+<p>Called if there is an error.</p>
+
+<p>The error String will be a key for localization, and will be pretty much worthless on its own.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">bmltLibInstance</span><span class="p">(</span><span class="n">_</span> <span class="nv">inLibInstance</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">,</span> <span class="n">errorOccurred</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inLibInstance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the BMLTiOSLib instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:meetingSearchResults:"></a>
+                    <a name="//apple_ref/swift/Method/bmltLibInstance(_:meetingSearchResults:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:meetingSearchResults:">bmltLibInstance(_:meetingSearchResults:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>OPTIONAL</strong></p>
+
+<p>Returns the result of a meeting search.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">bmltLibInstance</span><span class="p">(</span><span class="n">_</span> <span class="nv">inLibInstance</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">,</span> <span class="nv">meetingSearchResults</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/BMLTiOSLibMeetingNode.html">BMLTiOSLibMeetingNode</a></span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inLibInstance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the BMLTiOSLib instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>meetingSearchResults</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of meeting objects, representing the results of a search.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:formatSearchResults:isAllUsedFormats:"></a>
+                    <a name="//apple_ref/swift/Method/bmltLibInstance(_:formatSearchResults:isAllUsedFormats:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:formatSearchResults:isAllUsedFormats:">bmltLibInstance(_:formatSearchResults:isAllUsedFormats:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>OPTIONAL</strong></p>
+
+<p>Returns the result of a format search.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">bmltLibInstance</span><span class="p">(</span><span class="n">_</span> <span class="nv">inLibInstance</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">,</span> <span class="nv">formatSearchResults</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/BMLTiOSLibFormatNode.html">BMLTiOSLibFormatNode</a></span><span class="p">],</span> <span class="nv">isAllUsedFormats</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inLibInstance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the BMLTiOSLib instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>formatSearchResults</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of format objects.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>isAllUsedFormats</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is true, if this is the <q>all used formats</q> call, where we generate objects that reflect the formats actually used by any meetings in the entire database (as opposed to simply <q>available, but not used</q>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:changeListResults:"></a>
+                    <a name="//apple_ref/swift/Method/bmltLibInstance(_:changeListResults:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:changeListResults:">bmltLibInstance(_:changeListResults:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>OPTIONAL</strong></p>
+
+<p>Returns the result of a change list request.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">bmltLibInstance</span><span class="p">(</span><span class="n">_</span> <span class="nv">inLibInstance</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">,</span> <span class="nv">changeListResults</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/BMLTiOSLibChangeNode.html">BMLTiOSLibChangeNode</a></span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inLibInstance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the BMLTiOSLib instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>changeListResults</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of change objects.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:deletedChangeListResults:"></a>
+                    <a name="//apple_ref/swift/Method/bmltLibInstance(_:deletedChangeListResults:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:deletedChangeListResults:">bmltLibInstance(_:deletedChangeListResults:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>OPTIONAL</strong></p>
+
+<p>Returns the result of a change list request for deleted-only meetings.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">bmltLibInstance</span><span class="p">(</span><span class="n">_</span> <span class="nv">inLibInstance</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">,</span> <span class="nv">deletedChangeListResults</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/BMLTiOSLibChangeNode.html">BMLTiOSLibChangeNode</a></span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inLibInstance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the BMLTiOSLib instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>deletedChangeListResults</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of change objects.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:loginChangedTo:"></a>
+                    <a name="//apple_ref/swift/Method/bmltLibInstance(_:loginChangedTo:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:loginChangedTo:">bmltLibInstance(_:loginChangedTo:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>OPTIONAL</strong></p>
+
+<p>Indicates whether or not a Semantic Admin log in or out occurred.</p>
+
+<p>This actually is called when the login state changes (or doesn&rsquo;t change when change is expected).
+This is called in response to a login or logout. It is always called, even if
+the login state did not change.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">bmltLibInstance</span><span class="p">(</span><span class="n">_</span> <span class="nv">inLibInstance</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">,</span> <span class="nv">loginChangedTo</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inLibInstance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the BMLTiOSLib instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>loginChangedTo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Bool, true, if the session is currently connected.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:newMeetingAdded:"></a>
+                    <a name="//apple_ref/swift/Method/bmltLibInstance(_:newMeetingAdded:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:newMeetingAdded:">bmltLibInstance(_:newMeetingAdded:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>OPTIONAL</strong></p>
+
+<p>Called when a new meeting has been added, or a deleted meeting has been restored.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">bmltLibInstance</span><span class="p">(</span><span class="n">_</span> <span class="nv">inLibInstance</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">,</span> <span class="nv">newMeetingAdded</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibEditableMeetingNode.html">BMLTiOSLibEditableMeetingNode</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inLibInstance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the BMLTiOSLib instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>newMeetingAdded</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Meeting object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:meetingRolledback:"></a>
+                    <a name="//apple_ref/swift/Method/bmltLibInstance(_:meetingRolledback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:meetingRolledback:">bmltLibInstance(_:meetingRolledback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>OPTIONAL</strong></p>
+
+<p>Called when a meeting has been rolled back to a previous version.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">bmltLibInstance</span><span class="p">(</span><span class="n">_</span> <span class="nv">inLibInstance</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">,</span> <span class="nv">meetingRolledback</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibEditableMeetingNode.html">BMLTiOSLibEditableMeetingNode</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inLibInstance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the BMLTiOSLib instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>meetingRolledback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Meeting object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:adminMeetingChangeComplete:"></a>
+                    <a name="//apple_ref/swift/Method/bmltLibInstance(_:adminMeetingChangeComplete:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:adminMeetingChangeComplete:">bmltLibInstance(_:adminMeetingChangeComplete:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>OPTIONAL</strong></p>
+
+<p>Called when a meeting has been edited.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">bmltLibInstance</span><span class="p">(</span><span class="n">_</span> <span class="nv">inLibInstance</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">,</span> <span class="nv">adminMeetingChangeComplete</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibChangedMeeting.html">BMLTiOSLibChangedMeeting</a></span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inLibInstance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the BMLTiOSLib instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>adminMeetingChangeComplete</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If successful, this will be the changes made to the meeting. nil, if failed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:deleteMeetingSuccessful:"></a>
+                    <a name="//apple_ref/swift/Method/bmltLibInstance(_:deleteMeetingSuccessful:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:deleteMeetingSuccessful:">bmltLibInstance(_:deleteMeetingSuccessful:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>OPTIONAL</strong></p>
+
+<p>Called when a new meeting has been deleted.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">bmltLibInstance</span><span class="p">(</span><span class="n">_</span> <span class="nv">inLibInstance</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">,</span> <span class="nv">deleteMeetingSuccessful</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inLibInstance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the BMLTiOSLib instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>deleteMeetingSuccessful</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>true, if the operation was successful.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:sendMessageSuccessful:"></a>
+                    <a name="//apple_ref/swift/Method/bmltLibInstance(_:sendMessageSuccessful:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:sendMessageSuccessful:">bmltLibInstance(_:sendMessageSuccessful:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>OPTIONAL</strong></p>
+
+<p>Called when a message has been sent to a meeting contact.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">bmltLibInstance</span><span class="p">(</span><span class="n">_</span> <span class="nv">inLibInstance</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">,</span> <span class="nv">sendMessageSuccessful</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inLibInstance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the BMLTiOSLib instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sendMessageSuccessful</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>true, if the operation was successful.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://bmlt.magshare.net/BMLTiOSLib" target="_blank" rel="external">BMLT Administrators</a>. All rights reserved. (Last updated: 2019-08-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

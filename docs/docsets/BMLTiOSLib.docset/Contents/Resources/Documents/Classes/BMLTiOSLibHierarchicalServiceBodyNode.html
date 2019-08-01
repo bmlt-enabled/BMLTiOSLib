@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BMLTiOSLibHierarchicalServiceBodyNode Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/BMLTiOSLibHierarchicalServiceBodyNode" class="dashAnchor"></a>
+    <a title="BMLTiOSLibHierarchicalServiceBodyNode Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">BMLTiOSLib Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/bmlt-enabled/BMLTiOSLib"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">BMLTiOSLib Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        BMLTiOSLibHierarchicalServiceBodyNode Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibChangeNode.html">BMLTiOSLibChangeNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibChangedMeeting.html">BMLTiOSLibChangedMeeting</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibEditableMeetingNode.html">BMLTiOSLibEditableMeetingNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibFormatContainer.html">BMLTiOSLibFormatContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibFormatNode.html">BMLTiOSLibFormatNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibMeetingNode.html">BMLTiOSLibMeetingNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibMeetingNodeSimpleDictionaryElement.html">BMLTiOSLibMeetingNodeSimpleDictionaryElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria.html">BMLTiOSLibSearchCriteria</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/SelectionState.html">– SelectionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/SearchCriteriaExtent.html">– SearchCriteriaExtent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/SearchCriteriaPublishedStatus.html">– SearchCriteriaPublishedStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/WeekdayIndex.html">– WeekdayIndex</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibServerLang.html">BMLTiOSLibServerLang</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibServiceBodyContainer.html">BMLTiOSLibServiceBodyContainer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibCommunicationHandlerBadTestReasons.html">BMLTiOSLibCommunicationHandlerBadTestReasons</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibDistanceUnits.html">BMLTiOSLibDistanceUnits</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibErrorCodes.html">BMLTiOSLibErrorCodes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibErrorDescriptions.html">BMLTiOSLibErrorDescriptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibErrorDomains.html">BMLTiOSLibErrorDomains</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibPermissions.html">BMLTiOSLibPermissions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/BMLTiOSLibDelegate.html">BMLTiOSLibDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>BMLTiOSLibHierarchicalServiceBodyNode</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BMLTiOSLibHierarchicalServiceBodyNode</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>This is a special <q>micro class</q> for aggregating a hierarchical Service body map.</p>
+
+<p>We create the map when we connect to the Root Server, and the map is a doubly-linked list,
+with each node containing the basic dictionary for a Service body, and references to parents
+and contained (<q>children</q>) nodes.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Properties."></a>
+                <a name="//apple_ref/swift/Section/Public Properties." class="dashAnchor"></a>
+                <a href="#/Public%20Properties.">
+                  <h3 class="section-name">Public Properties.</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC6parentACSgvp"></a>
+                    <a name="//apple_ref/swift/Property/parent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC6parentACSgvp">parent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The parent node for this object. Nil if top-level.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">parent</span><span class="p">:</span> <span class="kt">BMLTiOSLibHierarchicalServiceBodyNode</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC07serviceE0SDyS2SGSgvp"></a>
+                    <a name="//apple_ref/swift/Property/serviceBody" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC07serviceE0SDyS2SGSgvp">serviceBody</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Service body information for this node.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">serviceBody</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC8childrenSayACGvp"></a>
+                    <a name="//apple_ref/swift/Property/children" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC8childrenSayACGvp">children</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An array of <q>child</q> nodes. May be empty, if we are a <q>leaf.</q></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">children</span><span class="p">:</span> <span class="p">[</span><span class="kt">BMLTiOSLibHierarchicalServiceBodyNode</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC9extraDatayXlSgvp"></a>
+                    <a name="//apple_ref/swift/Property/extraData" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC9extraDatayXlSgvp">extraData</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is whatever data the user wants to attach to the node.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">extraData</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Calculated%20Properties."></a>
+                <a name="//apple_ref/swift/Section/Public Calculated Properties." class="dashAnchor"></a>
+                <a href="#/Public%20Calculated%20Properties.">
+                  <h3 class="section-name">Public Calculated Properties.</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC4keysSaySSGvp"></a>
+                    <a name="//apple_ref/swift/Property/keys" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC4keysSaySSGvp">keys</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">keys</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>all of the available keys in our dictionary.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC2idSivp"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC2idSivp">id</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the Service body ID as an Int. If there is no ID, it returns 0 (Should never happen).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC4nameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC4nameSSvp">name</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the Service body name as a String. If there is no name, it returns blank.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BMLTiOSLib@objc(cs)BMLTiOSLibHierarchicalServiceBodyNode(py)description"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BMLTiOSLib@objc(cs)BMLTiOSLibHierarchicalServiceBodyNode(py)description">description</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the Service body description as a String. If there is no description, it returns the name.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC14iCanAdministerSbvp"></a>
+                    <a name="//apple_ref/swift/Property/iCanAdminister" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC14iCanAdministerSbvp">iCanAdminister</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">iCanAdminister</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>If we are logged in as an admin, and have administrator rights for this Service body, we get a true.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC8iCanEditSbvp"></a>
+                    <a name="//apple_ref/swift/Property/iCanEdit" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC8iCanEditSbvp">iCanEdit</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">iCanEdit</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>If we are logged in as an admin, and have edit rights for this Service body, we get a true.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC11iCanObserveSbvp"></a>
+                    <a name="//apple_ref/swift/Property/iCanObserve" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC11iCanObserveSbvp">iCanObserve</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">iCanObserve</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>If we are logged in as an admin, and have observer rights for this Service body, we get a true.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC11permissionsAA0aB11PermissionsOvp"></a>
+                    <a name="//apple_ref/swift/Property/permissions" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC11permissionsAA0aB11PermissionsOvp">permissions</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">permissions</span><span class="p">:</span> <span class="kt"><a href="../Enums/BMLTiOSLibPermissions.html">BMLTiOSLibPermissions</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>If we are logged in as an admin, this will indicate the level of permission we have with this Service body.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC9hasParentSbvp"></a>
+                    <a name="//apple_ref/swift/Property/hasParent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC9hasParentSbvp">hasParent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hasParent</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true, if we have a parent.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC11hasChildrenSbvp"></a>
+                    <a name="//apple_ref/swift/Property/hasChildren" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC11hasChildrenSbvp">hasChildren</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hasChildren</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true, if we have children.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC18completeChildCountSivp"></a>
+                    <a name="//apple_ref/swift/Property/completeChildCount" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC18completeChildCountSivp">completeChildCount</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">completeChildCount</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the total number of children, including children of children, etc.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC25howDeepInTheRabbitHoleAmISivp"></a>
+                    <a name="//apple_ref/swift/Property/howDeepInTheRabbitHoleAmI" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC25howDeepInTheRabbitHoleAmISivp">howDeepInTheRabbitHoleAmI</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">howDeepInTheRabbitHoleAmI</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>how many levels down we are. 0 is top-level (no parent).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Initializers."></a>
+                <a name="//apple_ref/swift/Section/Public Initializers." class="dashAnchor"></a>
+                <a href="#/Public%20Initializers.">
+                  <h3 class="section-name">Public Initializers.</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeCyA2Ccfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeCyA2Ccfc">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Copy initializer.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">inObject</span><span class="p">:</span> <span class="kt">BMLTiOSLibHierarchicalServiceBodyNode</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inObject</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This references an object we will adopt.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC12inServerCommAc2AC_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(inServerComm:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC12inServerCommAc2AC_tcfc">init(inServerComm:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Default initializer. We must have at least the server comm.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">inServerComm</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inServerComm</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a reference to the BMLTiOSLib instance that <q>owns</q> this.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC12inServerComm6parent07serviceE08childrenAc2AC_ACSgSDyS2SGSgSayACGtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(inServerComm:parent:serviceBody:children:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC12inServerComm6parent07serviceE08childrenAc2AC_ACSgSDyS2SGSgSayACGtcfc">init(inServerComm:parent:serviceBody:children:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Basic initializer with full data.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">inServerComm</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">,</span> <span class="nv">parent</span><span class="p">:</span> <span class="kt">BMLTiOSLibHierarchicalServiceBodyNode</span><span class="o">!</span><span class="p">,</span> <span class="nv">serviceBody</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span><span class="o">!</span><span class="p">,</span> <span class="nv">children</span><span class="p">:</span> <span class="p">[</span><span class="kt">BMLTiOSLibHierarchicalServiceBodyNode</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inServerComm</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a reference to the BMLTiOSLib instance that <q>owns</q> this.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>parent</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>any parent node in a hierarchy.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>serviceBody</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a Dictionary<String,String>, containing the Service body information.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>chidren</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is an Array of BMLTiOSLibHierarchicalServiceBodyNode objects, which are the children for this node.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Instance%20Methods."></a>
+                <a name="//apple_ref/swift/Section/Public Instance Methods." class="dashAnchor"></a>
+                <a href="#/Public%20Instance%20Methods.">
+                  <h3 class="section-name">Public Instance Methods.</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC13isInHierarchyySbACF"></a>
+                    <a name="//apple_ref/swift/Method/isInHierarchy(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC13isInHierarchyySbACF">isInHierarchy(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This checks a given Service Body node, and sees if it is in the hierarchy.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isInHierarchy</span><span class="p">(</span><span class="n">_</span> <span class="nv">inSBNode</span><span class="p">:</span> <span class="kt">BMLTiOSLibHierarchicalServiceBodyNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inSBNode</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>this is the node to check.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true, if the node is somewhere in our woodpile.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC17isSBIDInHierarchyySbSiF"></a>
+                    <a name="//apple_ref/swift/Method/isSBIDInHierarchy(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB27HierarchicalServiceBodyNodeC17isSBIDInHierarchyySbSiF">isSBIDInHierarchy(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This checks a given Service Body node by its ID, and sees if it is in the hierarchy.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isSBIDInHierarchy</span><span class="p">(</span><span class="n">_</span> <span class="nv">inID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the integer ID of the Service body to check.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true, if the ID represents a Service body somewhere in our woodpile.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://bmlt.magshare.net/BMLTiOSLib" target="_blank" rel="external">BMLT Administrators</a>. All rights reserved. (Last updated: 2019-08-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

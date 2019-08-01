@@ -1,0 +1,2425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BMLTiOSLib Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/BMLTiOSLib" class="dashAnchor"></a>
+    <a title="BMLTiOSLib Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">BMLTiOSLib Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/bmlt-enabled/BMLTiOSLib"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">BMLTiOSLib Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        BMLTiOSLib Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibChangeNode.html">BMLTiOSLibChangeNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibChangedMeeting.html">BMLTiOSLibChangedMeeting</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibEditableMeetingNode.html">BMLTiOSLibEditableMeetingNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibFormatContainer.html">BMLTiOSLibFormatContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibFormatNode.html">BMLTiOSLibFormatNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibMeetingNode.html">BMLTiOSLibMeetingNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibMeetingNodeSimpleDictionaryElement.html">BMLTiOSLibMeetingNodeSimpleDictionaryElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria.html">BMLTiOSLibSearchCriteria</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/SelectionState.html">– SelectionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/SearchCriteriaExtent.html">– SearchCriteriaExtent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/SearchCriteriaPublishedStatus.html">– SearchCriteriaPublishedStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/WeekdayIndex.html">– WeekdayIndex</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibServerLang.html">BMLTiOSLibServerLang</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibServiceBodyContainer.html">BMLTiOSLibServiceBodyContainer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibCommunicationHandlerBadTestReasons.html">BMLTiOSLibCommunicationHandlerBadTestReasons</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibDistanceUnits.html">BMLTiOSLibDistanceUnits</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibErrorCodes.html">BMLTiOSLibErrorCodes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibErrorDescriptions.html">BMLTiOSLibErrorDescriptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibErrorDomains.html">BMLTiOSLibErrorDomains</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibPermissions.html">BMLTiOSLibPermissions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/BMLTiOSLibDelegate.html">BMLTiOSLibDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>BMLTiOSLib</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BMLTiOSLib</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>This class represents the public interface to the BMLTiOSLib framework.</p>
+
+<p>This class needs to be instantiated with a URI to a valid Root Server (the same URI used to log in), and a BMLTiOSLibDelegate object.</p>
+
+<p>Instantiation immediately starts a communication process, and the result will be reflected in the delegate&rsquo;s bmltLibInstance(_:BMLTiOSLib,serverIsValid:Bool) callback.</p>
+
+<p>If this instance fails to connect to a valid Root Server, it should be deleted, and reinstantiated for a new connection.</p>
+
+<p>Once a connection is established, the HTTP session is maintained until the instance is deinstantiated.</p>
+
+<p>The session is required to be maintained for Semantic Administration. You cannot share a session across instances of BMLTiOSLib.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Instance%20Calculated%20Properties"></a>
+                <a name="//apple_ref/swift/Section/Public Instance Calculated Properties" class="dashAnchor"></a>
+                <a href="#/Public%20Instance%20Calculated%20Properties">
+                  <h3 class="section-name">Public Instance Calculated Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC14searchCriteriaAA0ab6SearchD0CSgvp"></a>
+                    <a name="//apple_ref/swift/Property/searchCriteria" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC14searchCriteriaAA0ab6SearchD0CSgvp">searchCriteria</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">searchCriteria</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibSearchCriteria.html">BMLTiOSLibSearchCriteria</a></span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a reference to the internal SearcCriteria object.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC13distanceUnitsAA0ab8DistanceD0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/distanceUnits" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC13distanceUnitsAA0ab8DistanceD0Ovp">distanceUnits</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal Distance Units.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">distanceUnits</span><span class="p">:</span> <span class="kt"><a href="../Enums/BMLTiOSLibDistanceUnits.html">BMLTiOSLibDistanceUnits</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC19distanceUnitsStringSSvp"></a>
+                    <a name="//apple_ref/swift/Property/distanceUnitsString" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC19distanceUnitsStringSSvp">distanceUnitsString</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal Distance Units.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">distanceUnitsString</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC25availableMeetingValueKeysSaySSGvp"></a>
+                    <a name="//apple_ref/swift/Property/availableMeetingValueKeys" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC25availableMeetingValueKeysSaySSGvp">availableMeetingValueKeys</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>These are the available value keys for use when querying meeting data.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">availableMeetingValueKeys</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC27emailMeetingContactsEnabledSbvp"></a>
+                    <a name="//apple_ref/swift/Property/emailMeetingContactsEnabled" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC27emailMeetingContactsEnabledSbvp">emailMeetingContactsEnabled</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is set to true if emails sent to the server are enabled (Goes to meeting contacts).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">emailMeetingContactsEnabled</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC29emailServiceBodyAdminsEnabledSbvp"></a>
+                    <a name="//apple_ref/swift/Property/emailServiceBodyAdminsEnabled" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC29emailServiceBodyAdminsEnabledSbvp">emailServiceBodyAdminsEnabled</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is set to true if emails sent to the meeting contacts also send a copy to the Service body Admin for that meeting.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">emailServiceBodyAdminsEnabled</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC11changeDepthSivp"></a>
+                    <a name="//apple_ref/swift/Property/changeDepth" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC11changeDepthSivp">changeDepth</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is number of changes stored per meeting.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">changeDepth</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC12googleAPIKeySSvp"></a>
+                    <a name="//apple_ref/swift/Property/googleAPIKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC12googleAPIKeySSvp">googleAPIKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is the server Google API Key</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">googleAPIKey</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC8delegateAA0aB8Delegate_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC8delegateAA0aB8Delegate_pSgvp">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns the delegate object for this instance.
+The delegate can only be set at instantiation taime, so this is a
+read-only dynamic property.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BMLTiOSLibDelegate.html">BMLTiOSLibDelegate</a></span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a reference to an object that follows the BMLTiOSLibDelegate protocol.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC13rootServerURISSvp"></a>
+                    <a name="//apple_ref/swift/Property/rootServerURI" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC13rootServerURISSvp">rootServerURI</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns the Root Server URI used by the instance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">rootServerURI</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a String, with the URI.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC11isConnectedSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isConnected" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC11isConnectedSbvp">isConnected</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is a simple Boolean test to see if the instance successfully connected.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isConnected</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a Bool, true if the instance is successfully connected.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC11errorStringSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/errorString" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC11errorStringSSSgvp">errorString</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns an error String (if any)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">errorString</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an optional String object. This will be a code that can be used to key a localized String.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC15isAdminLoggedInSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isAdminLoggedIn" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC15isAdminLoggedInSbvp">isAdminLoggedIn</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns true, if the Semantic Administration interface has an administrator logged in.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isAdminLoggedIn</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a Bool, true, if the administrator is logged in.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC15versionAsStringSSvp"></a>
+                    <a name="//apple_ref/swift/Property/versionAsString" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC15versionAsStringSSvp">versionAsString</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns the Root Server version, as an easily readable String.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">versionAsString</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a String, with the version, in <q>X.Y.Z</q> form, where X is the major version, Y is the minor version, and Z is the fix version</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC12versionAsIntSivp"></a>
+                    <a name="//apple_ref/swift/Property/versionAsInt" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC12versionAsIntSivp">versionAsInt</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns the Root Server version, as an integer. This allows easy version level checking.</p>
+
+<p>The format is XXXYYYZZZ, with XXX being the major version, YYY being the minor version, and ZZZ being the fix version.</p>
+
+<p>The result has no leading zeroes (It&rsquo;s an Int), so, for example, 2.8.1 is represented as <q>2008001</q>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">versionAsInt</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an Int, with the version packed into integer form.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC16isAdminAvailableSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isAdminAvailable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC16isAdminAvailableSbvp">isAdminAvailable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns whether or not the Root Server is capable of supporting Semantic Administration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isAdminAvailable</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a Bool, true, if the Root Server supports Semantic Administration.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC15defaultLocationSo22CLLocationCoordinate2DVvp"></a>
+                    <a name="//apple_ref/swift/Property/defaultLocation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC15defaultLocationSo22CLLocationCoordinate2DVvp">defaultLocation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns the Root Server center coordinates.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">defaultLocation</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a CLLocationCoordinate2D object, with the coordinates (default Server coordinates).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC13serviceBodiesSayAA0aB27HierarchicalServiceBodyNodeCGvp"></a>
+                    <a name="//apple_ref/swift/Property/serviceBodies" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC13serviceBodiesSayAA0aB27HierarchicalServiceBodyNodeCGvp">serviceBodies</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns a flat (non-hierarchical) array of Service Body nodes.</p>
+
+<p>This returns every Service body on the server. Each will be in a node, with links to its parents and children (if any).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">serviceBodies</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an Array of BMLTiOSLibHierarchicalServiceBodyNode objects, each of which represents one Service body.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC24serviceBodiesICanObserveSayAA0aB27HierarchicalServiceBodyNodeCGvp"></a>
+                    <a name="//apple_ref/swift/Property/serviceBodiesICanObserve" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC24serviceBodiesICanObserveSayAA0aB27HierarchicalServiceBodyNodeCGvp">serviceBodiesICanObserve</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns a flat (non-hierarchical) array of Service Body nodes that can be observed.</p>
+
+<p>This returns every Service body on the server that the current user can observe. Each will be in a node, with links to its parents and children (if any).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">serviceBodiesICanObserve</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an Array of BMLTiOSLibHierarchicalServiceBodyNode objects, each of which represents one Service body.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC21serviceBodiesICanEditSayAA0aB27HierarchicalServiceBodyNodeCGvp"></a>
+                    <a name="//apple_ref/swift/Property/serviceBodiesICanEdit" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC21serviceBodiesICanEditSayAA0aB27HierarchicalServiceBodyNodeCGvp">serviceBodiesICanEdit</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns a flat (non-hierarchical) array of Service Body nodes that can be edited or observed.</p>
+
+<p>This returns every Service body on the server that the current user can observe or edit. Each will be in a node, with links to its parents and children (if any).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">serviceBodiesICanEdit</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an Array of BMLTiOSLibHierarchicalServiceBodyNode objects, each of which represents one Service body.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC27serviceBodiesICanAdministerSayAA0aB27HierarchicalServiceBodyNodeCGvp"></a>
+                    <a name="//apple_ref/swift/Property/serviceBodiesICanAdminister" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC27serviceBodiesICanAdministerSayAA0aB27HierarchicalServiceBodyNodeCGvp">serviceBodiesICanAdminister</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns a flat (non-hierarchical) array of Service Body nodes that can be observed.</p>
+
+<p>This returns every Service body on the server that the current user can observe, edit or administer. Each will be in a node, with links to its parents and children (if any).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">serviceBodiesICanAdminister</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an Array of BMLTiOSLibHierarchicalServiceBodyNode objects, each of which represents one Service body.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC25hierarchicalServiceBodiesAA0ab12HierarchicalD8BodyNodeCvp"></a>
+                    <a name="//apple_ref/swift/Property/hierarchicalServiceBodies" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC25hierarchicalServiceBodiesAA0ab12HierarchicalD8BodyNodeCvp">hierarchicalServiceBodies</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns a hierarchical linked list of Service Body nodes.</p>
+
+<p>This returns every Service body on the server, in a doubly linked list.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hierarchicalServiceBodies</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a BMLTiOSLibHierarchicalServiceBodyNode object that is the root of the hierarchy. Look in its <q>children</q> property.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC18allPossibleFormatsSayAA0aB10FormatNodeCGvp"></a>
+                    <a name="//apple_ref/swift/Property/allPossibleFormats" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC18allPossibleFormatsSayAA0aB10FormatNodeCGvp">allPossibleFormats</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This contains all of the possible meeting formats.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">allPossibleFormats</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/BMLTiOSLibFormatNode.html">BMLTiOSLibFormatNode</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC24availableServerLanguagesSayAA0abD4LangCGvp"></a>
+                    <a name="//apple_ref/swift/Property/availableServerLanguages" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC24availableServerLanguagesSayAA0abD4LangCGvp">availableServerLanguages</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This contains the response from our get server languages call (nil, by default).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">availableServerLanguages</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/BMLTiOSLibServerLang.html">BMLTiOSLibServerLang</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Instance%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Public Instance Methods" class="dashAnchor"></a>
+                <a href="#/Public%20Instance%20Methods">
+                  <h3 class="section-name">Public Instance Methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC15inRootServerURI0C8DelegateABSS_AA0abG0_ptcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(inRootServerURI:inDelegate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC15inRootServerURI0C8DelegateABSS_AA0abG0_ptcfc">init(inRootServerURI:inDelegate:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is the default initializer. This is required. You need to supply a valid URI and a valid delegate.</p>
+
+<p>After this is called, the BMLTiOSLib attempts to connect to the Root Server.</p>
+
+<p>IMPORTANT: YOU SHOULD NOT DO ANYTHING MORE WITH THIS BMLTiOSLib INSTANCE UNTIL THE DELEGATE CALLBACK IS INVOKED!</p>
+
+<p>The callback is the bmltLibInstance(_:BMLTiOSLib,serverIsValid:Bool) method in your delegate instance.</p>
+
+<p>You need to wait until this callback is invoked with serverIsValid set to true.</p>
+
+<p>If serverIsValid is false, then this instance of BMLTiOSLib is no longer usable, and should be discarded.</p>
+
+<p>Each instance of BMLTiOSLib has a lifetime associated with its HTTPS connection session.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">inRootServerURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">inDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BMLTiOSLibDelegate.html">BMLTiOSLibDelegate</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inRootServerURI</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A String, with the URI to a valid BMLT Root Server</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inDelegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A reference to an object that follows the BMLTiOSLibDelegate protocol.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC12clearStorageyyF"></a>
+                    <a name="//apple_ref/swift/Method/clearStorage()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC12clearStorageyyF">clearStorage()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Disconnects the session, and removes all local storage.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">clearStorage</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC18getServiceBodyByIDyAA0ab12HierarchicaldE4NodeCSgSiF"></a>
+                    <a name="//apple_ref/swift/Method/getServiceBodyByID(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC18getServiceBodyByIDyAA0ab12HierarchicaldE4NodeCSgSiF">getServiceBodyByID(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetches a Service body node by its ID.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getServiceBodyByID</span><span class="p">(</span><span class="n">_</span> <span class="nv">inID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ID for the requested Service body.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC13getFormatByIDyAA0abD4NodeCSgSiF"></a>
+                    <a name="//apple_ref/swift/Method/getFormatByID(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC13getFormatByIDyAA0abD4NodeCSgSiF">getFormatByID(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetches a format node by its shared ID.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getFormatByID</span><span class="p">(</span><span class="n">_</span> <span class="nv">inID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/BMLTiOSLibFormatNode.html">BMLTiOSLibFormatNode</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ID for the requested format.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an optional format node object.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC14getFormatByKeyyAA0abD4NodeCSgSSF"></a>
+                    <a name="//apple_ref/swift/Method/getFormatByKey(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC14getFormatByKeyyAA0abD4NodeCSgSSF">getFormatByKey(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetches a format node by its string key.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getFormatByKey</span><span class="p">(</span><span class="n">_</span> <span class="nv">inKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/BMLTiOSLibFormatNode.html">BMLTiOSLibFormatNode</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key for the requested format.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an optional format node object.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Communication%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Communication Methods" class="dashAnchor"></a>
+                <a href="#/Communication%20Methods">
+                  <h3 class="section-name">Communication Methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC17getAllUsedFormatsyyF"></a>
+                    <a name="//apple_ref/swift/Method/getAllUsedFormats()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC17getAllUsedFormatsyyF">getAllUsedFormats()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to get every format actually used by meetings in the database (usually a subset of the entire format list).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAllUsedFormats</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC20performMeetingSearchyyAA0abE8CriteriaC0eF6ExtentOF"></a>
+                    <a name="//apple_ref/swift/Method/performMeetingSearch(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC20performMeetingSearchyyAA0abE8CriteriaC0eF6ExtentOF">performMeetingSearch(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This performs a meeting search, based on the search criteria that currently exists.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">performMeetingSearch</span><span class="p">(</span><span class="n">_</span> <span class="nv">inSearchResultsType</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibSearchCriteria.html">BMLTiOSLibSearchCriteria</a></span><span class="o">.</span><span class="kt">SearchCriteriaExtent</span> <span class="o">=</span> <span class="o">.</span><span class="kt">BothMeetingsAndFormats</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inSearchResultsType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The type of result[s] you&rsquo;d like. Defaults to both meetings and formats.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC22getMeetingsObjectsByID_10searchTypeySaySiG_AA0aB14SearchCriteriaC0jK6ExtentOtF"></a>
+                    <a name="//apple_ref/swift/Method/getMeetingsObjectsByID(_:searchType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC22getMeetingsObjectsByID_10searchTypeySaySiG_AA0aB14SearchCriteriaC0jK6ExtentOtF">getMeetingsObjectsByID(_:searchType:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This performs a meeting search, based on a list of meeting IDs.</p>
+
+<p>The BMLT Root Server has a special case, where a CSV list of integers is interpreted as a list of meeting IDs.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getMeetingsObjectsByID</span><span class="p">(</span><span class="n">_</span> <span class="nv">inMeetingIDArray</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">],</span> <span class="n">searchType</span> <span class="nv">inSearchResultsType</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibSearchCriteria.html">BMLTiOSLibSearchCriteria</a></span><span class="o">.</span><span class="kt">SearchCriteriaExtent</span> <span class="o">=</span> <span class="o">.</span><span class="kt">BothMeetingsAndFormats</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inMeetingIDArray</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array on Int, with each integer being a BMLT ID of a meeting.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>searchType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The type of result[s] you&rsquo;d like. Defaults to both meetings and formats.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Changed,%20Deleted%20and%20Rolled-Back%20Meetings"></a>
+                <a name="//apple_ref/swift/Section/Changed, Deleted and Rolled-Back Meetings" class="dashAnchor"></a>
+                <a href="#/Changed,%20Deleted%20and%20Rolled-Back%20Meetings">
+                  <h3 class="section-name">Changed, Deleted and Rolled-Back Meetings</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC24getDeletedMeetingChanges8fromDate02toH014serviceBodyIDsy10Foundation0H0VSg_AJSaySiGSgtF"></a>
+                    <a name="//apple_ref/swift/Method/getDeletedMeetingChanges(fromDate:toDate:serviceBodyIDs:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC24getDeletedMeetingChanges8fromDate02toH014serviceBodyIDsy10Foundation0H0VSg_AJSaySiGSgtF">getDeletedMeetingChanges(fromDate:toDate:serviceBodyIDs:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to get meeting change records for deleted meetings only from the Root Server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getDeletedMeetingChanges</span><span class="p">(</span><span class="n">fromDate</span> <span class="nv">inFromDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">toDate</span> <span class="nv">inToDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">serviceBodyIDs</span> <span class="nv">inServiceBodyIDs</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a Date object that contains a date/time that represents the first meeting change instance. It can be nil for no Start Date.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a Date object that contains a date/time that represents the last meeting change instance. It can be nil for no End Date.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>serviceBodyIDs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Array of Int, with the ID of one or more Service Bodies for which we want to get changes. It can be nil for all meeting changes within the given date range.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC24getDeletedMeetingChanges8fromDate02toH013serviceBodyIDy10Foundation0H0VSg_AJSiSgtF"></a>
+                    <a name="//apple_ref/swift/Method/getDeletedMeetingChanges(fromDate:toDate:serviceBodyID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC24getDeletedMeetingChanges8fromDate02toH013serviceBodyIDy10Foundation0H0VSg_AJSiSgtF">getDeletedMeetingChanges(fromDate:toDate:serviceBodyID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to get meeting change records for deleted meetings only from the Root Server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getDeletedMeetingChanges</span><span class="p">(</span><span class="n">fromDate</span> <span class="nv">inFromDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">toDate</span> <span class="nv">inToDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">serviceBodyID</span> <span class="nv">inServiceBodyID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a Date object that contains a date/time that represents the first meeting change instance. It can be nil for no Start Date.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a Date object that contains a date/time that represents the last meeting change instance. It can be nil for no End Date.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>serviceBodyID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Int, with the ID of one Service Body for which we want to get changes. It can be nil for all meeting changes within the given date range.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC24getDeletedMeetingChanges13serviceBodyIDySiSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/getDeletedMeetingChanges(serviceBodyID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC24getDeletedMeetingChanges13serviceBodyIDySiSg_tF">getDeletedMeetingChanges(serviceBodyID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to get meeting change records for deleted meetings only from the Root Server for a particular Service body.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getDeletedMeetingChanges</span><span class="p">(</span><span class="n">serviceBodyID</span> <span class="nv">inServiceBodyID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>serviceBodyID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Int, with the ID of one Service Body for which we want to get changes. It can be nil for all meeting changes within the given date range.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC24getDeletedMeetingChanges14serviceBodyIDsySaySiGSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/getDeletedMeetingChanges(serviceBodyIDs:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC24getDeletedMeetingChanges14serviceBodyIDsySaySiGSg_tF">getDeletedMeetingChanges(serviceBodyIDs:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to get meeting change records for deleted meetings only from the Root Server for a particular Service body.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getDeletedMeetingChanges</span><span class="p">(</span><span class="n">serviceBodyIDs</span> <span class="nv">inServiceBodyIDs</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>serviceBodyIDs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Array of Int, with the ID of one or more Service Bodies for which we want to get changes. It can be nil for all meeting changes within the given date range.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC24getDeletedMeetingChangesyyF"></a>
+                    <a name="//apple_ref/swift/Method/getDeletedMeetingChanges()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC24getDeletedMeetingChangesyyF">getDeletedMeetingChanges()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to get all meeting change records for deleted meetings only from the Root Server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getDeletedMeetingChanges</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC20getAllMeetingChanges8fromDate02toH013serviceBodyID07meetingL004userL0y10Foundation0H0VSg_ALSiSgA2MtF"></a>
+                    <a name="//apple_ref/swift/Method/getAllMeetingChanges(fromDate:toDate:serviceBodyID:meetingID:userID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC20getAllMeetingChanges8fromDate02toH013serviceBodyID07meetingL004userL0y10Foundation0H0VSg_ALSiSgA2MtF">getAllMeetingChanges(fromDate:toDate:serviceBodyID:meetingID:userID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to get meeting change records from the Root Server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAllMeetingChanges</span><span class="p">(</span><span class="n">fromDate</span> <span class="nv">inFromDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">toDate</span> <span class="nv">inToDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">serviceBodyID</span> <span class="nv">inServiceBodyID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?,</span> <span class="n">meetingID</span> <span class="nv">inMeetingID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?,</span> <span class="n">userID</span> <span class="nv">inUserID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a Date object that contains a date/time that represents the first meeting change instance. It can be nil for no Start Date.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a Date object that contains a date/time that represents the last meeting change instance. It can be nil for no End Date.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>serviceBodyID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Int, with the ID of one Service Body for which we want to get changes. It can be nil for all meeting changes within the given date range.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>meetingID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Int, with the ID of one meeting for which we want to get changes. It can be nil for all meeting changes within the given date range.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Int, with the ID of one Admin User for which we want to get changes. It can be nil for all meeting changes within the given date range. This is only valid for logged-in users.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC20getAllMeetingChanges8fromDate02toH013serviceBodyID07meetingL0y10Foundation0H0VSg_AKSiSgALtF"></a>
+                    <a name="//apple_ref/swift/Method/getAllMeetingChanges(fromDate:toDate:serviceBodyID:meetingID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC20getAllMeetingChanges8fromDate02toH013serviceBodyID07meetingL0y10Foundation0H0VSg_AKSiSgALtF">getAllMeetingChanges(fromDate:toDate:serviceBodyID:meetingID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to get meeting change records from the Root Server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAllMeetingChanges</span><span class="p">(</span><span class="n">fromDate</span> <span class="nv">inFromDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">toDate</span> <span class="nv">inToDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">serviceBodyID</span> <span class="nv">inServiceBodyID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?,</span> <span class="n">meetingID</span> <span class="nv">inMeetingID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a Date object that contains a date/time that represents the first meeting change instance. It can be nil for no Start Date.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a Date object that contains a date/time that represents the last meeting change instance. It can be nil for no End Date.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>meetingID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Int, with the ID of one meeting for which we want to get changes. It can be nil for all meeting changes within the given date range.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>serviceBodyID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Int, with the ID of one Service Body for which we want to get changes. It can be nil for all meeting changes within the given date range.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC20getAllMeetingChanges8fromDate02toH09meetingIDy10Foundation0H0VSg_AJSiSgtF"></a>
+                    <a name="//apple_ref/swift/Method/getAllMeetingChanges(fromDate:toDate:meetingID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC20getAllMeetingChanges8fromDate02toH09meetingIDy10Foundation0H0VSg_AJSiSgtF">getAllMeetingChanges(fromDate:toDate:meetingID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to get meeting change records from a meeting within a date range from the Root Server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAllMeetingChanges</span><span class="p">(</span><span class="n">fromDate</span> <span class="nv">inFromDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">toDate</span> <span class="nv">inToDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">meetingID</span> <span class="nv">inID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a Date object that contains a date/time that represents the first meeting change instance. It can be nil for no Start Date.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a Date object that contains a date/time that represents the last meeting change instance. It can be nil for no End Date.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>meetingID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Int, with the ID of one meeting for which we want to get changes. It can be nil for all meeting changes within the given date range.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC20getAllMeetingChanges8fromDate02toH013serviceBodyIDy10Foundation0H0VSg_AJSiSgtF"></a>
+                    <a name="//apple_ref/swift/Method/getAllMeetingChanges(fromDate:toDate:serviceBodyID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC20getAllMeetingChanges8fromDate02toH013serviceBodyIDy10Foundation0H0VSg_AJSiSgtF">getAllMeetingChanges(fromDate:toDate:serviceBodyID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to get meeting change records from a Service body within a date range from the Root Server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAllMeetingChanges</span><span class="p">(</span><span class="n">fromDate</span> <span class="nv">inFromDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">toDate</span> <span class="nv">inToDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">serviceBodyID</span> <span class="nv">inServiceBodyID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a Date object that contains a date/time that represents the first meeting change instance. It can be nil for no Start Date.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a Date object that contains a date/time that represents the last meeting change instance. It can be nil for no End Date.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>serviceBodyID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Int, with the ID of one Service Body for which we want to get changes. It can be nil for all meeting changes within the given date range.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC20getAllMeetingChanges8fromDate02toH0y10Foundation0H0VSg_AItF"></a>
+                    <a name="//apple_ref/swift/Method/getAllMeetingChanges(fromDate:toDate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC20getAllMeetingChanges8fromDate02toH0y10Foundation0H0VSg_AItF">getAllMeetingChanges(fromDate:toDate:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to get all meeting change records within a date range from the Root Server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAllMeetingChanges</span><span class="p">(</span><span class="n">fromDate</span> <span class="nv">inFromDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">toDate</span> <span class="nv">inToDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a Date object that contains a date/time that represents the first meeting change instance. It can be nil for no Start Date.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a Date object that contains a date/time that represents the last meeting change instance. It can be nil for no End Date.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC20getAllMeetingChanges9meetingIDySi_tF"></a>
+                    <a name="//apple_ref/swift/Method/getAllMeetingChanges(meetingID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC20getAllMeetingChanges9meetingIDySi_tF">getAllMeetingChanges(meetingID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to get meeting change records for one single meeting from the Root Server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAllMeetingChanges</span><span class="p">(</span><span class="n">meetingID</span> <span class="nv">inID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>meetingID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Int, with the ID of one meeting for which we want to get all of the last changes (It fetches all the stored changes, which are limited in scope).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC20getAllMeetingChanges7meetingyAA0abE4NodeCSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/getAllMeetingChanges(meeting:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC20getAllMeetingChanges7meetingyAA0abE4NodeCSg_tF">getAllMeetingChanges(meeting:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to get meeting change records for one single meeting from the Root Server, with delivery of the changes to that meeting.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAllMeetingChanges</span><span class="p">(</span><span class="n">meeting</span> <span class="nv">inMeetingNode</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibMeetingNode.html">BMLTiOSLibMeetingNode</a></span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>meetingID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Int, with the ID of one meeting for which we want to get all of the last changes (It fetches all the stored changes, which are limited in scope).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC20getAllMeetingChanges13serviceBodyIDySi_tF"></a>
+                    <a name="//apple_ref/swift/Method/getAllMeetingChanges(serviceBodyID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC20getAllMeetingChanges13serviceBodyIDySi_tF">getAllMeetingChanges(serviceBodyID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to get meeting change records for one single Service body from the Root Server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAllMeetingChanges</span><span class="p">(</span><span class="n">serviceBodyID</span> <span class="nv">inServiceBodyID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>serviceBodyID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Int, with the ID of one Service Body for which we want to get changes. It can be nil for all meeting changes within the given date range.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Administration%20Instance%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Public Administration Instance Methods" class="dashAnchor"></a>
+                <a href="#/Public%20Administration%20Instance%20Methods">
+                  <h3 class="section-name">Public Administration Instance Methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC10adminLogin7loginID8passwordSbSS_SStF"></a>
+                    <a name="//apple_ref/swift/Method/adminLogin(loginID:password:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC10adminLogin7loginID8passwordSbSS_SStF">adminLogin(loginID:password:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to log into a server that has semantic admin turned on.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">adminLogin</span><span class="p">(</span><span class="n">loginID</span> <span class="nv">inLoginID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">password</span> <span class="nv">inPassword</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inLoginID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a string, with the login ID.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inPassword</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a string, with the password.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a Bool, which is true, if the connection is to a valid server with semantic admin on.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC11adminLogoutSbyF"></a>
+                    <a name="//apple_ref/swift/Method/adminLogout()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC11adminLogoutSbyF">adminLogout()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to log out of a server that has semantic admin turned on.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">adminLogout</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a Bool, which is true, if the connection is to a valid server with semantic admin on.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC11permissions14forServiceBodyAA0aB11PermissionsOAA0ab12HierarchicaleF4NodeC_tF"></a>
+                    <a name="//apple_ref/swift/Method/permissions(forServiceBody:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC11permissions14forServiceBodyAA0aB11PermissionsOAA0ab12HierarchicaleF4NodeC_tF">permissions(forServiceBody:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">permissions</span><span class="p">(</span><span class="n">forServiceBody</span> <span class="nv">inServiceBody</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/BMLTiOSLibPermissions.html">BMLTiOSLibPermissions</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>If we are logged in as an admin, this will indicate the level of permission we have with a given Service body.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC18saveMeetingChangesyyAA0ab8EditableD4NodeCF"></a>
+                    <a name="//apple_ref/swift/Method/saveMeetingChanges(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC18saveMeetingChangesyyAA0ab8EditableD4NodeCF">saveMeetingChanges(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is called to set a meeting change.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">saveMeetingChanges</span><span class="p">(</span><span class="n">_</span> <span class="nv">inMeetingObject</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibEditableMeetingNode.html">BMLTiOSLibEditableMeetingNode</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inMeetingObject</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an editable meeting object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC15rollbackMeeting_14toBeforeChangeSbSi_SitF"></a>
+                    <a name="//apple_ref/swift/Method/rollbackMeeting(_:toBeforeChange:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC15rollbackMeeting_14toBeforeChangeSbSi_SitF">rollbackMeeting(_:toBeforeChange:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is called to set a meeting change.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">rollbackMeeting</span><span class="p">(</span><span class="n">_</span> <span class="nv">inMeetingID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">toBeforeChange</span> <span class="nv">inChangeID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inMeetingObject</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an ID of an editable meeting object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true, if the operation was dispatched successfully.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC17saveMeetingAsCopyyyAA0ab8EditableD4NodeCF"></a>
+                    <a name="//apple_ref/swift/Method/saveMeetingAsCopy(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC17saveMeetingAsCopyyyAA0ab8EditableD4NodeCF">saveMeetingAsCopy(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Saves the meeting as a copy (does not save or set changes in current meeting).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">saveMeetingAsCopy</span><span class="p">(</span><span class="n">_</span> <span class="nv">inMeetingObject</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibEditableMeetingNode.html">BMLTiOSLibEditableMeetingNode</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC13deleteMeetingyySiF"></a>
+                    <a name="//apple_ref/swift/Method/deleteMeeting(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC13deleteMeetingyySiF">deleteMeeting(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to delete a meeting.</p>
+
+<p>We have to assume the logged-in admin has rights. If they don&rsquo;t, it will be stopped at the server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">deleteMeeting</span><span class="p">(</span><span class="n">_</span> <span class="nv">inMeetingID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inMeetingID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Int, with the ID of the meeting to be deleted.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLibAAC21restoreDeletedMeetingySbSiF"></a>
+                    <a name="//apple_ref/swift/Method/restoreDeletedMeeting(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLibAAC21restoreDeletedMeetingySbSiF">restoreDeletedMeeting(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to restore a deleted meeting.</p>
+
+<p>This instructs the Root Server to find the last deletion record for the meeting,
+and restore it to the state it was in just prior to deletion.</p>
+
+<p>However, it is more ideal to find the latest deletion record, and restore its <q>before</q> instance (See discussion above).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">restoreDeletedMeeting</span><span class="p">(</span><span class="n">_</span> <span class="nv">inMeetingID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inMeetingID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An Int, with the ID of the meeting to be restored.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true, if the operation was dispatched successfully.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://bmlt.magshare.net/BMLTiOSLib" target="_blank" rel="external">BMLT Administrators</a>. All rights reserved. (Last updated: 2019-08-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

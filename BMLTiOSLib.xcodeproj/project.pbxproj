@@ -66,7 +66,6 @@
 		77D7067B1FEB203E00C8A237 /* BMLTiOSLibFormatNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D706791FEB203E00C8A237 /* BMLTiOSLibFormatNode.swift */; };
 		77D7067D1FEB206F00C8A237 /* BMLTiOSLibServerLang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7067C1FEB206F00C8A237 /* BMLTiOSLibServerLang.swift */; };
 		77D7067E1FEB206F00C8A237 /* BMLTiOSLibServerLang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7067C1FEB206F00C8A237 /* BMLTiOSLibServerLang.swift */; };
-		77DBD79D1FDEAEEB008F110F /* BMLTiOSLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DBD79B1FDEAEEB008F110F /* BMLTiOSLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DBD7A71FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A41FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift */; };
 		77DBD7A81FDEAFBF008F110F /* BMLTCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A51FDEAFBF008F110F /* BMLTCommunicator.swift */; };
 		77DBD7A91FDEAFBF008F110F /* BMLTiOSLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A61FDEAFBF008F110F /* BMLTiOSLib.swift */; };
@@ -138,7 +137,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		25ADA2B14C8D4B6D38142B32 /* Pods-BMLTiOSLib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMLTiOSLib.debug.xcconfig"; path = "Target Support Files/Pods-BMLTiOSLib/Pods-BMLTiOSLib.debug.xcconfig"; sourceTree = "<group>"; };
 		771B00961FE197BE004C6CC7 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		772570CD1FDF12C400297473 /* BMLTiOSLib Test Harness (Direct).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMLTiOSLib Test Harness (Direct).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		772B79FE1FEC1A7B002ACDAB /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -198,8 +196,6 @@
 		77DBD8191FDEB183008F110F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		77DBD81A1FDEB183008F110F /* BMLTiOSLib.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BMLTiOSLib.podspec; sourceTree = "<group>"; };
 		77DBD81B1FDEB183008F110F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		BA3FA16D6D95473857AA7AAB /* Pods_BMLTiOSLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMLTiOSLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E31F536F3B6DEF15A2D3A5F9 /* Pods-BMLTiOSLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMLTiOSLib.release.xcconfig"; path = "Target Support Files/Pods-BMLTiOSLib/Pods-BMLTiOSLib.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,8 +247,6 @@
 				77DBD7A31FDEAFBF008F110F /* Framework Project */,
 				77DBD7C01FDEB027008F110F /* Test Harness Project */,
 				77DBD7991FDEAEEB008F110F /* Products */,
-				9F2AEF357313BE8BEE338456 /* Frameworks */,
-				C231037CA41FE3911684726B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -338,35 +332,7 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		9F2AEF357313BE8BEE338456 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BA3FA16D6D95473857AA7AAB /* Pods_BMLTiOSLib.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C231037CA41FE3911684726B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				25ADA2B14C8D4B6D38142B32 /* Pods-BMLTiOSLib.debug.xcconfig */,
-				E31F536F3B6DEF15A2D3A5F9 /* Pods-BMLTiOSLib.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		77DBD7951FDEAEEB008F110F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				77DBD79D1FDEAEEB008F110F /* BMLTiOSLib.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		772570A11FDF12C400297473 /* BMLTiOSLib Test Harness (Direct) */ = {
@@ -393,7 +359,6 @@
 			buildPhases = (
 				77BAC1141FDEBC120036577C /* SwiftLint */,
 				77DBD7931FDEAEEB008F110F /* Sources */,
-				77DBD7951FDEAEEB008F110F /* Headers */,
 			);
 			buildRules = (
 			);
@@ -444,7 +409,7 @@
 					};
 					77DBD7AD1FDEB010008F110F = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -924,7 +889,6 @@
 		};
 		77DBD7A11FDEAEEB008F110F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25ADA2B14C8D4B6D38142B32 /* Pods-BMLTiOSLib.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -951,7 +915,6 @@
 		};
 		77DBD7A21FDEAEEB008F110F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E31F536F3B6DEF15A2D3A5F9 /* Pods-BMLTiOSLib.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -989,7 +952,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1008,7 +971,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

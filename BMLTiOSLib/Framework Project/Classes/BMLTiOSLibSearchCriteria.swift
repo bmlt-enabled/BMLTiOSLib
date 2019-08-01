@@ -53,10 +53,12 @@ public class BMLTiOSLibSearchCriteria: NSObject {
     /** The idea here is that these are "selectable." They can be assigned a state of "selected," "deselected" or "clear." */
     /** This contains a Service body Dictionary, and is used to make it easy to differentiate the Service bodies from other data types. */
     public typealias SelectableServiceBodyItem = BMLTiOSLibServiceBodyContainer
+    /** This is a simple Array of SelectableServiceBodyItem instances. */
     public typealias SelectableServiceBodyList = [SelectableServiceBodyItem]
     
     /** The same for formats. */
     public typealias SelectableFormatItem = BMLTiOSLibFormatContainer
+    /** This is a simple Array of SelectableFormatItem instances. */
     public typealias SelectableFormatList = [SelectableFormatItem]
     
     /** This allows us to differentiate weekday objects. */

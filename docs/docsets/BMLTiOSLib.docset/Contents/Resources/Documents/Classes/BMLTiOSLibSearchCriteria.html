@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BMLTiOSLibSearchCriteria Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/BMLTiOSLibSearchCriteria" class="dashAnchor"></a>
+    <a title="BMLTiOSLibSearchCriteria Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">BMLTiOSLib Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/bmlt-enabled/BMLTiOSLib"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">BMLTiOSLib Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        BMLTiOSLibSearchCriteria Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibChangeNode.html">BMLTiOSLibChangeNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibChangedMeeting.html">BMLTiOSLibChangedMeeting</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibEditableMeetingNode.html">BMLTiOSLibEditableMeetingNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibFormatContainer.html">BMLTiOSLibFormatContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibFormatNode.html">BMLTiOSLibFormatNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibMeetingNode.html">BMLTiOSLibMeetingNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibMeetingNodeSimpleDictionaryElement.html">BMLTiOSLibMeetingNodeSimpleDictionaryElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria.html">BMLTiOSLibSearchCriteria</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/SelectionState.html">– SelectionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/SearchCriteriaExtent.html">– SearchCriteriaExtent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/SearchCriteriaPublishedStatus.html">– SearchCriteriaPublishedStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/WeekdayIndex.html">– WeekdayIndex</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibServerLang.html">BMLTiOSLibServerLang</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibServiceBodyContainer.html">BMLTiOSLibServiceBodyContainer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibCommunicationHandlerBadTestReasons.html">BMLTiOSLibCommunicationHandlerBadTestReasons</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibDistanceUnits.html">BMLTiOSLibDistanceUnits</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibErrorCodes.html">BMLTiOSLibErrorCodes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibErrorDescriptions.html">BMLTiOSLibErrorDescriptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibErrorDomains.html">BMLTiOSLibErrorDomains</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibPermissions.html">BMLTiOSLibPermissions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/BMLTiOSLibDelegate.html">BMLTiOSLibDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>BMLTiOSLibSearchCriteria</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BMLTiOSLibSearchCriteria</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>This is a special class that is used to gather and process meeting search criteria.</p>
+
+<p>The way it works, is that it gathers a search state, then creates a URI parameter list to be used by the main communication module.
+It does not do any communication, in itself.</p>
+
+<p>It has been designed so that the search criteria are expressed as properties, instead of functions.</p>
+
+<p>In order to execute searches, the user should access the instance of this class, and use it to set up search criteria. Upon completion of
+this, they should call the main instance&rsquo;s performMeetingSearch(_:) method. The main instance will ask the Search Criteria instance to
+create a URI parameter list that will describe the search.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Typealiases"></a>
+                <a name="//apple_ref/swift/Section/Public Typealiases" class="dashAnchor"></a>
+                <a href="#/Public%20Typealiases">
+                  <h3 class="section-name">Public Typealiases</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC25SelectableServiceBodyItema"></a>
+                    <a name="//apple_ref/swift/Alias/SelectableServiceBodyItem" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC25SelectableServiceBodyItema">SelectableServiceBodyItem</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The idea here is that these are <q>selectable.</q> They can be assigned a state of <q>selected,</q> <q>deselected</q> or <q>clear.</q> 
+This contains a Service body Dictionary, and is used to make it easy to differentiate the Service bodies from other data types.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">SelectableServiceBodyItem</span> <span class="o">=</span> <span class="kt"><a href="../Classes/BMLTiOSLibServiceBodyContainer.html">BMLTiOSLibServiceBodyContainer</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC25SelectableServiceBodyLista"></a>
+                    <a name="//apple_ref/swift/Alias/SelectableServiceBodyList" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC25SelectableServiceBodyLista">SelectableServiceBodyList</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is a simple Array of SelectableServiceBodyItem instances.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">SelectableServiceBodyList</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="../Classes/BMLTiOSLibSearchCriteria.html#/s:10BMLTiOSLib0aB14SearchCriteriaC25SelectableServiceBodyItema">SelectableServiceBodyItem</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC20SelectableFormatItema"></a>
+                    <a name="//apple_ref/swift/Alias/SelectableFormatItem" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC20SelectableFormatItema">SelectableFormatItem</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The same for formats.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">SelectableFormatItem</span> <span class="o">=</span> <span class="kt"><a href="../Classes/BMLTiOSLibFormatContainer.html">BMLTiOSLibFormatContainer</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC20SelectableFormatLista"></a>
+                    <a name="//apple_ref/swift/Alias/SelectableFormatList" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC20SelectableFormatLista">SelectableFormatList</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is a simple Array of SelectableFormatItem instances.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">SelectableFormatList</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="../Classes/BMLTiOSLibSearchCriteria.html#/s:10BMLTiOSLib0aB14SearchCriteriaC20SelectableFormatItema">SelectableFormatItem</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC27SelectableWeekdayDictionarya"></a>
+                    <a name="//apple_ref/swift/Alias/SelectableWeekdayDictionary" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC27SelectableWeekdayDictionarya">SelectableWeekdayDictionary</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This allows us to differentiate weekday objects.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">SelectableWeekdayDictionary</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="../Classes/BMLTiOSLibSearchCriteria/WeekdayIndex.html">WeekdayIndex</a></span> <span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibSearchCriteria/SelectionState.html">SelectionState</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC23SpecificFieldValueTuplea"></a>
+                    <a name="//apple_ref/swift/Alias/SpecificFieldValueTuple" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC23SpecificFieldValueTuplea">SpecificFieldValueTuple</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is used to specify a field, and a value for that field</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">SpecificFieldValueTuple</span> <span class="o">=</span> <span class="p">(</span><span class="nv">fieldKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completeMatch</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">caseSensitive</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Enums"></a>
+                <a name="//apple_ref/swift/Section/Public Enums" class="dashAnchor"></a>
+                <a href="#/Public%20Enums">
+                  <h3 class="section-name">Public Enums</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC14SelectionStateO"></a>
+                    <a name="//apple_ref/swift/Enum/SelectionState" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC14SelectionStateO">SelectionState</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>These are the available selection states for Search Criteria.</p>
+
+                        <a href="../Classes/BMLTiOSLibSearchCriteria/SelectionState.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">SelectionState</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC0cD6ExtentO"></a>
+                    <a name="//apple_ref/swift/Enum/SearchCriteriaExtent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC0cD6ExtentO">SearchCriteriaExtent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This enum specifies what kind of results we want from the search.</p>
+
+                        <a href="../Classes/BMLTiOSLibSearchCriteria/SearchCriteriaExtent.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">SearchCriteriaExtent</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC0cD15PublishedStatusO"></a>
+                    <a name="//apple_ref/swift/Enum/SearchCriteriaPublishedStatus" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC0cD15PublishedStatusO">SearchCriteriaPublishedStatus</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This only applies when we are logged in as an admin. We can search for published, unpublished, or both kinds of meetings.
+Additionally, this only applies to meetings that are under the logged-in admin&rsquo;s control. Meetings outside their control will
+always only show published meetings.</p>
+
+                        <a href="../Classes/BMLTiOSLibSearchCriteria/SearchCriteriaPublishedStatus.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">SearchCriteriaPublishedStatus</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC12WeekdayIndexO"></a>
+                    <a name="//apple_ref/swift/Enum/WeekdayIndex" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC12WeekdayIndexO">WeekdayIndex</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is used to index our weekday list.</p>
+
+                        <a href="../Classes/BMLTiOSLibSearchCriteria/WeekdayIndex.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">WeekdayIndex</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Calculated%20Properties"></a>
+                <a name="//apple_ref/swift/Section/Public Calculated Properties" class="dashAnchor"></a>
+                <a href="#/Public%20Calculated%20Properties">
+                  <h3 class="section-name">Public Calculated Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC15publishedStatusAC0cd9PublishedF0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/publishedStatus" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC15publishedStatusAC0cd9PublishedF0Ovp">publishedStatus</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal Published Status.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">publishedStatus</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibSearchCriteria/SearchCriteriaPublishedStatus.html">SearchCriteriaPublishedStatus</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>whether we want published, unpublished, or both.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC13serviceBodiesSayAA0aB20ServiceBodyContainerCGvp"></a>
+                    <a name="//apple_ref/swift/Property/serviceBodies" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC13serviceBodiesSayAA0aB20ServiceBodyContainerCGvp">serviceBodies</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal Service body list.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">serviceBodies</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibSearchCriteria.html#/s:10BMLTiOSLib0aB14SearchCriteriaC25SelectableServiceBodyLista">SelectableServiceBodyList</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the selected/unselected Service bodies, in a linear list.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC7formatsSayAA0aB15FormatContainerCGvp"></a>
+                    <a name="//apple_ref/swift/Property/formats" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC7formatsSayAA0aB15FormatContainerCGvp">formats</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal format list.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">formats</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibSearchCriteria.html#/s:10BMLTiOSLib0aB14SearchCriteriaC20SelectableFormatLista">SelectableFormatList</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The selected/unselected formats.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC8weekdaysSDyAC12WeekdayIndexOAC14SelectionStateOGvp"></a>
+                    <a name="//apple_ref/swift/Property/weekdays" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC8weekdaysSDyAC12WeekdayIndexOAC14SelectionStateOGvp">weekdays</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal weekday list.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">weekdays</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibSearchCriteria.html#/s:10BMLTiOSLib0aB14SearchCriteriaC27SelectableWeekdayDictionarya">SelectableWeekdayDictionary</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC12searchRadiusSfvp"></a>
+                    <a name="//apple_ref/swift/Property/searchRadius" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC12searchRadiusSfvp">searchRadius</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal search radius value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">searchRadius</span><span class="p">:</span> <span class="kt">Float</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the search radius. negative integer values are auto-search thresholds. Positive floating point is dependent upon the measurement units selected by the user.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC12searchStringSSvp"></a>
+                    <a name="//apple_ref/swift/Property/searchString" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC12searchStringSSvp">searchString</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal Search String.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">searchString</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the string we are looking for.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC23searchStringIsALocationSbvp"></a>
+                    <a name="//apple_ref/swift/Property/searchStringIsALocation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC23searchStringIsALocationSbvp">searchStringIsALocation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal Search String Is a Location selector.</p>
+
+<p>NOTE: If this is specified, and a string is provided in searchString, then searchLocation is ignored.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">searchStringIsALocation</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true, if the string is to be interpreted as a location.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC06stringC7IsExactSbvp"></a>
+                    <a name="//apple_ref/swift/Property/stringSearchIsExact" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC06stringC7IsExactSbvp">stringSearchIsExact</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal Search String is Exact selector</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">stringSearchIsExact</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true, if the string should be parsed strictly (no metaphone).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC06stringC14UsesAllStringsSbvp"></a>
+                    <a name="//apple_ref/swift/Property/stringSearchUsesAllStrings" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC06stringC14UsesAllStringsSbvp">stringSearchUsesAllStrings</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal Search String Uses all Substrings selector</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">stringSearchUsesAllStrings</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true, if the match needs to go across all strings.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC14searchLocationSo22CLLocationCoordinate2DVSgvp"></a>
+                    <a name="//apple_ref/swift/Property/searchLocation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC14searchLocationSo22CLLocationCoordinate2DVSgvp">searchLocation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal center location selector.</p>
+
+<p>NOTE: This is ignored if searchStringIsALocation is true, and we have a search string in searchString.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">searchLocation</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the search center, as a Location manager 2D coordinate.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC013specificFieldC0SS8fieldKey_SS5valueSb13completeMatchSb13caseSensitivetSgvp"></a>
+                    <a name="//apple_ref/swift/Property/specificFieldSearch" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC013specificFieldC0SS8fieldKey_SS5valueSb13completeMatchSb13caseSensitivetSgvp">specificFieldSearch</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal specific field value search criteria.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">specificFieldSearch</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibSearchCriteria.html#/s:10BMLTiOSLib0aB14SearchCriteriaC23SpecificFieldValueTuplea">SpecificFieldValueTuple</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an optional tuple, with the various field criteria, or nil</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC18startTimeInSecondsSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/startTimeInSeconds" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC18startTimeInSecondsSiSgvp">startTimeInSeconds</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal start time (in seconds from midnight -00:00:00) search criteria.
+This is an inclusive time, and includes 24:00:00 (end of day midnight).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">startTimeInSeconds</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an optional int, with seconds from Midnight, or nil</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC16endTimeInSecondsSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/endTimeInSeconds" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC16endTimeInSecondsSiSgvp">endTimeInSeconds</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal meeting end time (in seconds from midnight -00:00:00) search criteria.
+This is an inclusive time, and includes 24:00:00 (end of day midnight).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">endTimeInSeconds</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an optional int, with seconds from Midnight, or nil</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC21durationTimeInSecondsSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/durationTimeInSeconds" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC21durationTimeInSecondsSiSgvp">durationTimeInSeconds</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal duration (in seconds) search criteria.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">durationTimeInSeconds</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an optional int, with seconds, or nil</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC019meetingsStartBeforeF4TimeSbvp"></a>
+                    <a name="//apple_ref/swift/Property/meetingsStartBeforeStartTime" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC019meetingsStartBeforeF4TimeSbvp">meetingsStartBeforeStartTime</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal meetings should begin before (or at) start time flag.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">meetingsStartBeforeStartTime</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a Bool, true if the meeting should start before or on the start time, or false, if the meeting is to start at or after the start time.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC30meetingsAreShorterThanDurationSbvp"></a>
+                    <a name="//apple_ref/swift/Property/meetingsAreShorterThanDuration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC30meetingsAreShorterThanDurationSbvp">meetingsAreShorterThanDuration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Accessor for our internal meetings should be shorter than the duration flag.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">meetingsAreShorterThanDuration</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a Bool, true if the meeting should be shorter than (or equal to) the duration time, or false, if the meeting is equal to, or longer than, the duration.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC28meetingsShouldStartAtOrAfterSo16NSDateComponentsCSgvp"></a>
+                    <a name="//apple_ref/swift/Property/meetingsShouldStartAtOrAfter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC28meetingsShouldStartAtOrAfterSo16NSDateComponentsCSgvp">meetingsShouldStartAtOrAfter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An easy way to test or set a minimum starting time for meetings.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">meetingsShouldStartAtOrAfter</span><span class="p">:</span> <span class="kt">NSDateComponents</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an optional NSDateComponents. If not nil, will contain the minimum start time for meetings.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC29meetingsShouldStartBeforeOrAtSo16NSDateComponentsCSgvp"></a>
+                    <a name="//apple_ref/swift/Property/meetingsShouldStartBeforeOrAt" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC29meetingsShouldStartBeforeOrAtSo16NSDateComponentsCSgvp">meetingsShouldStartBeforeOrAt</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An easy way to test or set a maximum starting time for meetings.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">meetingsShouldStartBeforeOrAt</span><span class="p">:</span> <span class="kt">NSDateComponents</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an optional NSDateComponents. If not nil, will contain the maximum start time for meetings.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC18meetingsAreAtLeastSo16NSDateComponentsCSgvp"></a>
+                    <a name="//apple_ref/swift/Property/meetingsAreAtLeast" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC18meetingsAreAtLeastSo16NSDateComponentsCSgvp">meetingsAreAtLeast</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An easy way to test or set a minimum duration time for meetings.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">meetingsAreAtLeast</span><span class="p">:</span> <span class="kt">NSDateComponents</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an optional NSDateComponents. If not nil, will contain the minimum duration for meetings.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC23meetingsAreNoLongerThanSo16NSDateComponentsCSgvp"></a>
+                    <a name="//apple_ref/swift/Property/meetingsAreNoLongerThan" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC23meetingsAreNoLongerThanSo16NSDateComponentsCSgvp">meetingsAreNoLongerThan</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An easy way to test or set a maximum duration time for meetings.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">meetingsAreNoLongerThan</span><span class="p">:</span> <span class="kt">NSDateComponents</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an optional NSDateComponents. If not nil, will contain the maximum duration for meetings.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC21meetingsEndOnOrBeforeSo16NSDateComponentsCSgvp"></a>
+                    <a name="//apple_ref/swift/Property/meetingsEndOnOrBefore" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC21meetingsEndOnOrBeforeSo16NSDateComponentsCSgvp">meetingsEndOnOrBefore</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An easy way to test or set a maximum end time for meetings.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">meetingsEndOnOrBefore</span><span class="p">:</span> <span class="kt">NSDateComponents</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an optional NSDateComponents. If not nil, will contain the maximum end time for meetings.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC7isDirtySbvp"></a>
+                    <a name="//apple_ref/swift/Property/isDirty" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC7isDirtySbvp">isDirty</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isDirty</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true, if there is a search criteria set.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Initializer"></a>
+                <a name="//apple_ref/swift/Section/Public Initializer" class="dashAnchor"></a>
+                <a href="#/Public%20Initializer">
+                  <h3 class="section-name">Public Initializer</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaCyAc2ACcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaCyAc2ACcfc">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Default initializer. We must have at least the server comm.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">inServerComm</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inServerComm</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a reference to the BMLTiOSLib instance that <q>owns</q> this.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Instance%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Public Instance Methods" class="dashAnchor"></a>
+                <a href="#/Public%20Instance%20Methods">
+                  <h3 class="section-name">Public Instance Methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC12clearStorageyyF"></a>
+                    <a name="//apple_ref/swift/Method/clearStorage()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC12clearStorageyyF">clearStorage()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Make sure we completely deallocate our selectable lists.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">clearStorage</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC8clearAllyyF"></a>
+                    <a name="//apple_ref/swift/Method/clearAll()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC8clearAllyyF">clearAll()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This resets all search criteria to default.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">clearAll</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC025getServiceBodyElementFromfG6ObjectyAA0abfG9ContainerCSgAA0ab12HierarchicalfG4NodeCF"></a>
+                    <a name="//apple_ref/swift/Method/getServiceBodyElementFromServiceBodyObject(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC025getServiceBodyElementFromfG6ObjectyAA0abfG9ContainerCSgAA0ab12HierarchicalfG4NodeCF">getServiceBodyElementFromServiceBodyObject(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns the selection object for a given Service body object.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getServiceBodyElementFromServiceBodyObject</span><span class="p">(</span><span class="n">_</span> <span class="nv">inObject</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/BMLTiOSLibSearchCriteria.html#/s:10BMLTiOSLib0aB14SearchCriteriaC25SelectableServiceBodyItema">SelectableServiceBodyItem</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inObject</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Service body object we are matching.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the wrapper item for that Service body object.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB14SearchCriteriaC014performMeetingC0yyAC0cD6ExtentOF"></a>
+                    <a name="//apple_ref/swift/Method/performMeetingSearch(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB14SearchCriteriaC014performMeetingC0yyAC0cD6ExtentOF">performMeetingSearch(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This tells our BMLTiOSLib instance to perform a meeting search, based on our current criteria.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">performMeetingSearch</span><span class="p">(</span><span class="n">_</span> <span class="nv">inSearchResultsType</span><span class="p">:</span> <span class="kt">BMLTiOSLibSearchCriteria</span><span class="o">.</span><span class="kt"><a href="../Classes/BMLTiOSLibSearchCriteria/SearchCriteriaExtent.html">SearchCriteriaExtent</a></span> <span class="o">=</span> <span class="o">.</span><span class="kt">BothMeetingsAndFormats</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inSearchResultsType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The type of result[s] you&rsquo;d like. Defaults to both meetings and formats.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://bmlt.magshare.net/BMLTiOSLib" target="_blank" rel="external">BMLT Administrators</a>. All rights reserved. (Last updated: 2019-08-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

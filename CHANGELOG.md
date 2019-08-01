@@ -4,7 +4,11 @@
 
 - **TBD**
 
-- Updated to Swift 5.1/Xcode 11. No operational changes.
+- Updated to Swift 5.1/Xcode 11.
+- Modified the Jazzy docs for use in GH Pages.
+- Got rid of the CocoaPods junk in the release project.
+- Ensured proper Carthage operation.
+- Changed the initial server URI, as the original was no longer valid.
 
 ## 1.2.13
 

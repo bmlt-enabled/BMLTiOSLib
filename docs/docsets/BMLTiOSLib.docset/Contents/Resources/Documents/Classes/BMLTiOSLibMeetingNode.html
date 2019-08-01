@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BMLTiOSLibMeetingNode Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/BMLTiOSLibMeetingNode" class="dashAnchor"></a>
+    <a title="BMLTiOSLibMeetingNode Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">BMLTiOSLib Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/bmlt-enabled/BMLTiOSLib"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">BMLTiOSLib Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        BMLTiOSLibMeetingNode Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibChangeNode.html">BMLTiOSLibChangeNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibChangedMeeting.html">BMLTiOSLibChangedMeeting</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibEditableMeetingNode.html">BMLTiOSLibEditableMeetingNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibFormatContainer.html">BMLTiOSLibFormatContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibFormatNode.html">BMLTiOSLibFormatNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibMeetingNode.html">BMLTiOSLibMeetingNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibMeetingNodeSimpleDictionaryElement.html">BMLTiOSLibMeetingNodeSimpleDictionaryElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria.html">BMLTiOSLibSearchCriteria</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/SelectionState.html">– SelectionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/SearchCriteriaExtent.html">– SearchCriteriaExtent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/SearchCriteriaPublishedStatus.html">– SearchCriteriaPublishedStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibSearchCriteria/WeekdayIndex.html">– WeekdayIndex</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibServerLang.html">BMLTiOSLibServerLang</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BMLTiOSLibServiceBodyContainer.html">BMLTiOSLibServiceBodyContainer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibCommunicationHandlerBadTestReasons.html">BMLTiOSLibCommunicationHandlerBadTestReasons</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibDistanceUnits.html">BMLTiOSLibDistanceUnits</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibErrorCodes.html">BMLTiOSLibErrorCodes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibErrorDescriptions.html">BMLTiOSLibErrorDescriptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibErrorDomains.html">BMLTiOSLibErrorDomains</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BMLTiOSLibPermissions.html">BMLTiOSLibPermissions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/BMLTiOSLibDelegate.html">BMLTiOSLibDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>BMLTiOSLibMeetingNode</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BMLTiOSLibMeetingNode</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Sequence</span></code></pre>
+
+                </div>
+              </div>
+            <p>This is a special <q>micro class</q> for accessing the meetings for a Server.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Subscript"></a>
+                <a name="//apple_ref/swift/Section/Public Subscript" class="dashAnchor"></a>
+                <a href="#/Public%20Subscript">
+                  <h3 class="section-name">Public Subscript</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeCySSSgSScip"></a>
+                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeCySSSgSScip">subscript(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This allows us to treat the meeting as if it were a standard Dictionary.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">inStringKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inStringKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a String key to access the meeting data element.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Properties"></a>
+                <a name="//apple_ref/swift/Section/Public Properties" class="dashAnchor"></a>
+                <a href="#/Public%20Properties">
+                  <h3 class="section-name">Public Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC7changesSayAA0ab6ChangeD0CGSgvp"></a>
+                    <a name="//apple_ref/swift/Property/changes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC7changesSayAA0ab6ChangeD0CGSgvp">changes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This will contain any changes that are associated with this meeting.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">changes</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/BMLTiOSLibChangeNode.html">BMLTiOSLibChangeNode</a></span><span class="p">]</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Calculated%20Properties"></a>
+                <a name="//apple_ref/swift/Section/Public Calculated Properties" class="dashAnchor"></a>
+                <a href="#/Public%20Calculated%20Properties">
+                  <h3 class="section-name">Public Calculated Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC10isEditableSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isEditable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC10isEditableSbvp">isEditable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This class is not editable.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isEditable</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC4keysSaySSGvp"></a>
+                    <a name="//apple_ref/swift/Property/keys" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC4keysSaySSGvp">keys</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a sorted list of the value array keys. It sorts the <q>default</q> ones first.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">keys</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>all of the available keys in our dictionary.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC03rawC0SDyS2SGvp"></a>
+                    <a name="//apple_ref/swift/Property/rawMeeting" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC03rawC0SDyS2SGvp">rawMeeting</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">rawMeeting</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Our internal editable instance instead of the read-only one for the superclass.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC2idSivp"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC2idSivp">id</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An Int, with the meeting BMLT ID.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC7worldIDSSvp"></a>
+                    <a name="//apple_ref/swift/Property/worldID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC7worldIDSSvp">worldID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">worldID</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the meeting NAWS ID.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC13serviceBodyIdSivp"></a>
+                    <a name="//apple_ref/swift/Property/serviceBodyId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC13serviceBodyIdSivp">serviceBodyId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">serviceBodyId</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An Int, with the meeting&rsquo;s Service body BMLT ID.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC11serviceBodyAA0ab19HierarchicalServicefD0CSgvp"></a>
+                    <a name="//apple_ref/swift/Property/serviceBody" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC11serviceBodyAA0ab19HierarchicalServicefD0CSgvp">serviceBody</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">serviceBody</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLibHierarchicalServiceBodyNode.html">BMLTiOSLibHierarchicalServiceBodyNode</a></span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The meeting&rsquo;s Service body object. nil, if no Service body (should never happen).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC7formatsSayAA0ab6FormatD0CGvp"></a>
+                    <a name="//apple_ref/swift/Property/formats" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC7formatsSayAA0ab6FormatD0CGvp">formats</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">formats</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/BMLTiOSLibFormatNode.html">BMLTiOSLibFormatNode</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an array of format objects.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC16formatsAsCSVListSSvp"></a>
+                    <a name="//apple_ref/swift/Property/formatsAsCSVList" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC16formatsAsCSVListSSvp">formatsAsCSVList</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">formatsAsCSVList</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a CSV string of format codes, sorted alphabetically.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC9publishedSbvp"></a>
+                    <a name="//apple_ref/swift/Property/published" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC9publishedSbvp">published</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">published</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A Bool. True, if the meeting is published.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC4nameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC4nameSSvp">name</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the meeting name.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC12weekdayIndexSivp"></a>
+                    <a name="//apple_ref/swift/Property/weekdayIndex" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC12weekdayIndexSivp">weekdayIndex</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">weekdayIndex</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An Int, with the weekday (1 = Sunday, 7 = Saturday).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC10timeStringSSvp"></a>
+                    <a name="//apple_ref/swift/Property/timeString" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC10timeStringSSvp">timeString</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">timeString</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the start time in military format (<q>HH:MM</q>).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC14durationStringSSvp"></a>
+                    <a name="//apple_ref/swift/Property/durationString" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC14durationStringSSvp">durationString</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">durationString</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the duration (<q>HH:MM</q>).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC17durationInMinutesSivp"></a>
+                    <a name="//apple_ref/swift/Property/durationInMinutes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC17durationInMinutesSivp">durationInMinutes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">durationInMinutes</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An Integer, with the duration in minutes.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC9startTime10Foundation14DateComponentsVSgvp"></a>
+                    <a name="//apple_ref/swift/Property/startTime" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC9startTime10Foundation14DateComponentsVSgvp">startTime</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">startTime</span><span class="p">:</span> <span class="kt">DateComponents</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an optional DateComponents object, with the time of the meeting.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC15startTimeAndDay10Foundation14DateComponentsVSgvp"></a>
+                    <a name="//apple_ref/swift/Property/startTimeAndDay" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC15startTimeAndDay10Foundation14DateComponentsVSgvp">startTimeAndDay</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">startTimeAndDay</span><span class="p">:</span> <span class="kt">DateComponents</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an optional DateComponents object, with the weekday and time of the meeting.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC16timeDayAsIntegerSivp"></a>
+                    <a name="//apple_ref/swift/Property/timeDayAsInteger" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC16timeDayAsIntegerSivp">timeDayAsInteger</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">timeDayAsInteger</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>returns an integer that allows sorting quickly. Weekday is 1,000s, hours are 100s, and minutes are 1s.
+NOTE: This value reflects the localized start day of the week (the others do not). This is because the reason for this value is for sorting.
+That means that if the week starts on Monday, then the weekday index will be 1 if the meeting is on Monday, and 7 if on Sunday.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC13nextStartDate10Foundation0G0VSgvp"></a>
+                    <a name="//apple_ref/swift/Property/nextStartDate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC13nextStartDate10Foundation0G0VSgvp">nextStartDate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">nextStartDate</span><span class="p">:</span> <span class="kt">Date</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an optional Date object, with the next occurrence of the meeting (from now).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC14locationCoordsSo22CLLocationCoordinate2DVSgvp"></a>
+                    <a name="//apple_ref/swift/Property/locationCoords" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC14locationCoordsSo22CLLocationCoordinate2DVSgvp">locationCoords</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locationCoords</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The location (optional).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC12locationNameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/locationName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC12locationNameSSvp">locationName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locationName</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the location building name.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC21locationStreetAddressSSvp"></a>
+                    <a name="//apple_ref/swift/Property/locationStreetAddress" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC21locationStreetAddressSSvp">locationStreetAddress</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locationStreetAddress</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the location street address.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC15locationBoroughSSvp"></a>
+                    <a name="//apple_ref/swift/Property/locationBorough" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC15locationBoroughSSvp">locationBorough</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locationBorough</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the location borough.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC20locationNeighborhoodSSvp"></a>
+                    <a name="//apple_ref/swift/Property/locationNeighborhood" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC20locationNeighborhoodSSvp">locationNeighborhood</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locationNeighborhood</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the location neigborhood.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC12locationTownSSvp"></a>
+                    <a name="//apple_ref/swift/Property/locationTown" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC12locationTownSSvp">locationTown</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locationTown</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the location town.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC14locationCountySSvp"></a>
+                    <a name="//apple_ref/swift/Property/locationCounty" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC14locationCountySSvp">locationCounty</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locationCounty</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the location county.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC13locationStateSSvp"></a>
+                    <a name="//apple_ref/swift/Property/locationState" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC13locationStateSSvp">locationState</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locationState</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the location state/province.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC11locationZipSSvp"></a>
+                    <a name="//apple_ref/swift/Property/locationZip" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC11locationZipSSvp">locationZip</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locationZip</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the location zip code/postal code.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC14locationNationSSvp"></a>
+                    <a name="//apple_ref/swift/Property/locationNation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC14locationNationSSvp">locationNation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locationNation</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the location nation.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC12locationInfoSSvp"></a>
+                    <a name="//apple_ref/swift/Property/locationInfo" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC12locationInfoSSvp">locationInfo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locationInfo</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with additional location info.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC8commentsSSvp"></a>
+                    <a name="//apple_ref/swift/Property/comments" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC8commentsSSvp">comments</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">comments</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the comments.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC15distanceInMilesSdvp"></a>
+                    <a name="//apple_ref/swift/Property/distanceInMiles" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC15distanceInMilesSdvp">distanceInMiles</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Read-only property that returns the distance (in Miles) from the search center.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">distanceInMiles</span><span class="p">:</span> <span class="kt">Double</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the distance from the search center (may not be applicable, in which case it will be 0).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC12distanceInKmSdvp"></a>
+                    <a name="//apple_ref/swift/Property/distanceInKm" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC12distanceInKmSdvp">distanceInKm</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Read-only property that returns the distance (in Kilometers) from the search center.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">distanceInKm</span><span class="p">:</span> <span class="kt">Double</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the distance from the search center (may not be applicable, in which case it will be 0).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC12basicAddressSSvp"></a>
+                    <a name="//apple_ref/swift/Property/basicAddress" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC12basicAddressSSvp">basicAddress</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This parses the meeting data, and creates a fairly basic, straightforward address.</p>
+
+<p>The address type is specified by the <q>BMLTiOSLibAddressParser</q> info.plist property.</p>
+
+<p>This is a read-only property.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">basicAddress</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with a basic address.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC7isDirtySbvp"></a>
+                    <a name="//apple_ref/swift/Property/isDirty" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC7isDirtySbvp">isDirty</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is always false for this class.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isDirty</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BMLTiOSLib@objc(cs)BMLTiOSLibMeetingNode(py)description"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BMLTiOSLib@objc(cs)BMLTiOSLibMeetingNode(py)description">description</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is a read-only property that overrides the NSObject description.
+It returns a string that aggregates the meeting info into a simple
+US-style meeting description.</p>
+
+<p>For many uses, this may give enough information to display the meeting.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the essential Meeting Info.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Public Methods" class="dashAnchor"></a>
+                <a href="#/Public%20Methods">
+                  <h3 class="section-name">Public Methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC_9inHandlerACSDyS2SG_A2ACtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:inHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC_9inHandlerACSDyS2SG_A2ACtcfc">init(_:inHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Default initializer. Initiatlize with raw meeting data (a simple Dictionary).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">inRawMeeting</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">],</span> <span class="nv">inHandler</span><span class="p">:</span> <span class="kt"><a href="../Classes/BMLTiOSLib.html">BMLTiOSLib</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inRawMeeting</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is a Dictionary that describes the meeting. If empty, then a default meeting will be created.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This is the BMLTiOSLib object that <q>owns</q> this meeting</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC10getChangesyyF"></a>
+                    <a name="//apple_ref/swift/Method/getChanges()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC10getChangesyyF">getChanges()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Requests all changes for this meeting from the BMLTiOSLib handler.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getChanges</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC013sendMessageToC7Contact11fromAddress11messageBodyySS_SStF"></a>
+                    <a name="//apple_ref/swift/Method/sendMessageToMeetingContact(fromAddress:messageBody:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC013sendMessageToC7Contact11fromAddress11messageBodyySS_SStF">sendMessageToMeetingContact(fromAddress:messageBody:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If sending messages to meeting contacts is enabled, this function will send a basic email to the contact for this email.</p>
+
+<p>This will result in the delegate callback bmltLibInstance(_:BMLTiOSLib,sendMessageSuccessful: Bool) being invoked.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendMessageToMeetingContact</span><span class="p">(</span><span class="nv">fromAddress</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">messageBody</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromAddress</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The email to be used as the <q>from</q> address. This is required, and should be valid.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>messageBody</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A String containing the body of the message to be sent.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Meeting%20Start%20and%20End%20Time%20Test%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Meeting Start and End Time Test Methods" class="dashAnchor"></a>
+                <a href="#/Meeting%20Start%20and%20End%20Time%20Test%20Methods">
+                  <h3 class="section-name">Meeting Start and End Time Test Methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC30meetingStartsOnOrAfterThisTimeySbSo16NSDateComponentsCF"></a>
+                    <a name="//apple_ref/swift/Method/meetingStartsOnOrAfterThisTime(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC30meetingStartsOnOrAfterThisTimeySbSo16NSDateComponentsCF">meetingStartsOnOrAfterThisTime(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true, if the meeting start time is after the given time.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">meetingStartsOnOrAfterThisTime</span><span class="p">(</span><span class="n">_</span> <span class="nv">inTime</span><span class="p">:</span> <span class="kt">NSDateComponents</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inTime</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The test start time, as time components (hours, minutes, seconds). The day is ignored.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true, if the meeting starts on or after the given test time.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC31meetingStartsOnOrBeforeThisTimeySbSo16NSDateComponentsCF"></a>
+                    <a name="//apple_ref/swift/Method/meetingStartsOnOrBeforeThisTime(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC31meetingStartsOnOrBeforeThisTimeySbSo16NSDateComponentsCF">meetingStartsOnOrBeforeThisTime(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true, if the meeting start time is before the given time.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">meetingStartsOnOrBeforeThisTime</span><span class="p">(</span><span class="n">_</span> <span class="nv">inTime</span><span class="p">:</span> <span class="kt">NSDateComponents</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inTime</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The test start time, as time components (hours, minutes, seconds). The day is ignored.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true, if the meeting starts on or before the given test time.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC29meetingEndsAtOrBeforeThisTimeySbSo16NSDateComponentsCF"></a>
+                    <a name="//apple_ref/swift/Method/meetingEndsAtOrBeforeThisTime(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC29meetingEndsAtOrBeforeThisTimeySbSo16NSDateComponentsCF">meetingEndsAtOrBeforeThisTime(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true, if the meeting end time is before the given time.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">meetingEndsAtOrBeforeThisTime</span><span class="p">(</span><span class="n">_</span> <span class="nv">inTime</span><span class="p">:</span> <span class="kt">NSDateComponents</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inTime</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The test end time, as time components (hours, minutes, seconds). The day is ignored.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true, if the meeting ends at or before the given test time.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Sequence%20Protocol%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Sequence Protocol Methods" class="dashAnchor"></a>
+                <a href="#/Sequence%20Protocol%20Methods">
+                  <h3 class="section-name">Sequence Protocol Methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB11MeetingNodeC12makeIterators03AnyF0VyAA0abcD23SimpleDictionaryElementCGyF"></a>
+                    <a name="//apple_ref/swift/Method/makeIterator()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB11MeetingNodeC12makeIterators03AnyF0VyAA0abcD23SimpleDictionaryElementCGyF">makeIterator()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create an iterator for this list.</p>
+
+<p>This iterator follows the order of the array, starting from element 0, and working up to the end.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">makeIterator</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">AnyIterator</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/BMLTiOSLibMeetingNodeSimpleDictionaryElement.html">BMLTiOSLibMeetingNodeSimpleDictionaryElement</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an iterator for the list.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://bmlt.magshare.net/BMLTiOSLib" target="_blank" rel="external">BMLT Administrators</a>. All rights reserved. (Last updated: 2019-08-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
