@@ -24,15 +24,15 @@ To use this as a [CocoaPod](https://cocoapods.org), simply add the following to 
 
     pod 'BMLTiOSLib'
 
-And then `cd` to the project directory, and execute `pod install` or `pod update`.
+You then `cd` to the project directory, and execute `pod install` or `pod update` on the command line.
 
 ### Using [Carthage](https://github.com/Carthage/Carthage):
 
 To use this from [Carthage](https://github.com/Carthage/Carthage), simply add the following to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
 
-    github "https://github.com/bmlt-enabled/BMLTiOSLib/"
+    github "bmlt-enabled/BMLTiOSLib"
 
-And then `cd` to the project directory, and execute `carthage update`.
+You then `cd` to the project directory, and execute `carthage update` on the command line.
 
 ### Directly:
 
