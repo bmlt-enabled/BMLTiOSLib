@@ -2,12 +2,12 @@
 //  DetailedInfoController.swift
 //  BMLTiOSLib
 //
-//  Created by MAGSHARE
+//  Created by BMLT-Enabled
 //
-//  https://bmlt.magshare.net/bmltioslib/
+//  https://bmlt.app/
 //
 //  This software is licensed under the MIT License.
-//  Copyright (c) 2017 MAGSHARE
+//  Copyright (c) 2017 BMLT-Enabled
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal

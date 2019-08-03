@@ -5,6 +5,8 @@
 - **TBD**
 
 - Updated to Swift 5.1/Xcode 11.
+- Updated the file headers to indicate BMLT-Enabled as the authors.
+- Updated the podspec to use the latest BMLT-Enabled links.
 
 ## 1.2.14.2000
 
