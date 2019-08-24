@@ -1,8 +1,8 @@
 # BMLTiOSLib Change Log
 
-## 1.2.14
+## 1.2.14.2001
 
-- **TBD**
+- **August 24, 2019**
 
 - Updated to Swift 5.1/Xcode 11.
 - Updated the file headers to indicate BMLT-Enabled as the authors.
