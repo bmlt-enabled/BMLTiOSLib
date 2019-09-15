@@ -275,7 +275,7 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
         }
         
         // Go through the flat Service body list.
-        for var sb in self._availableServiceBodies {
+        for sb in self._availableServiceBodies {
             if let pid_string = sb["parent_id"] {
                 if let pID = Int(pid_string) {
                     // If we find a Service body that belongs inside this parent, we create a node for it, then populate that node.

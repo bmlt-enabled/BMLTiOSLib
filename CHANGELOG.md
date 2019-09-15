@@ -1,5 +1,11 @@
 # BMLTiOSLib Change Log
 
+## 1.2.15.3000
+
+- **September 15, 2019**
+
+- Tweaked a couple of inline allocation specifiers, because all of a sudden, things that were structs, are now classes, and "let" is perfectly fine.
+
 ## 1.2.14.2001
 
 - **August 24, 2019**

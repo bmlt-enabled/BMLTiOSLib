@@ -424,7 +424,7 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
     public var startTime: DateComponents! {
         var ret: DateComponents! = nil
         if let time = self["start_time"] {
-            var timeComponents = time.components(separatedBy: ":").map { Int($0) }
+            let timeComponents = time.components(separatedBy: ":").map { Int($0) }
             
             if 1 < timeComponents.count {
                 // Create our answer from the components of the result.
