@@ -281,7 +281,7 @@ public class SingleMeetingViewController: BaseTestViewController, UITableViewDel
         if row == myKeys.count {
             return tableView.bounds.size.width + 31
         } else {
-            var myKeys = self.meetingObject.keys
+            let myKeys = self.meetingObject.keys
             let id = myKeys[row]
             let value = self.meetingObject[id].trimmingCharacters(in: CharacterSet(charactersIn: " \n\t"))
             if self.meetingObject.isEditable || !value.isEmpty {
@@ -302,7 +302,7 @@ public class SingleMeetingViewController: BaseTestViewController, UITableViewDel
             row += 1
         }
         
-        var myKeys = self.meetingObject.keys
+        let myKeys = self.meetingObject.keys
         
         var id: String = ""
         var value = ""
