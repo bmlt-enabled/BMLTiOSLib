@@ -340,6 +340,20 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
     
     /* ################################################################## */
     /**
+     - returns: A String, with the virtual meeting link.
+     */
+    override public var virtualMeetingURI: String {
+        get {
+            return super.virtualMeetingURI
+        }
+        
+        set {
+            self.rawMeeting["virtual_meeting_link"] = newValue
+        }
+    }
+
+    /* ################################################################## */
+    /**
      - returns: A String, with the comments.
      */
     override public var comments: String {

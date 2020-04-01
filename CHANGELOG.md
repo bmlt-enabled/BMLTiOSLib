@@ -1,5 +1,11 @@
 # BMLTiOSLib Change Log
 
+## 1.2.16.3000
+
+- **April 1, 2020**
+
+- Added support for the virtual meeting link.
+
 ## 1.2.15.3000
 
 - **September 15, 2019**

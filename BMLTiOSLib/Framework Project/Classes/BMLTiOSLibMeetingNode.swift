@@ -648,6 +648,18 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
     
     /* ################################################################## */
     /**
+     - returns: A String, with the virtual meeting link.
+     */
+    public var virtualMeetingURI: String {
+        var ret: String = ""
+        if let name = self["virtual_meeting_link"] {
+            ret = name
+        }
+        return ret
+    }
+
+    /* ################################################################## */
+    /**
      - returns: A String, with the comments.
      */
     public var comments: String {
