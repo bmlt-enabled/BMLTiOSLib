@@ -40,6 +40,6 @@ let package = Package(
         )
     ],
     swiftLanguageVersions: [
-        4.2
+        5.0
     ]
 )

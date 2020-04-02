@@ -1,5 +1,11 @@
 # BMLTiOSLib Change Log
 
+## 1.2.17.3000
+
+- **April 2, 2020**
+
+- Added support for the phone number field.
+
 ## 1.2.16.3000
 
 - **April 1, 2020**

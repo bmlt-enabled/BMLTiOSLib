@@ -351,6 +351,20 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
             self.rawMeeting["virtual_meeting_link"] = newValue
         }
     }
+    
+    /* ################################################################## */
+    /**
+     - returns: A String, with the meeting phone number.
+     */
+    override public var meetingPhoneNumber: String {
+        get {
+            return super.meetingPhoneNumber
+        }
+        
+        set {
+            self.rawMeeting["phone_meeting_number"] = newValue
+        }
+    }
 
     /* ################################################################## */
     /**

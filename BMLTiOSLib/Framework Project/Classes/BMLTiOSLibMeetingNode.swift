@@ -657,6 +657,18 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
         }
         return ret
     }
+    
+    /* ################################################################## */
+    /**
+     - returns: A String, with the meeting phone number.
+     */
+    public var meetingPhoneNumber: String {
+        var ret: String = ""
+        if let name = self["phone_meeting_number"] {
+            ret = name
+        }
+        return ret
+    }
 
     /* ################################################################## */
     /**
