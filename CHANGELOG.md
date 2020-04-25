@@ -1,5 +1,11 @@
 # BMLTiOSLib Change Log
 
+## 1.2.18.3000
+
+- **April 25, 2020**
+
+- Fixed an issue where the library could crash, if given bad data in response to a change search.
+
 ## 1.2.17.3000
 
 - **April 2, 2020**

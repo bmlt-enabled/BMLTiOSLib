@@ -1671,8 +1671,8 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
                     self._activeCommunicator = nil // OK. We're done.
                     self.handleNewMeetingResponse((parsedObject as? [String: AnyObject?])!)
                 } else if let meetingNode = inRefCon as? BMLTiOSLibMeetingNode {   // This is a special case for when we get changes and directly associate them with a meeting.
-                    if nil != parsedObject {
-                        self.handleGetChangesResponse((parsedObject as? [BMLTiOSLibChangeNode])!, inMeetingNode: meetingNode, inDeletedMeetingsOnly: false)
+                    if let parsedObject = parsedObject as? [BMLTiOSLibChangeNode] {
+                        self.handleGetChangesResponse(parsedObject, inMeetingNode: meetingNode, inDeletedMeetingsOnly: false)
                     } else {
                         self.handleGetChangesResponse([], inMeetingNode: meetingNode, inDeletedMeetingsOnly: false)
                     }
@@ -1681,8 +1681,8 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
                     if let callType = inRefCon as? String { // We send a key in as a string.
                         // Special handler for deleted meetings.
                         if BMLTiOSLibCommunicationHandlerSuffixes.GetDeletedMeetings.rawValue == callType {
-                            if nil != parsedObject {
-                                self.handleGetChangesResponse((parsedObject as? [BMLTiOSLibChangeNode])!, inMeetingNode: nil, inDeletedMeetingsOnly: true)
+                            if let parsedObject = parsedObject as? [BMLTiOSLibChangeNode] {
+                                self.handleGetChangesResponse(parsedObject, inMeetingNode: nil, inDeletedMeetingsOnly: true)
                             } else {
                                 self.handleGetChangesResponse([], inMeetingNode: nil, inDeletedMeetingsOnly: true)
                             }
