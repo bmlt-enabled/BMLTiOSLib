@@ -30,11 +30,11 @@
 import UIKit
 import BMLTiOSLib
 
-@UIApplicationMain
 // MARK: - Classes -
 /* ###################################################################################################################################### */
 /**
  */
+@UIApplicationMain
 class BMLTiOSLibTesterAppDelegate: UIResponder, UIApplicationDelegate {
 
     static var libraryObject: BMLTiOSLib! {

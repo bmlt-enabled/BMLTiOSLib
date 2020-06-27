@@ -143,7 +143,6 @@
 		775D89E61FEC11EB002BD8C3 /* BMLTiOSLibFormatContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibFormatContainer.swift; sourceTree = "<group>"; };
 		775D89E91FEC12C2002BD8C3 /* BMLTiOSLibEditableMeetingNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibEditableMeetingNode.swift; sourceTree = "<group>"; };
 		775D89EC1FEC13D5002BD8C3 /* BMLTiOSLibHierarchicalServiceBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibHierarchicalServiceBodyNode.swift; sourceTree = "<group>"; };
-		7790839A1FDEB5CD0032C2B8 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		77D706641FEB1D8A00C8A237 /* BMLTiOSLibServerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibServerInfo.swift; sourceTree = "<group>"; };
 		77D706671FEB1DE200C8A237 /* BMLTiOSLibSearchCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibSearchCriteria.swift; sourceTree = "<group>"; };
 		77D7066A1FEB1ED700C8A237 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift; sourceTree = "<group>"; };
@@ -154,7 +153,6 @@
 		77D706791FEB203E00C8A237 /* BMLTiOSLibFormatNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibFormatNode.swift; sourceTree = "<group>"; };
 		77D7067C1FEB206F00C8A237 /* BMLTiOSLibServerLang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibServerLang.swift; sourceTree = "<group>"; };
 		77DBD7981FDEAEEB008F110F /* BMLTiOSLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BMLTiOSLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		77DBD79B1FDEAEEB008F110F /* BMLTiOSLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLTiOSLib.h; sourceTree = "<group>"; };
 		77DBD79C1FDEAEEB008F110F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77DBD7A41FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibCommunicationHandler.swift; sourceTree = "<group>"; };
 		77DBD7A51FDEAFBF008F110F /* BMLTCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTCommunicator.swift; sourceTree = "<group>"; };
@@ -196,6 +194,7 @@
 		77DBD8191FDEB183008F110F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		77DBD81A1FDEB183008F110F /* BMLTiOSLib.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BMLTiOSLib.podspec; sourceTree = "<group>"; };
 		77DBD81B1FDEB183008F110F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D430B2D624A77D56001F2019 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
 		D4403E6A22F3913A00424EB1 /* jazzy.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = jazzy.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,13 +238,7 @@
 		77DBD78E1FDEAEEB008F110F = {
 			isa = PBXGroup;
 			children = (
-				77DBD81A1FDEB183008F110F /* BMLTiOSLib.podspec */,
-				7790839A1FDEB5CD0032C2B8 /* Podfile */,
-				77DBD81B1FDEB183008F110F /* LICENSE */,
-				77DBD8191FDEB183008F110F /* README.md */,
-				771B00961FE197BE004C6CC7 /* CHANGELOG.md */,
-				772B79FE1FEC1A7B002ACDAB /* Package.swift */,
-				D4403E6A22F3913A00424EB1 /* jazzy.sh */,
+				D430B2D724A77EC7001F2019 /* Meta */,
 				77DBD7A31FDEAFBF008F110F /* Framework Project */,
 				77DBD7C01FDEB027008F110F /* Test Harness Project */,
 				77DBD7991FDEAEEB008F110F /* Products */,
@@ -266,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				77DBD79C1FDEAEEB008F110F /* Info.plist */,
-				77DBD79B1FDEAEEB008F110F /* BMLTiOSLib.h */,
 				77DBD81C1FDEB501008F110F /* Classes */,
 			);
 			name = "Framework Project";
@@ -334,6 +326,20 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		D430B2D724A77EC7001F2019 /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				77DBD8191FDEB183008F110F /* README.md */,
+				771B00961FE197BE004C6CC7 /* CHANGELOG.md */,
+				772B79FE1FEC1A7B002ACDAB /* Package.swift */,
+				77DBD81A1FDEB183008F110F /* BMLTiOSLib.podspec */,
+				D4403E6A22F3913A00424EB1 /* jazzy.sh */,
+				D430B2D624A77D56001F2019 /* Warnings.xcconfig */,
+				77DBD81B1FDEB183008F110F /* LICENSE */,
+			);
+			name = Meta;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -397,7 +403,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = MAGSHARE;
 				TargetAttributes = {
 					772570A11FDF12C400297473 = {
@@ -500,7 +506,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "FILE=\"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"\nif test -f \"$FILE\"; then\n    \"$FILE\"\nfi\n";
+			shellScript = "if test -f \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"; then\n    \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -744,7 +750,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.18;
+				MARKETING_VERSION = 1.2.19;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -763,7 +769,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.18;
+				MARKETING_VERSION = 1.2.19;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -773,6 +779,7 @@
 		};
 		77DBD79E1FDEAEEB008F110F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D430B2D624A77D56001F2019 /* Warnings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -836,6 +843,7 @@
 		};
 		77DBD79F1FDEAEEB008F110F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D430B2D624A77D56001F2019 /* Warnings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -909,7 +917,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.18;
+				MARKETING_VERSION = 1.2.19;
 				PRODUCT_BUNDLE_IDENTIFIER = net.magshare.bmlt.BMLTiOSLib;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -935,7 +943,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.18;
+				MARKETING_VERSION = 1.2.19;
 				PRODUCT_BUNDLE_IDENTIFIER = net.magshare.bmlt.BMLTiOSLib;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -956,7 +964,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.18;
+				MARKETING_VERSION = 1.2.19;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -976,7 +984,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.18;
+				MARKETING_VERSION = 1.2.19;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

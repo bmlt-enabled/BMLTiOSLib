@@ -1,5 +1,15 @@
 # BMLTiOSLib Change Log
 
+## 1.2.19.3000
+
+- **June 27, 2020**
+
+- Updated docs for SPM support.
+- Some basic reformatting.
+- Rebuilt the docs.
+- Slight refatoring to consolidate the String extension.
+- Added the key file to make Markdown render in the project.
+
 ## 1.2.18.3000
 
 - **April 25, 2020**

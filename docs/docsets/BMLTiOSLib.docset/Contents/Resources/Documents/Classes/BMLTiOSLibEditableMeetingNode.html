@@ -127,6 +127,17 @@
             </ul>
           </li>
           <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -139,7 +150,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>BMLTiOSLibEditableMeetingNode</h1>
               <div class="declaration">
                 <div class="language">
@@ -147,7 +158,7 @@
 
                 </div>
               </div>
-            <p>This is a special <q>micro class</q> for editing the meetings for a Server.</p>
+            <p>This is a special &ldquo;micro class&rdquo; for editing the meetings for a Server.</p>
 
           </div>
         </section>
@@ -158,9 +169,11 @@
               <div class="task-name-container">
                 <a name="/Public%20Calculated%20Properties"></a>
                 <a name="//apple_ref/swift/Section/Public Calculated Properties" class="dashAnchor"></a>
-                <a href="#/Public%20Calculated%20Properties">
-                  <h3 class="section-name">Public Calculated Properties</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Public%20Calculated%20Properties"></a>
+                  <h3 class="section-name"><p>Public Calculated Properties</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -299,7 +312,7 @@ Each will be in a node, with links to its parents and children (if any).</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This sets the meeting&rsquo;s <q>published</q> status.</p>
+                        <p>This sets the meeting&rsquo;s &ldquo;published&rdquo; status.</p>
 
                       </div>
                       <div class="declaration">
@@ -772,6 +785,66 @@ Each will be in a node, with links to its parents and children (if any).</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:10BMLTiOSLib0aB19EditableMeetingNodeC07virtualD3URISSvp"></a>
+                    <a name="//apple_ref/swift/Property/virtualMeetingURI" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB19EditableMeetingNodeC07virtualD3URISSvp">virtualMeetingURI</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">virtualMeetingURI</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the virtual meeting link.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10BMLTiOSLib0aB19EditableMeetingNodeC18meetingPhoneNumberSSvp"></a>
+                    <a name="//apple_ref/swift/Property/meetingPhoneNumber" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10BMLTiOSLib0aB19EditableMeetingNodeC18meetingPhoneNumberSSvp">meetingPhoneNumber</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">meetingPhoneNumber</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, with the meeting phone number.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:10BMLTiOSLib0aB19EditableMeetingNodeC8commentsSSvp"></a>
                     <a name="//apple_ref/swift/Property/comments" class="dashAnchor"></a>
                     <a class="token" href="#/s:10BMLTiOSLib0aB19EditableMeetingNodeC8commentsSSvp">comments</a>
@@ -842,7 +915,7 @@ Each will be in a node, with links to its parents and children (if any).</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This parses a military time string (either <q>HH:MM</q> or <q>HHMM</q>), and creates a new
+                        <p>This parses a military time string (either &ldquo;HH:MM&rdquo; or &ldquo;HHMM&rdquo;), and creates a new
 start time from the string.</p>
 
                       </div>
@@ -856,7 +929,7 @@ start time from the string.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A String, with the start time in military format (<q>HH:MM</q>).</p>
+                        <p>A String, with the start time in military format (&ldquo;HH:MM&rdquo;).</p>
                       </div>
                     </section>
                   </div>
@@ -886,7 +959,7 @@ start time from the string.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A String, with the duration (<q>HH:MM</q>).</p>
+                        <p>A String, with the duration (&ldquo;HH:MM&rdquo;).</p>
                       </div>
                     </section>
                   </div>
@@ -1052,9 +1125,11 @@ It extracts the weekday and the time of day, and uses these as new values for th
               <div class="task-name-container">
                 <a name="/Public%20Initializer"></a>
                 <a name="//apple_ref/swift/Section/Public Initializer" class="dashAnchor"></a>
-                <a href="#/Public%20Initializer">
-                  <h3 class="section-name">Public Initializer</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Public%20Initializer"></a>
+                  <h3 class="section-name"><p>Public Initializer</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -1105,7 +1180,7 @@ It extracts the weekday and the time of day, and uses these as new values for th
                               </td>
                               <td>
                                 <div>
-                                  <p>This is the BMLTiOSLib object that <q>owns</q> this meeting</p>
+                                  <p>This is the BMLTiOSLib object that &ldquo;owns&rdquo; this meeting</p>
                                 </div>
                               </td>
                             </tr>
@@ -1121,9 +1196,11 @@ It extracts the weekday and the time of day, and uses these as new values for th
               <div class="task-name-container">
                 <a name="/Public%20Methods"></a>
                 <a name="//apple_ref/swift/Section/Public Methods" class="dashAnchor"></a>
-                <a href="#/Public%20Methods">
-                  <h3 class="section-name">Public Methods</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Public%20Methods"></a>
+                  <h3 class="section-name"><p>Public Methods</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -1262,12 +1339,12 @@ It extracts the weekday and the time of day, and uses these as new values for th
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Reverts a meeting to the <q>before</q> state of a given change, but does not save it to the server.</p>
+                        <p>Reverts a meeting to the &ldquo;before&rdquo; state of a given change, but does not save it to the server.</p>
 
-<p>The <q>before</q> meeting must also be editable, the user needs to be currently logged in
+<p>The &ldquo;before&rdquo; meeting must also be editable, the user needs to be currently logged in
 with edit privileges on the meeting.</p>
 
-<p>This makes the meeting <q>dirty.</q></p>
+<p>This makes the meeting &ldquo;dirty.&rdquo;</p>
 
                       </div>
                       <div class="declaration">
@@ -1298,9 +1375,9 @@ with edit privileges on the meeting.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Reverts a meeting to the <q>before</q> state of a given change, and saves it to the server.</p>
+                        <p>Reverts a meeting to the &ldquo;before&rdquo; state of a given change, and saves it to the server.</p>
 
-<p>The <q>before</q> meeting must also be editable, the user needs to be currently logged in
+<p>The &ldquo;before&rdquo; meeting must also be editable, the user needs to be currently logged in
 with edit privileges on the meeting.</p>
 
                       </div>
@@ -1431,8 +1508,8 @@ with edit privileges on the meeting.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://bmlt.app" target="_blank" rel="external">BMLT-Enabled</a>. All rights reserved. (Last updated: 2019-08-02)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://bmlt.app" target="_blank" rel="external">BMLT-Enabled</a>. All rights reserved. (Last updated: 2020-06-27)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

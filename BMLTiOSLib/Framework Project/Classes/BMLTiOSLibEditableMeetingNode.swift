@@ -40,6 +40,7 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
     /* ################################################################## */
     // MARK: Private Properties
     /* ################################################################## */
+    /// This is the original, unmodified object, built from JSON.
     var _originalObject: [String: String] = [:]
     
     /* ################################################################## */

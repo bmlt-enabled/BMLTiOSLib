@@ -38,6 +38,15 @@ import Foundation
 extension String {
     /* ################################################################## */
     /**
+     - returns: The String, with just the first letter uppercased.
+     */
+    var firstUppercased: String {
+        guard let first = first else { return "" }
+        return String(first).uppercased() + dropFirst()
+    }
+
+    /* ################################################################## */
+    /**
      This tests a string to see if a given substring is present at the start.
      
      - parameter inSubstring: The substring to test.

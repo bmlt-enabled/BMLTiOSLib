@@ -26,6 +26,18 @@ To use this as a [CocoaPod](https://cocoapods.org), simply add the following to 
 
 You then `cd` to the project directory, and execute `pod install` or `pod update` on the command line.
 
+You will then need to import the module, by adding the following to the source files that will be accessing the library:
+
+    import BMLTiOSLib
+
+### As A [Swift Package](https://swift.org/package-manager/):
+
+You can include the BMLTiOSLib, using the Swift Package Manager, simply by referring to [its GitHub Repository](https://github.com/bmlt-enabled/BMLTiOSLib) URI (SSH: [git@github.com:bmlt-enabled/BMLTiOSLib.git](git@github.com:bmlt-enabled/BMLTiOSLib.git) or HTTPS: [https://github.com/bmlt-enabled/BMLTiOSLib.git](https://github.com/bmlt-enabled/BMLTiOSLib.git)).
+
+You will then need to import the module, by adding the following to the source files that will be accessing the library:
+
+    import BMLTiOSLib
+
 ### Using [Carthage](https://github.com/Carthage/Carthage):
 
 To use this from [Carthage](https://github.com/Carthage/Carthage), simply add the following to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
@@ -33,6 +45,12 @@ To use this from [Carthage](https://github.com/Carthage/Carthage), simply add th
     github "bmlt-enabled/BMLTiOSLib"
 
 You then `cd` to the project directory, and execute `carthage update` on the command line.
+
+You will then need to import the module, by adding the following to the source files that will be accessing the library:
+
+    import BMLTiOSLib
+    
+It should be noted that Carthage can have issues with App Store provisioning, and you may want to build the framework, yourself, to avoid these issues.
 
 ### Directly:
 

@@ -1,3 +1,5 @@
+// swift-tools-version:5.2
+
 //  Created by BMLT-Enabled
 //
 //  https://bmlt.app/
