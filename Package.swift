@@ -40,8 +40,5 @@ let package = Package(
             name: "BMLTiOSLib",
             path: "BMLTiOSLib/Framework Project/Classes"
         )
-    ],
-    swiftLanguageVersions: [
-        5.0
     ]
 )
