@@ -36,9 +36,6 @@ let package = Package(
         )
     ],
     targets: [
-        .target(
-            name: "BMLTiOSLib",
-            path: "BMLTiOSLib/Framework Project/Classes"
-        )
+        .target(name: "BMLTiOSLib")
     ]
 )

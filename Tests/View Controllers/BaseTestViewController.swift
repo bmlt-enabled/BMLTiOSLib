@@ -28,7 +28,9 @@
 //  SOFTWARE.
 
 import UIKit
-import BMLTiOSLib
+#if !DIRECT
+    import BMLTiOSLib
+#endif
 
 public class BaseTestViewController: UIViewController {
     /* ################################################################## */

@@ -28,8 +28,10 @@
 //  SOFTWARE.
 
 import UIKit
-import BMLTiOSLib
 import MapKit
+#if !DIRECT
+    import BMLTiOSLib
+#endif
 
 /* ###################################################################################################################################### */
 /**

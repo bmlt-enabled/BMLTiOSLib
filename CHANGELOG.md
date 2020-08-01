@@ -1,5 +1,11 @@
 # BMLTiOSLib Change Log
 
+## 1.2.20.3000
+
+- **August 1, 2020**
+
+- Rearranged for GitHub Action
+
 ## 1.2.19.3000
 
 - **June 27, 2020**

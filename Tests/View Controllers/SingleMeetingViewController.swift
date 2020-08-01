@@ -29,7 +29,9 @@
 
 import UIKit
 import MapKit
-import BMLTiOSLib
+#if !DIRECT
+    import BMLTiOSLib
+#endif
 
 // Cribbed from here: http://stackoverflow.com/a/37494260/879365
 

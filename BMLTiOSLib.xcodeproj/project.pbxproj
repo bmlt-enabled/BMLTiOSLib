@@ -7,113 +7,106 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		772570A51FDF12C400297473 /* ChangeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C51FDEB027008F110F /* ChangeListViewController.swift */; };
-		772570A61FDF12C400297473 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C31FDEB027008F110F /* ConnectViewController.swift */; };
-		772570A71FDF12C400297473 /* BMLTiOSLibTesterAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EC1FDEB027008F110F /* BMLTiOSLibTesterAppDelegate.swift */; };
-		772570A81FDF12C400297473 /* FormatSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7E91FDEB027008F110F /* FormatSearchResultsViewController.swift */; };
-		772570A91FDF12C400297473 /* SingleMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EF1FDEB027008F110F /* SingleMeetingViewController.swift */; };
-		772570AA1FDF12C400297473 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C21FDEB027008F110F /* SearchViewController.swift */; };
-		772570AB1FDF12C400297473 /* BaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7ED1FDEB027008F110F /* BaseTestViewController.swift */; };
-		772570AC1FDF12C400297473 /* BMLTiOSLibCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C61FDEB027008F110F /* BMLTiOSLibCheckbox.swift */; };
-		772570AD1FDF12C400297473 /* AllChangesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C11FDEB027008F110F /* AllChangesListViewController.swift */; };
-		772570AE1FDF12C400297473 /* BMLTiOSTesterMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C41FDEB027008F110F /* BMLTiOSTesterMarker.swift */; };
-		772570AF1FDF12C400297473 /* TestTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EB1FDEB027008F110F /* TestTabController.swift */; };
-		772570B01FDF12C400297473 /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EA1FDEB027008F110F /* SendMessageViewController.swift */; };
-		772570B11FDF12C400297473 /* MeetingSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EE1FDEB027008F110F /* MeetingSearchResultsViewController.swift */; };
-		772570B21FDF12C400297473 /* DetailedInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C81FDEB027008F110F /* DetailedInfoController.swift */; };
-		772570B31FDF12C400297473 /* NewMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7F01FDEB027008F110F /* NewMeetingViewController.swift */; };
-		772570B71FDF12C400297473 /* SearchByStartTimeAndEndTimeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D11FDEB027008F110F /* SearchByStartTimeAndEndTimeCellView.xib */; };
-		772570B81FDF12C400297473 /* MeetingSearchResultsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E51FDEB027008F110F /* MeetingSearchResultsTableCell.xib */; };
-		772570B91FDF12C400297473 /* SearchServiceBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E31FDEB027008F110F /* SearchServiceBodyCell.xib */; };
-		772570BA1FDF12C400297473 /* SearchFormatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7CD1FDEB027008F110F /* SearchFormatCell.xib */; };
-		772570BB1FDF12C400297473 /* SearchWeekdaysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D51FDEB027008F110F /* SearchWeekdaysCell.xib */; };
-		772570BC1FDF12C400297473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7DD1FDEB027008F110F /* Main.storyboard */; };
-		772570BD1FDF12C400297473 /* SearchViewControllerMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7DB1FDEB027008F110F /* SearchViewControllerMapView.xib */; };
-		772570BE1FDF12C400297473 /* SearchRadiusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E71FDEB027008F110F /* SearchRadiusCell.xib */; };
-		772570BF1FDF12C400297473 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E11FDEB027008F110F /* Default-568h@2x.png */; };
-		772570C01FDF12C400297473 /* SearchMeetingDurationCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7DF1FDEB027008F110F /* SearchMeetingDurationCellView.xib */; };
-		772570C11FDF12C400297473 /* DetailFormatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7CF1FDEB027008F110F /* DetailFormatCell.xib */; };
-		772570C21FDF12C400297473 /* DetailLoginTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D91FDEB027008F110F /* DetailLoginTableCellView.xib */; };
-		772570C31FDF12C400297473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7CB1FDEB027008F110F /* LaunchScreen.storyboard */; };
-		772570C41FDF12C400297473 /* SingleMeetingMapDisplayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D31FDEB027008F110F /* SingleMeetingMapDisplayCellView.xib */; };
-		772570C51FDF12C400297473 /* DetailLocationMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D71FDEB027008F110F /* DetailLocationMapCell.xib */; };
-		772570C61FDF12C400297473 /* SearchStringCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7C91FDEB027008F110F /* SearchStringCell.xib */; };
-		772570C71FDF12C400297473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7C71FDEB027008F110F /* Assets.xcassets */; };
-		772570CF1FDF12F500297473 /* BMLTiOSLibCommunicationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A41FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift */; };
-		772570D01FDF12F500297473 /* BMLTCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A51FDEAFBF008F110F /* BMLTCommunicator.swift */; };
-		772570D11FDF12F500297473 /* BMLTiOSLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A61FDEAFBF008F110F /* BMLTiOSLib.swift */; };
-		775D89E71FEC11EB002BD8C3 /* BMLTiOSLibFormatContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775D89E61FEC11EB002BD8C3 /* BMLTiOSLibFormatContainer.swift */; };
-		775D89E81FEC11EB002BD8C3 /* BMLTiOSLibFormatContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775D89E61FEC11EB002BD8C3 /* BMLTiOSLibFormatContainer.swift */; };
-		775D89EA1FEC12C2002BD8C3 /* BMLTiOSLibEditableMeetingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775D89E91FEC12C2002BD8C3 /* BMLTiOSLibEditableMeetingNode.swift */; };
-		775D89EB1FEC12C2002BD8C3 /* BMLTiOSLibEditableMeetingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775D89E91FEC12C2002BD8C3 /* BMLTiOSLibEditableMeetingNode.swift */; };
-		775D89ED1FEC13D5002BD8C3 /* BMLTiOSLibHierarchicalServiceBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775D89EC1FEC13D5002BD8C3 /* BMLTiOSLibHierarchicalServiceBodyNode.swift */; };
-		775D89EE1FEC13D5002BD8C3 /* BMLTiOSLibHierarchicalServiceBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775D89EC1FEC13D5002BD8C3 /* BMLTiOSLibHierarchicalServiceBodyNode.swift */; };
-		77D706651FEB1D8A00C8A237 /* BMLTiOSLibServerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D706641FEB1D8A00C8A237 /* BMLTiOSLibServerInfo.swift */; };
-		77D706661FEB1D8A00C8A237 /* BMLTiOSLibServerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D706641FEB1D8A00C8A237 /* BMLTiOSLibServerInfo.swift */; };
-		77D706681FEB1DE200C8A237 /* BMLTiOSLibSearchCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D706671FEB1DE200C8A237 /* BMLTiOSLibSearchCriteria.swift */; };
-		77D706691FEB1DE200C8A237 /* BMLTiOSLibSearchCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D706671FEB1DE200C8A237 /* BMLTiOSLibSearchCriteria.swift */; };
-		77D7066B1FEB1ED700C8A237 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7066A1FEB1ED700C8A237 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift */; };
-		77D7066C1FEB1ED700C8A237 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7066A1FEB1ED700C8A237 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift */; };
-		77D7066E1FEB1F0900C8A237 /* BMLTiOSLibChangedMeeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7066D1FEB1F0900C8A237 /* BMLTiOSLibChangedMeeting.swift */; };
-		77D7066F1FEB1F0900C8A237 /* BMLTiOSLibChangedMeeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7066D1FEB1F0900C8A237 /* BMLTiOSLibChangedMeeting.swift */; };
-		77D706711FEB1F4300C8A237 /* BMLTiOSLibChangeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D706701FEB1F4300C8A237 /* BMLTiOSLibChangeNode.swift */; };
-		77D706721FEB1F4300C8A237 /* BMLTiOSLibChangeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D706701FEB1F4300C8A237 /* BMLTiOSLibChangeNode.swift */; };
-		77D706741FEB1F8700C8A237 /* BMLTiOSLibMeetingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D706731FEB1F8700C8A237 /* BMLTiOSLibMeetingNode.swift */; };
-		77D706751FEB1F8700C8A237 /* BMLTiOSLibMeetingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D706731FEB1F8700C8A237 /* BMLTiOSLibMeetingNode.swift */; };
-		77D706771FEB1FE000C8A237 /* BMLTiOSLibServiceBodyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D706761FEB1FE000C8A237 /* BMLTiOSLibServiceBodyContainer.swift */; };
-		77D706781FEB1FE000C8A237 /* BMLTiOSLibServiceBodyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D706761FEB1FE000C8A237 /* BMLTiOSLibServiceBodyContainer.swift */; };
-		77D7067A1FEB203E00C8A237 /* BMLTiOSLibFormatNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D706791FEB203E00C8A237 /* BMLTiOSLibFormatNode.swift */; };
-		77D7067B1FEB203E00C8A237 /* BMLTiOSLibFormatNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D706791FEB203E00C8A237 /* BMLTiOSLibFormatNode.swift */; };
-		77D7067D1FEB206F00C8A237 /* BMLTiOSLibServerLang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7067C1FEB206F00C8A237 /* BMLTiOSLibServerLang.swift */; };
-		77D7067E1FEB206F00C8A237 /* BMLTiOSLibServerLang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D7067C1FEB206F00C8A237 /* BMLTiOSLibServerLang.swift */; };
-		77DBD7A71FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A41FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift */; };
-		77DBD7A81FDEAFBF008F110F /* BMLTCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A51FDEAFBF008F110F /* BMLTCommunicator.swift */; };
-		77DBD7A91FDEAFBF008F110F /* BMLTiOSLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7A61FDEAFBF008F110F /* BMLTiOSLib.swift */; };
-		77DBD7F21FDEB027008F110F /* AllChangesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C11FDEB027008F110F /* AllChangesListViewController.swift */; };
-		77DBD7F31FDEB027008F110F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C21FDEB027008F110F /* SearchViewController.swift */; };
-		77DBD7F41FDEB027008F110F /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C31FDEB027008F110F /* ConnectViewController.swift */; };
-		77DBD7F51FDEB027008F110F /* BMLTiOSTesterMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C41FDEB027008F110F /* BMLTiOSTesterMarker.swift */; };
-		77DBD7F61FDEB027008F110F /* ChangeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C51FDEB027008F110F /* ChangeListViewController.swift */; };
-		77DBD7F71FDEB027008F110F /* BMLTiOSLibCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C61FDEB027008F110F /* BMLTiOSLibCheckbox.swift */; };
-		77DBD7F81FDEB027008F110F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7C71FDEB027008F110F /* Assets.xcassets */; };
-		77DBD7F91FDEB027008F110F /* DetailedInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7C81FDEB027008F110F /* DetailedInfoController.swift */; };
-		77DBD7FA1FDEB027008F110F /* SearchStringCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7C91FDEB027008F110F /* SearchStringCell.xib */; };
-		77DBD7FB1FDEB027008F110F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7CB1FDEB027008F110F /* LaunchScreen.storyboard */; };
-		77DBD7FC1FDEB027008F110F /* SearchFormatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7CD1FDEB027008F110F /* SearchFormatCell.xib */; };
-		77DBD7FD1FDEB027008F110F /* DetailFormatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7CF1FDEB027008F110F /* DetailFormatCell.xib */; };
-		77DBD7FE1FDEB027008F110F /* SearchByStartTimeAndEndTimeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D11FDEB027008F110F /* SearchByStartTimeAndEndTimeCellView.xib */; };
-		77DBD7FF1FDEB027008F110F /* SingleMeetingMapDisplayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D31FDEB027008F110F /* SingleMeetingMapDisplayCellView.xib */; };
-		77DBD8001FDEB027008F110F /* SearchWeekdaysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D51FDEB027008F110F /* SearchWeekdaysCell.xib */; };
-		77DBD8011FDEB027008F110F /* DetailLocationMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D71FDEB027008F110F /* DetailLocationMapCell.xib */; };
-		77DBD8021FDEB027008F110F /* DetailLoginTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7D91FDEB027008F110F /* DetailLoginTableCellView.xib */; };
-		77DBD8031FDEB027008F110F /* SearchViewControllerMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7DB1FDEB027008F110F /* SearchViewControllerMapView.xib */; };
-		77DBD8041FDEB027008F110F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7DD1FDEB027008F110F /* Main.storyboard */; };
-		77DBD8051FDEB027008F110F /* SearchMeetingDurationCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7DF1FDEB027008F110F /* SearchMeetingDurationCellView.xib */; };
-		77DBD8061FDEB027008F110F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E11FDEB027008F110F /* Default-568h@2x.png */; };
-		77DBD8071FDEB027008F110F /* SearchServiceBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E31FDEB027008F110F /* SearchServiceBodyCell.xib */; };
-		77DBD8081FDEB027008F110F /* MeetingSearchResultsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E51FDEB027008F110F /* MeetingSearchResultsTableCell.xib */; };
-		77DBD8091FDEB027008F110F /* SearchRadiusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBD7E71FDEB027008F110F /* SearchRadiusCell.xib */; };
-		77DBD80A1FDEB027008F110F /* FormatSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7E91FDEB027008F110F /* FormatSearchResultsViewController.swift */; };
-		77DBD80B1FDEB027008F110F /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EA1FDEB027008F110F /* SendMessageViewController.swift */; };
-		77DBD80C1FDEB027008F110F /* TestTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EB1FDEB027008F110F /* TestTabController.swift */; };
-		77DBD80D1FDEB027008F110F /* BMLTiOSLibTesterAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EC1FDEB027008F110F /* BMLTiOSLibTesterAppDelegate.swift */; };
-		77DBD80E1FDEB027008F110F /* BaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7ED1FDEB027008F110F /* BaseTestViewController.swift */; };
-		77DBD80F1FDEB027008F110F /* MeetingSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EE1FDEB027008F110F /* MeetingSearchResultsViewController.swift */; };
-		77DBD8101FDEB027008F110F /* SingleMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7EF1FDEB027008F110F /* SingleMeetingViewController.swift */; };
-		77DBD8111FDEB027008F110F /* NewMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD7F01FDEB027008F110F /* NewMeetingViewController.swift */; };
 		77DBD8141FDEB08B008F110F /* BMLTiOSLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DBD7981FDEAEEB008F110F /* BMLTiOSLib.framework */; };
 		77DBD8151FDEB08B008F110F /* BMLTiOSLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 77DBD7981FDEAEEB008F110F /* BMLTiOSLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D4131A0C24D5AC8D002A1520 /* BMLTiOSLibServiceBodyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41319FD24D5AC8D002A1520 /* BMLTiOSLibServiceBodyContainer.swift */; };
+		D4131A0D24D5AC8D002A1520 /* BMLTiOSLibChangedMeeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41319FE24D5AC8D002A1520 /* BMLTiOSLibChangedMeeting.swift */; };
+		D4131A0E24D5AC8D002A1520 /* BMLTiOSLibHierarchicalServiceBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41319FF24D5AC8D002A1520 /* BMLTiOSLibHierarchicalServiceBodyNode.swift */; };
+		D4131A0F24D5AC8D002A1520 /* BMLTiOSLibChangeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0024D5AC8D002A1520 /* BMLTiOSLibChangeNode.swift */; };
+		D4131A1024D5AC8D002A1520 /* BMLTiOSLibFormatNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0124D5AC8D002A1520 /* BMLTiOSLibFormatNode.swift */; };
+		D4131A1124D5AC8D002A1520 /* BMLTiOSLibMeetingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0224D5AC8D002A1520 /* BMLTiOSLibMeetingNode.swift */; };
+		D4131A1224D5AC8D002A1520 /* BMLTiOSLibServerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0324D5AC8D002A1520 /* BMLTiOSLibServerInfo.swift */; };
+		D4131A1324D5AC8D002A1520 /* BMLTiOSLibFormatContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0424D5AC8D002A1520 /* BMLTiOSLibFormatContainer.swift */; };
+		D4131A1424D5AC8D002A1520 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0524D5AC8D002A1520 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift */; };
+		D4131A1524D5AC8D002A1520 /* BMLTiOSLibEditableMeetingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0624D5AC8D002A1520 /* BMLTiOSLibEditableMeetingNode.swift */; };
+		D4131A1624D5AC8D002A1520 /* BMLTiOSLibServerLang.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0724D5AC8D002A1520 /* BMLTiOSLibServerLang.swift */; };
+		D4131A1724D5AC8D002A1520 /* BMLTiOSLibSearchCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0824D5AC8D002A1520 /* BMLTiOSLibSearchCriteria.swift */; };
+		D4131A1824D5AC8D002A1520 /* BMLTiOSLibCommunicationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0924D5AC8D002A1520 /* BMLTiOSLibCommunicationHandler.swift */; };
+		D4131A1924D5AC8D002A1520 /* BMLTCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0A24D5AC8D002A1520 /* BMLTCommunicator.swift */; };
+		D4131A1A24D5AC8D002A1520 /* BMLTiOSLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0B24D5AC8D002A1520 /* BMLTiOSLib.swift */; };
+		D4131A1B24D5ACCD002A1520 /* BMLTiOSLibServiceBodyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41319FD24D5AC8D002A1520 /* BMLTiOSLibServiceBodyContainer.swift */; };
+		D4131A1C24D5ACCD002A1520 /* BMLTiOSLibChangedMeeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41319FE24D5AC8D002A1520 /* BMLTiOSLibChangedMeeting.swift */; };
+		D4131A1D24D5ACCD002A1520 /* BMLTiOSLibHierarchicalServiceBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41319FF24D5AC8D002A1520 /* BMLTiOSLibHierarchicalServiceBodyNode.swift */; };
+		D4131A1E24D5ACCD002A1520 /* BMLTiOSLibChangeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0024D5AC8D002A1520 /* BMLTiOSLibChangeNode.swift */; };
+		D4131A1F24D5ACCD002A1520 /* BMLTiOSLibFormatNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0124D5AC8D002A1520 /* BMLTiOSLibFormatNode.swift */; };
+		D4131A2024D5ACCD002A1520 /* BMLTiOSLibMeetingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0224D5AC8D002A1520 /* BMLTiOSLibMeetingNode.swift */; };
+		D4131A2124D5ACCD002A1520 /* BMLTiOSLibServerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0324D5AC8D002A1520 /* BMLTiOSLibServerInfo.swift */; };
+		D4131A2224D5ACCD002A1520 /* BMLTiOSLibFormatContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0424D5AC8D002A1520 /* BMLTiOSLibFormatContainer.swift */; };
+		D4131A2324D5ACCD002A1520 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0524D5AC8D002A1520 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift */; };
+		D4131A2424D5ACCD002A1520 /* BMLTiOSLibEditableMeetingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0624D5AC8D002A1520 /* BMLTiOSLibEditableMeetingNode.swift */; };
+		D4131A2524D5ACCD002A1520 /* BMLTiOSLibServerLang.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0724D5AC8D002A1520 /* BMLTiOSLibServerLang.swift */; };
+		D4131A2624D5ACCD002A1520 /* BMLTiOSLibSearchCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0824D5AC8D002A1520 /* BMLTiOSLibSearchCriteria.swift */; };
+		D4131A2724D5ACCD002A1520 /* BMLTiOSLibCommunicationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0924D5AC8D002A1520 /* BMLTiOSLibCommunicationHandler.swift */; };
+		D4131A2824D5ACCD002A1520 /* BMLTCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0A24D5AC8D002A1520 /* BMLTCommunicator.swift */; };
+		D4131A2924D5ACCD002A1520 /* BMLTiOSLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A0B24D5AC8D002A1520 /* BMLTiOSLib.swift */; };
+		D4131A5F24D5AD89002A1520 /* BMLTiOSTesterMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A2C24D5AD89002A1520 /* BMLTiOSTesterMarker.swift */; };
+		D4131A6024D5AD89002A1520 /* BMLTiOSTesterMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A2C24D5AD89002A1520 /* BMLTiOSTesterMarker.swift */; };
+		D4131A6124D5AD89002A1520 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4131A2E24D5AD89002A1520 /* Assets.xcassets */; };
+		D4131A6224D5AD89002A1520 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4131A2E24D5AD89002A1520 /* Assets.xcassets */; };
+		D4131A6324D5AD89002A1520 /* SearchStringCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A2F24D5AD89002A1520 /* SearchStringCell.xib */; };
+		D4131A6424D5AD89002A1520 /* SearchStringCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A2F24D5AD89002A1520 /* SearchStringCell.xib */; };
+		D4131A6524D5AD89002A1520 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3124D5AD89002A1520 /* LaunchScreen.storyboard */; };
+		D4131A6624D5AD89002A1520 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3124D5AD89002A1520 /* LaunchScreen.storyboard */; };
+		D4131A6724D5AD89002A1520 /* SearchFormatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3324D5AD89002A1520 /* SearchFormatCell.xib */; };
+		D4131A6824D5AD89002A1520 /* SearchFormatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3324D5AD89002A1520 /* SearchFormatCell.xib */; };
+		D4131A6924D5AD89002A1520 /* DetailFormatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3524D5AD89002A1520 /* DetailFormatCell.xib */; };
+		D4131A6A24D5AD89002A1520 /* DetailFormatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3524D5AD89002A1520 /* DetailFormatCell.xib */; };
+		D4131A6B24D5AD89002A1520 /* SearchByStartTimeAndEndTimeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3724D5AD89002A1520 /* SearchByStartTimeAndEndTimeCellView.xib */; };
+		D4131A6C24D5AD89002A1520 /* SearchByStartTimeAndEndTimeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3724D5AD89002A1520 /* SearchByStartTimeAndEndTimeCellView.xib */; };
+		D4131A6D24D5AD89002A1520 /* SingleMeetingMapDisplayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3924D5AD89002A1520 /* SingleMeetingMapDisplayCellView.xib */; };
+		D4131A6E24D5AD89002A1520 /* SingleMeetingMapDisplayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3924D5AD89002A1520 /* SingleMeetingMapDisplayCellView.xib */; };
+		D4131A6F24D5AD89002A1520 /* SearchWeekdaysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3B24D5AD89002A1520 /* SearchWeekdaysCell.xib */; };
+		D4131A7024D5AD89002A1520 /* SearchWeekdaysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3B24D5AD89002A1520 /* SearchWeekdaysCell.xib */; };
+		D4131A7124D5AD89002A1520 /* DetailLocationMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3D24D5AD89002A1520 /* DetailLocationMapCell.xib */; };
+		D4131A7224D5AD89002A1520 /* DetailLocationMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3D24D5AD89002A1520 /* DetailLocationMapCell.xib */; };
+		D4131A7324D5AD89002A1520 /* DetailLoginTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3F24D5AD89002A1520 /* DetailLoginTableCellView.xib */; };
+		D4131A7424D5AD89002A1520 /* DetailLoginTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A3F24D5AD89002A1520 /* DetailLoginTableCellView.xib */; };
+		D4131A7524D5AD89002A1520 /* SearchViewControllerMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A4124D5AD89002A1520 /* SearchViewControllerMapView.xib */; };
+		D4131A7624D5AD89002A1520 /* SearchViewControllerMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A4124D5AD89002A1520 /* SearchViewControllerMapView.xib */; };
+		D4131A7724D5AD89002A1520 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4131A4324D5AD89002A1520 /* Main.storyboard */; };
+		D4131A7824D5AD89002A1520 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4131A4324D5AD89002A1520 /* Main.storyboard */; };
+		D4131A7924D5AD89002A1520 /* SearchMeetingDurationCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A4524D5AD89002A1520 /* SearchMeetingDurationCellView.xib */; };
+		D4131A7A24D5AD89002A1520 /* SearchMeetingDurationCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A4524D5AD89002A1520 /* SearchMeetingDurationCellView.xib */; };
+		D4131A7B24D5AD89002A1520 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4131A4724D5AD89002A1520 /* Default-568h@2x.png */; };
+		D4131A7C24D5AD89002A1520 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4131A4724D5AD89002A1520 /* Default-568h@2x.png */; };
+		D4131A7D24D5AD89002A1520 /* SearchServiceBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A4924D5AD89002A1520 /* SearchServiceBodyCell.xib */; };
+		D4131A7E24D5AD89002A1520 /* SearchServiceBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A4924D5AD89002A1520 /* SearchServiceBodyCell.xib */; };
+		D4131A7F24D5AD89002A1520 /* MeetingSearchResultsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A4B24D5AD89002A1520 /* MeetingSearchResultsTableCell.xib */; };
+		D4131A8024D5AD89002A1520 /* MeetingSearchResultsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A4B24D5AD89002A1520 /* MeetingSearchResultsTableCell.xib */; };
+		D4131A8124D5AD89002A1520 /* SearchRadiusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A4D24D5AD89002A1520 /* SearchRadiusCell.xib */; };
+		D4131A8224D5AD89002A1520 /* SearchRadiusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4131A4D24D5AD89002A1520 /* SearchRadiusCell.xib */; };
+		D4131A8324D5AD89002A1520 /* BMLTiOSLibCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A4F24D5AD89002A1520 /* BMLTiOSLibCheckbox.swift */; };
+		D4131A8424D5AD89002A1520 /* BMLTiOSLibCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A4F24D5AD89002A1520 /* BMLTiOSLibCheckbox.swift */; };
+		D4131A8524D5AD89002A1520 /* AllChangesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5124D5AD89002A1520 /* AllChangesListViewController.swift */; };
+		D4131A8624D5AD89002A1520 /* AllChangesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5124D5AD89002A1520 /* AllChangesListViewController.swift */; };
+		D4131A8724D5AD89002A1520 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5224D5AD89002A1520 /* SearchViewController.swift */; };
+		D4131A8824D5AD89002A1520 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5224D5AD89002A1520 /* SearchViewController.swift */; };
+		D4131A8924D5AD89002A1520 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5324D5AD89002A1520 /* ConnectViewController.swift */; };
+		D4131A8A24D5AD89002A1520 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5324D5AD89002A1520 /* ConnectViewController.swift */; };
+		D4131A8B24D5AD89002A1520 /* ChangeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5424D5AD89002A1520 /* ChangeListViewController.swift */; };
+		D4131A8C24D5AD89002A1520 /* ChangeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5424D5AD89002A1520 /* ChangeListViewController.swift */; };
+		D4131A8D24D5AD89002A1520 /* DetailedInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5524D5AD89002A1520 /* DetailedInfoController.swift */; };
+		D4131A8E24D5AD89002A1520 /* DetailedInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5524D5AD89002A1520 /* DetailedInfoController.swift */; };
+		D4131A8F24D5AD89002A1520 /* FormatSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5624D5AD89002A1520 /* FormatSearchResultsViewController.swift */; };
+		D4131A9024D5AD89002A1520 /* FormatSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5624D5AD89002A1520 /* FormatSearchResultsViewController.swift */; };
+		D4131A9124D5AD89002A1520 /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5724D5AD89002A1520 /* SendMessageViewController.swift */; };
+		D4131A9224D5AD89002A1520 /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5724D5AD89002A1520 /* SendMessageViewController.swift */; };
+		D4131A9324D5AD89002A1520 /* BaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5824D5AD89002A1520 /* BaseTestViewController.swift */; };
+		D4131A9424D5AD89002A1520 /* BaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5824D5AD89002A1520 /* BaseTestViewController.swift */; };
+		D4131A9524D5AD89002A1520 /* MeetingSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5924D5AD89002A1520 /* MeetingSearchResultsViewController.swift */; };
+		D4131A9624D5AD89002A1520 /* MeetingSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5924D5AD89002A1520 /* MeetingSearchResultsViewController.swift */; };
+		D4131A9724D5AD89002A1520 /* SingleMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5A24D5AD89002A1520 /* SingleMeetingViewController.swift */; };
+		D4131A9824D5AD89002A1520 /* SingleMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5A24D5AD89002A1520 /* SingleMeetingViewController.swift */; };
+		D4131A9924D5AD89002A1520 /* NewMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5B24D5AD89002A1520 /* NewMeetingViewController.swift */; };
+		D4131A9A24D5AD89002A1520 /* NewMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5B24D5AD89002A1520 /* NewMeetingViewController.swift */; };
+		D4131A9B24D5AD89002A1520 /* TestTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5C24D5AD89002A1520 /* TestTabController.swift */; };
+		D4131A9C24D5AD89002A1520 /* TestTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5C24D5AD89002A1520 /* TestTabController.swift */; };
+		D4131A9D24D5AD89002A1520 /* BMLTiOSLibTesterAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5D24D5AD89002A1520 /* BMLTiOSLibTesterAppDelegate.swift */; };
+		D4131A9E24D5AD89002A1520 /* BMLTiOSLibTesterAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4131A5D24D5AD89002A1520 /* BMLTiOSLibTesterAppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		77DBD8161FDEB08B008F110F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 77DBD78F1FDEAEEB008F110F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 77DBD7971FDEAEEB008F110F;
-			remoteInfo = BMLTiOSLib;
-		};
-		D4309E9B21D63A390038C6DF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 77DBD78F1FDEAEEB008F110F /* Project object */;
 			proxyType = 1;
@@ -140,72 +133,66 @@
 		771B00961FE197BE004C6CC7 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		772570CD1FDF12C400297473 /* BMLTiOSLib Test Harness (Direct).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMLTiOSLib Test Harness (Direct).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		772B79FE1FEC1A7B002ACDAB /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		775D89E61FEC11EB002BD8C3 /* BMLTiOSLibFormatContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibFormatContainer.swift; sourceTree = "<group>"; };
-		775D89E91FEC12C2002BD8C3 /* BMLTiOSLibEditableMeetingNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibEditableMeetingNode.swift; sourceTree = "<group>"; };
-		775D89EC1FEC13D5002BD8C3 /* BMLTiOSLibHierarchicalServiceBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibHierarchicalServiceBodyNode.swift; sourceTree = "<group>"; };
-		77D706641FEB1D8A00C8A237 /* BMLTiOSLibServerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibServerInfo.swift; sourceTree = "<group>"; };
-		77D706671FEB1DE200C8A237 /* BMLTiOSLibSearchCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibSearchCriteria.swift; sourceTree = "<group>"; };
-		77D7066A1FEB1ED700C8A237 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift; sourceTree = "<group>"; };
-		77D7066D1FEB1F0900C8A237 /* BMLTiOSLibChangedMeeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibChangedMeeting.swift; sourceTree = "<group>"; };
-		77D706701FEB1F4300C8A237 /* BMLTiOSLibChangeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibChangeNode.swift; sourceTree = "<group>"; };
-		77D706731FEB1F8700C8A237 /* BMLTiOSLibMeetingNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibMeetingNode.swift; sourceTree = "<group>"; };
-		77D706761FEB1FE000C8A237 /* BMLTiOSLibServiceBodyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibServiceBodyContainer.swift; sourceTree = "<group>"; };
-		77D706791FEB203E00C8A237 /* BMLTiOSLibFormatNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibFormatNode.swift; sourceTree = "<group>"; };
-		77D7067C1FEB206F00C8A237 /* BMLTiOSLibServerLang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibServerLang.swift; sourceTree = "<group>"; };
 		77DBD7981FDEAEEB008F110F /* BMLTiOSLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BMLTiOSLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		77DBD79C1FDEAEEB008F110F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		77DBD7A41FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibCommunicationHandler.swift; sourceTree = "<group>"; };
-		77DBD7A51FDEAFBF008F110F /* BMLTCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTCommunicator.swift; sourceTree = "<group>"; };
-		77DBD7A61FDEAFBF008F110F /* BMLTiOSLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLib.swift; sourceTree = "<group>"; };
 		77DBD7AE1FDEB010008F110F /* BMLTiOSLib Test Harness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMLTiOSLib Test Harness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		77DBD7C11FDEB027008F110F /* AllChangesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChangesListViewController.swift; sourceTree = "<group>"; };
-		77DBD7C21FDEB027008F110F /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		77DBD7C31FDEB027008F110F /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
-		77DBD7C41FDEB027008F110F /* BMLTiOSTesterMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSTesterMarker.swift; sourceTree = "<group>"; };
-		77DBD7C51FDEB027008F110F /* ChangeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeListViewController.swift; sourceTree = "<group>"; };
-		77DBD7C61FDEB027008F110F /* BMLTiOSLibCheckbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibCheckbox.swift; sourceTree = "<group>"; };
-		77DBD7C71FDEB027008F110F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		77DBD7C81FDEB027008F110F /* DetailedInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedInfoController.swift; sourceTree = "<group>"; };
-		77DBD7CA1FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchStringCell.xib; sourceTree = "<group>"; };
-		77DBD7CC1FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		77DBD7CE1FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchFormatCell.xib; sourceTree = "<group>"; };
-		77DBD7D01FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DetailFormatCell.xib; sourceTree = "<group>"; };
-		77DBD7D21FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchByStartTimeAndEndTimeCellView.xib; sourceTree = "<group>"; };
-		77DBD7D41FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SingleMeetingMapDisplayCellView.xib; sourceTree = "<group>"; };
-		77DBD7D61FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchWeekdaysCell.xib; sourceTree = "<group>"; };
-		77DBD7D81FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DetailLocationMapCell.xib; sourceTree = "<group>"; };
-		77DBD7DA1FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DetailLoginTableCellView.xib; sourceTree = "<group>"; };
-		77DBD7DC1FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchViewControllerMapView.xib; sourceTree = "<group>"; };
-		77DBD7DE1FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		77DBD7E01FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchMeetingDurationCellView.xib; sourceTree = "<group>"; };
-		77DBD7E21FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = "Base.lproj/Default-568h@2x.png"; sourceTree = "<group>"; };
-		77DBD7E41FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchServiceBodyCell.xib; sourceTree = "<group>"; };
-		77DBD7E61FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MeetingSearchResultsTableCell.xib; sourceTree = "<group>"; };
-		77DBD7E81FDEB027008F110F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchRadiusCell.xib; sourceTree = "<group>"; };
-		77DBD7E91FDEB027008F110F /* FormatSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatSearchResultsViewController.swift; sourceTree = "<group>"; };
-		77DBD7EA1FDEB027008F110F /* SendMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
-		77DBD7EB1FDEB027008F110F /* TestTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTabController.swift; sourceTree = "<group>"; };
-		77DBD7EC1FDEB027008F110F /* BMLTiOSLibTesterAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibTesterAppDelegate.swift; sourceTree = "<group>"; };
-		77DBD7ED1FDEB027008F110F /* BaseTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestViewController.swift; sourceTree = "<group>"; };
-		77DBD7EE1FDEB027008F110F /* MeetingSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingSearchResultsViewController.swift; sourceTree = "<group>"; };
-		77DBD7EF1FDEB027008F110F /* SingleMeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleMeetingViewController.swift; sourceTree = "<group>"; };
-		77DBD7F01FDEB027008F110F /* NewMeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMeetingViewController.swift; sourceTree = "<group>"; };
-		77DBD7F11FDEB027008F110F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77DBD8191FDEB183008F110F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		77DBD81A1FDEB183008F110F /* BMLTiOSLib.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BMLTiOSLib.podspec; sourceTree = "<group>"; };
 		77DBD81B1FDEB183008F110F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D41319FB24D5AC8D002A1520 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D41319FD24D5AC8D002A1520 /* BMLTiOSLibServiceBodyContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibServiceBodyContainer.swift; sourceTree = "<group>"; };
+		D41319FE24D5AC8D002A1520 /* BMLTiOSLibChangedMeeting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibChangedMeeting.swift; sourceTree = "<group>"; };
+		D41319FF24D5AC8D002A1520 /* BMLTiOSLibHierarchicalServiceBodyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibHierarchicalServiceBodyNode.swift; sourceTree = "<group>"; };
+		D4131A0024D5AC8D002A1520 /* BMLTiOSLibChangeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibChangeNode.swift; sourceTree = "<group>"; };
+		D4131A0124D5AC8D002A1520 /* BMLTiOSLibFormatNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibFormatNode.swift; sourceTree = "<group>"; };
+		D4131A0224D5AC8D002A1520 /* BMLTiOSLibMeetingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibMeetingNode.swift; sourceTree = "<group>"; };
+		D4131A0324D5AC8D002A1520 /* BMLTiOSLibServerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibServerInfo.swift; sourceTree = "<group>"; };
+		D4131A0424D5AC8D002A1520 /* BMLTiOSLibFormatContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibFormatContainer.swift; sourceTree = "<group>"; };
+		D4131A0524D5AC8D002A1520 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift; sourceTree = "<group>"; };
+		D4131A0624D5AC8D002A1520 /* BMLTiOSLibEditableMeetingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibEditableMeetingNode.swift; sourceTree = "<group>"; };
+		D4131A0724D5AC8D002A1520 /* BMLTiOSLibServerLang.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibServerLang.swift; sourceTree = "<group>"; };
+		D4131A0824D5AC8D002A1520 /* BMLTiOSLibSearchCriteria.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibSearchCriteria.swift; sourceTree = "<group>"; };
+		D4131A0924D5AC8D002A1520 /* BMLTiOSLibCommunicationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibCommunicationHandler.swift; sourceTree = "<group>"; };
+		D4131A0A24D5AC8D002A1520 /* BMLTCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTCommunicator.swift; sourceTree = "<group>"; };
+		D4131A0B24D5AC8D002A1520 /* BMLTiOSLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLib.swift; sourceTree = "<group>"; };
+		D4131A2A24D5AD48002A1520 /* swift.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = swift.yml; path = .github/workflows/swift.yml; sourceTree = "<group>"; };
+		D4131A2C24D5AD89002A1520 /* BMLTiOSTesterMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BMLTiOSTesterMarker.swift; path = ../BMLTiOSTesterMarker.swift; sourceTree = "<group>"; };
+		D4131A2E24D5AD89002A1520 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4131A3024D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchStringCell.xib; sourceTree = "<group>"; };
+		D4131A3224D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D4131A3424D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchFormatCell.xib; sourceTree = "<group>"; };
+		D4131A3624D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DetailFormatCell.xib; sourceTree = "<group>"; };
+		D4131A3824D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchByStartTimeAndEndTimeCellView.xib; sourceTree = "<group>"; };
+		D4131A3A24D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SingleMeetingMapDisplayCellView.xib; sourceTree = "<group>"; };
+		D4131A3C24D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchWeekdaysCell.xib; sourceTree = "<group>"; };
+		D4131A3E24D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DetailLocationMapCell.xib; sourceTree = "<group>"; };
+		D4131A4024D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DetailLoginTableCellView.xib; sourceTree = "<group>"; };
+		D4131A4224D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchViewControllerMapView.xib; sourceTree = "<group>"; };
+		D4131A4424D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D4131A4624D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchMeetingDurationCellView.xib; sourceTree = "<group>"; };
+		D4131A4824D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = "Base.lproj/Default-568h@2x.png"; sourceTree = "<group>"; };
+		D4131A4A24D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchServiceBodyCell.xib; sourceTree = "<group>"; };
+		D4131A4C24D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MeetingSearchResultsTableCell.xib; sourceTree = "<group>"; };
+		D4131A4E24D5AD89002A1520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchRadiusCell.xib; sourceTree = "<group>"; };
+		D4131A4F24D5AD89002A1520 /* BMLTiOSLibCheckbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibCheckbox.swift; sourceTree = "<group>"; };
+		D4131A5124D5AD89002A1520 /* AllChangesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChangesListViewController.swift; sourceTree = "<group>"; };
+		D4131A5224D5AD89002A1520 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D4131A5324D5AD89002A1520 /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		D4131A5424D5AD89002A1520 /* ChangeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeListViewController.swift; sourceTree = "<group>"; };
+		D4131A5524D5AD89002A1520 /* DetailedInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedInfoController.swift; sourceTree = "<group>"; };
+		D4131A5624D5AD89002A1520 /* FormatSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatSearchResultsViewController.swift; sourceTree = "<group>"; };
+		D4131A5724D5AD89002A1520 /* SendMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
+		D4131A5824D5AD89002A1520 /* BaseTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestViewController.swift; sourceTree = "<group>"; };
+		D4131A5924D5AD89002A1520 /* MeetingSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingSearchResultsViewController.swift; sourceTree = "<group>"; };
+		D4131A5A24D5AD89002A1520 /* SingleMeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleMeetingViewController.swift; sourceTree = "<group>"; };
+		D4131A5B24D5AD89002A1520 /* NewMeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMeetingViewController.swift; sourceTree = "<group>"; };
+		D4131A5C24D5AD89002A1520 /* TestTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTabController.swift; sourceTree = "<group>"; };
+		D4131A5D24D5AD89002A1520 /* BMLTiOSLibTesterAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMLTiOSLibTesterAppDelegate.swift; sourceTree = "<group>"; };
+		D4131A5E24D5AD89002A1520 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D430B2D624A77D56001F2019 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
-		D4403E6A22F3913A00424EB1 /* jazzy.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = jazzy.sh; sourceTree = "<group>"; };
+		D4403E6A22F3913A00424EB1 /* jazzy.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = jazzy.command; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		772570B41FDF12C400297473 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		77DBD7AB1FDEB010008F110F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,30 +204,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		772570D21FDF13E200297473 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				77DBD7ED1FDEB027008F110F /* BaseTestViewController.swift */,
-				77DBD7C31FDEB027008F110F /* ConnectViewController.swift */,
-				77DBD7C81FDEB027008F110F /* DetailedInfoController.swift */,
-				77DBD7C11FDEB027008F110F /* AllChangesListViewController.swift */,
-				77DBD7C21FDEB027008F110F /* SearchViewController.swift */,
-				77DBD7C51FDEB027008F110F /* ChangeListViewController.swift */,
-				77DBD7E91FDEB027008F110F /* FormatSearchResultsViewController.swift */,
-				77DBD7EA1FDEB027008F110F /* SendMessageViewController.swift */,
-				77DBD7EE1FDEB027008F110F /* MeetingSearchResultsViewController.swift */,
-				77DBD7EF1FDEB027008F110F /* SingleMeetingViewController.swift */,
-				77DBD7F01FDEB027008F110F /* NewMeetingViewController.swift */,
-			);
-			path = "View Controllers";
-			sourceTree = "<group>";
-		};
 		77DBD78E1FDEAEEB008F110F = {
 			isa = PBXGroup;
 			children = (
 				D430B2D724A77EC7001F2019 /* Meta */,
-				77DBD7A31FDEAFBF008F110F /* Framework Project */,
-				77DBD7C01FDEB027008F110F /* Test Harness Project */,
+				D41319FA24D5AC8D002A1520 /* Sources */,
+				D4131A2B24D5AD89002A1520 /* Tests */,
 				77DBD7991FDEAEEB008F110F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -255,75 +224,91 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		77DBD7A31FDEAFBF008F110F /* Framework Project */ = {
+		D41319FA24D5AC8D002A1520 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				77DBD79C1FDEAEEB008F110F /* Info.plist */,
-				77DBD81C1FDEB501008F110F /* Classes */,
+				D41319FB24D5AC8D002A1520 /* Info.plist */,
+				D41319FC24D5AC8D002A1520 /* BMLTiOSLib */,
 			);
-			name = "Framework Project";
-			path = "BMLTiOSLib/Framework Project";
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		77DBD7C01FDEB027008F110F /* Test Harness Project */ = {
+		D41319FC24D5AC8D002A1520 /* BMLTiOSLib */ = {
 			isa = PBXGroup;
 			children = (
-				77DBD7EC1FDEB027008F110F /* BMLTiOSLibTesterAppDelegate.swift */,
-				77DBD7C61FDEB027008F110F /* BMLTiOSLibCheckbox.swift */,
-				77DBD7C41FDEB027008F110F /* BMLTiOSTesterMarker.swift */,
-				77DBD7EB1FDEB027008F110F /* TestTabController.swift */,
-				772570D21FDF13E200297473 /* View Controllers */,
-				77DBD8131FDEB055008F110F /* Resources */,
-				77DBD7F11FDEB027008F110F /* Info.plist */,
+				D41319FD24D5AC8D002A1520 /* BMLTiOSLibServiceBodyContainer.swift */,
+				D41319FE24D5AC8D002A1520 /* BMLTiOSLibChangedMeeting.swift */,
+				D41319FF24D5AC8D002A1520 /* BMLTiOSLibHierarchicalServiceBodyNode.swift */,
+				D4131A0024D5AC8D002A1520 /* BMLTiOSLibChangeNode.swift */,
+				D4131A0124D5AC8D002A1520 /* BMLTiOSLibFormatNode.swift */,
+				D4131A0224D5AC8D002A1520 /* BMLTiOSLibMeetingNode.swift */,
+				D4131A0324D5AC8D002A1520 /* BMLTiOSLibServerInfo.swift */,
+				D4131A0424D5AC8D002A1520 /* BMLTiOSLibFormatContainer.swift */,
+				D4131A0524D5AC8D002A1520 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift */,
+				D4131A0624D5AC8D002A1520 /* BMLTiOSLibEditableMeetingNode.swift */,
+				D4131A0724D5AC8D002A1520 /* BMLTiOSLibServerLang.swift */,
+				D4131A0824D5AC8D002A1520 /* BMLTiOSLibSearchCriteria.swift */,
+				D4131A0924D5AC8D002A1520 /* BMLTiOSLibCommunicationHandler.swift */,
+				D4131A0A24D5AC8D002A1520 /* BMLTCommunicator.swift */,
+				D4131A0B24D5AC8D002A1520 /* BMLTiOSLib.swift */,
 			);
-			name = "Test Harness Project";
-			path = "BMLTiOSLib/Test Harness Project";
+			path = BMLTiOSLib;
 			sourceTree = "<group>";
 		};
-		77DBD8131FDEB055008F110F /* Resources */ = {
+		D4131A2B24D5AD89002A1520 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				77DBD7C71FDEB027008F110F /* Assets.xcassets */,
-				77DBD7C91FDEB027008F110F /* SearchStringCell.xib */,
-				77DBD7CB1FDEB027008F110F /* LaunchScreen.storyboard */,
-				77DBD7CD1FDEB027008F110F /* SearchFormatCell.xib */,
-				77DBD7CF1FDEB027008F110F /* DetailFormatCell.xib */,
-				77DBD7D11FDEB027008F110F /* SearchByStartTimeAndEndTimeCellView.xib */,
-				77DBD7D31FDEB027008F110F /* SingleMeetingMapDisplayCellView.xib */,
-				77DBD7D51FDEB027008F110F /* SearchWeekdaysCell.xib */,
-				77DBD7D71FDEB027008F110F /* DetailLocationMapCell.xib */,
-				77DBD7D91FDEB027008F110F /* DetailLoginTableCellView.xib */,
-				77DBD7DB1FDEB027008F110F /* SearchViewControllerMapView.xib */,
-				77DBD7DD1FDEB027008F110F /* Main.storyboard */,
-				77DBD7DF1FDEB027008F110F /* SearchMeetingDurationCellView.xib */,
-				77DBD7E11FDEB027008F110F /* Default-568h@2x.png */,
-				77DBD7E31FDEB027008F110F /* SearchServiceBodyCell.xib */,
-				77DBD7E51FDEB027008F110F /* MeetingSearchResultsTableCell.xib */,
-				77DBD7E71FDEB027008F110F /* SearchRadiusCell.xib */,
+				D4131A5E24D5AD89002A1520 /* Info.plist */,
+				D4131A5D24D5AD89002A1520 /* BMLTiOSLibTesterAppDelegate.swift */,
+				D4131A4F24D5AD89002A1520 /* BMLTiOSLibCheckbox.swift */,
+				D4131A5024D5AD89002A1520 /* View Controllers */,
+				D4131A2D24D5AD89002A1520 /* Resources */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		D4131A2D24D5AD89002A1520 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4131A2C24D5AD89002A1520 /* BMLTiOSTesterMarker.swift */,
+				D4131A2E24D5AD89002A1520 /* Assets.xcassets */,
+				D4131A2F24D5AD89002A1520 /* SearchStringCell.xib */,
+				D4131A3124D5AD89002A1520 /* LaunchScreen.storyboard */,
+				D4131A3324D5AD89002A1520 /* SearchFormatCell.xib */,
+				D4131A3524D5AD89002A1520 /* DetailFormatCell.xib */,
+				D4131A3724D5AD89002A1520 /* SearchByStartTimeAndEndTimeCellView.xib */,
+				D4131A3924D5AD89002A1520 /* SingleMeetingMapDisplayCellView.xib */,
+				D4131A3B24D5AD89002A1520 /* SearchWeekdaysCell.xib */,
+				D4131A3D24D5AD89002A1520 /* DetailLocationMapCell.xib */,
+				D4131A3F24D5AD89002A1520 /* DetailLoginTableCellView.xib */,
+				D4131A4124D5AD89002A1520 /* SearchViewControllerMapView.xib */,
+				D4131A4324D5AD89002A1520 /* Main.storyboard */,
+				D4131A4524D5AD89002A1520 /* SearchMeetingDurationCellView.xib */,
+				D4131A4724D5AD89002A1520 /* Default-568h@2x.png */,
+				D4131A4924D5AD89002A1520 /* SearchServiceBodyCell.xib */,
+				D4131A4B24D5AD89002A1520 /* MeetingSearchResultsTableCell.xib */,
+				D4131A4D24D5AD89002A1520 /* SearchRadiusCell.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		77DBD81C1FDEB501008F110F /* Classes */ = {
+		D4131A5024D5AD89002A1520 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				77DBD7A61FDEAFBF008F110F /* BMLTiOSLib.swift */,
-				77D706671FEB1DE200C8A237 /* BMLTiOSLibSearchCriteria.swift */,
-				77D706641FEB1D8A00C8A237 /* BMLTiOSLibServerInfo.swift */,
-				775D89E61FEC11EB002BD8C3 /* BMLTiOSLibFormatContainer.swift */,
-				77D7067C1FEB206F00C8A237 /* BMLTiOSLibServerLang.swift */,
-				77D706791FEB203E00C8A237 /* BMLTiOSLibFormatNode.swift */,
-				77D706761FEB1FE000C8A237 /* BMLTiOSLibServiceBodyContainer.swift */,
-				775D89EC1FEC13D5002BD8C3 /* BMLTiOSLibHierarchicalServiceBodyNode.swift */,
-				77D706731FEB1F8700C8A237 /* BMLTiOSLibMeetingNode.swift */,
-				775D89E91FEC12C2002BD8C3 /* BMLTiOSLibEditableMeetingNode.swift */,
-				77D706701FEB1F4300C8A237 /* BMLTiOSLibChangeNode.swift */,
-				77D7066D1FEB1F0900C8A237 /* BMLTiOSLibChangedMeeting.swift */,
-				77D7066A1FEB1ED700C8A237 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift */,
-				77DBD7A41FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift */,
-				77DBD7A51FDEAFBF008F110F /* BMLTCommunicator.swift */,
+				D4131A5C24D5AD89002A1520 /* TestTabController.swift */,
+				D4131A5124D5AD89002A1520 /* AllChangesListViewController.swift */,
+				D4131A5224D5AD89002A1520 /* SearchViewController.swift */,
+				D4131A5324D5AD89002A1520 /* ConnectViewController.swift */,
+				D4131A5424D5AD89002A1520 /* ChangeListViewController.swift */,
+				D4131A5524D5AD89002A1520 /* DetailedInfoController.swift */,
+				D4131A5624D5AD89002A1520 /* FormatSearchResultsViewController.swift */,
+				D4131A5724D5AD89002A1520 /* SendMessageViewController.swift */,
+				D4131A5824D5AD89002A1520 /* BaseTestViewController.swift */,
+				D4131A5924D5AD89002A1520 /* MeetingSearchResultsViewController.swift */,
+				D4131A5A24D5AD89002A1520 /* SingleMeetingViewController.swift */,
+				D4131A5B24D5AD89002A1520 /* NewMeetingViewController.swift */,
 			);
-			path = Classes;
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		D430B2D724A77EC7001F2019 /* Meta */ = {
@@ -333,7 +318,8 @@
 				771B00961FE197BE004C6CC7 /* CHANGELOG.md */,
 				772B79FE1FEC1A7B002ACDAB /* Package.swift */,
 				77DBD81A1FDEB183008F110F /* BMLTiOSLib.podspec */,
-				D4403E6A22F3913A00424EB1 /* jazzy.sh */,
+				D4403E6A22F3913A00424EB1 /* jazzy.command */,
+				D4131A2A24D5AD48002A1520 /* swift.yml */,
 				D430B2D624A77D56001F2019 /* Warnings.xcconfig */,
 				77DBD81B1FDEB183008F110F /* LICENSE */,
 			);
@@ -348,13 +334,11 @@
 			buildConfigurationList = 772570CA1FDF12C400297473 /* Build configuration list for PBXNativeTarget "BMLTiOSLib Test Harness (Direct)" */;
 			buildPhases = (
 				772570A41FDF12C400297473 /* Sources */,
-				772570B41FDF12C400297473 /* Frameworks */,
 				772570B61FDF12C400297473 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D4309E9C21D63A390038C6DF /* PBXTargetDependency */,
 			);
 			name = "BMLTiOSLib Test Harness (Direct)";
 			productName = "BMLTiOSLib Test Harness";
@@ -382,8 +366,8 @@
 			buildConfigurationList = 77DBD7BD1FDEB010008F110F /* Build configuration list for PBXNativeTarget "BMLTiOSLib Test Harness" */;
 			buildPhases = (
 				77DBD7AA1FDEB010008F110F /* Sources */,
-				77DBD7AB1FDEB010008F110F /* Frameworks */,
 				77DBD7AC1FDEB010008F110F /* Resources */,
+				77DBD7AB1FDEB010008F110F /* Frameworks */,
 				77DBD8181FDEB08C008F110F /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -403,7 +387,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = MAGSHARE;
 				TargetAttributes = {
 					772570A11FDF12C400297473 = {
@@ -447,23 +431,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				772570B71FDF12C400297473 /* SearchByStartTimeAndEndTimeCellView.xib in Resources */,
-				772570B81FDF12C400297473 /* MeetingSearchResultsTableCell.xib in Resources */,
-				772570B91FDF12C400297473 /* SearchServiceBodyCell.xib in Resources */,
-				772570BA1FDF12C400297473 /* SearchFormatCell.xib in Resources */,
-				772570BB1FDF12C400297473 /* SearchWeekdaysCell.xib in Resources */,
-				772570BC1FDF12C400297473 /* Main.storyboard in Resources */,
-				772570BD1FDF12C400297473 /* SearchViewControllerMapView.xib in Resources */,
-				772570BE1FDF12C400297473 /* SearchRadiusCell.xib in Resources */,
-				772570BF1FDF12C400297473 /* Default-568h@2x.png in Resources */,
-				772570C01FDF12C400297473 /* SearchMeetingDurationCellView.xib in Resources */,
-				772570C11FDF12C400297473 /* DetailFormatCell.xib in Resources */,
-				772570C21FDF12C400297473 /* DetailLoginTableCellView.xib in Resources */,
-				772570C31FDF12C400297473 /* LaunchScreen.storyboard in Resources */,
-				772570C41FDF12C400297473 /* SingleMeetingMapDisplayCellView.xib in Resources */,
-				772570C51FDF12C400297473 /* DetailLocationMapCell.xib in Resources */,
-				772570C61FDF12C400297473 /* SearchStringCell.xib in Resources */,
-				772570C71FDF12C400297473 /* Assets.xcassets in Resources */,
+				D4131A6C24D5AD89002A1520 /* SearchByStartTimeAndEndTimeCellView.xib in Resources */,
+				D4131A8024D5AD89002A1520 /* MeetingSearchResultsTableCell.xib in Resources */,
+				D4131A7E24D5AD89002A1520 /* SearchServiceBodyCell.xib in Resources */,
+				D4131A6824D5AD89002A1520 /* SearchFormatCell.xib in Resources */,
+				D4131A7024D5AD89002A1520 /* SearchWeekdaysCell.xib in Resources */,
+				D4131A7824D5AD89002A1520 /* Main.storyboard in Resources */,
+				D4131A7624D5AD89002A1520 /* SearchViewControllerMapView.xib in Resources */,
+				D4131A8224D5AD89002A1520 /* SearchRadiusCell.xib in Resources */,
+				D4131A7C24D5AD89002A1520 /* Default-568h@2x.png in Resources */,
+				D4131A7A24D5AD89002A1520 /* SearchMeetingDurationCellView.xib in Resources */,
+				D4131A6A24D5AD89002A1520 /* DetailFormatCell.xib in Resources */,
+				D4131A7424D5AD89002A1520 /* DetailLoginTableCellView.xib in Resources */,
+				D4131A6624D5AD89002A1520 /* LaunchScreen.storyboard in Resources */,
+				D4131A6E24D5AD89002A1520 /* SingleMeetingMapDisplayCellView.xib in Resources */,
+				D4131A7224D5AD89002A1520 /* DetailLocationMapCell.xib in Resources */,
+				D4131A6424D5AD89002A1520 /* SearchStringCell.xib in Resources */,
+				D4131A6224D5AD89002A1520 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,23 +455,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77DBD7FE1FDEB027008F110F /* SearchByStartTimeAndEndTimeCellView.xib in Resources */,
-				77DBD8081FDEB027008F110F /* MeetingSearchResultsTableCell.xib in Resources */,
-				77DBD8071FDEB027008F110F /* SearchServiceBodyCell.xib in Resources */,
-				77DBD7FC1FDEB027008F110F /* SearchFormatCell.xib in Resources */,
-				77DBD8001FDEB027008F110F /* SearchWeekdaysCell.xib in Resources */,
-				77DBD8041FDEB027008F110F /* Main.storyboard in Resources */,
-				77DBD8031FDEB027008F110F /* SearchViewControllerMapView.xib in Resources */,
-				77DBD8091FDEB027008F110F /* SearchRadiusCell.xib in Resources */,
-				77DBD8061FDEB027008F110F /* Default-568h@2x.png in Resources */,
-				77DBD8051FDEB027008F110F /* SearchMeetingDurationCellView.xib in Resources */,
-				77DBD7FD1FDEB027008F110F /* DetailFormatCell.xib in Resources */,
-				77DBD8021FDEB027008F110F /* DetailLoginTableCellView.xib in Resources */,
-				77DBD7FB1FDEB027008F110F /* LaunchScreen.storyboard in Resources */,
-				77DBD7FF1FDEB027008F110F /* SingleMeetingMapDisplayCellView.xib in Resources */,
-				77DBD8011FDEB027008F110F /* DetailLocationMapCell.xib in Resources */,
-				77DBD7FA1FDEB027008F110F /* SearchStringCell.xib in Resources */,
-				77DBD7F81FDEB027008F110F /* Assets.xcassets in Resources */,
+				D4131A6B24D5AD89002A1520 /* SearchByStartTimeAndEndTimeCellView.xib in Resources */,
+				D4131A7F24D5AD89002A1520 /* MeetingSearchResultsTableCell.xib in Resources */,
+				D4131A7D24D5AD89002A1520 /* SearchServiceBodyCell.xib in Resources */,
+				D4131A6724D5AD89002A1520 /* SearchFormatCell.xib in Resources */,
+				D4131A6F24D5AD89002A1520 /* SearchWeekdaysCell.xib in Resources */,
+				D4131A7724D5AD89002A1520 /* Main.storyboard in Resources */,
+				D4131A7524D5AD89002A1520 /* SearchViewControllerMapView.xib in Resources */,
+				D4131A8124D5AD89002A1520 /* SearchRadiusCell.xib in Resources */,
+				D4131A7B24D5AD89002A1520 /* Default-568h@2x.png in Resources */,
+				D4131A7924D5AD89002A1520 /* SearchMeetingDurationCellView.xib in Resources */,
+				D4131A6924D5AD89002A1520 /* DetailFormatCell.xib in Resources */,
+				D4131A7324D5AD89002A1520 /* DetailLoginTableCellView.xib in Resources */,
+				D4131A6524D5AD89002A1520 /* LaunchScreen.storyboard in Resources */,
+				D4131A6D24D5AD89002A1520 /* SingleMeetingMapDisplayCellView.xib in Resources */,
+				D4131A7124D5AD89002A1520 /* DetailLocationMapCell.xib in Resources */,
+				D4131A6324D5AD89002A1520 /* SearchStringCell.xib in Resources */,
+				D4131A6124D5AD89002A1520 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,36 +499,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				772570A51FDF12C400297473 /* ChangeListViewController.swift in Sources */,
-				775D89EE1FEC13D5002BD8C3 /* BMLTiOSLibHierarchicalServiceBodyNode.swift in Sources */,
-				772570A61FDF12C400297473 /* ConnectViewController.swift in Sources */,
-				772570D11FDF12F500297473 /* BMLTiOSLib.swift in Sources */,
-				772570A71FDF12C400297473 /* BMLTiOSLibTesterAppDelegate.swift in Sources */,
-				772570A81FDF12C400297473 /* FormatSearchResultsViewController.swift in Sources */,
-				775D89EB1FEC12C2002BD8C3 /* BMLTiOSLibEditableMeetingNode.swift in Sources */,
-				77D7067E1FEB206F00C8A237 /* BMLTiOSLibServerLang.swift in Sources */,
-				772570CF1FDF12F500297473 /* BMLTiOSLibCommunicationHandler.swift in Sources */,
-				772570A91FDF12C400297473 /* SingleMeetingViewController.swift in Sources */,
-				772570AA1FDF12C400297473 /* SearchViewController.swift in Sources */,
-				77D7066C1FEB1ED700C8A237 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift in Sources */,
-				77D7067B1FEB203E00C8A237 /* BMLTiOSLibFormatNode.swift in Sources */,
-				77D706781FEB1FE000C8A237 /* BMLTiOSLibServiceBodyContainer.swift in Sources */,
-				772570AB1FDF12C400297473 /* BaseTestViewController.swift in Sources */,
-				772570AC1FDF12C400297473 /* BMLTiOSLibCheckbox.swift in Sources */,
-				772570AD1FDF12C400297473 /* AllChangesListViewController.swift in Sources */,
-				772570AE1FDF12C400297473 /* BMLTiOSTesterMarker.swift in Sources */,
-				77D7066F1FEB1F0900C8A237 /* BMLTiOSLibChangedMeeting.swift in Sources */,
-				77D706751FEB1F8700C8A237 /* BMLTiOSLibMeetingNode.swift in Sources */,
-				772570AF1FDF12C400297473 /* TestTabController.swift in Sources */,
-				77D706721FEB1F4300C8A237 /* BMLTiOSLibChangeNode.swift in Sources */,
-				772570B01FDF12C400297473 /* SendMessageViewController.swift in Sources */,
-				772570B11FDF12C400297473 /* MeetingSearchResultsViewController.swift in Sources */,
-				772570D01FDF12F500297473 /* BMLTCommunicator.swift in Sources */,
-				772570B21FDF12C400297473 /* DetailedInfoController.swift in Sources */,
-				772570B31FDF12C400297473 /* NewMeetingViewController.swift in Sources */,
-				77D706661FEB1D8A00C8A237 /* BMLTiOSLibServerInfo.swift in Sources */,
-				77D706691FEB1DE200C8A237 /* BMLTiOSLibSearchCriteria.swift in Sources */,
-				775D89E81FEC11EB002BD8C3 /* BMLTiOSLibFormatContainer.swift in Sources */,
+				D4131A2524D5ACCD002A1520 /* BMLTiOSLibServerLang.swift in Sources */,
+				D4131A2924D5ACCD002A1520 /* BMLTiOSLib.swift in Sources */,
+				D4131A1B24D5ACCD002A1520 /* BMLTiOSLibServiceBodyContainer.swift in Sources */,
+				D4131A2624D5ACCD002A1520 /* BMLTiOSLibSearchCriteria.swift in Sources */,
+				D4131A8824D5AD89002A1520 /* SearchViewController.swift in Sources */,
+				D4131A9024D5AD89002A1520 /* FormatSearchResultsViewController.swift in Sources */,
+				D4131A8624D5AD89002A1520 /* AllChangesListViewController.swift in Sources */,
+				D4131A9824D5AD89002A1520 /* SingleMeetingViewController.swift in Sources */,
+				D4131A1C24D5ACCD002A1520 /* BMLTiOSLibChangedMeeting.swift in Sources */,
+				D4131A2424D5ACCD002A1520 /* BMLTiOSLibEditableMeetingNode.swift in Sources */,
+				D4131A9E24D5AD89002A1520 /* BMLTiOSLibTesterAppDelegate.swift in Sources */,
+				D4131A1E24D5ACCD002A1520 /* BMLTiOSLibChangeNode.swift in Sources */,
+				D4131A8E24D5AD89002A1520 /* DetailedInfoController.swift in Sources */,
+				D4131A9624D5AD89002A1520 /* MeetingSearchResultsViewController.swift in Sources */,
+				D4131A6024D5AD89002A1520 /* BMLTiOSTesterMarker.swift in Sources */,
+				D4131A2824D5ACCD002A1520 /* BMLTCommunicator.swift in Sources */,
+				D4131A2224D5ACCD002A1520 /* BMLTiOSLibFormatContainer.swift in Sources */,
+				D4131A2124D5ACCD002A1520 /* BMLTiOSLibServerInfo.swift in Sources */,
+				D4131A8C24D5AD89002A1520 /* ChangeListViewController.swift in Sources */,
+				D4131A9224D5AD89002A1520 /* SendMessageViewController.swift in Sources */,
+				D4131A8424D5AD89002A1520 /* BMLTiOSLibCheckbox.swift in Sources */,
+				D4131A1D24D5ACCD002A1520 /* BMLTiOSLibHierarchicalServiceBodyNode.swift in Sources */,
+				D4131A8A24D5AD89002A1520 /* ConnectViewController.swift in Sources */,
+				D4131A9C24D5AD89002A1520 /* TestTabController.swift in Sources */,
+				D4131A2724D5ACCD002A1520 /* BMLTiOSLibCommunicationHandler.swift in Sources */,
+				D4131A9A24D5AD89002A1520 /* NewMeetingViewController.swift in Sources */,
+				D4131A9424D5AD89002A1520 /* BaseTestViewController.swift in Sources */,
+				D4131A1F24D5ACCD002A1520 /* BMLTiOSLibFormatNode.swift in Sources */,
+				D4131A2024D5ACCD002A1520 /* BMLTiOSLibMeetingNode.swift in Sources */,
+				D4131A2324D5ACCD002A1520 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,21 +536,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77DBD7A71FDEAFBF008F110F /* BMLTiOSLibCommunicationHandler.swift in Sources */,
-				775D89ED1FEC13D5002BD8C3 /* BMLTiOSLibHierarchicalServiceBodyNode.swift in Sources */,
-				77D706651FEB1D8A00C8A237 /* BMLTiOSLibServerInfo.swift in Sources */,
-				77D706741FEB1F8700C8A237 /* BMLTiOSLibMeetingNode.swift in Sources */,
-				77D706711FEB1F4300C8A237 /* BMLTiOSLibChangeNode.swift in Sources */,
-				77D706771FEB1FE000C8A237 /* BMLTiOSLibServiceBodyContainer.swift in Sources */,
-				775D89E71FEC11EB002BD8C3 /* BMLTiOSLibFormatContainer.swift in Sources */,
-				77D7067A1FEB203E00C8A237 /* BMLTiOSLibFormatNode.swift in Sources */,
-				77D7066E1FEB1F0900C8A237 /* BMLTiOSLibChangedMeeting.swift in Sources */,
-				77DBD7A81FDEAFBF008F110F /* BMLTCommunicator.swift in Sources */,
-				775D89EA1FEC12C2002BD8C3 /* BMLTiOSLibEditableMeetingNode.swift in Sources */,
-				77DBD7A91FDEAFBF008F110F /* BMLTiOSLib.swift in Sources */,
-				77D706681FEB1DE200C8A237 /* BMLTiOSLibSearchCriteria.swift in Sources */,
-				77D7066B1FEB1ED700C8A237 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift in Sources */,
-				77D7067D1FEB206F00C8A237 /* BMLTiOSLibServerLang.swift in Sources */,
+				D4131A1524D5AC8D002A1520 /* BMLTiOSLibEditableMeetingNode.swift in Sources */,
+				D4131A1924D5AC8D002A1520 /* BMLTCommunicator.swift in Sources */,
+				D4131A1A24D5AC8D002A1520 /* BMLTiOSLib.swift in Sources */,
+				D4131A1624D5AC8D002A1520 /* BMLTiOSLibServerLang.swift in Sources */,
+				D4131A0C24D5AC8D002A1520 /* BMLTiOSLibServiceBodyContainer.swift in Sources */,
+				D4131A1224D5AC8D002A1520 /* BMLTiOSLibServerInfo.swift in Sources */,
+				D4131A0E24D5AC8D002A1520 /* BMLTiOSLibHierarchicalServiceBodyNode.swift in Sources */,
+				D4131A1124D5AC8D002A1520 /* BMLTiOSLibMeetingNode.swift in Sources */,
+				D4131A1024D5AC8D002A1520 /* BMLTiOSLibFormatNode.swift in Sources */,
+				D4131A1424D5AC8D002A1520 /* BMLTiOSLibMeetingNodeSimpleDictionaryElement.swift in Sources */,
+				D4131A0F24D5AC8D002A1520 /* BMLTiOSLibChangeNode.swift in Sources */,
+				D4131A0D24D5AC8D002A1520 /* BMLTiOSLibChangedMeeting.swift in Sources */,
+				D4131A1324D5AC8D002A1520 /* BMLTiOSLibFormatContainer.swift in Sources */,
+				D4131A1724D5AC8D002A1520 /* BMLTiOSLibSearchCriteria.swift in Sources */,
+				D4131A1824D5AC8D002A1520 /* BMLTiOSLibCommunicationHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,21 +558,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77DBD7F61FDEB027008F110F /* ChangeListViewController.swift in Sources */,
-				77DBD7F41FDEB027008F110F /* ConnectViewController.swift in Sources */,
-				77DBD80D1FDEB027008F110F /* BMLTiOSLibTesterAppDelegate.swift in Sources */,
-				77DBD80A1FDEB027008F110F /* FormatSearchResultsViewController.swift in Sources */,
-				77DBD8101FDEB027008F110F /* SingleMeetingViewController.swift in Sources */,
-				77DBD7F31FDEB027008F110F /* SearchViewController.swift in Sources */,
-				77DBD80E1FDEB027008F110F /* BaseTestViewController.swift in Sources */,
-				77DBD7F71FDEB027008F110F /* BMLTiOSLibCheckbox.swift in Sources */,
-				77DBD7F21FDEB027008F110F /* AllChangesListViewController.swift in Sources */,
-				77DBD7F51FDEB027008F110F /* BMLTiOSTesterMarker.swift in Sources */,
-				77DBD80C1FDEB027008F110F /* TestTabController.swift in Sources */,
-				77DBD80B1FDEB027008F110F /* SendMessageViewController.swift in Sources */,
-				77DBD80F1FDEB027008F110F /* MeetingSearchResultsViewController.swift in Sources */,
-				77DBD7F91FDEB027008F110F /* DetailedInfoController.swift in Sources */,
-				77DBD8111FDEB027008F110F /* NewMeetingViewController.swift in Sources */,
+				D4131A8924D5AD89002A1520 /* ConnectViewController.swift in Sources */,
+				D4131A9324D5AD89002A1520 /* BaseTestViewController.swift in Sources */,
+				D4131A5F24D5AD89002A1520 /* BMLTiOSTesterMarker.swift in Sources */,
+				D4131A9524D5AD89002A1520 /* MeetingSearchResultsViewController.swift in Sources */,
+				D4131A8F24D5AD89002A1520 /* FormatSearchResultsViewController.swift in Sources */,
+				D4131A8524D5AD89002A1520 /* AllChangesListViewController.swift in Sources */,
+				D4131A8724D5AD89002A1520 /* SearchViewController.swift in Sources */,
+				D4131A8B24D5AD89002A1520 /* ChangeListViewController.swift in Sources */,
+				D4131A8324D5AD89002A1520 /* BMLTiOSLibCheckbox.swift in Sources */,
+				D4131A9124D5AD89002A1520 /* SendMessageViewController.swift in Sources */,
+				D4131A9D24D5AD89002A1520 /* BMLTiOSLibTesterAppDelegate.swift in Sources */,
+				D4131A9724D5AD89002A1520 /* SingleMeetingViewController.swift in Sources */,
+				D4131A9B24D5AD89002A1520 /* TestTabController.swift in Sources */,
+				D4131A9924D5AD89002A1520 /* NewMeetingViewController.swift in Sources */,
+				D4131A8D24D5AD89002A1520 /* DetailedInfoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,138 +584,133 @@
 			target = 77DBD7971FDEAEEB008F110F /* BMLTiOSLib */;
 			targetProxy = 77DBD8161FDEB08B008F110F /* PBXContainerItemProxy */;
 		};
-		D4309E9C21D63A390038C6DF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 77DBD7971FDEAEEB008F110F /* BMLTiOSLib */;
-			targetProxy = D4309E9B21D63A390038C6DF /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		77DBD7C91FDEB027008F110F /* SearchStringCell.xib */ = {
+		D4131A2F24D5AD89002A1520 /* SearchStringCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7CA1FDEB027008F110F /* Base */,
+				D4131A3024D5AD89002A1520 /* Base */,
 			);
 			name = SearchStringCell.xib;
 			sourceTree = "<group>";
 		};
-		77DBD7CB1FDEB027008F110F /* LaunchScreen.storyboard */ = {
+		D4131A3124D5AD89002A1520 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7CC1FDEB027008F110F /* Base */,
+				D4131A3224D5AD89002A1520 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		77DBD7CD1FDEB027008F110F /* SearchFormatCell.xib */ = {
+		D4131A3324D5AD89002A1520 /* SearchFormatCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7CE1FDEB027008F110F /* Base */,
+				D4131A3424D5AD89002A1520 /* Base */,
 			);
 			name = SearchFormatCell.xib;
 			sourceTree = "<group>";
 		};
-		77DBD7CF1FDEB027008F110F /* DetailFormatCell.xib */ = {
+		D4131A3524D5AD89002A1520 /* DetailFormatCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7D01FDEB027008F110F /* Base */,
+				D4131A3624D5AD89002A1520 /* Base */,
 			);
 			name = DetailFormatCell.xib;
 			sourceTree = "<group>";
 		};
-		77DBD7D11FDEB027008F110F /* SearchByStartTimeAndEndTimeCellView.xib */ = {
+		D4131A3724D5AD89002A1520 /* SearchByStartTimeAndEndTimeCellView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7D21FDEB027008F110F /* Base */,
+				D4131A3824D5AD89002A1520 /* Base */,
 			);
 			name = SearchByStartTimeAndEndTimeCellView.xib;
 			sourceTree = "<group>";
 		};
-		77DBD7D31FDEB027008F110F /* SingleMeetingMapDisplayCellView.xib */ = {
+		D4131A3924D5AD89002A1520 /* SingleMeetingMapDisplayCellView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7D41FDEB027008F110F /* Base */,
+				D4131A3A24D5AD89002A1520 /* Base */,
 			);
 			name = SingleMeetingMapDisplayCellView.xib;
 			sourceTree = "<group>";
 		};
-		77DBD7D51FDEB027008F110F /* SearchWeekdaysCell.xib */ = {
+		D4131A3B24D5AD89002A1520 /* SearchWeekdaysCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7D61FDEB027008F110F /* Base */,
+				D4131A3C24D5AD89002A1520 /* Base */,
 			);
 			name = SearchWeekdaysCell.xib;
 			sourceTree = "<group>";
 		};
-		77DBD7D71FDEB027008F110F /* DetailLocationMapCell.xib */ = {
+		D4131A3D24D5AD89002A1520 /* DetailLocationMapCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7D81FDEB027008F110F /* Base */,
+				D4131A3E24D5AD89002A1520 /* Base */,
 			);
 			name = DetailLocationMapCell.xib;
 			sourceTree = "<group>";
 		};
-		77DBD7D91FDEB027008F110F /* DetailLoginTableCellView.xib */ = {
+		D4131A3F24D5AD89002A1520 /* DetailLoginTableCellView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7DA1FDEB027008F110F /* Base */,
+				D4131A4024D5AD89002A1520 /* Base */,
 			);
 			name = DetailLoginTableCellView.xib;
 			sourceTree = "<group>";
 		};
-		77DBD7DB1FDEB027008F110F /* SearchViewControllerMapView.xib */ = {
+		D4131A4124D5AD89002A1520 /* SearchViewControllerMapView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7DC1FDEB027008F110F /* Base */,
+				D4131A4224D5AD89002A1520 /* Base */,
 			);
 			name = SearchViewControllerMapView.xib;
 			sourceTree = "<group>";
 		};
-		77DBD7DD1FDEB027008F110F /* Main.storyboard */ = {
+		D4131A4324D5AD89002A1520 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7DE1FDEB027008F110F /* Base */,
+				D4131A4424D5AD89002A1520 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		77DBD7DF1FDEB027008F110F /* SearchMeetingDurationCellView.xib */ = {
+		D4131A4524D5AD89002A1520 /* SearchMeetingDurationCellView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7E01FDEB027008F110F /* Base */,
+				D4131A4624D5AD89002A1520 /* Base */,
 			);
 			name = SearchMeetingDurationCellView.xib;
 			sourceTree = "<group>";
 		};
-		77DBD7E11FDEB027008F110F /* Default-568h@2x.png */ = {
+		D4131A4724D5AD89002A1520 /* Default-568h@2x.png */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7E21FDEB027008F110F /* Base */,
+				D4131A4824D5AD89002A1520 /* Base */,
 			);
 			name = "Default-568h@2x.png";
 			sourceTree = "<group>";
 		};
-		77DBD7E31FDEB027008F110F /* SearchServiceBodyCell.xib */ = {
+		D4131A4924D5AD89002A1520 /* SearchServiceBodyCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7E41FDEB027008F110F /* Base */,
+				D4131A4A24D5AD89002A1520 /* Base */,
 			);
 			name = SearchServiceBodyCell.xib;
 			sourceTree = "<group>";
 		};
-		77DBD7E51FDEB027008F110F /* MeetingSearchResultsTableCell.xib */ = {
+		D4131A4B24D5AD89002A1520 /* MeetingSearchResultsTableCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7E61FDEB027008F110F /* Base */,
+				D4131A4C24D5AD89002A1520 /* Base */,
 			);
 			name = MeetingSearchResultsTableCell.xib;
 			sourceTree = "<group>";
 		};
-		77DBD7E71FDEB027008F110F /* SearchRadiusCell.xib */ = {
+		D4131A4D24D5AD89002A1520 /* SearchRadiusCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77DBD7E81FDEB027008F110F /* Base */,
+				D4131A4E24D5AD89002A1520 /* Base */,
 			);
 			name = SearchRadiusCell.xib;
 			sourceTree = "<group>";
@@ -745,14 +724,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P53V4JS928;
-				INFOPLIST_FILE = "$(SRCROOT)/BMLTiOSLib/Test Harness Project/Info.plist";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DIRECT=1",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.19;
+				MARKETING_VERSION = 1.2.20;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DIRECT";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -764,14 +748,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P53V4JS928;
-				INFOPLIST_FILE = "$(SRCROOT)/BMLTiOSLib/Test Harness Project/Info.plist";
+				GCC_PREPROCESSOR_DEFINITIONS = "DIRECT=1";
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.19;
+				MARKETING_VERSION = 1.2.20;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DIRECT;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -910,14 +896,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/BMLTiOSLib/Framework Project/Info.plist";
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.19;
+				MARKETING_VERSION = 1.2.20;
 				PRODUCT_BUNDLE_IDENTIFIER = net.magshare.bmlt.BMLTiOSLib;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -936,14 +922,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/BMLTiOSLib/Framework Project/Info.plist";
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.19;
+				MARKETING_VERSION = 1.2.20;
 				PRODUCT_BUNDLE_IDENTIFIER = net.magshare.bmlt.BMLTiOSLib;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -959,12 +945,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P53V4JS928;
-				INFOPLIST_FILE = "$(SRCROOT)/BMLTiOSLib/Test Harness Project/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.19;
+				MARKETING_VERSION = 1.2.20;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -979,12 +965,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P53V4JS928;
-				INFOPLIST_FILE = "$(SRCROOT)/BMLTiOSLib/Test Harness Project/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.19;
+				MARKETING_VERSION = 1.2.20;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.magshare.bmlt.BMLTiOSLib-Test-Harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

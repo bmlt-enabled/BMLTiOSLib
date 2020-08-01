@@ -1,5 +1,5 @@
 //
-//  NewMeetingViewController.swift
+//  BMLTiOSLibTesterAppDelegate.swift
 //  BMLTiOSLib
 //
 //  Created by BMLT-Enabled
@@ -28,28 +28,22 @@
 //  SOFTWARE.
 
 import UIKit
-import MapKit
-import BMLTiOSLib
+#if !DIRECT
+    import BMLTiOSLib
+#endif
 
+// MARK: - Classes -
 /* ###################################################################################################################################### */
 /**
  */
-public class NewMeetingViewController: SingleMeetingViewController {
-    /* ################################################################## */
-    /**
-     */
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-        self.meetingObject = BMLTiOSLibEditableMeetingNode([:], inHandler: BMLTiOSLibTesterAppDelegate.libraryObject)
-        self.displayTableView.reloadData()
+@UIApplicationMain
+class BMLTiOSLibTesterAppDelegate: UIResponder, UIApplicationDelegate {
+
+    static var libraryObject: BMLTiOSLib! {
+        return (UIApplication.shared.delegate as? BMLTiOSLibTesterAppDelegate)!._libraryObject
     }
     
-    /* ################################################################## */
-    /**
-     */
-    @IBAction override func saveButtonHit(_ sender: UIBarButtonItem) {
-        (self.meetingObject as? BMLTiOSLibEditableMeetingNode)?.saveChanges()
-        self.meetingObject = BMLTiOSLibEditableMeetingNode([:], inHandler: BMLTiOSLibTesterAppDelegate.libraryObject)
-        self.displayTableView.reloadData()
-    }
+    public var _libraryObject: BMLTiOSLib! = nil
+    
+    var window: UIWindow?
 }
