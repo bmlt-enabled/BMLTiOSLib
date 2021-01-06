@@ -355,6 +355,20 @@ public class BMLTiOSLibEditableMeetingNode: BMLTiOSLibMeetingNode {
     
     /* ################################################################## */
     /**
+     - returns: A String, with any additional information about the virtual meeting.
+     */
+    override public var virtualMeetingAdditionalInfo: String {
+        get {
+            return super.virtualMeetingAdditionalInfo
+        }
+        
+        set {
+            self.rawMeeting["virtual_meeting_additional_info"] = newValue
+        }
+    }
+
+    /* ################################################################## */
+    /**
      - returns: A String, with the meeting phone number.
      */
     override public var meetingPhoneNumber: String {

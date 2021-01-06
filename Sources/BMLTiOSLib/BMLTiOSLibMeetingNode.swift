@@ -646,6 +646,18 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
     
     /* ################################################################## */
     /**
+     - returns: A String, with any additional information about the virtual meeting.
+     */
+    public var virtualMeetingAdditionalInfo: String {
+        var ret: String = ""
+        if let name = self["virtual_meeting_additional_info"] {
+            ret = name
+        }
+        return ret
+    }
+
+    /* ################################################################## */
+    /**
      - returns: A String, with the meeting phone number.
      */
     public var meetingPhoneNumber: String {
