@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>BMLTiOSLib  Reference</title>
+    <title>  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset="utf-8">
@@ -15,12 +15,12 @@
   <body>
 
 
-    <a title="BMLTiOSLib  Reference"></a>
+    <a title="  Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          BMLTiOSLib Docs
+          BMLTiOSLib Doumentation
         </a>
          (100% documented)
       </p>
@@ -41,9 +41,9 @@
     </header>
 
     <p class="breadcrumbs">
-      <a class="breadcrumb" href="index.html">BMLTiOSLib Reference</a>
+      <a class="breadcrumb" href="index.html"> Reference</a>
       <img class="carat" src="img/carat.png" />
-      BMLTiOSLib  Reference
+        Reference
     </p>
 
     <div class="content-wrapper">
@@ -126,17 +126,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Extensions/Bundle.html">Bundle</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Extensions/String.html">String</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -151,16 +140,14 @@
         <section class="section">
           <div class="section-content top-matter">
             
-            <p><img src="https://bmlt.app/wp-content/uploads/2017/01/BMLTLogo.png" alt="BMLTiOSLib Icon"></p>
+            <p><img src="img/icon.png" alt="BMLTiOSLib Icon"></p>
 
 <p><em><a href="https://bmlt-enabled.github.io/BMLTiOSLib/">This document, as a GitHub Pages Site</a></em></p>
 <h1 id='bmltioslib' class='heading'>BMLTiOSLib</h1>
 
-<p><strong>NOTE:</strong> A detailed, example-rich technical discussion of this library <a href="https://bmlt.app/specific-topics/bmltioslib/">is available on this Web site</a>.</p>
-
 <p>The BMLTiOSLib fits between <a href="https://bmlt.app/semantic/">the BMLT Root Server&rsquo;s Semantic Interface</a> and your iOS app:</p>
 
-<p><img src="https://bmlt.app/wp-content/uploads/2017/01/BMLTiOSLibSetup.png" alt="Chart, Showing Where the BMLTiOSLib Fits"></p>
+<p><img src="img/BMLTiOSLibSetup.png" alt="Chart, Showing Where the BMLTiOSLib Fits"></p>
 
 <p>This project is an <a href="https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPFrameworks/Tasks/CreatingFrameworks.html">iOS Shared Framework</a>, designed to ease integration of a BMLT Root Server into an iOS client (it may also work for MacOS, but we&rsquo;re not there yet). The BMLTiOSLib is a Swift-only framework. It won&rsquo;t support Objective-C. The <a href="https://github.com/bmlt-enabled/BMLTiOSLib/tree/master/BMLTiOSLib/Framework%20Project">BMLTiOSLib/Framework</a> directory has the relevant exported classes. The <a href="https://github.com/bmlt-enabled/BMLTiOSLib/tree/master/BMLTiOSLib/Test%20Harness%20Project">BMLTiOSLib/Test Harness Project</a> directory implements a fairly complex program that we&rsquo;ve written to exercise the library. Because <a href="https://techcrunch.com/2016/06/14/apple-will-require-https-connections-for-ios-apps-by-the-end-of-2016/">Apple now requires that iOS apps only interact with SSL servers</a>, it&rsquo;s a bit complex to test. We don&rsquo;t want to compromise security by allowing connections to self-signed certs, so we can&rsquo;t test with localhost.</p>
 
@@ -168,17 +155,6 @@
 
 <p>For easy testing, you can connect to <a href="https://latest.aws.bmlt.app/main_server/">the BMLT Test Server</a>, which uses SSL. This database may change a lot, as it is our main test bed, but it will always have the ability to be accessed via SSL. <a href="https://github.com/bmlt-enabled/BMLTiOSLib/tree/master/BMLTiOSLib/Test%20Harness%20Project">The BMLTiOSLib Tester app</a> is not pretty. It&rsquo;s not meant to be. It&rsquo;s a space shuttle cockpit program that&rsquo;s designed to let us press all the various buttons. It also has a couple of issues with operation that, quite frankly, aren&rsquo;t a priority to fix, as <a href="https://bmlt.app/satellites/bmlt-ios-apps/">we now have several &ldquo;real world&rdquo; implementations</a> that stress the BMLTiOSLib a great deal more than this ugly little duckling. <a href="https://bmlt.app/bmltioslib/">This is the documentation page for the BMLTiOSLib.</a></p>
 <h2 id='installation' class='heading'>INSTALLATION</h2>
-<h3 id='as-a-a-href-https-cocoapods-org-cocoapod-a' class='heading'>As A <a href="https://cocoapods.org">CocoaPod</a>:</h3>
-
-<p>To use this as a <a href="https://cocoapods.org">CocoaPod</a>, simply add the following to your <a href="https://guides.cocoapods.org/using/the-podfile.html">podfile</a>:</p>
-<pre class="highlight plaintext"><code>pod 'BMLTiOSLib'
-</code></pre>
-
-<p>You then <code>cd</code> to the project directory, and execute <code>pod install</code> or <code>pod update</code> on the command line.</p>
-
-<p>You will then need to import the module, by adding the following to the source files that will be accessing the library:</p>
-<pre class="highlight plaintext"><code>import BMLTiOSLib
-</code></pre>
 <h3 id='as-a-a-href-https-swift-org-package-manager-swift-package-a' class='heading'>As A <a href="https://swift.org/package-manager/">Swift Package</a>:</h3>
 
 <p>You can include the BMLTiOSLib, using the Swift Package Manager, simply by referring to <a href="https://github.com/bmlt-enabled/BMLTiOSLib">its GitHub Repository</a> URI (SSH: <a href="git@github.com:bmlt-enabled/BMLTiOSLib.git">git@github.com:bmlt-enabled/BMLTiOSLib.git</a> or HTTPS: <a href="https://github.com/bmlt-enabled/BMLTiOSLib.git">https://github.com/bmlt-enabled/BMLTiOSLib.git</a>).</p>
@@ -204,7 +180,7 @@
 <p>You can also directly access this project from its <a href="https://github.com/bmlt-enabled/BMLTiOSLib">location as a GitHub repo</a>, and include it into your project.</p>
 <h2 id='under-the-hood' class='heading'>UNDER THE HOOD</h2>
 
-<p>The BMLTiOSLib communicates with the Root Server using <a href="http://bmlt.magshare.net/semantic/how-to-use-the-semantic-interface/">the BMLT JSON Semantic Interface</a>. Administration is done using <a href="http://bmlt.magshare.net/semantic/semantic-administration/">the BMLT Administrative Semantic Interface</a> (Also JSON). The whole idea is to completely abstract the communication layer from the app development process. BMLTiOSLib provides a simple, error-checked functional interface to the BMLT. Interaction with the BMLTiOSLib is done via Apple&rsquo;s <a href="https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Delegation.html">Delegation Pattern</a>. When you instantiate an instance of BMLTiOSLib, you register your app as a <a href="https://bmlt-enabled.github.io/BMLTiOSLib/Protocols/BMLTiOSLibDelegate.html">BMLTiOSLibDelegate</a> delegate instance, and it will receive events as they come in. You then use the functional interface to operate the connection.</p>
+<p>The BMLTiOSLib communicates with the Root Server using <a href="https://bmlt.app/semantic/">the BMLT JSON Semantic Interface</a>. Administration is done using the BMLT Administrative Semantic Interface (Also JSON). The whole idea is to completely abstract the communication layer from the app development process. BMLTiOSLib provides a simple, error-checked functional interface to the BMLT. Interaction with the BMLTiOSLib is done via Apple&rsquo;s <a href="https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Delegation.html">Delegation Pattern</a>. When you instantiate an instance of BMLTiOSLib, you register your app as a <a href="https://bmlt-enabled.github.io/BMLTiOSLib/Protocols/BMLTiOSLibDelegate.html">BMLTiOSLibDelegate</a> delegate instance, and it will receive events as they come in. You then use the functional interface to operate the connection.</p>
 <h2 id='basic-usage' class='heading'>BASIC USAGE:</h2>
 
 <p>The <a href="https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html">BMLTiOSLib</a> class represents the public interface to the BMLTiOSLib framework. This class needs to be instantiated with a URI to a valid <a href="http://bmlt.magshare.net/installing-a-new-root-server/">Root Server</a> (the same URI used to log in), and a BMLTiOSLibDelegate delegate instance. Instantiation immediately starts a communication process, and the result will be reflected in the delegate&rsquo;s <a href="https://bmlt-enabled.github.io/BMLTiOSLib/Protocols/BMLTiOSLibDelegate.html#/c:@M@BMLTiOSLib@objc(pl)BMLTiOSLibDelegate(im)bmltLibInstance:serverIsValid:">bmltLibInstance(_ inLibInstance: BMLTiOSLib, serverIsValid: Bool)</a> callback. If this instance fails to connect to a valid Root Server, it should be deleted, and reinstantiated for a new connection. Once a connection is established, the HTTP session is maintained until the instance is deinstantiated. The session is required to be maintained for Semantic Administration. You cannot share a session across instances of <a href="https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html">BMLTiOSLib</a>.</p>
@@ -221,7 +197,7 @@
 <li><p><a href="https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html#/s:10BMLTiOSLibAAC12googleAPIKeySSv">googleAPIKey</a> (<a href="https://developers.google.com/maps/documentation/javascript/get-api-key">The Google Maps API key</a> for the Root Server -May not be useful for most other Servers).</p></li>
 <li><p><a href="https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html#/s:10BMLTiOSLibAAC8delegateSQyAA0aB8Delegate_pGv">delegate</a> (That will be the object -implementing the <a href="https://bmlt-enabled.github.io/BMLTiOSLib/Protocols/BMLTiOSLibDelegate.html">BMLTiOSLibDelegate</a> protocol that was passed in as delegate <a href="https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html#/s:10BMLTiOSLibAACABSS15inRootServerURI_AA0aB8Delegate_p0cG0tcfc">when the instance was created</a>).</p></li>
 <li><p><a href="https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html#/s:10BMLTiOSLibAAC15versionAsStringSSv">versionAsString</a> and <a href="https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html#/s:10BMLTiOSLibAAC12versionAsIntSiv">versionAsInt</a> (The server version)</p></li>
-<li><p><a href="https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html#/s:10BMLTiOSLibAAC16isAdminAvailableSbv">isAdminAvailable</a> (True, if <a href="https://bmlt.app/semantic/semantic-administration/">Semantic Administration</a> is available).</p></li>
+<li><p><a href="https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html#/s:10BMLTiOSLibAAC16isAdminAvailableSbv">isAdminAvailable</a> (True, if Semantic Administration is available).</p></li>
 <li><p><a href="https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html#/s:10BMLTiOSLibAAC15defaultLocationSC22CLLocationCoordinate2DVv">defaultLocation</a> (The Root Server&rsquo;s default central location).</p></li>
 <li><p><a href="https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html#/s:10BMLTiOSLibAAC13serviceBodiesSayAA0aB27HierarchicalServiceBodyNodeCGv">serviceBodies</a> (This is a &ldquo;flat&rdquo; Array of the Service bodies, with no hierarchy).</p></li>
 <li><p><a href="https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html#/s:10BMLTiOSLibAAC25hierarchicalServiceBodiesAA0ab12HierarchicalD8BodyNodeCv">hierarchicalServiceBodies</a> (This maps out the Service bodies in the hierarchy they occupy on the Root Server, and this is just one node with children only -no parents or Service body).</p></li>
@@ -256,7 +232,7 @@
 
 <p>Here&rsquo;s a brief image, showing how the BMLTiOSLib acts when setting up the connection:</p>
 
-<p><img src="https://bmlt.app/wp-content/uploads/2017/01/InitialConnection.png" alt="Interaction Diagram"></p>
+<p><img src="img/InitialConnection.png" alt="Interaction Diagram"></p>
 <h3 id='meeting-searches' class='heading'>MEETING SEARCHES:</h3>
 
 <p>The way that you do a meeting search with this class, is to acquire the instance&rsquo;s searchCriteria object, and use its various properties to set up your desired search. Once that is done, you call this class instance&rsquo;s <a href="https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLibSearchCriteria.html#/s:10BMLTiOSLib0aB14SearchCriteriaC014performMeetingC0yAC0cD6ExtentOF">performMeetingSearch(_:BMLTiOSLibSearchCriteria.SearchCriteriaExtent)</a> method, indicating whether you want just meetings, just the formats used by the meetings in the search results, or both. Once the search is complete, this class will call your delegate routines:</p>
@@ -349,8 +325,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://bmlt.app" target="_blank" rel="external">BMLT-Enabled</a>. All rights reserved. (Last updated: 2020-08-01)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2021 <a class="link" href="https://bmlt.app" target="_blank" rel="external">BMLT-Enabled</a>. All rights reserved. (Last updated: 2021-05-12)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

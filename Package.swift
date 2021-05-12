@@ -1,11 +1,11 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.4
 
 //  Created by BMLT-Enabled
 //
 //  https://bmlt.app/
 //
 //  This software is licensed under the MIT License.
-//  Copyright (c) 2017 BMLT-Enabled
+//  Copyright (c) 2017-2021 BMLT-Enabled
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal

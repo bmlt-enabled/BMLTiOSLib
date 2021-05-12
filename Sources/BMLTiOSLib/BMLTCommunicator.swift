@@ -167,7 +167,7 @@ extension Bundle {
 /**
     This is a protocol for a data source that defines a "send and call back" structure.
 */
-protocol BMLTCommunicatorDataSourceProtocol: class {
+protocol BMLTCommunicatorDataSourceProtocol: AnyObject {
     /** If this is set to true, then errors are ignored. */
     var suppressErrors: Bool { get set }
     
@@ -189,7 +189,7 @@ protocol BMLTCommunicatorDataSourceProtocol: class {
 /**
     This defines a protocol for a communicator delegate, which receives the responses.
 */
-protocol BMLTCommunicatorDataSinkProtocol: class {
+protocol BMLTCommunicatorDataSinkProtocol: AnyObject {
     /* ################################################################## */
     /**
         The response callback.

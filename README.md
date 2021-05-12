@@ -1,14 +1,12 @@
-![BMLTiOSLib Icon](https://bmlt.app/wp-content/uploads/2017/01/BMLTLogo.png)
+![BMLTiOSLib Icon](img/icon.png)
 
 *[This document, as a GitHub Pages Site](https://bmlt-enabled.github.io/BMLTiOSLib/)*
 
 # BMLTiOSLib
 
-**NOTE:** A detailed, example-rich technical discussion of this library [is available on this Web site](https://bmlt.app/specific-topics/bmltioslib/).
-
 The BMLTiOSLib fits between [the BMLT Root Server's Semantic Interface](https://bmlt.app/semantic/) and your iOS app:
 
-![Chart, Showing Where the BMLTiOSLib Fits](https://bmlt.app/wp-content/uploads/2017/01/BMLTiOSLibSetup.png)
+![Chart, Showing Where the BMLTiOSLib Fits](img/BMLTiOSLibSetup.png)
 
 This project is an [iOS Shared Framework](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPFrameworks/Tasks/CreatingFrameworks.html), designed to ease integration of a BMLT Root Server into an iOS client (it may also work for MacOS, but we're not there yet). The BMLTiOSLib is a Swift-only framework. It won't support Objective-C. The [BMLTiOSLib/Framework](https://github.com/bmlt-enabled/BMLTiOSLib/tree/master/BMLTiOSLib/Framework%20Project) directory has the relevant exported classes. The [BMLTiOSLib/Test Harness Project](https://github.com/bmlt-enabled/BMLTiOSLib/tree/master/BMLTiOSLib/Test%20Harness%20Project) directory implements a fairly complex program that we've written to exercise the library. Because [Apple now requires that iOS apps only interact with SSL servers](https://techcrunch.com/2016/06/14/apple-will-require-https-connections-for-ios-apps-by-the-end-of-2016/), it's a bit complex to test. We don't want to compromise security by allowing connections to self-signed certs, so we can't test with localhost.
 
@@ -17,18 +15,6 @@ This project is an [iOS Shared Framework](https://developer.apple.com/library/co
 For easy testing, you can connect to [the BMLT Test Server](https://latest.aws.bmlt.app/main_server/), which uses SSL. This database may change a lot, as it is our main test bed, but it will always have the ability to be accessed via SSL. [The BMLTiOSLib Tester app](https://github.com/bmlt-enabled/BMLTiOSLib/tree/master/BMLTiOSLib/Test%20Harness%20Project) is not pretty. It's not meant to be. It's a space shuttle cockpit program that's designed to let us press all the various buttons. It also has a couple of issues with operation that, quite frankly, aren't a priority to fix, as [we now have several "real world" implementations](https://bmlt.app/satellites/bmlt-ios-apps/) that stress the BMLTiOSLib a great deal more than this ugly little duckling. [This is the documentation page for the BMLTiOSLib.](https://bmlt.app/bmltioslib/)
 
 ## INSTALLATION
-
-### As A [CocoaPod](https://cocoapods.org):
-
-To use this as a [CocoaPod](https://cocoapods.org), simply add the following to your [podfile](https://guides.cocoapods.org/using/the-podfile.html):
-
-    pod 'BMLTiOSLib'
-
-You then `cd` to the project directory, and execute `pod install` or `pod update` on the command line.
-
-You will then need to import the module, by adding the following to the source files that will be accessing the library:
-
-    import BMLTiOSLib
 
 ### As A [Swift Package](https://swift.org/package-manager/):
 
@@ -58,7 +44,7 @@ You can also directly access this project from its [location as a GitHub repo](h
 
 ## UNDER THE HOOD
 
-The BMLTiOSLib communicates with the Root Server using [the BMLT JSON Semantic Interface](http://bmlt.magshare.net/semantic/how-to-use-the-semantic-interface/). Administration is done using [the BMLT Administrative Semantic Interface](http://bmlt.magshare.net/semantic/semantic-administration/) (Also JSON). The whole idea is to completely abstract the communication layer from the app development process. BMLTiOSLib provides a simple, error-checked functional interface to the BMLT. Interaction with the BMLTiOSLib is done via Apple's [Delegation Pattern](https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Delegation.html). When you instantiate an instance of BMLTiOSLib, you register your app as a [BMLTiOSLibDelegate](https://bmlt-enabled.github.io/BMLTiOSLib/Protocols/BMLTiOSLibDelegate.html) delegate instance, and it will receive events as they come in. You then use the functional interface to operate the connection.
+The BMLTiOSLib communicates with the Root Server using [the BMLT JSON Semantic Interface](https://bmlt.app/semantic/). Administration is done using the BMLT Administrative Semantic Interface (Also JSON). The whole idea is to completely abstract the communication layer from the app development process. BMLTiOSLib provides a simple, error-checked functional interface to the BMLT. Interaction with the BMLTiOSLib is done via Apple's [Delegation Pattern](https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Delegation.html). When you instantiate an instance of BMLTiOSLib, you register your app as a [BMLTiOSLibDelegate](https://bmlt-enabled.github.io/BMLTiOSLib/Protocols/BMLTiOSLibDelegate.html) delegate instance, and it will receive events as they come in. You then use the functional interface to operate the connection.
 
 ## BASIC USAGE:
 
@@ -84,7 +70,7 @@ Once you have successfully connected (established a session) to the Root Server,
 
 - [versionAsString](https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html#/s:10BMLTiOSLibAAC15versionAsStringSSv) and [versionAsInt](https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html#/s:10BMLTiOSLibAAC12versionAsIntSiv) (The server version)
 
-- [isAdminAvailable](https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html#/s:10BMLTiOSLibAAC16isAdminAvailableSbv) (True, if [Semantic Administration](https://bmlt.app/semantic/semantic-administration/) is available).
+- [isAdminAvailable](https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html#/s:10BMLTiOSLibAAC16isAdminAvailableSbv) (True, if Semantic Administration is available).
 
 - [defaultLocation](https://bmlt-enabled.github.io/BMLTiOSLib/Classes/BMLTiOSLib.html#/s:10BMLTiOSLibAAC15defaultLocationSC22CLLocationCoordinate2DVv) (The Root Server's default central location).
 
@@ -130,7 +116,7 @@ If any errors occurred, the required [bmltLibInstance(_ : BMLTiOSLib, errorOccur
 Here's a brief image, showing how the BMLTiOSLib acts when setting up the connection:
 
 
-![Interaction Diagram](https://bmlt.app/wp-content/uploads/2017/01/InitialConnection.png)
+![Interaction Diagram](img/InitialConnection.png)
 
 
 ### MEETING SEARCHES:

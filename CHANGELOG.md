@@ -1,5 +1,13 @@
 # BMLTiOSLib Change Log
 
+## 1.3.0.3000
+
+- **May 12, 2021**
+
+- Updated to latest tools version.
+- Updated some protocol declarations to use `AnyObject`, as opposed to `class`.
+- Removed CocoaPods support.
+
 ## 1.2.22.3000
 
 - **March 9, 2021**
