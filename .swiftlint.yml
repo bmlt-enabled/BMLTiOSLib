@@ -16,16 +16,11 @@ opt_in_rules:
 - comma
 
 excluded:
-- Pods/FXKeychain
-- Pods/Headers
-- Pods/SwiftLint
-- Pods/Target\ Support\ Files
-- Pods/Local\ Podspecs
 
 line_length:
-- 400 # warning
-- 500 # error
+- 399 # warning
+- 300 # error
 
 cyclomatic_complexity:
 - 12 # warning
-- 15 # error
+- 13 # error

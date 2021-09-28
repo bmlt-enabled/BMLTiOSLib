@@ -166,7 +166,26 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
     }
     
     /** These are the standard keys that all meeting objects should have available (They may not all be filled, though). */
-    internal static let standardKeys = ["id_bigint", "service_body_bigint", "weekday_tinyint", "start_time", "duration_time", "formats", "longitude", "latitude", "meeting_name", "location_text", "location_info", "location_street", "location_city_subsection", "location_neighborhood", "location_municipality", "location_sub_province", "location_province", "location_postal_code_1", "comments"]
+    internal static let standardKeys = ["id_bigint",
+                                        "service_body_bigint",
+                                        "weekday_tinyint",
+                                        "start_time",
+                                        "duration_time",
+                                        "formats",
+                                        "longitude",
+                                        "latitude",
+                                        "meeting_name",
+                                        "location_text",
+                                        "location_info",
+                                        "location_street",
+                                        "location_city_subsection",
+                                        "location_neighborhood",
+                                        "location_municipality",
+                                        "location_sub_province",
+                                        "location_province",
+                                        "location_postal_code_1",
+                                        "comments"
+    ]
     
     /** This is the library object that "owns" this instance. */
     weak internal var _handler: BMLTiOSLib! = nil
@@ -441,7 +460,7 @@ public class BMLTiOSLibMeetingNode: NSObject, Sequence {
                 }
                 
                 // Create our answer from the components of the result.
-                ret = DateComponents(calendar: nil, timeZone: nil, era: nil, year: nil, month: nil, day: nil, hour: timeComponents[0]!, minute: timeComponents[1]!, second: 0, nanosecond: nil, weekday: weekdayIndex, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
+                ret = DateComponents(hour: timeComponents[0]!, minute: timeComponents[1]!, second: 0, weekday: weekdayIndex)
             }
         }
         

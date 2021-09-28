@@ -84,7 +84,7 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
     // MARK: Constant Instance Properties
     /* ######################################################## */
     /** This is the minimum server version we'll support. Format is XYYYZZZ, with X = Main version (No leading zeroes), YYY = Feature Version (with leading zeroes), and ZZZ = Fix Version (with leading zeroes). */
-    let s_minServerVersion: Int                     =   2008012 ///< 2.8.12
+    let s_minServerVersion: Int                     =   2008012 // 2.8.12
     
     /* ######################################################## */
     // MARK: Variable Instance Properties

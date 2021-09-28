@@ -1,5 +1,12 @@
 # BMLTiOSLib Change Log
 
+## 1.3.1.3000
+
+- **September 28, 2021**
+
+- Updated to latest tools version.
+- Minor doc fixes.
+
 ## 1.3.0.3000
 
 - **May 12, 2021**

@@ -79,7 +79,8 @@ import CoreLocation
      - isAdminAvailable (True, if Semantic Administration is available).
      - defaultLocation (The Root Server's default central location).
      - serviceBodies (This is a "flat" Array of the Service bodies, with no hierarchy).
-     - hierarchicalServiceBodies (This maps out the Service bodies in the hierarchy they occupy on the Root Server, and this is just one node with children only -no parents or Service body). The children are all the top-level (sb_owner == 0, or "parentless") Service bodies. The hierarchy is designed to be "crawled."
+     - hierarchicalServiceBodies (This maps out the Service bodies in the hierarchy they occupy on the Root Server, and this is just one node with children only -no parents or Service body).\
+       The children are all the top-level (sb_owner == 0, or "parentless") Service bodies. The hierarchy is designed to be "crawled."
      - allPossibleFormats (an Array of format objects available -May not all be used by the meetings).
      - availableServerLanguages (an Array of language objects).
      
