@@ -877,7 +877,7 @@ public class BMLTiOSLib: NSObject {
      Called to get every format actually used by meetings in the database (usually a subset of the entire format list).
      */
     public func getAllUsedFormats() {
-        self.searchCriteria.clearAll()
+        self.searchCriteria?.clearAll()
         self._communicationHandler._gettingAllUsedFormats = true
         self.performMeetingSearch(.FormatsOnly)
     }
@@ -889,7 +889,7 @@ public class BMLTiOSLib: NSObject {
      - parameter inSearchResultsType: The type of result[s] you'd like. Defaults to both meetings and formats.
      */
     public func performMeetingSearch(_ inSearchResultsType: BMLTiOSLibSearchCriteria.SearchCriteriaExtent = .BothMeetingsAndFormats) {
-        self._communicationHandler.meetingSearch(self.searchCriteria.generateSearchURI(inSearchResultsType))
+        self._communicationHandler.meetingSearch(self.searchCriteria?.generateSearchURI(inSearchResultsType) ?? "")
     }
     
     /* ################################################################## */
@@ -902,9 +902,9 @@ public class BMLTiOSLib: NSObject {
      - parameter searchType: The type of result[s] you'd like. Defaults to both meetings and formats.
      */
     public func getMeetingsObjectsByID(_ inMeetingIDArray: [Int], searchType inSearchResultsType: BMLTiOSLibSearchCriteria.SearchCriteriaExtent = .BothMeetingsAndFormats) {
-        self.searchCriteria.clearAll()
-        self.searchCriteria.searchString = inMeetingIDArray.map { String($0) }.joined(separator: ",")  // Generates a CSV list of integers.
-        self._communicationHandler.meetingSearch(self.searchCriteria.generateSearchURI(inSearchResultsType))
+        self.searchCriteria?.clearAll()
+        self.searchCriteria?.searchString = inMeetingIDArray.map { String($0) }.joined(separator: ",")  // Generates a CSV list of integers.
+        self._communicationHandler.meetingSearch(self.searchCriteria?.generateSearchURI(inSearchResultsType) ?? "")
     }
     
     /* ################################################################## */

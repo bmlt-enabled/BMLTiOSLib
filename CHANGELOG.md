@@ -1,5 +1,11 @@
 # BMLTiOSLib Change Log
 
+## 1.3.3.3000
+
+- **December 30, 2021**
+
+- Fixed possible crashers, with search criteria.
+
 ## 1.3.2.3000
 
 - **December 14, 2021**

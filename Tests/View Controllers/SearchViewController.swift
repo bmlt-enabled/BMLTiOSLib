@@ -195,8 +195,8 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     @IBAction func durationSwitchChanged(_ sender: UISwitch) {
         self._durationTypeSegmentedControl.isEnabled = sender.isOn
         self._durationTimePicker.isEnabled = sender.isOn
-        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.meetingsAreShorterThanDuration = (1 == self._durationTypeSegmentedControl.selectedSegmentIndex)
-        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.durationTimeInSeconds = self.durationTimeAsSeconds
+        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.meetingsAreShorterThanDuration = (1 == self._durationTypeSegmentedControl.selectedSegmentIndex)
+        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.durationTimeInSeconds = self.durationTimeAsSeconds
         self.determineStringItemsEnabling()
     }
     
@@ -204,8 +204,8 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     /**
      */
     @IBAction func durationTypeChanged(_ sender: UISegmentedControl) {
-        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.durationTimeInSeconds = self.durationTimeAsSeconds
-        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.meetingsAreShorterThanDuration = (1 == sender.selectedSegmentIndex)
+        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.durationTimeInSeconds = self.durationTimeAsSeconds
+        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.meetingsAreShorterThanDuration = (1 == sender.selectedSegmentIndex)
         self.determineStringItemsEnabling()
     }
     
@@ -213,7 +213,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     /**
      */
     @IBAction func durationTimeChanged(_ sender: UIDatePicker) {
-        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.durationTimeInSeconds = self.durationTimeAsSeconds
+        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.durationTimeInSeconds = self.durationTimeAsSeconds
         self.determineStringItemsEnabling()
     }
     
@@ -223,8 +223,8 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     @IBAction func startTimeSwitchChanged(_ sender: UISwitch) {
         self._startsAfterSegmentedControlView.isEnabled = sender.isOn
         self._startsAfterDatePicker.isEnabled = sender.isOn
-        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.startTimeInSeconds = self.startTimeAsSeconds
-        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.meetingsStartBeforeStartTime = (0 == self._startsAfterSegmentedControlView.selectedSegmentIndex)
+        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.startTimeInSeconds = self.startTimeAsSeconds
+        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.meetingsStartBeforeStartTime = (0 == self._startsAfterSegmentedControlView.selectedSegmentIndex)
         self.determineStringItemsEnabling()
     }
     
@@ -233,7 +233,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
      */
     @IBAction func endTimeSwitchChanged(_ sender: UISwitch) {
         self._endsBeforeDatePicker.isEnabled = sender.isOn
-        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.endTimeInSeconds = self.endTimeAsSeconds
+        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.endTimeInSeconds = self.endTimeAsSeconds
         self.determineStringItemsEnabling()
     }
     
@@ -241,8 +241,8 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     /**
      */
     @IBAction func startTimeSegmentedControlChanged(_ sender: UISegmentedControl) {
-        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.startTimeInSeconds = self.startTimeAsSeconds
-        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.meetingsStartBeforeStartTime = (0 == self._startsAfterSegmentedControlView.selectedSegmentIndex)
+        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.startTimeInSeconds = self.startTimeAsSeconds
+        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.meetingsStartBeforeStartTime = (0 == self._startsAfterSegmentedControlView.selectedSegmentIndex)
         self.determineStringItemsEnabling()
     }
     
@@ -250,7 +250,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     /**
      */
     @IBAction func startsAfterDatePickerChanged(_ sender: UIDatePicker) {
-        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.startTimeInSeconds = self.startTimeAsSeconds
+        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.startTimeInSeconds = self.startTimeAsSeconds
         self.determineStringItemsEnabling()
     }
     
@@ -258,7 +258,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     /**
      */
     @IBAction func endsBeforeDatePickerChanged(_ sender: UIDatePicker) {
-        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.endTimeInSeconds = self.endTimeAsSeconds
+        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.endTimeInSeconds = self.endTimeAsSeconds
         self.determineStringItemsEnabling()
     }
 
@@ -273,19 +273,19 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
     /**
      */
     func setWeekdayButtons() {
-        self.sundayButton.selectionState = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.weekdays[.Sunday]!
+        self.sundayButton.selectionState = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.weekdays[.Sunday]
         self.sundayButton.extraData = 1 as AnyObject
-        self.mondayButton.selectionState = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.weekdays[.Monday]!
+        self.mondayButton.selectionState = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.weekdays[.Monday]
         self.mondayButton.extraData = 2 as AnyObject
-        self.tuesdayButton.selectionState = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.weekdays[.Tuesday]!
+        self.tuesdayButton.selectionState = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.weekdays[.Tuesday]
         self.tuesdayButton.extraData = 3 as AnyObject
-        self.wednesdayButton.selectionState = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.weekdays[.Wednesday]!
+        self.wednesdayButton.selectionState = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.weekdays[.Wednesday]
         self.wednesdayButton.extraData = 4 as AnyObject
-        self.thursdayButton.selectionState = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.weekdays[.Thursday]!
+        self.thursdayButton.selectionState = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.weekdays[.Thursday]
         self.thursdayButton.extraData = 5 as AnyObject
-        self.fridayButton.selectionState = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.weekdays[.Friday]!
+        self.fridayButton.selectionState = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.weekdays[.Friday]
         self.fridayButton.extraData = 6 as AnyObject
-        self.saturdayButton.selectionState = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.weekdays[.Saturday]!
+        self.saturdayButton.selectionState = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.weekdays[.Saturday]
         self.saturdayButton.extraData = 7 as AnyObject
     }
     
@@ -353,7 +353,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
         if let weekdayIndex = inCheckbox.extraData as? Int {
             if (0 < weekdayIndex) && (8 > weekdayIndex) {
                 if let weekday = BMLTiOSLibSearchCriteria.WeekdayIndex(rawValue: weekdayIndex) {
-                    BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.weekdays[weekday] = inCheckbox.selectionState
+                    BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.weekdays[weekday] = inCheckbox.selectionState
                 }
             }
         }
@@ -392,7 +392,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
                     enabled = true
                 }
                 
-                if BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.isDirty {
+                if BMLTiOSLibTesterAppDelegate.libraryObject?.searchCriteria?.isDirty ?? false {
                     enabled = true
                 }
                 
@@ -442,7 +442,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
                 self._mapView.isZoomEnabled = true
                 self._mapView.isRotateEnabled = true
                 self._mapView.isScrollEnabled = true
-                BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.searchLocation = self._mapView.centerCoordinate
+                BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.searchLocation = self._mapView.centerCoordinate
             } else {
                 if nil != self.mapMarkerAnnotation {
                     self._mapView.removeAnnotation(self.mapMarkerAnnotation)
@@ -451,7 +451,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
                 self._mapView.isZoomEnabled = false
                 self._mapView.isRotateEnabled = false
                 self._mapView.isScrollEnabled = false
-                BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.searchLocation = nil
+                BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.searchLocation = nil
             }
         }
     }
@@ -548,12 +548,12 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
         }
         
         if (nil != self._stringIsALocationSwitch) && (nil != self._stringSearchTextEntry) {
-            BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.searchString = self._stringSearchTextEntry.text!
+            BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.searchString = self._stringSearchTextEntry.text!
             if self._stringIsALocationSwitch.isOn {
-                BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.searchStringIsALocation = true
+                BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.searchStringIsALocation = true
             } else {
-                BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.stringSearchIsExact = self._exactMatchSwitch.isOn
-                BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.stringSearchUsesAllStrings = self._allStringsMustMatchSwitch.isOn
+                BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.stringSearchIsExact = self._exactMatchSwitch.isOn
+                BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.stringSearchUsesAllStrings = self._allStringsMustMatchSwitch.isOn
             }
         }
         
@@ -565,7 +565,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
                     radius = -trunc(radius)
                 }
                 
-                BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.searchRadius = radius
+                BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.searchRadius = radius
             }
         }
         
@@ -597,7 +597,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
         self.meetingSearchResults = nil
         self.formatSearchResults = nil
         self.clearSearchCriteria()
-        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.searchString = String(inMeetingID)
+        BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.searchString = String(inMeetingID)
         BMLTiOSLibTesterAppDelegate.libraryObject.performMeetingSearch(.MeetingsOnly)
     }
     
@@ -629,7 +629,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
             bounds.size.height = self.checkboxRowHeight
             
             let newCheckboxObject = BMLTiOSLibCheckbox(frame: bounds)
-            if let sbElement = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.getServiceBodyElementFromServiceBodyObject(inServiceBody) {
+            if let sbElement = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.getServiceBodyElementFromServiceBodyObject(inServiceBody) {
                 newCheckboxObject.extraData = sbElement as AnyObject?
                 inServiceBody.extraData = newCheckboxObject as AnyObject?
                 
@@ -826,7 +826,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
             ret = (CGFloat(BMLTiOSLibTesterAppDelegate.libraryObject.serviceBodies.count) * (self.checkboxRowHeight + 1))
             
         case TableRows.FormatRow.rawValue:
-            let formats = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.formats
+            let formats = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.formats ?? []
             
             ret = (CGFloat(formats.count) * (self.checkboxRowHeight + 1))
             
@@ -1185,7 +1185,7 @@ class SearchViewController: BaseTestViewController, UITableViewDelegate, UITable
                 let span = self._mapView.region.span
                 let newRegion: MKCoordinateRegion = MKCoordinateRegion(center: mapLocation, span: span)
                 self._mapView.setRegion(newRegion, animated: true)
-                BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.searchLocation = mapLocation
+                BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.searchLocation = mapLocation
             }
         }
     }

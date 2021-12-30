@@ -156,7 +156,7 @@ class AllChangesListViewController: BaseTestViewController {
             bounds.size.height = self.checkboxRowHeight
             
             let newCheckboxObject = BMLTiOSLibCheckbox(frame: bounds)
-            if let sbElement = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria.getServiceBodyElementFromServiceBodyObject(inServiceBody) {
+            if let sbElement = BMLTiOSLibTesterAppDelegate.libraryObject.searchCriteria?.getServiceBodyElementFromServiceBodyObject(inServiceBody) {
                 newCheckboxObject.extraData = sbElement as AnyObject?
                 newCheckboxObject.binaryState = true
                 inServiceBody.extraData = newCheckboxObject as AnyObject?

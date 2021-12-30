@@ -1024,8 +1024,8 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
             if let id = newMeetingIndicatorObject["id"] as? String {
                 self._newMeetingCall = true
                 if nil == self._activeCommunicator {
-                    self.delegate.searchCriteria.clearAll()
-                    self.delegate.searchCriteria.searchString = id
+                    self.delegate.searchCriteria?.clearAll()
+                    self.delegate.searchCriteria?.searchString = id
                     self.delegate.performMeetingSearch(.MeetingsOnly)
                 }
             }
