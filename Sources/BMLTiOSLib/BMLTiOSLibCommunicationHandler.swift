@@ -743,7 +743,8 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
         if 0 < self._availableServiceBodies.count {
             self.hierarchicalServiceBodies = self.populateHierarchicalServiceBodies(inParentObject: nil)
             self.errorDescription = .NoFormats
-            self.getFormatsFromServer()
+            self.getLanguagesFromServer()
+//            self.getFormatsFromServer()
         } else {
             // If we got here, we gots problems.
             self.cleanupOnAisleSeven()
