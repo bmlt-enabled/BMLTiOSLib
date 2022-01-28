@@ -189,6 +189,7 @@
 		D430B2D624A77D56001F2019 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
 		D4403E6A22F3913A00424EB1 /* jazzy.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = jazzy.command; sourceTree = "<group>"; };
 		D475DA26264C1EFF0025002C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D4870DEF27A4604A00743789 /* BMLTiOSLib.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = BMLTiOSLib.docc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +236,7 @@
 		D41319FC24D5AC8D002A1520 /* BMLTiOSLib */ = {
 			isa = PBXGroup;
 			children = (
+				D4870DEF27A4604A00743789 /* BMLTiOSLib.docc */,
 				D41319FD24D5AC8D002A1520 /* BMLTiOSLibServiceBodyContainer.swift */,
 				D41319FE24D5AC8D002A1520 /* BMLTiOSLibChangedMeeting.swift */,
 				D41319FF24D5AC8D002A1520 /* BMLTiOSLibHierarchicalServiceBodyNode.swift */,

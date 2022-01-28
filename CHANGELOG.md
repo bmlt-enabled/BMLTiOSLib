@@ -1,31 +1,32 @@
 # BMLTiOSLib Change Log
 
-## 1.4.0.3000
+## 1.4.0
 
-- **TBD**
+- **January 28, 2022**
 
-- removed the automatic format load from the server.
+- Removed the automatic format load from the server, during initialization.
+- Added DocC support.
 
-## 1.3.3.3000
+## 1.3.3
 
 - **December 30, 2021**
 
 - Fixed possible crashers, with search criteria.
 
-## 1.3.2.3000
+## 1.3.2
 
 - **December 14, 2021**
 
 - Updated to latest tools version.
 
-## 1.3.1.3000
+## 1.3.1
 
 - **September 28, 2021**
 
 - Updated to latest tools version.
 - Minor doc fixes.
 
-## 1.3.0.3000
+## 1.3.0
 
 - **May 12, 2021**
 
@@ -33,25 +34,25 @@
 - Updated some protocol declarations to use `AnyObject`, as opposed to `class`.
 - Removed CocoaPods support.
 
-## 1.2.22.3000
+## 1.2.22
 
 - **March 9, 2021**
 
 - Updated to latest tools version.
 
-## 1.2.21.3000
+## 1.2.21
 
 - **January 6, 2021**
 
 - Added more support for virtual meetings.
 
-## 1.2.20.3000
+## 1.2.20
 
 - **August 1, 2020**
 
 - Rearranged for GitHub Action
 
-## 1.2.19.3000
+## 1.2.19
 
 - **June 27, 2020**
 
@@ -61,25 +62,25 @@
 - Slight refatoring to consolidate the String extension.
 - Added the key file to make Markdown render in the project.
 
-## 1.2.18.3000
+## 1.2.18
 
 - **April 25, 2020**
 
 - Fixed an issue where the library could crash, if given bad data in response to a change search.
 
-## 1.2.17.3000
+## 1.2.17
 
 - **April 2, 2020**
 
 - Added support for the phone number field.
 
-## 1.2.16.3000
+## 1.2.16
 
 - **April 1, 2020**
 
 - Added support for the virtual meeting link.
 
-## 1.2.15.3000
+## 1.2.15
 
 - **September 15, 2019**
 
@@ -198,7 +199,7 @@
 
 - Spruced up this README, and tweaked some settings in the project.
 
-## 1.1.1.3000
+## 1.1.1
 
 - **November 23, 2017**
 
@@ -216,7 +217,7 @@
 - Moving repo to GitHub, as GitHub and CocoaPods play better together.
 - Fixed an issue with the search tab sometimes crashing when selected (test app).
 
-## 1.0.1.3000
+## 1.0.1
 
 - **August 27, 2017**
 
@@ -228,7 +229,7 @@
 - Slight update for the latest Xcode.
 - Fixed an issue where Service bodies with no type would pooch the app.
 
-## 1.0.0.3000
+## 1.0.0
 
 - **January 25, 2017**
 

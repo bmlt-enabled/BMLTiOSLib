@@ -10,5 +10,5 @@ jazzy   --github_url https://github.com/bmlt-enabled/BMLTiOSLib \
         --theme fullwidth \
         --author_url https://bmlt.app \
         --min-acl public
-cp ./img/* docs/img
+cp ./Sources/BMLTiOSLib/BMLTiOSLib.docc/Resources/* docs/img
 cd "${CWD}"
