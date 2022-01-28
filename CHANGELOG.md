@@ -1,5 +1,11 @@
 # BMLTiOSLib Change Log
 
+## 1.4.1
+
+- **January 28, 2022**
+
+- There was a bug, in which the fetched formats were not being properly parsed, and the formats array was always empty. This has been fixed.
+
 ## 1.4.0
 
 - **January 28, 2022**
