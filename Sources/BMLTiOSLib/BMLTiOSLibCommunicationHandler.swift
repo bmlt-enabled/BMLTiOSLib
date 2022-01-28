@@ -801,6 +801,19 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
     func handleMeetingSearchResponse(_ inResponseData: [String: AnyObject?]) {
         let formatArray = inResponseData["formats"]
         let meetingArray = inResponseData["meetings"]
+        if let formatArray = formatArray as? [BMLTiOSLibFormatNode] {
+            var formats = [String : [BMLTiOSLibFormatNode]]()
+            formatArray.forEach {
+                if let key = $0.key {
+                    if !(formats[key]?.isEmpty ?? true) {
+                        formats[key]?.append($0)
+                    } else {
+                        formats[key] = [$0]
+                    }
+                }
+            }
+            self.handleFormats(formats)
+        }
         if self._newMeetingCall {
             self._newMeetingCall = false
             self.delegate.meetingSearchResults(meetingArray as? [BMLTiOSLibMeetingNode], newMeeting: true)
