@@ -1,5 +1,11 @@
 # BMLTiOSLib Change Log
 
+## 1.5.1
+
+- **July 21, 2022**
+
+- Fixed an error in the new feature, that specified incorrect URIs.
+
 ## 1.5.0
 
 - **July 21, 2022**

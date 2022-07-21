@@ -216,7 +216,7 @@ public class BMLTiOSLibSearchCriteria: NSObject {
         }
         
         if !_specificFieldFilter.isEmpty {
-            ret += "&data_field_key=" + _specificFieldFilter.joined(separator: "&")
+            ret += "&data_field_key[]=" + _specificFieldFilter.joined(separator: "&data_field_key[]=")
         }
         
         // Return the search parameter list.
