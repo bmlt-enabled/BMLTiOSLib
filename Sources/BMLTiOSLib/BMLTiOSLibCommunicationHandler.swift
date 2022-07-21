@@ -1098,15 +1098,7 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
         if nil == inError {
             // See if the response data is a Dictionary
             if inResponseData is NSDictionary {
-                if ret is BMLTiOSLibMeetingNode {
-                    ret = ["meetings": [ret]] as AnyObject?
-                } else {
-                    if ret is BMLTiOSLibFormatNode {
-                        ret = ["formats": [ret]] as AnyObject?
-                    } else {
-                        ret = self.parseJSONDictionaryHandler(inResponseData, error: inError, refCon: inRefCon)
-                    }
-                }
+                ret = self.parseJSONDictionaryHandler(inResponseData, error: inError, refCon: inRefCon)
             } else {
                 ret = self.parseJSONOtherHandler(inResponseData, error: inError, refCon: inRefCon)
             }
@@ -1340,7 +1332,7 @@ class BMLTiOSLibCommunicationHandler: BMLTSession, BMLTCommunicatorDataSinkProto
             } else if keys.contains("json_data") {
                 ret = self.parseJSONChangeObject(inResponseData) as AnyObject?
             // Is this a meeting?
-            } else if keys.contains("service_body_bigint") && keys.contains("id_bigint") && keys.contains("published") && keys.contains("longitude") && keys.contains("latitude") && keys.contains("formats") {
+            } else if keys.contains("service_body_bigint") && keys.contains("id_bigint") && keys.contains("longitude") && keys.contains("latitude") && keys.contains("formats") {
                 ret = self.parseJSONMeeting(inResponseData)
             // Is this a format?
             } else if keys.contains("key_string") && keys.contains("name_string") && keys.contains("description_string") && keys.contains("lang") && keys.contains("id") {
