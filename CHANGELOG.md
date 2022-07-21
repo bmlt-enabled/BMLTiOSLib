@@ -1,5 +1,11 @@
 # BMLTiOSLib Change Log
 
+## 1.5.0
+
+- **July 21, 2022**
+
+- Added the ability to specify that only certain fields be returned by the server.
+
 ## 1.4.2
 
 - **March 15, 2022**

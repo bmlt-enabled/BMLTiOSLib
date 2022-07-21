@@ -149,7 +149,8 @@ public class BMLTiOSLibSearchCriteria: NSObject {
     private var _durationTimeInSeconds: Int! = nil
     private var _meetingsStartBeforeStartTime: Bool = false
     private var _meetingsAreShorterThanDuration: Bool = false
-    
+    private var _specificFieldFilter: [String] = []
+
     /* ############################################################## */
     // MARK: Internal Methods
     /* ############################################################## */
@@ -212,6 +213,10 @@ public class BMLTiOSLibSearchCriteria: NSObject {
         // If we are a logged-in admin, then we can pick our published status.
         if self._serverComm.isAdminLoggedIn {
             ret += "&advanced_published=" + ((.Published == self.publishedStatus) ? "1" : ((.Both == self.publishedStatus) ? "0" : "-1"))
+        }
+        
+        if !_specificFieldFilter.isEmpty {
+            ret += "&data_field_key=" + _specificFieldFilter.joined(separator: "&")
         }
         
         // Return the search parameter list.
@@ -863,6 +868,15 @@ public class BMLTiOSLibSearchCriteria: NSObject {
         }
         
         return ret
+    }
+    
+    /* ############################################################## */
+    /**
+     - returns: An Array of String. Each element is a specific field that should be returned in the query. Empty, means return all fields.
+     */
+    public var specificFieldFilter: [String] {
+        get { _specificFieldFilter }
+        set { _specificFieldFilter = newValue }
     }
     
     /* ############################################################## */
