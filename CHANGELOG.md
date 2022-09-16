@@ -1,5 +1,11 @@
 # BMLTiOSLib Change Log
 
+## 1.5.4
+
+- **September 16, 2022**
+
+- Updated to latest tools. No API changes.
+
 ## 1.5.3
 
 - **July 21, 2022**
